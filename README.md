@@ -1,6 +1,6 @@
 # Brokurly
 
 # usecase diagram
-<img src="https://user-images.githubusercontent.com/80576569/129039503-c71aed04-410b-4af2-9da5-b8a31f9aeaf7.png" width="1200" height="600"/>
+![Use case diagram (2)](https://user-images.githubusercontent.com/80576569/129040057-36317c7b-2369-46d6-be28-6f14146ad2c0.png)
 
 
