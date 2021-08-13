@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.teamright.brokruly.model.MainCategoryVO;
 
-public interface MainCategoryDAO {
+public interface MainCategoryMapper {
 	
 	public List<MainCategoryVO> getCateList();
 	
