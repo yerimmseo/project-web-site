@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.teamright.brokurly.product.mapper.SubCategoryMapper">
+	<select id="getSubCateList" resultType="com.teamright.brokurly.model.SubCategoryVO">
+		SELECT * FROM subcategory_table
+	</select>
+	<select id="searchByMainCategory" resultType="com.teamright.brokurly.model.SubCategoryVO">
+		SELECT * FROM subcategory_table WHERE maincate_id = #{maincate_id}
+	</select>
+</mapper>
