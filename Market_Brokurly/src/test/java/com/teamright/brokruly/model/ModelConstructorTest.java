@@ -1,5 +1,7 @@
 package com.teamright.brokruly.model;
 
+import static org.junit.Assert.*;
+
 import java.util.Date;
 
 import org.apache.log4j.Logger;
@@ -11,7 +13,7 @@ import org.junit.Test;
 public class ModelConstructorTest {
 
 	Logger log = Logger.getLogger(this.getClass());
-		
+	
 	@Test
 	public void TestCartVO() {
 		CartVO cart = new CartVO(3, 21, "customer1");
@@ -114,4 +116,5 @@ public class ModelConstructorTest {
 		SubCategoryVO sCate = new SubCategoryVO(22, "°ß°ú·ù");
 		log.info(sCate);
 	}
+
 }
