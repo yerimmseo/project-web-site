@@ -29,6 +29,8 @@ public class CustomerVO {
 	private String customer_tel;
 	@NonNull
 	private String customer_address;
+	@NonNull
+	private String customer_detailaddress;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date customer_birth;
 	private String customer_gender;

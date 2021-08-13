@@ -3,7 +3,7 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.teamright.brokruly.product.mapper.MainCategoryMapper">
-	<select id="getCateList" resultType="com.teamright.brokruly.model.MainCategoryVO">
+	<select id="getMainCateList" resultType="com.teamright.brokruly.model.MainCategoryVO">
 		SELECT * FROM maincategory_table
 	</select>
 </mapper>

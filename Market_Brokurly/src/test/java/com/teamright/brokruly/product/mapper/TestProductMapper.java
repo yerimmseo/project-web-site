@@ -1,4 +1,4 @@
-package com.teamright.brokurly.product.mapper;
+package com.teamright.brokruly.product.mapper;
 
 import static org.junit.Assert.*;
 
@@ -21,9 +21,10 @@ public class TestProductMapper {
 	@Autowired
 	ProductMapper productMapper;
 	
+	@Ignore
 	@Test
-	public void getAllInfoTest() {
-		List<ProductVO> productList = productMapper.getAllInfo(22);
+	public void getInfoAsSearchSubCateTest() {
+		List<ProductVO> productList = productMapper.getListBySub(22);
 		
 		for (ProductVO product : productList) {
 			System.out.println(product);
@@ -31,11 +32,11 @@ public class TestProductMapper {
 	}
 	
 	@Test
-	public void getNameAndPriceTest() {
-		List<ProductVO> productList = productMapper.getNameAndPrice(22);
+	public void getListByMainTest() {
+		List<ProductVO> productList = productMapper.getListByMain(10);
 		
 		for (ProductVO product : productList) {
-			System.out.println(product.getProduct_name() + product.getProduct_price());
+			System.out.println(product);
 		}
 	}
 
