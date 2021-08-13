@@ -14,8 +14,8 @@ public class ProductController {
 	@Autowired
 	private ProductMapper productMapper;
 	
-	@RequestMapping("/select")
+	@RequestMapping("/test")
 	public void select(Model model) {
-		model.addAttribute("product", productMapper.getListBySub(22));
+		model.addAttribute("product", productMapper.getListByMain(50));
 	}
 }
