@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 
 import java.util.List;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +30,7 @@ public class TestProductMapper {
 		}
 	}
 	
+	@Ignore
 	@Test
 	public void getListByMainTest() {
 		// 메인 카테고리가 10번인 상품들을 조회 (메인 카테고리로 상품을 조회)

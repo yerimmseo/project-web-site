@@ -126,6 +126,11 @@ CREATE TABLE cart_table (
     customer_id VARCHAR2(50) CONSTRAINT CART_CUSTOMER_ID_FK REFERENCES customer_table(customer_id)
 );
 
+CREATE TABLE product_detail (
+    product_id NUMBER(3) CONSTRAINT PRODUCT_DETAIL_ID_FK REFERENCES product_table(product_id),
+    detail_content CLOB
+);
+
 
 -- 제약조건 상관없이 테이블 삭제하기
 DROP TABLE MAINCATEGORY_TABLE CASCADE CONSTRAINTS;
