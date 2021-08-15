@@ -41,7 +41,7 @@
             <c:forEach var="i" begin="0" end="${product.size() - 1 }">
                 <li>
                     <div class="item">
-                        <div class="thum" style="background-image: url('${path }/resources/img/product/${product.get(i).product_id }.jpg'); background-size: cover">
+                        <div class="thum" style="background-image: url('${path }/resources/img/product/maincategory${mainNum }/${product.get(i).product_id }.jpg'); background-size: cover">
                             <a>
                              
                             </a>
