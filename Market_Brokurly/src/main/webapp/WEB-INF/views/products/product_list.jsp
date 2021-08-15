@@ -27,13 +27,10 @@
             <div id="title">채소</div>
             <ul class="list">
                 <li><a>전체보기</a></li>
-                <li><a>고구마·당근·감자</a></li>
-                <li><a>시금치·쌈나물·채소</a></li>
-                <li>브로콜리·파프리카·양배추</li>
-                <li>양파·대파·마늘·배추</li>
-                <li>오이·호박·고추</li>
-                <li>냉동·이색·간편채소</li>
-                <li>콩나물·버섯</li>
+                <!-- 메뉴는 대항목 번호 받아서 출력해주기 -->
+                <c:forEach var="i" begin="0" end="${menus.size() - 1 }">
+                	<li>${menus.get(i).subcate_name }</li>
+                </c:forEach>
             </ul>
         </div>
         <div class="inner-list">
