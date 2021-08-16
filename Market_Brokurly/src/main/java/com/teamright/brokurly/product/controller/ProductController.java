@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.teamright.brokurly.product.mapper.ProductDetailMapper;
 import com.teamright.brokurly.product.mapper.ProductMapper;
 import com.teamright.brokurly.product.mapper.SubCategoryMapper;
 
@@ -17,6 +18,8 @@ public class ProductController {
 	private ProductMapper productMapper;
 	@Autowired
 	private SubCategoryMapper subCateMapper;
+	@Autowired
+	private ProductDetailMapper detailMapper;
 	
 	@GetMapping("/product_list")
 	public void searchAllProduct(Model model) {
@@ -29,5 +32,12 @@ public class ProductController {
 		model.addAttribute("product", productMapper.getListByMain(a));
 		// 서브 카테고리로 검색하기 -> 서브카테고리 번호 받아서 검색하기
 //		model.addAttribute("product", productMapper.getListBySub(53));
+	}
+	
+	@GetMapping("/product_detail")
+	public void viewProductDetail(Model model) {
+		String[] contents = detailMapper.getProductDetail(10).getDetail_content().split("\n");
+		
+		model.addAttribute("detail", contents);
 	}
 }
