@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.teamright.brokurly.product.mapper.ProductDetailMapper">
+	<resultMap type="com.teamright.brokurly.model.ProductDetailVO" id="getInfo">
+		<result property="detail_content" column="detail_content" jdbcType="CLOB" javaType="java.lang.String"/>
+	</resultMap>
+	<select id="getProductDetail" parameterType="com.teamright.brokurly.model.ProductDetailVO" resultMap="getInfo">
+		SELECT * FROM product_detail WHERE product_id = #{product_id}
+	</select>
+</mapper>
