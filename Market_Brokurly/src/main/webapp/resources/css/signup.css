@@ -1,0 +1,152 @@
+@charset "UTF-8";
+
+* {user-select: none;}
+a {cursor: pointer;}
+button {cursor: pointer;}
+
+.join_body {width: 1050px; padding-bottom: 120px; margin: auto;}
+
+.member_join {width: 700px; margin: 0 auto;}
+.member_join .tit {padding-top: 64px; font-weight: 900; font-size: 30px; line-height: 40px; text-align: center; letter-spacing: -.5px; color: #333;}
+.member_join .tbl {width: 100%; color: #333;}
+.member_join .field_head .sub {padding: 0 0; font-size: 12px; color: #666; line-height: 17px; text-align: right;}
+.member_join th {width: 159px; padding: 20px 0 0 20px; font-weight: 700; font-size: 14px; color: #333; line-height: 40px; vertical-align: top; text-align: left;}
+.member_join td {padding: 19px 0 0 0;}
+.member_join input[type=text], .member_join input[type=password] {width: 332px; height: 44px; padding: 0 14px; font-size: 14px; color: #333; border: 1px solid #ccc; border-radius: 3px; line-height: 20px; background: #fff; outline: none; vertical-align: top;}
+.member_join input[type=text]:focus, .member_join input[type=password]:focus {border: 1px solid #666;}
+.member_join input[type=text]::placeholder, .member_join input[type=password]::placeholder {color: #ccc;}
+
+table {border-top: black solid 2px; border-collapse: collapse;}
+
+.ico {color: #ee6a7b; vertical-align: top;}
+
+.chk_btn {display: inline-block; width: 120px; margin-left: 5px; vertical-align: top; border: solid 1px teal; background-color: white; color: teal; font-weight: bold; border-radius: 3px; height: 44px; font-size: 14px; line-height: 40px; text-align: center; outline: none;}
+
+.btn_cert {display: inline-block; width: 120px; margin-left: 5px; vertical-align: top; border: solid 1px teal; background-color: white; color: teal; font-weight: bold; border-radius: 3px; height: 44px; font-size: 14px; line-height: 40px; text-align: center;}
+.btn_cert.disabled {border: 1px solid #ddd; background-color: #fff; color: #ddd;}
+
+.search_address {display: block; width: 359px; border: solid 1px teal; font-weight: bold; background-color: white; color: teal; border-radius: 3px; height: 44px; font-size: 14px; text-align: center;}
+.search_address > span:first-of-type {display: inline-block; margin-top: 12px; font-size: 20px;}
+.search_address > span:nth-of-type(2) {display: inline-block; vertical-align: top; margin-top: 12px; margin-left: -3px;}
+
+.txt_guide {font-size: 12px; color: #666; line-height: 18px;}
+
+.member_join input[type=radio] {position: absolute; z-index: -1; opacity: 0;}
+.member_join input[type=radio]+.ico {display: inline-block; position: relative; width: 24px; height: 24px; margin-right: 9px; border: solid 1px #ddd; border-radius: 100%; vertical-align: -7px;}
+.member_join .select_gender label {display: inline-block; padding: 0 52px 10px 0;}
+.member_join label {font-size: 14px; line-height: 25px;}
+.member_join input[type=radio]:checked+.ico {border: solid 1px teal; background-color: teal;}
+.member_join input[type=radio]:checked+.ico::after {content: ""; position: absolute; left: 26%; top: 26%; width: 12px; height: 12px; margin-right: -5px 0 0 -5px; border-radius: 100%; background-color: #fff;}
+
+.birth_day input[type=text] {float: left; width: 81px; height: 40px; border: 0; text-align: center; color: #333;}
+.birth_day {overflow: hidden; border: solid 1px #ccc; border-radius: 3px; width: 359px;}
+.birth_day input[type=text]:focus {border: 0;}
+
+.bar:after {content: "/"; float: left; width: 15px; height: 100%; font-size: 14px; color: #ccc; line-height: 42px; text-align: center;}
+
+.group_radio {padding-top: 8px;}
+
+.radio_wrap label {padding: 10px 52px 10px 0;}
+
+.select_recommend td {padding-bottom: 20px;}
+
+.square {display: none;}
+.square .txt {display: block;}
+.square .txt::before {content: "\2022"; display: inline-block; padding: 0 4px 0 2px; font-size: 12px; vertical-align: 0;}
+
+.phone_guide {width: 359px;}
+
+.chk_phone_num {margin-top: 10px; display: none;}
+.chk_phone_num {position: relative;}
+
+.count_down {position: absolute; left: 310px; top: 0; width: 100px; font-size: 14px; color: #b3130b; text-align: 20px; letter-spacing: -.5px;}
+
+.main_sub_wrap > input:nth-of-type(2) {margin-top: 10px;}
+.main_sub_wrap {display: none;}
+
+.gender_wrap {padding-top: 8px;}
+
+.research > span:first-of-type {display: inline-block; margin-top: 11px; font-size: 19px;}
+.research > span:nth-of-type(2) {display: inline-block; vertical-align: top; margin-top: 0px; margin-left: -3px;}
+
+.reco_input {display: none;}
+
+.event_input {display: none;}
+
+.add_input {margin-top: 20px;}
+
+.reco_guide {display: none;}
+
+.select_recommend {border-bottom: solid 1px black;}
+
+.reg_agree .label_all_check {padding: 12px 0 4px; font-weight: 700; font-size: 18px; color: #666;}
+
+.member_join input[type=checkbox] {position: absolute; z-index: -1; opacity: 0;}
+.member_join input[type=checkbox] + .ico {display: inline-block; position: relative; box-sizing: border-box; width: 24px; height: 24px; margin-right: 12px; border: 0; background: url("../img/icon/ico_checkbox.png") no-repeat 50% 50%; background-size: 24px 24px;}
+.member_join input[type=checkbox]:checked +.ico{background-color: teal; border-radius: 100%; border: teal solid 1px;}
+
+.reg_agree .ico {vertical-align: -5px;}
+
+.all_check .sub {padding-left: 43px; font-size: 12px; color: #666; line-height: 10px;}
+
+.reg_agree .all_check {padding-top: 10px;}
+.reg_agree .check_view {position: relative; padding-top: 15px;}
+
+.label_block {display: block;line-height: 22px;}
+
+.check_view .sub {color: #999;}
+
+.member_join .btn_link {position: absolute; right: 22px; top: 0; padding-top: 10px; font-size: 14px; color: teal; letter-spacing: 0;}
+.member_join .btn_link::after {content: ">"; display: inline-block;}
+.member_join .check_event {overflow: hidden; padding: 20px 0 2px 24px;}
+.member_join .sms_info {margin-left: 65px; padding: 0 0 6px 16px; background: url("../img/icon/ico_sub_dot.png") no-repeat 0 0; background-size: 16px 20px; font-size: 12px; color: teal; line-height: 18px; letter-spacing: -.5px; margin-bottom: 0;}
+.member_join .btn {display: inline-block; margin-left: 5px; vertical-align: top;}
+
+.email_sms > label{display: inline-block; padding-right: 80px;}
+
+.reg_agree {border-bottom: solid 1px rgb(236, 235, 235);}
+.reg_agree .check_view:last-of-type {padding-bottom: 20px;}
+
+.btn_join {width: 240px; height: 56px; font-size: 16px; line-height: 54px;}
+
+.btn.active {border: solid 1px teal; border-radius: 3px; background-color: teal; color: white;}
+
+.form_footer {padding-top: 40px; text-align: center;}
+
+.layer_agreement {display: none;}
+
+.reg_agree .ico {vertical-align: top;}
+.reg_agree .bg_dim {display: none; position: fixed; z-index: 9998; left: 0; top: 0; width: 100%; height: 100%; background-color: #000; opacity: .5;}
+.reg_agree .layer {position: fixed; display: none; left: 50%; top: 25%; width: 440px; margin: 0 0 0 -220px; border-radius: 12px; background-color: #fff; z-index: 9999;}
+.reg_agree .choice {top: 35%;}
+.reg_agree .inner_layer {position: relative; width: 440px; margin: 0 auto; background-color: #fff;}
+
+.box_tit {font-weight: normal; font-size: 14px;}
+
+.reg_agree .tit_layer {padding: 25px 88px 8px 30px; font-weight: normal; font-size: 24px; line-height: 40px; color: #333; letter-spacing: -1px; margin: 0;}
+.reg_agree .tit_layer .sub {color: #999;}
+.reg_agree .layer .inner_layer {border-radius: 12px;}
+.reg_agree .layer_agreement .inner_layer .box_tbl {overflow-y: scroll; height: 450px; font-size: 14px; color: #666; line-height: 20px; text-align: justify;}
+
+.layer .box_tbl {margin-top: 19px; padding: 0 30px; font-size: 14px; color: #333;}
+.layer .btn_ok {display: block; width: 100%; height: 57px; border: 0; border-top: 1px solid #f7f7f7; border-radius: 12px; background-color: #fff; font-size: 16px; color: teal; line-height: 32px; letter-spacing: 0; overflow: visible;}
+.layer .btn_close {position: absolute; right: 24px; top: 30px; width: 32px; height: 32px; border: 0; background: url("../img/icon/ico_layer_close.png") no-repeat 0 0;}
+
+.inner_tbl {border-collapse: collapse; border-spacing: 0; border: none; width: 100%;}
+
+.layer_essential .tit1 {width: auto;}
+.layer_essential .tit2 {width: 81px;}
+.layer_essential .tit3 {width: 101px;}
+
+.member_join .reg_agree .box_tbl th {padding: 7px 8px 8px; background-color: #fafafa; border: 1px solid #ddd; border-bottom: 0; font-weight: 700; font-size: 12px; line-height: 18px; text-align: center;}
+.member_join .reg_agree .box_tbl td {padding: 9px 4px; border: 1px solid #ddd; font-size: 11px; line-height: 17px; text-align: center; vertical-align: middle;}
+.member_join .reg_agree .box_tbl .emph {font-weight: 700; font-size: 12px;}
+
+.reg_agree .layer .txt_service {margin-top: 20px; padding: 0 30px; font-size: 13px; line-height: 20px; color: #333; text-align: justify;}
+
+.txt_service2 {font-size: 13px; padding-top: 10px; padding-bottom: 13px;}
+
+.layer_choice {top: 50%;}
+
+thead > tr > th:nth-of-type(2) {width: 81px;}
+thead > tr > th:nth-of-type(3) {width: 100px;}
