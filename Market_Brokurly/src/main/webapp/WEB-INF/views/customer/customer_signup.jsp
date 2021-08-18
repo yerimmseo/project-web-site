@@ -13,6 +13,9 @@
 <body>
 
 	<!-- header 추가 해야됨 -->
+	<div class="header">
+		<jsp:include page="../home.jsp"></jsp:include>
+	</div>
 
     <div class="contents">
         <div class="join_body">
