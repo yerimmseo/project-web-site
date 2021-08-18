@@ -8,7 +8,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/customer")
 public class CustomerController {
 	@GetMapping("/customer_signup")
-	public void signup() {
-		
-	}
+	public void signup() {}
+	
+	@GetMapping("/signin")
+	public void signin() {}
+	
+	@GetMapping("/findid")
+	public void findid() {}
+	
+	@GetMapping("/findpw")
+	public void findpw() {}
 }
