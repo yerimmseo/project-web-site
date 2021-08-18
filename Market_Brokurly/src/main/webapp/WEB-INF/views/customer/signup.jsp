@@ -6,17 +6,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>마켓브로컬리 :: 내일의 장보기, 마켓브로컬리</title>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Sharp|Material+Icons+Two+Tone" rel="stylesheet">
 <link rel="stylesheet" href="${path }/resources/css/signup.css">
 </head>
 <body>
-
-	<!-- header 추가 해야됨 -->
 	<div class="header">
-		<jsp:include page="../home.jsp"></jsp:include>
+		<jsp:include page="../include/header.jsp"></jsp:include>
 	</div>
-
     <div class="contents">
         <div class="join_body">
             <div class="member_join">

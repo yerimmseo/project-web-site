@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/customer")
 public class CustomerController {
-	@GetMapping("/customer_signup")
+	@GetMapping("/signup")
 	public void signup() {}
 	
 	@GetMapping("/signin")
