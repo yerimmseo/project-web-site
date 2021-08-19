@@ -191,7 +191,7 @@
                             </li>
                             <li id="skincare" class="mainCate_text">
                                 <a href="" id="mca">
-                                    스킨케어·메이크업&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                                    스킨케어·메이크업&emsp;&emsp;&emsp;&emsp;&emsp;
                                 </a>
                                 <ul id="sub_skincare" > <!-- 스킨케어·메이크업 -->
                                     <li class="subs"><a href="">스킨케어·메이크업</a></li>

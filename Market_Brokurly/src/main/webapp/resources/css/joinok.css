@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+.layout-wrapper div, .layout-wrapper th, .layout-wrapper td, .layout-wrapper li, .layout-wrapper dt, .layout-wrapper dd, .layout-wrapper p {word-break: break-all;}
+.layout-wrapper *, .layout-wrapper *::after, .layout-wrapper *::before {box-sizing: border-box; margin: 0; padding: 0;}
+.layout-wrapper ol, .layout-wrapper ul {list-style-type: none;}
+.layout-wrapper a {background-color: transparent; text-decoration: none; color: inherit;}
+
+.default {height: 180px;}
+.default2 {height: 100px;}
+
+.main {border-bottom: solid 1px #f7f7f7;}
+.content {min-width: 1050px; padding-bottom: 120px; position: relative;}
+.layout-wrapper {position: relative; width: 1050px; height: 100%; margin: 0 auto;}
+.xans-member-joincomplete {padding: 50px 0; line-height: 150%; text-align: center; background-color: rgb(239, 250, 239); border-top: solid 2px #4d4d4d; border-bottom: solid 1px #4d4d4d;}
+.xans-member-joincomplete .joinComplete {width: 430px; margin: 0 auto; color: #4c4c4c;}
+.xans-member-joincomplete .joinComplete .desc {margin: 0 0 30px; font-size: 20px; font-weight: 700;}
+.xans-member-joincomplete .joinComplete .memberInfo {overflow: hidden; text-align: left; border-top:  solid 2px darkslategray; padding-top: 10px;}
+.xans-member-joincomplete .joinComplete .memberInfo li span .bolds, .xans-member-joincomplete .joinComplete .memberInfo li strong {font-weight: 700; display: inline-block; width: 30%; padding: 20px 0; color: #000; font-size: 13px;}
+.xans-member-joincomplete .joinComplete .memberInfo li strong {text-indent: 20px;}
+.xans-member-joincomplete .joinComplete .memberInfo li {border-bottom: solid 1px darkslategray;}
+.xans-member-joincomplete .joinComplete .button {margin: 30px 0 0;}
+.xans-member-joincomplete span > span {font-size: 13px;}
+
+.button .bhs_button {float: none; width: 200px;}
+.button .active {background-color: #fff; color: seagreen;}
+.bhs_button {display: inline-block; line-height: 40px; text-align: center; background-color: darkseagreen; border: solid 1px seagreen; color: #fff; margin-left: 2px; font-size: 13px;}

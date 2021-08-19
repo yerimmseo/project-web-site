@@ -18,4 +18,7 @@ public class CustomerController {
 	
 	@GetMapping("/findpw")
 	public void findpw() {}
+	
+	@GetMapping("/joinok")
+	public void joinok() {}
 }
