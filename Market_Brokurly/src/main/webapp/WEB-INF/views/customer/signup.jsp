@@ -9,6 +9,7 @@
 <title>마켓브로컬리 :: 내일의 장보기, 마켓브로컬리</title>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Sharp|Material+Icons+Two+Tone" rel="stylesheet">
 <link rel="stylesheet" href="${path }/resources/css/signup.css">
+<link rel="stylesheet" href="${path }/resources/css/font.css" />
 </head>
 <body>
 	<div class="header">

@@ -1,0 +1,7 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
+
+body {font-family: 'Noto Sans KR', Arial, sans-serif;}
+button {font-family: 'Noto Sans KR', Arial, sans-serif;}
+#user_info {font-family: Arial;}
