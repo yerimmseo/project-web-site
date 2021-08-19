@@ -24,7 +24,6 @@
     	<property name="dataSource" ref="dataSource" />
     </bean>
 
-    <context:component-scan base-package="com.teamright.brokurly" />
 	<mybatis-spring:scan base-package="com.teamright.brokurly.product.mapper" />
 
 </beans>
