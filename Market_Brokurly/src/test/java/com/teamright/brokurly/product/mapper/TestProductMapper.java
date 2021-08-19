@@ -29,9 +29,7 @@ public class TestProductMapper {
 			System.out.println(product);
 		}
 	}
-	
-	@Ignore
-	@Test
+		@Test
 	public void getListByMainTest() {
 		// 메인 카테고리가 10번인 상품들을 조회 (메인 카테고리로 상품을 조회)
 		List<ProductVO> productList = productMapper.getListByMain(10);

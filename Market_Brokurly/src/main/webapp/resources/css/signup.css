@@ -20,12 +20,12 @@ table {border-top: black solid 2px; border-collapse: collapse;}
 
 .ico {color: #ee6a7b; vertical-align: top;}
 
-.chk_btn {display: inline-block; width: 120px; margin-left: 5px; vertical-align: top; border: solid 1px teal; background-color: white; color: teal; font-weight: bold; border-radius: 3px; height: 44px; font-size: 14px; line-height: 40px; text-align: center; outline: none;}
+.chk_btn {display: inline-block; width: 120px; margin-left: 5px; vertical-align: top; border: solid 1px seagreen; background-color: white; color: seagreen; font-weight: bold; border-radius: 3px; height: 44px; font-size: 14px; line-height: 40px; text-align: center; outline: none;}
 
-.btn_cert {display: inline-block; width: 120px; margin-left: 5px; vertical-align: top; border: solid 1px teal; background-color: white; color: teal; font-weight: bold; border-radius: 3px; height: 44px; font-size: 14px; line-height: 40px; text-align: center;}
+.btn_cert {display: inline-block; width: 120px; margin-left: 5px; vertical-align: top; border: solid 1px seagreen; background-color: white; color: seagreen; font-weight: bold; border-radius: 3px; height: 44px; font-size: 14px; line-height: 40px; text-align: center;}
 .btn_cert.disabled {border: 1px solid #ddd; background-color: #fff; color: #ddd;}
 
-.search_address {display: block; width: 359px; border: solid 1px teal; font-weight: bold; background-color: white; color: teal; border-radius: 3px; height: 44px; font-size: 14px; text-align: center;}
+.search_address {display: block; width: 359px; border: solid 1px seagreen; font-weight: bold; background-color: white; color: seagreen; border-radius: 3px; height: 44px; font-size: 14px; text-align: center;}
 .search_address > span:first-of-type {display: inline-block; margin-top: 12px; font-size: 20px;}
 .search_address > span:nth-of-type(2) {display: inline-block; vertical-align: top; margin-top: 12px; margin-left: -3px;}
 
@@ -35,7 +35,7 @@ table {border-top: black solid 2px; border-collapse: collapse;}
 .member_join input[type=radio]+.ico {display: inline-block; position: relative; width: 24px; height: 24px; margin-right: 9px; border: solid 1px #ddd; border-radius: 100%; vertical-align: -7px;}
 .member_join .select_gender label {display: inline-block; padding: 0 52px 10px 0;}
 .member_join label {font-size: 14px; line-height: 25px;}
-.member_join input[type=radio]:checked+.ico {border: solid 1px teal; background-color: teal;}
+.member_join input[type=radio]:checked+.ico {border: solid 1px seagreen; background-color: seagreen;}
 .member_join input[type=radio]:checked+.ico::after {content: ""; position: absolute; left: 26%; top: 26%; width: 12px; height: 12px; margin-right: -5px 0 0 -5px; border-radius: 100%; background-color: #fff;}
 
 .birth_day input[type=text] {float: left; width: 81px; height: 40px; border: 0; text-align: center; color: #333;}
@@ -83,7 +83,7 @@ table {border-top: black solid 2px; border-collapse: collapse;}
 
 .member_join input[type=checkbox] {position: absolute; z-index: -1; opacity: 0;}
 .member_join input[type=checkbox] + .ico {display: inline-block; position: relative; box-sizing: border-box; width: 24px; height: 24px; margin-right: 12px; border: 0; background: url("../img/icon/ico_checkbox.png") no-repeat 50% 50%; background-size: 24px 24px;}
-.member_join input[type=checkbox]:checked +.ico{background-color: teal; border-radius: 100%; border: teal solid 1px;}
+.member_join input[type=checkbox]:checked +.ico{background-color: seagreen; border-radius: 100%; border: seagreen solid 1px;}
 
 .reg_agree .ico {vertical-align: -5px;}
 
@@ -96,10 +96,10 @@ table {border-top: black solid 2px; border-collapse: collapse;}
 
 .check_view .sub {color: #999;}
 
-.member_join .btn_link {position: absolute; right: 22px; top: 0; padding-top: 10px; font-size: 14px; color: teal; letter-spacing: 0;}
+.member_join .btn_link {position: absolute; right: 22px; top: 0; padding-top: 10px; font-size: 14px; color: seagreen; letter-spacing: 0;}
 .member_join .btn_link::after {content: ">"; display: inline-block;}
 .member_join .check_event {overflow: hidden; padding: 20px 0 2px 24px;}
-.member_join .sms_info {margin-left: 65px; padding: 0 0 6px 16px; background: url("../img/icon/ico_sub_dot.png") no-repeat 0 0; background-size: 16px 20px; font-size: 12px; color: teal; line-height: 18px; letter-spacing: -.5px; margin-bottom: 0;}
+.member_join .sms_info {margin-left: 65px; padding: 0 0 6px 16px; background: url("../img/icon/ico_sub_dot.png") no-repeat 0 0; background-size: 16px 20px; font-size: 12px; color: seagreen; line-height: 18px; letter-spacing: -.5px; margin-bottom: 0;}
 .member_join .btn {display: inline-block; margin-left: 5px; vertical-align: top;}
 
 .email_sms > label{display: inline-block; padding-right: 80px;}
@@ -109,7 +109,7 @@ table {border-top: black solid 2px; border-collapse: collapse;}
 
 .btn_join {width: 240px; height: 56px; font-size: 16px; line-height: 54px;}
 
-.btn.active {border: solid 1px teal; border-radius: 3px; background-color: teal; color: white;}
+.btn.active {border: solid 1px seagreen; border-radius: 3px; background-color: seagreen; color: white;}
 
 .form_footer {padding-top: 40px; text-align: center;}
 
@@ -129,7 +129,7 @@ table {border-top: black solid 2px; border-collapse: collapse;}
 .reg_agree .layer_agreement .inner_layer .box_tbl {overflow-y: scroll; height: 450px; font-size: 14px; color: #666; line-height: 20px; text-align: justify;}
 
 .layer .box_tbl {margin-top: 19px; padding: 0 30px; font-size: 14px; color: #333;}
-.layer .btn_ok {display: block; width: 100%; height: 57px; border: 0; border-top: 1px solid #f7f7f7; border-radius: 12px; background-color: #fff; font-size: 16px; color: teal; line-height: 32px; letter-spacing: 0; overflow: visible;}
+.layer .btn_ok {display: block; width: 100%; height: 57px; border: 0; border-top: 1px solid #f7f7f7; border-radius: 12px; background-color: #fff; font-size: 16px; color: seagreen; line-height: 32px; letter-spacing: 0; overflow: visible;}
 .layer .btn_close {position: absolute; right: 24px; top: 30px; width: 32px; height: 32px; border: 0; background: url("../img/icon/ico_layer_close.png") no-repeat 0 0;}
 
 .inner_tbl {border-collapse: collapse; border-spacing: 0; border: none; width: 100%;}

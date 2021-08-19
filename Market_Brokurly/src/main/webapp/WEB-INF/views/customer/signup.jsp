@@ -436,6 +436,9 @@
             </div>
         </div>
     </div>
+    <div class="footer_wrap">
+		<jsp:include page="../include/footer.jsp"></jsp:include>
+	</div>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="${path }/resources/js/signup.js"></script>
