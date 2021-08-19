@@ -28,7 +28,7 @@ import com.teamright.brokurly.model.SubCategoryVO;
 /*
  * 모델 생성자에 대한 테스트 진행
  * */
-public class ModelConstructorTest {
+public class TestModelConstructor {
 
 	Logger log = Logger.getLogger(this.getClass());
 	
