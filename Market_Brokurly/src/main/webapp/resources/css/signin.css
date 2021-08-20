@@ -5,6 +5,7 @@
 div, th, td, li, dt, dd, p {word-break: break-all;}
 
 a, button {cursor: pointer;}
+input[type=button] {cursor: pointer;}
 
 .main {border-bottom: 1px solid #f7f7f7;}
 .content {min-width: 1050px; padding-bottom: 120px; position: relative;}
