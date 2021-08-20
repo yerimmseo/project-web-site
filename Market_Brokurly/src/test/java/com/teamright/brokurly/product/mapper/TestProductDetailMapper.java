@@ -10,6 +10,9 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.teamright.brokurly.model.ProductDetailVO;
 
+import lombok.extern.log4j.Log4j;
+
+@Log4j
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("file:src/main/webapp/WEB-INF/spring/root-context.xml")
 public class TestProductDetailMapper {
@@ -22,10 +25,10 @@ public class TestProductDetailMapper {
 		ProductDetailVO detailInfo = detailMapper.getProductDetail(10);
 		
 		// CLOB형 데이터 어떤 방식으로 쪼개지는지 확인. split()이용해서 데이터 처리예정
-		// true, false 이용해서 공백일 경우 true로 변경해서 테이블 사용해야 할 것 같음
+		// true, false 이용해서 공백일 경우 true로 변경해서 테이블 사용할 것
 		String[] arr = detailInfo.getDetail_content().split("\n");
 		for(int i = 0; i < arr.length; i++) {
-			System.out.println(i + " : " + arr[i]);
+			log.info(i + " : " + arr[i]);
 		}
 	}
 }

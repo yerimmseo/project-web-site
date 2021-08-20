@@ -13,6 +13,9 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.teamright.brokurly.model.ProductVO;
 
+import lombok.extern.log4j.Log4j;
+
+@Log4j
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("file:src/main/webapp/WEB-INF/spring/root-context.xml")
 public class TestProductMapper {
@@ -26,7 +29,7 @@ public class TestProductMapper {
 		List<ProductVO> productList = productMapper.getListBySub(22);
 		
 		for (ProductVO product : productList) {
-			System.out.println(product);
+			log.info(product);
 		}
 	}
 		@Test
@@ -35,7 +38,7 @@ public class TestProductMapper {
 		List<ProductVO> productList = productMapper.getListByMain(10);
 		
 		for (ProductVO product : productList) {
-			System.out.println(product);
+			log.info(product);
 		}
 	}
 

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.teamright.brokurly.customer.mapper.CustomerMapper">
+	<select id="getAllCustomerList" resultType="com.teamright.brokurly.model.CustomerVO">
+		SELECT * FROM customer_table
+	</select>
+	<select id="getCustomerInfo" resultType="com.teamright.brokurly.model.CustomerVO">
+		SELECT * FROM customer_table WHERE customer_id=#{customer_id}
+	</select>
+</mapper>
