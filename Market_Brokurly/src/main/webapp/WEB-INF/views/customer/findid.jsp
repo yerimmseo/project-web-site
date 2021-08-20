@@ -10,7 +10,9 @@
 <link rel="stylesheet" href="${path }/resources/css/signin.css" />
 </head>
 <body>
-
+	<div class="header">
+		<jsp:include page="../include/header.jsp"></jsp:include>
+	</div>
 	<div class="main">
         <div class="content">
             <div class="section_login">
@@ -29,5 +31,8 @@
             </div>
         </div>
     </div>
+        <div class="footer_wrap">
+		<jsp:include page="../include/footer.jsp"></jsp:include>
+	</div>
 </body>
 </html>
