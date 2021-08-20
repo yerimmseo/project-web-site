@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <c:set var="path" value="${pageContext.request.contextPath }" />
 <!DOCTYPE html>
 <html>
@@ -10,6 +11,8 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Sharp|Material+Icons+Two+Tone" rel="stylesheet">
 <link rel="stylesheet" href="${path }/resources/css/signup.css">
 <link rel="stylesheet" href="${path }/resources/css/font.css" />
+<script type="text/javascript" src="${path }/resources/js/sha512.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
 	<div class="header">
@@ -18,7 +21,7 @@
     <div class="contents">
         <div class="join_body">
             <div class="member_join">
-                <form action="">
+                <form action="signupPage" id="signForm" name="signForm" method="GET">
                     <div class="field_head">
                         <h3 class="tit">회원가입</h3>
                         <p class="sub">
@@ -30,58 +33,60 @@
                         <tr class="">
                             <th>아이디<span class="ico">*</span></th>
                             <td>
-                                <input type="text" name="mid" class="id_input" placeholder="6자 이상의 영문 혹은 영문과 숫자를 조합">
-                                <a class="chk_btn">중복확인</a>
-                                <p class="txt_guide square id_guide">
-                                    <span class="txt">6자 이상의 영문 혹은 영문과 숫자를 조합</span>
-                                    <span class="txt">아이디 중복확인</span>
+                                <input type="text" id="customer_id" name="customer_id" class="id_input" placeholder="6자 이상의 영문 혹은 영문과 숫자를 조합">
+                                <a class="chk_btn" id="id_check">중복확인</a>
+                                <p class="txt_guide square id_guide" >
+                                    <span class="txt" id="idcheck_length">6자 이상의 영문 혹은 영문과 숫자를 조합</span>
+                                    <span class="txt" id="idcheck">아이디 중복확인</span>
                                 </p>
                             </td>
                         </tr>
                         <tr>
                             <th>비밀번호<span class="ico">*</span></th>
                             <td>
-                                <input type="password" name="password" class="password_input" placeholder="비밀번호를 입력해주세요">
+                                <input type="password" id="customer_pw" name="customer_pw" class="password_input" placeholder="비밀번호를 입력해주세요">
                                 <p class="txt_guide square password_guide">
-                                    <span class="txt">10자 이상 입력</span>
-                                    <span class="txt">영문/숫자/특수문자(공백 제외)만 허용하며, 2개 이상 조합</span>
-                                    <span class="txt">동일한 숫자 3개 이상 연속 사용 불가</span>
+                                    <span class="txt" id="pwcheck_length">8자 이상 입력</span>
+                                    <span class="txt" id="pwcheck_language">영문/숫자/특수문자(공백 제외)만 허용하며, 3개 이상 조합</span>
                                 </p>
                             </td>
                         </tr>
                         <tr>
                             <th>비밀번호확인<span class="ico">*</span></th>
                             <td>
-                                <input type="password" name="password" class="pass_chk_input" placeholder="비밀번호를 한번 더 입력해주세요">
+                                <input type="password" id="customer_pw_confirm" class="pass_chk_input" placeholder="비밀번호를 한번 더 입력해주세요">
                                 <p class="txt_guide square pass_chk_guide">
-                                    <span class="txt">동일한 비밀번호를 입력해주세요.</span>
+                                    <span class="txt" id="pwcheck_confirm">동일한 비밀번호를 입력해주세요.</span>
                                 </p>
                             </td>
                         </tr>
                         <tr>
                             <th>이름<span class="ico">*</span></th>
                             <td>
-                                <input type="text" name="name" placeholder="이름을 입력해주세요">
+                                <input type="text" id="customer_name" name="customer_name" placeholder="이름을 입력해주세요">
                             </td>
                         </tr>
                         <tr>
                             <th>이메일<span class="ico">*</span></th>
                             <td>
-                                <input type="text" name="email" placeholder="예: marketbrokurly@brokurly.com">
-                                <a class="chk_btn">중복확인</a>
+                                <input type="text" id="customer_email" name="customer_email" class="email_input" placeholder="예: marketbrokurly@brokurly.com">
+                                <a class="chk_btn" id="email_check">중복확인</a>
+                                <p class="txt_guide square email_guide" >
+                                    <span class="txt" id="emailcheck_length">중복확인</span>
+                                </p>
                             </td>
                         </tr>
                         <tr>
                             <th>휴대폰<span class="ico">*</span></th>
                             <td>
                                 <div class="phone_num">
-                                    <input type="text" pattern="[0-9]*" placeholder="숫자만 입력해주세요">
-                                    <button class="btn_cert send_num_btn" type="button">인증번호 받기</button>
+                                    <input type="text" id="customer_tel" name="customer_tel" placeholder="숫자만 입력해주세요">
+                                    <a class="btn_cert send_num_btn" type="button" id="tel_check">중복 확인</a>
                                 </div>
                                 <div class="chk_phone_num">
-                                    <input type="text" pattern="[0-9]*">
-                                    <button class="btn_cert" type="button">인증번호 확인</button>
-                                    <p id="countdown" class="count_down">0 : 06</p>
+                                    <input type="text" pattern="[0-9]*" id="check">
+                                    <a class="btn_cert" id="number_check" type="button">인증 확인</a>
+                                    <p id="countdown" class="count_down"></p>
                                 </div>
                                 <p class="txt_guide square phone_guide">
                                     <span class="phone_guide">인증번호가 오지 않는다면, 통신사 스팸 차단 서비스 혹은 휴대폰 번호 차단 여부를 확인해주세요. (마켓브로컬리 1644-1107)</span>
@@ -91,21 +96,21 @@
                         <tr class="delevery">
                             <th>주소<span class="ico">*</span></th>
                             <td>
-                                <a class="search_address">
-                                    <span class="material-icons-sharp">
+                                <a class="search_address" id="findAddr" >
+                                    <span class="material-icons-sharp" >
                                         search
                                     </span>
                                     <span>주소 검색</span>
                                 </a>
                                 <div class="main_sub_wrap">
-                                    <input type="text">
-                                    <button class="btn_cert research" type="button">
+                                    <input type="text" id="customer_address" name="customer_address" readonly>
+                                    <button class="btn_cert research" type="button" id="refindAddr">
                                         <span class="material-icons-sharp">
                                             search
                                         </span>
                                         <span>재검색</span>
                                     </button>
-                                    <input type="text" placeholder="나머지 주소를 입력해주세요">
+                                    <input type="text" id="customer_detailaddress" name="customer_detailaddress" placeholder="나머지 주소를 입력해주세요">
                                 </div>
                                 <p class="txt_guide">
                                     배송지에 따라 상품 정보가 달라질 수 있습니다.
@@ -117,17 +122,17 @@
                             <td>
                                 <div class="gender_wrap">
                                     <label>
-                                        <input type="radio" name="gender">
+                                        <input type="radio" id="customer_gender" name="customer_gender" value="남자">
                                         <span class="ico"></span>
                                         남자
                                     </label>
                                     <label>
-                                        <input type="radio" name="gender">
+                                        <input type="radio" id="customer_gender" name="customer_gender" value="여자">
                                         <span class="ico"></span>
                                         여자
                                     </label>
                                     <label>
-                                        <input type="radio" name="gender" checked>
+                                        <input type="radio" id="customer_gender" name="customer_gender" checked value="선택안함">
                                         <span class="ico"></span>
                                         선택안함
                                     </label>
@@ -138,11 +143,11 @@
                             <th>생년월일</th>
                             <td>
                                 <div class="birth_day">
-                                    <input type="text" name="birth_year" class="birth_input" maxlength="4" placeholder="YYYY">
+                                    <input type="text" id="customer_year" name="customer_year" class="birth_input" maxlength="4" placeholder="YYYY">
                                     <span class="bar"></span>
-                                    <input type="text" name="birth_month" class="birth_input" maxlength="2" placeholder="MM">
+                                    <input type="text" id="customer_month" name="customer_month" class="birth_input" maxlength="2" placeholder="MM">
                                     <span class="bar"></span>
-                                    <input type="text" name="birth_day" class="birth_input" maxlength="2" placeholder="DD">
+                                    <input type="text" id="customer_day" name="customer_day" class="birth_input" maxlength="2" placeholder="DD">
                                 </div>
                             </td>
                         </tr>
@@ -182,7 +187,7 @@
                                 <div class="bg_dim"></div>
                                 <div class="all_check">
                                     <label class="check_agree label_all_check">
-                                        <input type="checkbox" name="agree_allcheck" class="all_check_input">
+                                        <input type="checkbox" id="agreement_allbox" name="agree_allcheck" class="all_check_input">
                                         <span class="ico"></span>
                                         전체 동의합니다.
                                     </label>
@@ -192,7 +197,7 @@
                                 </div>
                                 <div class="check_view">
                                     <label class="check_agree label_block">
-                                        <input type="checkbox" name="agree_allcheck" class="chk" name="chk">
+                                        <input type="checkbox" id="agreement_box1" name="agree_allcheck" class="chk" name="chk">
                                         <span class="ico"></span>
                                         이용약관 동의
                                         <span class="sub">(필수)</span>
@@ -288,7 +293,7 @@
                                 </div>
                                 <div class="check_view">
                                     <label class="check_agree label_block">
-                                        <input type="checkbox" name="agree_allcheck" class="chk" name="chk">
+                                        <input type="checkbox" id="agreement_box2" name="agree_allcheck" class="chk" name="chk">
                                         <span class="ico"></span>
                                         개인정보 수집·이용 동의
                                         <span class="sub">(필수)</span>
@@ -421,7 +426,7 @@
                                 </div>
                                 <div class="check_view">
                                     <label class="check_agree label_block">
-                                        <input type="checkbox" name="agree_allcheck" class="chk" name="chk">
+                                        <input type="checkbox" id="agreement_box3" name="agree_allcheck" class="chk" name="chk">
                                         <span class="ico"></span>
                                         본인은 만 14세 이상입니다.
                                         <span class="sub">(필수)</span>
@@ -431,7 +436,7 @@
                         </tr>
                     </table>
                     <div id="form_submit" class="form_footer">
-                        <button class="btn active btn_join">가입하기</button>
+                        <input type="button" class="btn active btn_join" id="signup" value="가입하기" />
                     </div>
                 </form>
             </div>
@@ -440,8 +445,9 @@
     <div class="footer_wrap">
 		<jsp:include page="../include/footer.jsp"></jsp:include>
 	</div>
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
     <script src="${path }/resources/js/signup.js"></script>
+    <script src="${path }/resources/js/signup_ajax.js" ></script>
+	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 </body>
 </html>
