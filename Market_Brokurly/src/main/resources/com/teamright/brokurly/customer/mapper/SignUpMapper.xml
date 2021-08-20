@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.teamright.brokurly.customer.mapper.SignUpMapper">
+	<select id="idCheck" resultType="String">
+		SELECT customer_id FROM customer_table WHERE customer_id=#{customer_id}
+	</select>
+	
+	<insert id="signUp">
+		INSERT INTO customer_table
+			(customer_id, customer_pw, customer_name, customer_email, customer_tel, customer_address, customer_detailaddress, customer_gender, customer_birth, customer_joindate, customer_grade) 
+		VALUES
+			(#{customer_id}, #{customer_pw}, #{customer_name}, #{customer_email}, #{customer_tel}, #{customer_address}, #{customer_detailaddress}, #{customer_gender}, #{customer_birth}, TO_CHAR(sysdate, 'YYYY/MM/DD'), 'WELCOME')
+	</insert>
+	
+	<select id="emailCheck" resultType="String">
+		SELECT customer_email FROM customer_table WHERE customer_email=#{customer_email}
+	</select>
+	
+	<select id="telCheck" resultType="String">
+		SELECT customer_tel from customer_table WHERE customer_tel=#{customer_tel}
+	</select>
+</mapper>
