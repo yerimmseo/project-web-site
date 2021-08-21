@@ -9,7 +9,8 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="${path }/resources/css/signin.css" />
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="${path }/resources/css/font.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
 	<form action="findid" id="findidForm"></form>
@@ -37,7 +38,9 @@
                                     <a class="link" id="findpw">비밀번호 찾기</a>
                                 </div>
                             </div>     
-							<input class="btn_type1" type="button" id="login_btn" value="로그인"/>
+                            <div class="btn_type1 btn_member">
+								<input class="txt_type" type="button" id="login_btn" value="로그인"/>
+                            </div>
                         </form>
                         <form action="signup" id="signupForm">
                         <a class="btn_type2 btn_member" id="signup">
@@ -53,6 +56,6 @@
 		<jsp:include page="../include/footer.jsp"></jsp:include>
 	</div>
 	
-	<script src="${path }/resources/js/signin_ajax.js"></script>
+	<script src="${path }/resources/js/ajax/signin_ajax.js"></script>
 </body>
 </html>

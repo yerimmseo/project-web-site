@@ -24,7 +24,7 @@ $(document).ready(function(e) {
 
 	// 아이디를 타이핑 할 때 마다 함수 발생
 	$('#customer_id').keyup(function() {
-		var id_inputLength = $(this).val().length; //입력한 값의 글자수
+		var id_inputLength = $(this).val().length; // 입력한 값의 글자수
 		var id_remain = 13 - id_inputLength;  // 13글자에서 남은 글자수
 		
 		

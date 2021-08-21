@@ -1,7 +1,3 @@
-/**
- * 
- */
-
 $(function() {
     // 아이디 input 클릭 시 나오는 안내문
     var $id_input = $('.id_input');

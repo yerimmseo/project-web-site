@@ -13,15 +13,15 @@ $(document).ready(function(e) {
 			},
 			success:function(data) {
 				if (data == '') {
-					alert("¾ÆÀÌµğ ¶Ç´Â ÆĞ½º¿öµå ¿À·ù");
+					alert("ì•„ì´ë”” ë˜ëŠ” íŒ¨ìŠ¤ì›Œë“œ ì˜¤ë¥˜");
 					return;
 				} else {
-					alert(data + "´Ô È¯¿µÇÕ´Ï´Ù.");
+					alert(data + "ë‹˜ í™˜ì˜í•©ë‹ˆë‹¤.");
 					$('#login_form').submit();
 				}
 			},
 			error:function() {
-				alert("¼­¹ö¿À·ù");
+				alert("ì„œë²„ì˜¤ë¥˜");
 			}
 		});
 	}); 
@@ -39,6 +39,3 @@ $(document).ready(function(e) {
 	});
 
 });
-
-
-

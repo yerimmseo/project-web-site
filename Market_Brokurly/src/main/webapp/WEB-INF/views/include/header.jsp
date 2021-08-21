@@ -290,6 +290,6 @@
             </div>
         </div> <!-- gnb_menu -->
     </div>
-    <script src="${path }/resources/js/header.js"></script>
+    <script src="${path }/resources/js/style/header.js"></script>
 </body>
 </html>

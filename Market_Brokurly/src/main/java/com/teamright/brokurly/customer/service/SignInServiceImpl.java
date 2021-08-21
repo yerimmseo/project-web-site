@@ -6,14 +6,13 @@ import java.security.MessageDigest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.teamright.brokurly.customer.mapper.LoginMapper;
-
+import com.teamright.brokurly.customer.mapper.SignInMapper;
 
 @Service
-public class LoginServiceimpl implements LoginService {
+public class SignInServiceImpl implements SignInService {
 
 	@Autowired
-	LoginMapper loginMapper;
+	SignInMapper loginMapper;
 	
 	@Override
 	public String getSHA512(String customer_pw) throws Exception {

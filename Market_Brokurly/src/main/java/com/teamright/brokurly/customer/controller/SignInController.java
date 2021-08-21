@@ -11,14 +11,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.teamright.brokurly.customer.service.LoginService;
+import com.teamright.brokurly.customer.service.SignInService;
 
 @Controller
 @RequestMapping("/customer")
 public class SignInController {
 
 	@Autowired
-	private LoginService loginService;
+	private SignInService loginService;
 	
 	@PostMapping("/logindo")
 	public String postlogin(HttpSession session , 

@@ -11,7 +11,7 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Sharp|Material+Icons+Two+Tone" rel="stylesheet">
 <link rel="stylesheet" href="${path }/resources/css/signup.css">
 <link rel="stylesheet" href="${path }/resources/css/font.css" />
-<script type="text/javascript" src="${path }/resources/js/sha512.min.js"></script>
+<script type="text/javascript" src="${path }/resources/js/ajax/sha512.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
@@ -446,8 +446,8 @@
 		<jsp:include page="../include/footer.jsp"></jsp:include>
 	</div>
 
-    <script src="${path }/resources/js/signup.js"></script>
-    <script src="${path }/resources/js/signup_ajax.js" ></script>
+    <script type="text/javascript" src="${path }/resources/js/style/signup.js" charset="UTF-8" ></script>
+    <script type="text/javascript" src="${path }/resources/js/ajax/signup_ajax.js" charset="UTF-8" ></script>
 	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 </body>
 </html>
