@@ -1,545 +1,129 @@
-.main div, .main th, .main td, .main li, .main dt, .main dd, .main p {
-    word-break: break-all;
-}
-.main div {
-    display: block;
-}
-img {
-    border: 0; 
-    max-width: 100%;
-}
-a {
-    background-color: transparent;
-    text-decoration: none;
-    color: inherit;
-    cursor: pointer;
-}
-.main *, .main *::after, .main *::before {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    user-select: none;
-}
-ol, ul {
-    list-style-type: none;
-}
-body {
-    line-height: 1;
-    letter-spacing: -.05em;
-    color: #4c4c4c;
-    font-size: 12px;
-    margin: 0;
-    display: block;
-}
-.main {
-    border-bottom: solid 1px #f7f7f7;
-}
-.content {
-    min-width: 1050px;
-    padding-bottom: 120px;
-    position: relative;
-}
+.main img {border: 0; max-width: 100%;}
+.main a {background-color: transparent; text-decoration: none; color: inherit; cursor: pointer;}
+.main ol, .main ul {list-style-type: none;}
+.main body {line-height: 1; letter-spacing: -.05em; color: #4c4c4c; font-size: 12px; margin: 0; display: block;}
 
-.mypage_top {
-    width: 100%;
-    padding: 50px 0;
-    margin-bottom: -20px;
-    background-color: #f7f7f7;
-}
-.page_article {
-    margin: 0 auto;
-}
+.main {border-bottom: solid 1px #f7f7f7;}
+.main div, .main th, .main td, .main li, .main dt, .main dd, .main p {word-break: break-all;}
+.main div {display: block;}
+.main *, .main *::after, .main *::before {box-sizing: border-box; margin: 0; padding: 0; user-select: none;}
 
+.main .content {min-width: 1050px; padding-bottom: 120px; position: relative;}
+
+.main .mypage_top {width: 100%; padding: 50px 0; margin-bottom: -20px; background-color: #f7f7f7;}
+
+.main .top1 {background-color: #f7f7f7;}
+
+.main .page_article {margin: 0 auto;}
+
+/* 등급별 추가할 스타일 지정 */
 /* 웰컴 */
-.class0 {
-    border: solid 1px rgb(123, 145, 132);
-    background-color: #fff;
-    color: rgb(123, 145, 132);
-}
-
+.class0 {border: solid 1px rgb(123, 145, 132); background-color: #fff; color: rgb(123, 145, 132);}
 /* 일반 */
-.class1 {
-	border: solid 1px darkseagreen;
-	background-color: #fff;
-    color: darkseagreen;
-}
+.class1 {border: solid 1px darkseagreen; background-color: #fff; color: darkseagreen;}
 /* 프렌즈 */
-.class2 {
-	border: solid 1px rgb(132, 240, 179);
-	background-color: #fff;
-    color: rgb(132, 240, 179);
-}
+.class2 {border: solid 1px rgb(132, 240, 179); background-color: #fff; color: rgb(132, 240, 179);}
 /* 그린 */
-.class3 {
-	border: solid 1px rgb(101, 209, 148);
-	background-color: #fff;
-    color: rgb(101, 209, 148);
-}
+.class3 {border: solid 1px rgb(101, 209, 148); background-color: #fff; color: rgb(101, 209, 148);}
 /* 아스파라거스 */
-.class4 {
-	border: solid 1px rgb(77, 173, 119);
-	background-color: #fff;
-    color: rgb(77, 173, 119);
-}
+.class4 {border: solid 1px rgb(77, 173, 119); background-color: #fff; color: rgb(77, 173, 119);}
 /* 브로컬리 */
-.class5 {
-	border: solid 1px seagreen;
-	background-color: #fff;
-    color: seagreen;
-}
-.screen_out {
-    display: block;
-    overflow: hidden;
-    position: absolute;
-    left: -9999px;
-    width: 1px;
-    height: 300px;
-    font-size: 0;
-    line-height: 0;
-    text-align: -9999px;
-    margin-block-start: 0.83em;
-    margin-block-end: 0.83em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-}
-.mypage_top .mypagetop_user {
-    overflow: hidden;
-    width: 1050px;
-    margin: 0 auto;
-}
+.class5 {border: solid 1px seagreen; background-color: #fff; color: seagreen;}
 
-.mypage_top .inner_mypagetop {
-    overflow: hidden;
-    width: 100%;
-    display: flex;
-    align-items: stretch;
-}
-.mypage_top .grade_user {
-    width: 362px;
-    padding: 30px;
-    background-color: #fff;
-}
-.mypage_top .grade_wrap {
-    display: flex;
-    align-items: center;
-}
-.mypage_top .grade_wrap .grade_logo {
-    width: 48px;
-    height: 48px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 3px;
-    border: solid 1px gery;
-    font-size: 14px;
-    color: gery;
-}
+.screen_out {display: block; overflow: hidden; position: absolute; left: -9999px; width: 1px; height: 300px; font-size: 0; line-height: 0; text-align: -9999px; margin-block-start: 0.83em; margin-block-end: 0.83em; margin-inline-start: 0px; margin-inline-end: 0px;}
 
-.mypage_top .grade_wrap .name {
-    margin-left: 20px;
-    font-size: 20px;
-}
-.mypage_top .name {
-    overflow: hidden;
-    float: left;
-    max-width: 263px;
-    color: #333;
-    line-height: 28px;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-}
-.mypage_top .grade_benefit {
-    overflow: hidden;
-    margin-top: 16px;
-}
-.mypage_top .grade_user .benefit {
-    padding-top: 4px;
-}
-.mypage_top .benefit {
-    font-size: 14px;
-    line-height: 18px;
-    color: #333;
-}
-.mypage_top .benefit .tit {
-    color: seagreen;
-}
-.mypage_top .next {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 18px;
-}
-.mypage_top .next a {
-    height: 30px;
-    padding-top: 4px;
-    border: solid 1px #f4f4f3;
-    border-radius: 15px;
-    background-color: #f4f4f4;
-    font-size: 12px;
-    color: #333;
-    line-height: 18px;
-    text-align: center;
-}
-.mypage_top .next a:not(:first-of-type) {
-    margin-left: 10px;
-}
-.mypage_top .total_grade {
-    width: 121px;
-}
+.mypage_top .mypagetop_user {overflow: hidden; width: 1050px; margin: 0 auto;}
 
-.mypage_top .next_month {
-    width: 169px;
-}
-.mypage_top .list_mypage {
-    display: flex;
-    flex-grow: 1;
-    flex-direction: column;
-    margin-left: 4px;
-}
+.mypage_top .inner_mypagetop {overflow: hidden; width: 100%; display: flex; align-items: stretch;}
 
-.mypage_top .list_mypage .list {
-    display: flex;
-    overflow: hidden;
-    width: 100%;
-    height: 100%;
-}
-.mypage_top .list_mypage .link_wrap {
-    flex-grow: 1;
-    width: 168px;
-    background-color: #fff;
-    padding: 26px 0 30px 30px;
-    display: flex;
-    flex-direction: column;
-}
-.mypage_top .list_mypage .link_wrap:not(:last-of-type) {
-    flex-grow: 1;
-    margin-right: 4px;
-}
-.mypage_top .list_mypage .link_wrap .link_title {
-    font-size: 14px;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    color: #333;
-    position: relative;
-}
-.mypage_top .list_mypage .link_wrap .link_title .arrow_right {
-    width: 28px;
-}
-.mypage_top .list_mypage .link_wrap .spacer {
-    flex-grow: 2;
-}
-.mypage_top .list_mypage .link_wrap .info {
-    font-weight: 700;
-    font-size: 20px;
-    color: seagreen;
-    line-height: 28px;
-    flex-grow: 3;
-    position: relative;
-}
+.mypage_top .grade_user {width: 362px; padding: 30px; background-color: #fff;}
+.mypage_top .grade_wrap {display: flex; align-items: center;}
+.mypage_top .grade_wrap .grade_logo {width: 48px; height: 48px; display: flex; justify-content: center; align-items: center; border-radius: 3px; border: solid 1px gery; font-size: 14px; color: gery;}
+.mypage_top .grade_wrap .name {margin-left: 20px; font-size: 20px;}
 
-.mypage_top .list_mypage .link_wrap .info .expire {
-    position: absolute;
-    font-size: 12px;
-    color: #999;
-    top: 32px;
-    left: 0;
-}
+.mypage_top .name {overflow: hidden; float: left; max-width: 263px; color: #333; line-height: 28px; white-space: nowrap; text-overflow: ellipsis;}
 
-.mypage_top .bnr_event {
-    display: block;
-    overflow: hidden;
-    width: 100%;
-    height: 60px;
-    margin-top: 20px;
-    background-image: url("../img/icon/ico_event_bnr.png");
-    background-size:  1050px 60px;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-}
+.mypage_top .grade_benefit {overflow: hidden; margin-top: 16px;}
+.mypage_top .grade_user .benefit {padding-top: 4px;}
 
+.mypage_top .benefit {font-size: 14px; line-height: 18px; color: #333;}
+.mypage_top .benefit .tit {color: seagreen;}
 
-.page_article.article_type2 {
-    padding-top: 65px;
+.mypage_top .next {display: flex; align-items: center; justify-content: center; margin-top: 18px;}
+.mypage_top .next a {height: 30px; padding-top: 4px; border: solid 1px #f4f4f3; border-radius: 15px; background-color: #f4f4f4; font-size: 12px; color: #333; line-height: 18px; text-align: center;}
+.mypage_top .next a:not(:first-of-type) {margin-left: 10px;}
 
-}
-.page_article.article_type2::after {
-    content: "";
-    display: block;
-    overflow: hidden;
-    width: 100%;
-    clear: both;
-}
-.page_article {
-    width: 1050px;
-    margin: 0 auto;
-}
-.page_article * {
-    font-weight: 400;
-}
-#snb {
-    float: left;
-    width: 200px;
-}
-#snb .tit_snb {
-    padding: 8px 0 33px 1px;
-    font-weight: 700;
-    font-size: 30px;
-    line-height: 34px;
-    color: #333;
-    letter-spacing: -.5px;
-}
-#snb .inner_snb {
-    border: solid 1px #f2f2f2;
-    border-bottom: 0;
-}
-#snb .list_menu li {
-    display: list-item;
-    border-bottom: solid 1px #f2f2f2;
-}
-#snb .list_menu li a {
-    display: block;
-    overflow: hidden;
-    padding: 15px 0 15px 20px;
-    background: #fff url("../img/icon/ico_arrow_6x11.png") no-repeat 174px 52%;
-    background-size: 6px 11px;
-    font-size: 14px;
-    color: #666;
-    line-height: 20px;
-    letter-spacing: -.3px;
-}
+.mypage_top .total_grade {width: 121px;}
 
-#snb .list_menu li.on a, #snb .list_menu li a:hover {
-    background: #fafafa url("../img/icon/ico_mypage_arrow_on.png") no-repeat 174px 52%;
-    background-size: 6px 11px;
-    font-weight: 700;
-    color: seagreen;
-}
-#snb .link_inquire {
-    display: block;
-    overflow: hidden;
-    width: 200px;
-    height: 60px;
-    margin-top: 20px;
-    padding: 9px 0 0 21px;
-    border-radius: 0 100px 100px 0;
-    background: #fafafa url("../img/icon/ico_mypage_arrow_on.png") no-repeat 174px 25px;
-    background-size: 6px 11px;
-    font-size: 12px;
-    color: #333;
-    line-height: 20px;
-}
-#snb .link_inquire .emph {
-    display: block;
-    padding-bottom: 1px;
-    font-weight: 700;
-    font-size: 14px;
-}
-.page_article.article_type2 .page_section {
-    float: right;
-    width: 820px;
-}
-.page_article .head_article {
-    padding: 5px 0 34px;
-}
-.page_article .head_article .tit {
-    height: 36px;
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 36px;
-    color: #333;
-    letter-spacing: -.5px;
-}
+.mypage_top .next_month {width: 169px;}
+.mypage_top .list_mypage {display: flex; flex-grow: 1; flex-direction: column; margin-left: 4px;}
+.mypage_top .list_mypage .list {display: flex; overflow: hidden; width: 100%; height: 100%;}
+.mypage_top .list_mypage .link_wrap {flex-grow: 1; width: 168px; background-color: #fff; padding: 26px 0 30px 30px; display: flex; flex-direction: column;}
+.mypage_top .list_mypage .link_wrap:not(:last-of-type) {flex-grow: 1; margin-right: 4px;}
+.mypage_top .list_mypage .link_wrap .link_title {font-size: 14px; font-weight: 500; display: flex; align-items: center; color: #333; position: relative;}
+.mypage_top .list_mypage .link_wrap .link_title .arrow_right {width: 28px;}
+.mypage_top .list_mypage .link_wrap .spacer {flex-grow: 2;}
+.mypage_top .list_mypage .link_wrap .info {font-weight: 700; font-size: 20px; color: seagreen; line-height: 28px; flex-grow: 3; position: relative;}
+.mypage_top .list_mypage .link_wrap .info .expire {position: absolute; font-size: 12px; color: #999; top: 32px; left: 0;}
 
-.page_article .head_article .tit_sub {
-    padding-left: 11px;
-    font-size: 14px;
-    color: #999;
-    line-height: 20px;
-    letter-spacing: -.3px;
-    vertical-align: 3px;
-}
+.mypage_top .bnr_event {display: block; overflow: hidden; width: 100%; height: 60px; margin-top: 20px; background-image: url("../img/icon/ico_event_bnr.png"); background-size:  1050px 60px; background-repeat: no-repeat; background-position: 50% 50%;}
 
-.search_date {
-    position: relative;
-    z-index: 1;
-}
-.screen_out {
-    display: block;
-    overflow: hidden;
-    position: absolute;
-    left: -9999px;
-    width: 1px;
-    height: 1px;
-    font-size: 0;
-    line-height: 0;
-    text-indent: -9999px;
-}
+.page_article {width: 1050px; margin: 0 auto;}
+.page_article * {font-weight: 400;}
+.page_article.article_type2 {padding-top: 65px;}
+.page_article.article_type2::after {content: ""; display: block; overflow: hidden; width: 100%; clear: both;}
 
-.search_date .btn_layer {
-    overflow: hidden;
-    position: absolute;
-    right: 0;
-    top: -74px;
-    width: 157px;
-    height: 44px;
-    padding: 11px 0 0 15px;
-    border: solid 1px #ddd;
-    font-size: 14px;
-    color: #666;
-    line-height: 18px;
-    letter-spacing: -.5px;
-}
+#snb {float: left; width: 200px;}
+#snb .tit_snb {padding: 8px 0 33px 1px; font-weight: 700; font-size: 30px; line-height: 34px; color: #333; letter-spacing: -.5px;}
+#snb .inner_snb {border: solid 1px #f2f2f2; border-bottom: 0;}
 
-.search_date .btn_layer::after {
-    content: "▼";
-    position: absolute;
-    left: 128px;
-    top: 10px;
-    width: 12px;
-    background-size: 12px 8px;
-}
-.search_date .btn_layer.on::after {
-    transform: rotate(-180deg);
-}
-.search_date .layer_search {
-    display: none;
-    position: absolute;
-    right: 0;
-    top: -30px;
-    width: 157px;
-    border: solid 1px #dddfe1;
-    border-top: 0;
-}
-.search_date .layer_search a {
-    display: block;
-    overflow: hidden;
-    height: 32px;
-    padding: 7px 0 0 8px;
-    font-size: 12px;
-    color: #666;
-    line-height: 18px;
-    letter-spacing: -.2px;
-}
-.search_date .layer_search li:first-child {
-    border-top: 0;
-}
-.search_date .layer_search li {
-    background-color: #fff;
-    border-top: solid 1px #dddfe1;
-}
-.search_date .layer_search a.on {
-    background-color: #f7f7f7;
-}
-.section_orderlist .list_order {
-    padding-top: 10px;
-    border-top: solid 2px #333;
-}
-.section_orderlist .list_order .date {
-    padding-top: 20px;
-    font-size: 16px;
-    line-height: 24px;
-    font-weight: 700;
-    color: #666;
-}
+#snb .list_menu li {display: list-item; border-bottom: solid 1px #f2f2f2;}
+#snb .list_menu li a {display: block; overflow: hidden; padding: 15px 0 15px 20px; background: #fff url("../img/icon/ico_arrow_6x11.png") no-repeat 174px 52%; background-size: 6px 11px; font-size: 14px; color: #666; line-height: 20px; letter-spacing: -.3px;}
+#snb .list_menu li.on a, #snb .list_menu li a:hover {background: #fafafa url("../img/icon/ico_mypage_arrow_on.png") no-repeat 174px 52%; background-size: 6px 11px; font-weight: 700; color: seagreen;}
 
-.section_orderlist .list_order .no_data {
-    border-bottom: solid 1px #dddfe1;
-}
-.page_article .no_data {
-    padding: 50px 0;
-    font-size: 13px;
-    color: #757575;
-    text-align: center;
-}
-/* 주문 건당 1칸씩 나오게 하는 것 같음 */
-.section_orderlist .list_order .order_goods {
-    position: relative;
-    margin-top: 10px;
-    padding: 0 20px;
-    border: solid 1px #dddfe1;
-}
-.section_orderlist .list_order .name {
-    padding: 20px 0 13px;
-    border-bottom: solid 1px #dddfe1;
-}
-.section_orderlist .list_order .name a {
-    display: block;
-    overflow: hidden;
-    background: url("../img/icon/ico_arrow_10x15.png") no-repeat 100% 1px;
-    font-size: 16px;
-    line-height: 24px;
-    font-weight: 700;
-    color: #000;
-    cursor: pointer;
-}
-.section_orderlist .list_order .order_info {
-    overflow: hidden;
-    padding: 14px 0 20px;
-}
-.section_orderlist .list_order .thumb {
-    float: left;
-    width: 60px;
-    margin-right: 20px;
-}
-.section_orderlist .list_order .thumb img {
-    width: 60px;
-    height: auto;
-}
-.section_orderlist .list_order .desc {
-    overflow: hidden;
-    padding-top: 1px;
-}
-.section_orderlist .list_order .order_info dl {
-    overflow: hidden;
-    padding-top: 6px;
-}
-.section_orderlist .list_order .order_info dl:first-child {
-    padding-top: 3px;
-}
+#snb .link_inquire {display: block; overflow: hidden; width: 200px; height: 60px; margin-top: 20px; padding: 9px 0 0 21px; border-radius: 0 100px 100px 0; background: #fafafa url("../img/icon/ico_mypage_arrow_on.png") no-repeat 174px 25px; background-size: 6px 11px; font-size: 12px; color: #333; line-height: 20px;}
+#snb .link_inquire .emph {display: block; padding-bottom: 1px; font-weight: 700; font-size: 14px;}
 
-.section_orderlist .list_order .order_info dt {
-    float: left;
-    padding-right: 15px;
-    font-size: 12px;
-    color: #000;
-    line-height: 20px;
-}
-.section_orderlist .list_order .order_info dd {
-    float: left;
-    font-size: 14px;
-    line-height: 20px;
-    font-weight: 700;
-    color: #000;
-}
+.page_article.article_type2 .page_section {float: right; width: 820px;}
 
-.section_orderlist .list_order .order_info .end {
-    color: #514859;
-}
-.section_orderlist .list_order .order_info .status {
-    color: seagreen;
-}
-.section_orderlist .list_order .order_status {
-    display: table;
-    position: absolute;
-    right: 20px;
-    bottom: 0;
-    height: 114px;
-    vertical-align: middle;
-}
-.section_orderlist .list_order .inner_status {
-    display: table-cell;
-    vertical-align: middle;
-}
-.section_orderlist .list_order .order_status .link {
-    display: block;
-    width: 100px;
-    height: 34px;
-    border: solid 1px seagreen;
-    background-color: #fff;
-    font-size: 12px;
-    color: seagreen;
-    line-height: 32px;
-    text-align: center;
-    cursor: pointer;
-}
+.page_article .head_article {padding: 5px 0 34px;}
+.page_article .head_article .tit {height: 36px; font-weight: 700; font-size: 24px; line-height: 36px; color: #333; letter-spacing: -.5px;}
+.page_article .head_article .tit_sub {padding-left: 11px; font-size: 14px; color: #999; line-height: 20px; letter-spacing: -.3px; vertical-align: 3px;}
+
+.screen_out {display: block; overflow: hidden; position: absolute; left: -9999px; width: 1px; height: 1px; font-size: 0; line-height: 0; text-indent: -9999px;}
+
+.search_date {position: relative; z-index: 1;}
+.search_date .btn_layer {overflow: hidden; position: absolute; right: 0; top: -74px; width: 157px; height: 44px; padding: 11px 0 0 15px; border: solid 1px #ddd; font-size: 14px; color: #666; line-height: 18px; letter-spacing: -.5px;}
+.search_date .btn_layer::after {content: "▼"; position: absolute; left: 128px; top: 10px; width: 12px; background-size: 12px 8px;}
+.search_date .btn_layer.on::after {transform: rotate(-180deg);}
+
+.search_date .layer_search {display: none; position: absolute; right: 0; top: -30px; width: 157px; border: solid 1px #dddfe1; border-top: 0;}
+.search_date .layer_search a {display: block; overflow: hidden; height: 32px; padding: 7px 0 0 8px; font-size: 12px; color: #666; line-height: 18px; letter-spacing: -.2px;}
+.search_date .layer_search li:first-child {border-top: 0;}
+.search_date .layer_search li {background-color: #fff; border-top: solid 1px #dddfe1;}
+.search_date .layer_search a.on {background-color: #f7f7f7;}
+
+.section_orderlist .list_order {padding-top: 10px; border-top: solid 2px #333;}
+.section_orderlist .list_order .date {padding-top: 20px; font-size: 16px; line-height: 24px; font-weight: 700; color: #666;}
+/* 주문 내역이 없을 때 나타나는 스타일 */
+.section_orderlist .list_order .no_data {border-bottom: solid 1px #dddfe1;}
+
+.page_article .no_data {padding: 50px 0; font-size: 13px; color: #757575; text-align: center;}
+
+/* 주문 건수가 있을 때 나타나는 스타일 */
+.section_orderlist .list_order .order_goods {position: relative; margin-top: 10px; padding: 0 20px; border: solid 1px #dddfe1;}
+.section_orderlist .list_order .name {padding: 20px 0 13px; border-bottom: solid 1px #dddfe1;}
+.section_orderlist .list_order .name a {display: block; overflow: hidden; background: url("../img/icon/ico_arrow_10x15.png") no-repeat 100% 1px; font-size: 16px; line-height: 24px; font-weight: 700; color: #000; cursor: pointer;}
+.section_orderlist .list_order .order_info {overflow: hidden; padding: 14px 0 20px;}
+.section_orderlist .list_order .thumb {float: left; width: 60px; margin-right: 20px;}
+.section_orderlist .list_order .thumb img {width: 60px; height: auto;}
+.section_orderlist .list_order .desc {overflow: hidden; padding-top: 1px;}
+.section_orderlist .list_order .order_info dl {overflow: hidden; padding-top: 6px;}
+.section_orderlist .list_order .order_info dl:first-child {padding-top: 3px;}
+.section_orderlist .list_order .order_info dt {float: left; padding-right: 15px; font-size: 12px; color: #000; line-height: 20px;}
+.section_orderlist .list_order .order_info dd {float: left; font-size: 14px; line-height: 20px; font-weight: 700; color: #000;}
+.section_orderlist .list_order .order_info .end {color: #514859;}
+.section_orderlist .list_order .order_info .status {color: seagreen;}
+.section_orderlist .list_order .order_status {display: table; position: absolute; right: 20px; bottom: 0; height: 114px; vertical-align: middle;}
+.section_orderlist .list_order .inner_status {display: table-cell; vertical-align: middle;}
+.section_orderlist .list_order .order_status .link {display: block; width: 100px; height: 34px; border: solid 1px seagreen; background-color: #fff; font-size: 12px; color: seagreen; line-height: 32px; text-align: center; cursor: pointer;}
