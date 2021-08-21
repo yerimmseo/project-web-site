@@ -1,7 +1,7 @@
-div, th, td, li, dt, dd, p {
+.main div, .main th, .main td, .main li, .main dt, .main dd, .main p {
     word-break: break-all;
 }
-div {
+.main div {
     display: block;
 }
 img {
@@ -14,7 +14,7 @@ a {
     color: inherit;
     cursor: pointer;
 }
-*, *::after, *::before {
+.main *, .main *::after, .main *::before {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -134,11 +134,7 @@ body {
     font-size: 14px;
     color: gery;
 }
-.mypage_top .grade_wrap .grade_logo.class0 {
-    border: solid 1px rgb(132, 240, 179);
-    background-color: #fff;
-    color: rgb(132, 240, 179);
-}
+
 .mypage_top .grade_wrap .name {
     margin-left: 20px;
     font-size: 20px;
@@ -256,10 +252,12 @@ body {
     width: 100%;
     height: 60px;
     margin-top: 20px;
+    background-image: url("../img/icon/ico_event_bnr.png");
     background-size:  1050px 60px;
     background-repeat: no-repeat;
     background-position: 50% 50%;
 }
+
 
 .page_article.article_type2 {
     padding-top: 65px;

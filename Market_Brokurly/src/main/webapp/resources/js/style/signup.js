@@ -1,43 +1,43 @@
 $(function() {
-    // ì•„ì´ë”” input í´ë¦­ ì‹œ ë‚˜ì˜¤ëŠ” ì•ˆë‚´ë¬¸
+    // ¾ÆÀÌµð input Å¬¸¯ ½Ã ³ª¿À´Â ¾È³»¹®
     var $id_input = $('.id_input');
     var $id_guide = $('.id_guide');
-    // íŒ¨ìŠ¤ì›Œë“œ input í´ë¦­ ì‹œ ë‚˜ì˜¤ëŠ” ì•ˆë‚´ë¬¸
+    // ÆÐ½º¿öµå input Å¬¸¯ ½Ã ³ª¿À´Â ¾È³»¹®
     var $password_input = $('.password_input');
     var $password_guide = $('.password_guide');
-    // íŒ¨ìŠ¤ì›Œë“œ í™•ì¸ input í´ë¦­ ì‹œ ë‚˜ì˜¤ëŠ” ì•ˆë‚´ë¬¸
+    // ÆÐ½º¿öµå È®ÀÎ input Å¬¸¯ ½Ã ³ª¿À´Â ¾È³»¹®
     var $pass_chk_input = $('.pass_chk_input');
     var $pass_chk_guide = $('.pass_chk_guide');
-    // ì¸ì¦ë²ˆí˜¸ ë°›ê¸°
+    // ÀÎÁõ¹øÈ£ ¹Þ±â
     var $send_num_btn = $('.send_num_btn');
     var $chk_phone_num = $('.chk_phone_num');
     var $phone_guide = $('.phone_guide');
-    // ì£¼ì†Œ ê²€ìƒ‰ ë²„íŠ¼
+    // ÁÖ¼Ò °Ë»ö ¹öÆ°
     var $search_address = $('.search_address');
-    // ì£¼ì†Œ ë°›ì•„ì™”ì„ ë•Œ ë‚˜íƒ€ë‚˜ëŠ” ë©”ì¸ ì£¼ì†Œ & ìƒì„¸ ì£¼ì†Œ
+    // ÁÖ¼Ò ¹Þ¾Æ¿ÔÀ» ¶§ ³ªÅ¸³ª´Â ¸ÞÀÎ ÁÖ¼Ò & »ó¼¼ ÁÖ¼Ò
     var $main_sub_wrap = $('.main_sub_wrap');
-    // ìƒì¼ input í•©ì³ì„œ í•˜ë‚˜ì¸ ê²ƒìœ¼ë¡œ ë³´ì´ê²Œ ë§Œë“¦
+    // »ýÀÏ input ÇÕÃÄ¼­ ÇÏ³ªÀÎ °ÍÀ¸·Î º¸ÀÌ°Ô ¸¸µê
     var $birth_input = $('.birth_input');
     var $birth_day = $('.birth_day');
     var $btn_ok = $('.btn_ok');
     var $btn_close = $('.btn_close');
-    // ì¶”ì²œì¸ ì•„ì´ë””, ì°¸ì—¬ì´ë²¤íŠ¸ëª…
+    // ÃßÃµÀÎ ¾ÆÀÌµð, Âü¿©ÀÌº¥Æ®¸í
     var $chk_reco = $('.chk_reco');
     var $chk_event = $('.chk_event');
     var $reco_input = $('.reco_input');
     var $event_input = $('.event_input');
     var $reco_guide = $('.reco_guide');
-    // ì•½ê´€ë³´ê¸° ë²„íŠ¼ë“¤
+    // ¾à°üº¸±â ¹öÆ°µé
     var $btn_agreement = $('.btn_agreement');
     var $btn_essential = $('.btn_essential');
     var $btn_choice = $('.btn_choice');
-    // ì•½ê´€ ë ˆì´ì–´
+    // ¾à°ü ·¹ÀÌ¾î
     var $layer_agreement = $('.layer_agreement');
     var $layer_essential = $('.layer_essential');
     var $layer_choice = $('.layer_choice');
-    // ì•½ê´€ ë ˆì´ì–´ ë°°ê²½
+    // ¾à°ü ·¹ÀÌ¾î ¹è°æ
     var $bg_dim = $('.bg_dim');
-    // ì•½ê´€ ë™ì˜ ì²´í¬
+    // ¾à°ü µ¿ÀÇ Ã¼Å©
     var $all_check_input = $('.all_check_input');
     var $chk = $('.chk');
 
@@ -86,7 +86,7 @@ $(function() {
         $birth_day.css('border', 'solid 1px #ddd');
     });
 
-    // ì•½ê´€ë³´ê¸°
+    // ¾à°üº¸±â
     $btn_agreement.click(() => {
         $layer_agreement.css('display', 'block');
         $bg_dim.css('display', 'block');

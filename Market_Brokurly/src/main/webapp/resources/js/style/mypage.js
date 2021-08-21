@@ -2,18 +2,18 @@ $(function() {
 	var grade_logo = $('.grade_logo');
 	var grade_logo_value = $.trim($('.grade_logo').text());
 
-	/* ê³„ê¸‰ë³„ ìƒ‰ìƒ ë³€ê²½ */
-	if (grade_logo_value == 'ì›°ì»´') {
+	/* °è±Şº° »ö»ó º¯°æ */
+	if (grade_logo_value == 'À£ÄÄ') {
 		grade_logo.addClass('class0');
-	} else if (grade_logo_value == 'ì¼ë°˜') {
+	} else if (grade_logo_value == 'ÀÏ¹İ') {
 		grade_logo.addClass('class1');
-	} else if (grade_logo_value == 'í”„ë Œì¦ˆ') {
+	} else if (grade_logo_value == 'ÇÁ·»Áî') {
 		grade_logo.addClass('class2');
-	} else if (grade_logo_value == 'ê·¸ë¦°') {
+	} else if (grade_logo_value == '±×¸°') {
 		grade_logo.addClass('class3');
-	} else if (grade_logo_value == 'ì•„ìŠ¤íŒŒë¼ê±°ìŠ¤') {
+	} else if (grade_logo_value == '¾Æ½ºÆÄ¶ó°Å½º') {
 		grade_logo.addClass('class4');
-	} else if (grade_logo_value == 'ë¸Œë¡œì»¬ë¦¬') {
+	} else if (grade_logo_value == 'ºê·ÎÄÃ¸®') {
 		grade_logo.addClass('class5');
 	}
 	

@@ -13,15 +13,15 @@ $(document).ready(function(e) {
 			},
 			success:function(data) {
 				if (data == '') {
-					alert("ì•„ì´ë”” ë˜ëŠ” íŒ¨ìŠ¤ì›Œë“œ ì˜¤ë¥˜");
+					alert("¾ÆÀÌµğ ¶Ç´Â ÆĞ½º¿öµå ¿À·ù");
 					return;
 				} else {
-					alert(data + "ë‹˜ í™˜ì˜í•©ë‹ˆë‹¤.");
+					alert(data + "´Ô È¯¿µÇÕ´Ï´Ù.");
 					$('#login_form').submit();
 				}
 			},
 			error:function() {
-				alert("ì„œë²„ì˜¤ë¥˜");
+				alert("¼­¹ö¿À·ù");
 			}
 		});
 	}); 

@@ -18,7 +18,7 @@ import lombok.extern.log4j.Log4j;
 public class TestCustomerMapper {
 	
 	@Autowired
-	CustomerMapper customerMapper;
+	MyPageMapper customerMapper;
 	
 	@Test
 	public void getCustomerInfoTest() {

@@ -9,9 +9,13 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="${path }/resources/css/font.css" />
 <link rel="stylesheet" href="${path }/resources/css/mypage.css" />
 </head>
 <body>
+	<div class="header">
+		<jsp:include page="../../include/header.jsp"></jsp:include>
+	</div>
 	<div class="main">
         <div class="content">
             <div id="myPageTop" class="page_article mypage_top">
@@ -107,25 +111,25 @@
                     <h2 class="tit_snb">마이브로컬리</h2>
                     <div class="inner_snb">
                         <ul class="list_menu">
-                            <li data-tab="tab-1">
+                            <li class="on">
                                 <a>주문 내역</a>
                             </li>
-                            <li data-tab="tab-2">
+                            <li>
                                 <a>배송지 관리</a>
                             </li>
-                            <li data-tab="tab-3">
+                            <li>
                                 <a>상품 후기</a>
                             </li>
-                            <li data-tab="tab-4">
+                            <li>
                                 <a>상품 문의</a>
                             </li>
-                            <li data-tab="tab-5">
+                            <li>
                                 <a>적립금</a>
                             </li>
-                            <li data-tab="tab-6">
+                            <li>
                                 <a>쿠폰</a>
                             </li>
-                            <li data-tab="tab-7">
+                            <li>
                                 <a>개인 정보 수정</a>
                             </li>
                         </ul>
@@ -202,8 +206,11 @@
             </div>
         </div>
     </div>
+    <div class="footer_wrap">
+		<jsp:include page="../../include/footer.jsp"></jsp:include>
+	</div>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="${path }/resources/js/mypage.js"></script>
+    <script src="${path }/resources/js/style/mypage.js"></script>
 </body>
 </html>
