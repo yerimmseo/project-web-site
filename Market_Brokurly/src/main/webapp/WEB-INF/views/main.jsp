@@ -7,8 +7,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="${path }/resources/css/header.css" />
 <link rel="stylesheet" href="${path }/resources/css/main.css" />
+<link rel="stylesheet" href="${path }/resources/css/font.css" />
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet" />
 </head>
 <body>
@@ -19,9 +19,8 @@
         <!-- 상단 광고 -->
         <div id="goods">
             <div id="event_slide">
-                <div id="event"></d>
+                <div id="event"></div>
             </div>
-        </div>
             <ul id="event_selector">
                 <li class="select"><div id="e_1" onclick="getEventId(this.id)"></div></li>
                 <li class="select"><div id="e_2" onclick="getEventId(this.id)"></div></li>
@@ -30,6 +29,7 @@
                 <li class="select"><div id="e_5" onclick="getEventId(this.id)"></div></li>
                 <li class="select"><div id="e_6" onclick="getEventId(this.id)"></div></li>
             </ul>
+        </div>
         <!-- 이 상품 어때요 -->
         <div id="product_list">
             <div id="tit_goods"> <!-- title -->
@@ -38,97 +38,97 @@
             <div class="view_port">
                 <ul class="item_list">
                     <li class="items">
-                        <div onclick="location.href='https://www.kurly.com/shop/goods/goods_view.php?&goodsno=81561'"><img src='../assets/민물장어.jpg' alt='items'></div>     
+                        <div onclick="location.href='https://www.kurly.com/shop/goods/goods_view.php?&goodsno=81561'"><img src='../assets/감자.jpg' alt='items'></div>     
                         <span class='product_name'><a href=''>[바븐] 민물장어 (자포니카) 400g 내외 (생물)</a></span> <br>  
                         <span class="price_tag"><span class='discounted_price'>6%</span>&emsp;<span style='font-size: 17px; color: #333; font-weight: 1000;'>27,180원</span></span>
-                        <span class='price'>29,000원</span></span>                
+                        <span class='price'>29,000원</span>              
                     </li>
                     <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/멋쟁이토마토.jpg" alt="items"></div> 
+                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
+                        <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
+                        <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
+                        <span class="price">14,800원</span>              
+                    </li>
+                    <li class="items">
+                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
+                        <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
+                        <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
+                        <span class="price">14,800원</span>               
+                    </li>
+                    <li class="items">
+                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
                         <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
                         <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
                         <span class="price">14,800원</span></span>                
                     </li>
                     <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/멋쟁이토마토.jpg" alt="items"></div> 
+                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
                         <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
                         <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
                         <span class="price">14,800원</span></span>                
                     </li>
                     <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/멋쟁이토마토.jpg" alt="items"></div> 
+                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
                         <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
                         <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
                         <span class="price">14,800원</span></span>                
                     </li>
                     <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/멋쟁이토마토.jpg" alt="items"></div> 
+                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
                         <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
                         <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
                         <span class="price">14,800원</span></span>                
                     </li>
                     <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/멋쟁이토마토.jpg" alt="items"></div> 
+                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
                         <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
                         <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
                         <span class="price">14,800원</span></span>                
                     </li>
                     <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/멋쟁이토마토.jpg" alt="items"></div> 
-                        <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
-                        <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
-                        <span class="price">14,800원</span></span>                
-                    </li>
-                    <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/멋쟁이토마토.jpg" alt="items"></div> 
-                        <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
-                        <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
-                        <span class="price">14,800원</span></span>                
-                    </li>
-                    <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/배추김치.jpg" alt="kimchi"></div> 
+                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="kimchi"></div> 
                         <span class="product_name"><a href="">[비비고] 썰은 배추김치</a></span> <br>
                         <span class="price_tag"><span class="discounted_price">7%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">5,440원</span></span>
                         <span class="price">5,900원</span></span>                
                     </li>
                     <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/배추김치.jpg" alt="kimchi"></div> 
+                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="kimchi"></div> 
                         <span class="product_name"><a href="">[비비고] 썰은 배추김치</a></span> <br>
                         <span class="price_tag"><span class="discounted_price">7%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">5,440원</span></span>
                         <span class="price">5,900원</span></span>                
                     </li>
                     <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/배추김치.jpg" alt="kimchi"></div> 
+                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="kimchi"></div> 
                         <span class="product_name"><a href="">[비비고] 썰은 배추김치</a></span> <br>
                         <span class="price_tag"><span class="discounted_price">7%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">5,440원</span></span>
                         <span class="price">5,900원</span></span>                
                     </li>
                     <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/배추김치.jpg" alt="kimchi"></div> 
+                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="kimchi"></div> 
                         <span class="product_name"><a href="">[비비고] 썰은 배추김치</a></span> <br>
                         <span class="price_tag"><span class="discounted_price">7%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">5,440원</span></span>
                         <span class="price">5,900원</span></span>                
                     </li>
                     <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/배추김치.jpg" alt="kimchi"></div> 
+                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="kimchi"></div> 
                         <span class="product_name"><a href="">[비비고] 썰은 배추김치</a></span> <br>
                         <span class="price_tag"><span class="discounted_price">7%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">5,440원</span></span>
                         <span class="price">5,900원</span></span>                
                     </li>
                     <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/배추김치.jpg" alt="kimchi"></div> 
+                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="kimchi"></div> 
                         <span class="product_name"><a href="">[비비고] 썰은 배추김치</a></span> <br>
                         <span class="price_tag"><span class="discounted_price">7%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">5,440원</span></span>
                         <span class="price">5,900원</span></span>                
                     </li>
                     <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/배추김치.jpg" alt="kimchi"></div> 
+                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="kimchi"></div> 
                         <span class="product_name"><a href="">[비비고] 썰은 배추김치</a></span> <br>
                         <span class="price_tag"><span class="discounted_price">7%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">5,440원</span></span>
                         <span class="price">5,900원</span></span>                
                     </li>
                     <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/배추김치.jpg" alt="kimchi"></div> 
+                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="kimchi"></div> 
                         <span class="product_name"><a href="">[비비고] 썰은 배추김치</a></span> <br>
                         <span class="price_tag"><span class="discounted_price">7%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">5,440원</span></span>
                         <span class="price">5,900원</span></span>                
@@ -156,17 +156,17 @@
             <div class="view_port">
                 <ul id="event_list">
                     <li class="events">
-                        <div onclick="location.href=''"><img src="../assets/건강식품할인.jpg" alt="events"></div> 
+                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="events"></div> 
                         <span class="event_name"><a href="">솔가 최대 46% 할인</a></span> <br>
                         <span class="event_info">미국에서 온 프리미엄 영양제</span>
                     </li>
                     <li class="events">
-                        <div onclick="location.href=''"><img src="../assets/주방용품할인.jpg" alt="events"></div> 
+                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="events"></div> 
                         <span class="event_name"><a href="">스텐 주방용품 최대 15% 할인</a></span> <br>
                         <span class="event_info">디자인과 내구성, 모두 잡고 싶다면</span>
                     </li>
                     <li class="events">
-                        <div onclick="location.href=''"><img src="../assets/간편식할인.jpg" alt="events"></div> 
+                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="events"></div> 
                         <span class="event_name"><a href="">Kurly's 간편식 최대 20% 할인</a></span> <br>
                         <span class="event_info">컬리답게 만든</span>
                     </li>
@@ -183,73 +183,73 @@
             <div class="view_port">
                 <ul class="item_list">
                     <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/멋쟁이토마토.jpg" alt="items"></div> 
+                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
                         <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
                         <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
                         <span class="price">14,800원</span></span>                
                     </li>
                     <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/멋쟁이토마토.jpg" alt="items"></div> 
+                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
                         <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
                         <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
                         <span class="price">14,800원</span></span>                
                     </li>
                     <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/멋쟁이토마토.jpg" alt="items"></div> 
+                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
                         <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
                         <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
                         <span class="price">14,800원</span></span>                
                     </li>
                     <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/멋쟁이토마토.jpg" alt="items"></div> 
+                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
                         <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
                         <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
                         <span class="price">14,800원</span></span>                
                     </li>
                     <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/배추김치.jpg" alt="kimchi"></div> 
+                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="kimchi"></div> 
                         <span class="product_name"><a href="">[비비고] 썰은 배추김치</a></span> <br>
                         <span class="price_tag"><span class="discounted_price">7%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">5,440원</span></span>
                         <span class="price">5,900원</span></span>                
                     </li>
                     <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/배추김치.jpg" alt="kimchi"></div> 
+                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="kimchi"></div> 
                         <span class="product_name"><a href="">[비비고] 썰은 배추김치</a></span> <br>
                         <span class="price_tag"><span class="discounted_price">7%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">5,440원</span></span>
                         <span class="price">5,900원</span></span>                
                     </li>
                     <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/배추김치.jpg" alt="kimchi"></div> 
+                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="kimchi"></div> 
                         <span class="product_name"><a href="">[비비고] 썰은 배추김치</a></span> <br>
                         <span class="price_tag"><span class="discounted_price">7%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">5,440원</span></span>
                         <span class="price">5,900원</span></span>                
                     </li>
                     <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/배추김치.jpg" alt="kimchi"></div> 
+                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="kimchi"></div> 
                         <span class="product_name"><a href="">[비비고] 썰은 배추김치</a></span> <br>
                         <span class="price_tag"><span class="discounted_price">7%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">5,440원</span></span>
                         <span class="price">5,900원</span></span>                
                     </li>
                     <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/배추김치.jpg" alt="kimchi"></div> 
+                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="kimchi"></div> 
                         <span class="product_name"><a href="">[비비고] 썰은 배추김치</a></span> <br>
                         <span class="price_tag"><span class="discounted_price">7%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">5,440원</span></span>
                         <span class="price">5,900원</span></span>                
                     </li>
                     <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/배추김치.jpg" alt="kimchi"></div> 
+                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="kimchi"></div> 
                         <span class="product_name"><a href="">[비비고] 썰은 배추김치</a></span> <br>
                         <span class="price_tag"><span class="discounted_price">7%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">5,440원</span></span>
                         <span class="price">5,900원</span></span>                
                     </li>
                     <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/배추김치.jpg" alt="kimchi"></div> 
+                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="kimchi"></div> 
                         <span class="product_name"><a href="">[비비고] 썰은 배추김치</a></span> <br>
                         <span class="price_tag"><span class="discounted_price">7%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">5,440원</span></span>
                         <span class="price">5,900원</span></span>                
                     </li>
                     <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/배추김치.jpg" alt="kimchi"></div> 
+                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="kimchi"></div> 
                         <span class="product_name"><a href="">[비비고] 썰은 배추김치</a></span> <br>
                         <span class="price_tag"><span class="discounted_price">7%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">5,440원</span></span>
                         <span class="price">5,900원</span></span>                
@@ -301,36 +301,36 @@
             <div class="view_port">
                 <ul id="md_list" class="item_list">
                     <li class="items" class='pre-ani'>
-                        <div onclick="location.href=''"><img src="../assets/멋쟁이토마토.jpg" alt="items"></div> 
+                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
                         <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
                         <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
                         <span class="price">14,800원</span></span>                
                     </li>
                     <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/호박잎150g.jpg" alt="items"></div> 
+                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
                         <span class="product_name"><a href="">호박잎 150g</a></span> <br>
                         <span class="price_tag"><span style="font-size: 17px; color: #333; font-weight: 1000;">2,490원</span></span>
                     </li>
                     <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/멋쟁이토마토.jpg" alt="items"></div> 
+                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
                         <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
                         <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
                         <span class="price">14,800원</span></span>                
                     </li>
                     <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/멋쟁이토마토.jpg" alt="items"></div> 
+                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
                         <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
                         <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
                         <span class="price">14,800원</span></span>                
                     </li>
                     <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/멋쟁이토마토.jpg" alt="items"></div> 
+                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
                         <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
                         <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
                         <span class="price">14,800원</span></span>                
                     </li>
                     <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/멋쟁이토마토.jpg" alt="items"></div> 
+                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
                         <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
                         <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
                         <span class="price">14,800원</span></span>                
@@ -372,37 +372,37 @@
             <div class="view_port">
                 <ul class="item_list">
                     <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/멋쟁이토마토.jpg" alt="items"></div> 
+                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
                         <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
                         <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
                         <span class="price">14,800원</span></span>                
                     </li>
                     <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/멋쟁이토마토.jpg" alt="items"></div> 
+                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
                         <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
                         <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
                         <span class="price">14,800원</span></span>                
                     </li>
                     <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/멋쟁이토마토.jpg" alt="items"></div> 
+                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
                         <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
                         <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
                         <span class="price">14,800원</span></span>                
                     </li>
                     <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/멋쟁이토마토.jpg" alt="items"></div> 
+                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
                         <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
                         <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
                         <span class="price">14,800원</span></span>                
                     </li>
                     <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/배추김치.jpg" alt="kimchi"></div> 
+                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="kimchi"></div> 
                         <span class="product_name"><a href="">[비비고] 썰은 배추김치</a></span> <br>
                         <span class="price_tag"><span class="discounted_price">7%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">5,440원</span></span>
                         <span class="price">5,900원</span></span>                
                     </li>
                     <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/배추김치.jpg" alt="kimchi"></div> 
+                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="kimchi"></div> 
                         <span class="product_name"><a href="">[비비고] 썰은 배추김치</a></span> <br>
                         <span class="price_tag"><span class="discounted_price">7%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">5,440원</span></span>
                         <span class="price">5,900원</span></span>                
@@ -430,37 +430,37 @@
             <div class="view_port">
                 <ul class="item_list">
                     <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/멋쟁이토마토.jpg" alt="items"></div> 
+                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
                         <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
                         <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
                         <span class="price">14,800원</span></span>                
                     </li>
                     <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/멋쟁이토마토.jpg" alt="items"></div> 
+                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
                         <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
                         <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
                         <span class="price">14,800원</span></span>                
                     </li>
                     <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/멋쟁이토마토.jpg" alt="items"></div> 
+                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
                         <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
                         <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
                         <span class="price">14,800원</span></span>                
                     </li>
                     <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/멋쟁이토마토.jpg" alt="items"></div> 
+                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
                         <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
                         <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
                         <span class="price">14,800원</span></span>                
                     </li>
                     <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/배추김치.jpg" alt="kimchi"></div> 
+                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="kimchi"></div> 
                         <span class="product_name"><a href="">[비비고] 썰은 배추김치</a></span> <br>
                         <span class="price_tag"><span class="discounted_price">7%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">5,440원</span></span>
                         <span class="price">5,900원</span></span>                
                     </li>
                     <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/배추김치.jpg" alt="kimchi"></div> 
+                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="kimchi"></div> 
                         <span class="product_name"><a href="">[비비고] 썰은 배추김치</a></span> <br>
                         <span class="price_tag"><span class="discounted_price">7%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">5,440원</span></span>
                         <span class="price">5,900원</span></span>                
@@ -489,37 +489,37 @@
             <div class="view_port">
                 <ul class="item_list">
                     <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/멋쟁이토마토.jpg" alt="items"></div> 
+                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
                         <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
                         <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
                         <span class="price">14,800원</span></span>                
                     </li>
                     <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/멋쟁이토마토.jpg" alt="items"></div> 
+                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
                         <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
                         <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
                         <span class="price">14,800원</span></span>                
                     </li>
                     <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/멋쟁이토마토.jpg" alt="items"></div> 
+                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
                         <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
                         <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
                         <span class="price">14,800원</span></span>                
                     </li>
                     <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/멋쟁이토마토.jpg" alt="items"></div> 
+                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
                         <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
                         <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
                         <span class="price">14,800원</span></span>                
                     </li>
                     <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/배추김치.jpg" alt="kimchi"></div> 
+                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="kimchi"></div> 
                         <span class="product_name"><a href="">[비비고] 썰은 배추김치</a></span> <br>
                         <span class="price_tag"><span class="discounted_price">7%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">5,440원</span></span>
                         <span class="price">5,900원</span></span>                
                     </li>
                     <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/배추김치.jpg" alt="kimchi"></div> 
+                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="kimchi"></div> 
                         <span class="product_name"><a href="">[비비고] 썰은 배추김치</a></span> <br>
                         <span class="price_tag"><span class="discounted_price">7%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">5,440원</span></span>
                         <span class="price">5,900원</span></span>                
@@ -547,37 +547,37 @@
             <div class="view_port">
                 <ul class="item_list">
                     <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/멋쟁이토마토.jpg" alt="items"></div> 
+                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
                         <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
                         <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
                         <span class="price">14,800원</span></span>                
                     </li>
                     <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/멋쟁이토마토.jpg" alt="items"></div> 
+                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
                         <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
                         <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
                         <span class="price">14,800원</span></span>                
                     </li>
                     <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/멋쟁이토마토.jpg" alt="items"></div> 
+                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
                         <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
                         <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
                         <span class="price">14,800원</span></span>                
                     </li>
                     <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/멋쟁이토마토.jpg" alt="items"></div> 
+                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
                         <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
                         <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
                         <span class="price">14,800원</span></span>                
                     </li>
                     <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/배추김치.jpg" alt="kimchi"></div> 
+                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="kimchi"></div> 
                         <span class="product_name"><a href="">[비비고] 썰은 배추김치</a></span> <br>
                         <span class="price_tag"><span class="discounted_price">7%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">5,440원</span></span>
                         <span class="price">5,900원</span></span>                
                     </li>
                     <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/배추김치.jpg" alt="kimchi"></div> 
+                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="kimchi"></div> 
                         <span class="product_name"><a href="">[비비고] 썰은 배추김치</a></span> <br>
                         <span class="price_tag"><span class="discounted_price">7%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">5,440원</span></span>
                         <span class="price">5,900원</span></span>                
@@ -606,37 +606,37 @@
             <div class="view_port">
                 <ul class="item_list">
                     <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/멋쟁이토마토.jpg" alt="items"></div> 
+                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
                         <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
                         <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
                         <span class="price">14,800원</span></span>                
                     </li>
                     <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/멋쟁이토마토.jpg" alt="items"></div> 
+                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
                         <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
                         <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
                         <span class="price">14,800원</span></span>                
                     </li>
                     <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/멋쟁이토마토.jpg" alt="items"></div> 
+                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
                         <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
                         <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
                         <span class="price">14,800원</span></span>                
                     </li>
                     <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/멋쟁이토마토.jpg" alt="items"></div> 
+                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
                         <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
                         <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
                         <span class="price">14,800원</span></span>                
                     </li>
                     <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/배추김치.jpg" alt="kimchi"></div> 
+                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="kimchi"></div> 
                         <span class="product_name"><a href="">[비비고] 썰은 배추김치</a></span> <br>
                         <span class="price_tag"><span class="discounted_price">7%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">5,440원</span></span>
                         <span class="price">5,900원</span></span>                
                     </li>
                     <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/배추김치.jpg" alt="kimchi"></div> 
+                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="kimchi"></div> 
                         <span class="product_name"><a href="">[비비고] 썰은 배추김치</a></span> <br>
                         <span class="price_tag"><span class="discounted_price">7%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">5,440원</span></span>
                         <span class="price">5,900원</span></span>                
@@ -654,16 +654,15 @@
                 </div>
             </div>
         </div>
-        <br><br><br><br><br>
+        <br><br><br><br>
         <!-- 마지막광고 -->
         <div>
             <div id="last_ad" onclick="location.href=''"></div>
         </div>
-    	</div>
+        <div class="footer_wrap">
+			<jsp:include page="include/footer.jsp"></jsp:include>
+		</div>
     </div>
-<%--     <div class="footer_wrap">
-		<jsp:include page="include/footer.jsp"></jsp:include>
-	</div> --%>
 	
 	<script type="text/javascript" src="${path }/resources/js/style/main.js"></script>
 </body>

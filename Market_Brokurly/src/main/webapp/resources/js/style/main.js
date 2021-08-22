@@ -23,21 +23,18 @@ function getEventId(get_id) {
     selectedDiv.style.backgroundColor="black";
 
     if(get_id == 'e_1') {
-        event_banner.style.backgroundImage="url(../assets/goods1.jpg)";
+        event_banner.style.backgroundImage="url(../../img/banner/goods1.jpg)";
     } else if (get_id == 'e_2') {
-        event_banner.style.backgroundImage="url(../assets/goods2.jpg)";
+        event_banner.style.backgroundImage="url(../../img/banner/goods2.jpg)";
     } else if (get_id == 'e_3') {
-        event_banner.style.backgroundImage="url(../assets/goods3.jpg)";
+        event_banner.style.backgroundImage="url(../../img/banner/goods3.jpg)";
     } else if (get_id == 'e_4') {
-        event_banner.style.backgroundImage="url(../assets/goods4.jpg)";
+        event_banner.style.backgroundImage="url(../../img/banner/goods4.jpg)";
     } else if (get_id == 'e_5') {
-        event_banner.style.backgroundImage="url(../assets/goods5.jpg)";
+        event_banner.style.backgroundImage="url(../../img/banner/goods5.jpg)";
     } else if (get_id == 'e_6') {
-        event_banner.style.backgroundImage="url(../assets/goods6.jpg)";
+        event_banner.style.backgroundImage="url(../../img/banner/goods6.jpg)";
     }
-
-
-
 
 }
     

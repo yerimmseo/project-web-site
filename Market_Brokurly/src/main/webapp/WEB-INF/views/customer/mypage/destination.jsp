@@ -119,10 +119,10 @@
 	                    <h2 class="tit_snb">마이브로컬리</h2>
 	                    <div class="inner_snb">
 	                        <ul class="list_menu">
-	                            <li id="orderlist" class="on">
+	                            <li id="orderlist">
 	                                <a>주문 내역</a>
 	                            </li>
-	                            <li id="destination">
+	                            <li id="destination" class="on">
 	                                <a>배송지 관리</a>
 	                            </li>
 	                            <li>
@@ -147,69 +147,62 @@
 	                        1:1 문의하기
 	                    </a>
 	                </div>
-	                <div id="viewOrderList" class="page_section section_orderlist">
+					<div id="viewOrderList" class="page_section section_destination">
 	                    <div class="head_article">
 	                        <h2 class="tit">
-	                            주문 내역
-	                            <span class="tit_sub">지난 3년간의 주문 내역 조회가 가능합니다</span>
+	                            배송지 관리
+	                            <span class="tit_sub">배송지에 따리 상품 정보가 달라질 수 있습니다.</span>
 	                        </h2>
+                            <div class="new_address">
+                                <button type="button" class="btn">
+                                    <img src="${path }/resources/img/icon/ico_add_16x16.png" alt="" class="ico"> 
+                                    새 배송지 추가
+                                </button>
+                            </div>
 	                    </div>
-	                    <div class="search_date">
-	                        <h3 class="screen_out">기간 선택</h3>
-	                        <a class="btn_layer">
-	                            전체기간
-	                        </a>
-	                        <ul class="layer_search">
-	                            <li>
-	                                <a class="on">전체기간</a>
-	                            </li>
-	                            <li>
-	                                <a data-year="2021">2021 년</a>
-	                            </li>
-	                            <li>
-	                                <a data-year="2020">2020 년</a>
-	                            </li>
-	                            <li>
-	                                <a data-year="2019">2019 년</a>
-	                            </li>
-	                        </ul>
-	                    </div>
-	                    <ul class="list_order">
-	                        <!-- 최근 주문내역 없을 때 클래스 추가 -->
-	                        <!-- <li class="no_data">주문내역이 없습니다.</li>  -->
-	                        <li>
-	                            <div class="date">2021.05.13 (22시 02분)</div>
-	                            <div class="order_goods">
-	                                <div class="name">
-	                                    <a>[신규회원 이벤트] 삼다수 (500ml X 20 PET) 외 1건</a>
-	                                </div>
-	                                <div class="order_info">
-	                                    <div class="thumb">
-	                                        <img src="${path }/resources/img/product/maincategory10/12.jpg" alt="해당 주문 대표 상품 이미지">
-	                                    </div>
-	                                    <div class="desc">
-	                                        <dl>
-	                                            <dt>주문번호</dt>
-	                                            <dd>1616166</dd>
-	                                        </dl>
-	                                        <dl>
-	                                            <dt>결제금액</dt>
-	                                            <dd>10,820원</dd>
-	                                        </dl>
-	                                        <dl>
-	                                            <dt>주문상태</dt>
-	                                            <dd class="status end">배송완료</dd>
-	                                        </dl>
-	                                    </div>
-	                                </div>
-	                                <div class="order_status">
-	                                    <span class="inner_status">
-	                                        <a class="link ga_tracking_event">1:1 문의</a>
-	                                    </span>
-	                                </div>
-	                            </div>
-	                        </li>
-	                    </ul>
+                        <span class="destination_add screen_out"></span>
+                        <div class="type_select">
+                            <table class="tbl tbl_type1">
+                                <thead>
+                                    <tr>
+                                        <th class="tit_select">선택</th>
+                                        <th class="tit_address">주소</th>
+                                        <th class="tit_receive">받으실 분</th>
+                                        <th class="tit_phone">연락처</th>
+                                        <th class="tit_delivery">배송유형</th>
+                                        <th class="tit_modify">수정</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="">
+                                    <!-- 테이블 바디 안에서 반복문 돌리기.
+                                    체크박스 클릭 시 기본배송지로 지정됨 -->
+                                    <tr>
+                                        <td class="select type_radio">
+                                            <label class="skin_checkbox">
+                                                <input type="radio" name="addrNo" checked>
+                                                <span class="ico"></span>
+                                                <span class="screen_out">선택하기</span>
+                                            </label>
+                                        </td>
+                                        <td class="address">
+                                            <span class="badge_default">기본 배송지</span>
+                                            <p class="addr">
+                                                경기 수원시 영통구 대학1로 14
+                                                안동빌 202호
+                                            </p>
+                                        </td>
+                                        <td class="name"></td>
+                                        <td class="phone"></td>
+                                        <td>
+                                            <span class="delivery star">샛별배송</span>
+                                        </td>
+                                        <td>
+                                            <button type="button" class="ico modify">수정하기</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
 	                </div>
 	            </div>
             </div>
@@ -218,8 +211,8 @@
     <div class="footer_wrap">
 		<jsp:include page="../../include/footer.jsp"></jsp:include>
 	</div>
-    
-    <script src="${path }/resources/js/style/mypage.js"></script>
-    <script src="${path }/resources/js/ajax/mypage_ajax.js"></script>
+	
+	<script src="${path }/resources/js/style/mypage.js"></script>
+	<script src="${path }/resources/js/ajax/mypage_ajax.js"></script>
 </body>
 </html>

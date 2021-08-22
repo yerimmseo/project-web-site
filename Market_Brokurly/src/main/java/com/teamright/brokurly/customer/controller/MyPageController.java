@@ -21,4 +21,18 @@ public class MyPageController {
 		
 		model.addAttribute("customer", customer);
 	}
+	
+	@RequestMapping("/destination")
+	public void destination(Model model) {
+		CustomerVO customer = customerMapper.getCustomerInfo("mongsoung");
+		
+		model.addAttribute("customer", customer);
+	}
+	
+	@RequestMapping("/point")
+	public void point(Model model) {
+		CustomerVO customer = customerMapper.getCustomerInfo("mongsoung");
+		
+		model.addAttribute("customer", customer);
+	}
 }
