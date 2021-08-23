@@ -122,7 +122,7 @@
 	                    <h2 class="tit_snb">마이브로컬리</h2>
 	                    <div class="inner_snb">
 	                        <ul class="list_menu">
-	                            <li id="orderlist" class="on">
+	                            <li id="orderlist">
 	                                <a>주문 내역</a>
 	                            </li>
 	                            <li id="destination">
@@ -131,7 +131,7 @@
 	                            <li id="review">
 	                                <a>상품 후기</a>
 	                            </li>
-	                            <li id="inquiry">
+	                            <li id="inquiry" class="on">
 	                                <a>상품 문의</a>
 	                            </li>
 	                            <li id="point">
@@ -150,69 +150,41 @@
 	                        1:1 문의하기
 	                    </a>
 	                </div>
-	                <div id="viewOrderList" class="page_section section_orderlist">
+					<div id="viewOrderList" class="page_section section_review">
 	                    <div class="head_article">
-	                        <h2 class="tit">
-	                            주문 내역
-	                            <span class="tit_sub">지난 3년간의 주문 내역 조회가 가능합니다</span>
-	                        </h2>
+	                        <h2 class="tit">상품문의</h2>
 	                    </div>
-	                    <div class="search_date">
-	                        <h3 class="screen_out">기간 선택</h3>
-	                        <a class="btn_layer">
-	                            전체기간
-	                        </a>
-	                        <ul class="layer_search">
-	                            <li>
-	                                <a class="on">전체기간</a>
-	                            </li>
-	                            <li>
-	                                <a data-year="2021">2021 년</a>
-	                            </li>
-	                            <li>
-	                                <a data-year="2020">2020 년</a>
-	                            </li>
-	                            <li>
-	                                <a data-year="2019">2019 년</a>
-	                            </li>
-	                        </ul>
-	                    </div>
-	                    <ul class="list_order">
-	                        <!-- 최근 주문내역 없을 때 클래스 추가 -->
-	                        <!-- <li class="no_data">주문내역이 없습니다.</li>  -->
-	                        <li>
-	                            <div class="date">2021.05.13 (22시 02분)</div>
-	                            <div class="order_goods">
-	                                <div class="name">
-	                                    <a>[신규회원 이벤트] 삼다수 (500ml X 20 PET) 외 1건</a>
-	                                </div>
-	                                <div class="order_info">
-	                                    <div class="thumb">
-	                                        <img src="${path }/resources/img/product/maincategory10/12.jpg" alt="해당 주문 대표 상품 이미지">
-	                                    </div>
-	                                    <div class="desc">
-	                                        <dl>
-	                                            <dt>주문번호</dt>
-	                                            <dd>1616166</dd>
-	                                        </dl>
-	                                        <dl>
-	                                            <dt>결제금액</dt>
-	                                            <dd>10,820원</dd>
-	                                        </dl>
-	                                        <dl>
-	                                            <dt>주문상태</dt>
-	                                            <dd class="status end">배송완료</dd>
-	                                        </dl>
-	                                    </div>
-	                                </div>
-	                                <div class="order_status">
-	                                    <span class="inner_status">
-	                                        <a class="link ga_tracking_event">1:1 문의</a>
-	                                    </span>
-	                                </div>
-	                            </div>
-	                        </li>
-	                    </ul>
+                        <div class="board-container">
+                            <div id="">
+                                <div class="board-header-container">
+                                    <ul class="list-description">
+                                        <li>상품에 대한 문의를 남기는 공간입니다. 해당 게시판의 성격과 다른 글은 사전동의 없이
+                                            담당 게시판으로 이동될 수 있습니다.
+                                        </li>
+                                        <li>배송관련, 주문(취소/교환/환불)관련 문의 및 요청사항은 마이컬리 내
+                                            <a>1:1 문의</a>
+                                            에 남겨주세요.
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="board-item-container my_brokurly">
+                                    <div class="inquiry-board-header">
+                                        <div></div>
+                                        <div style="width: 520px;">제목</div>
+                                        <div>작성일</div>
+                                        <div>답변상태</div>
+                                    </div>
+                                    <ul class="board-list">
+                                        <li class="inquiry-empty">작성한 상품 문의가 없습니다.</li>
+                                    </ul>
+                                    <div class="board-inquiry-area">
+                                        <div class="paging-navigation">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                        
 	                </div>
 	            </div>
             </div>
@@ -221,8 +193,8 @@
     <div class="footer_wrap">
 		<jsp:include page="../../include/footer.jsp"></jsp:include>
 	</div>
-    
-    <script src="${path }/resources/js/style/mypage.js"></script>
-    <script src="${path }/resources/js/ajax/mypage_ajax.js"></script>
+	
+	<script src="${path }/resources/js/style/mypage.js"></script>
+	<script src="${path }/resources/js/ajax/mypage_ajax.js"></script>
 </body>
 </html>

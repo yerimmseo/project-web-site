@@ -122,7 +122,7 @@
 	                    <h2 class="tit_snb">마이브로컬리</h2>
 	                    <div class="inner_snb">
 	                        <ul class="list_menu">
-	                            <li id="orderlist" class="on">
+	                            <li id="orderlist">
 	                                <a>주문 내역</a>
 	                            </li>
 	                            <li id="destination">
@@ -137,7 +137,7 @@
 	                            <li id="point">
 	                                <a>적립금</a>
 	                            </li>
-	                            <li id="coupon">
+	                            <li id="coupon" class="on">
 	                                <a>쿠폰</a>
 	                            </li>
 	                            <li>
@@ -150,69 +150,57 @@
 	                        1:1 문의하기
 	                    </a>
 	                </div>
-	                <div id="viewOrderList" class="page_section section_orderlist">
+					<div id="viewOrderList" class="page_section section_coupon">
 	                    <div class="head_article">
-	                        <h2 class="tit">
-	                            주문 내역
-	                            <span class="tit_sub">지난 3년간의 주문 내역 조회가 가능합니다</span>
-	                        </h2>
+	                        <h2 class="tit">상품문의</h2>
 	                    </div>
-	                    <div class="search_date">
-	                        <h3 class="screen_out">기간 선택</h3>
-	                        <a class="btn_layer">
-	                            전체기간
-	                        </a>
-	                        <ul class="layer_search">
-	                            <li>
-	                                <a class="on">전체기간</a>
-	                            </li>
-	                            <li>
-	                                <a data-year="2021">2021 년</a>
-	                            </li>
-	                            <li>
-	                                <a data-year="2020">2020 년</a>
-	                            </li>
-	                            <li>
-	                                <a data-year="2019">2019 년</a>
-	                            </li>
-	                        </ul>
-	                    </div>
-	                    <ul class="list_order">
-	                        <!-- 최근 주문내역 없을 때 클래스 추가 -->
-	                        <!-- <li class="no_data">주문내역이 없습니다.</li>  -->
-	                        <li>
-	                            <div class="date">2021.05.13 (22시 02분)</div>
-	                            <div class="order_goods">
-	                                <div class="name">
-	                                    <a>[신규회원 이벤트] 삼다수 (500ml X 20 PET) 외 1건</a>
-	                                </div>
-	                                <div class="order_info">
-	                                    <div class="thumb">
-	                                        <img src="${path }/resources/img/product/maincategory10/12.jpg" alt="해당 주문 대표 상품 이미지">
-	                                    </div>
-	                                    <div class="desc">
-	                                        <dl>
-	                                            <dt>주문번호</dt>
-	                                            <dd>1616166</dd>
-	                                        </dl>
-	                                        <dl>
-	                                            <dt>결제금액</dt>
-	                                            <dd>10,820원</dd>
-	                                        </dl>
-	                                        <dl>
-	                                            <dt>주문상태</dt>
-	                                            <dd class="status end">배송완료</dd>
-	                                        </dl>
-	                                    </div>
-	                                </div>
-	                                <div class="order_status">
-	                                    <span class="inner_status">
-	                                        <a class="link ga_tracking_event">1:1 문의</a>
-	                                    </span>
-	                                </div>
-	                            </div>
-	                        </li>
-	                    </ul>
+                        <div class="coupon_reg">
+                            <form action="" method="POST">
+                                <fieldset>
+                                    <legend>쿠폰 등록 폼</legend>
+                                    <div class="reg">
+                                        <input type="hidden" name="sno">
+                                        <input type="text" name="coupon_number" class="inp" placeholder="쿠폰을 입력해주세요">
+                                        <button type="submit" class="btn">쿠폰 등록</button>
+                                    </div>
+                                    <p class="notice">쿠폰에 하이픈("-")이 포함되어 있을 경우 하이픈("-")을 반드시 입력해주세요.</p>
+                                </fieldset>
+                            </form>
+                        </div>
+                        <div class="coupon_count">
+                            <span class="ico"></span>
+                            <p class="txt">
+                                쿠폰은 적용 가능한 상품이 따로 적용되어 있는 경우 해당 상품 구매 시에만 사용이 가능합니다.
+                            </p>
+                            <p class="count">
+                                <span class="tit">사용가능쿠폰</span>
+                                : 0장
+                            </p>
+                        </div>
+                        <table class="tbl tbl_type1">
+                            <caption>적립 사용 내역 상세보기</caption>
+                            <colgroup>
+                                <col style="width: auto;">
+                                <col style="width: 58px;">
+                                <col style="width: 101px;">
+                                <col style="width: 139px;">
+                                <col style="width: 101px;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th class="name">쿠폰명</th>
+                                    <th>기능</th>
+                                    <th>할인/적립</th>
+                                    <th>사용가능기간</th>
+                                    <th>사용여부</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="no_data" colspan="5">주문 쿠폰이 없습니다.</td>
+                                </tr>
+                            </tbody>
+                        </table>
 	                </div>
 	            </div>
             </div>
@@ -221,8 +209,8 @@
     <div class="footer_wrap">
 		<jsp:include page="../../include/footer.jsp"></jsp:include>
 	</div>
-    
-    <script src="${path }/resources/js/style/mypage.js"></script>
-    <script src="${path }/resources/js/ajax/mypage_ajax.js"></script>
+	
+	<script src="${path }/resources/js/style/mypage.js"></script>
+	<script src="${path }/resources/js/ajax/mypage_ajax.js"></script>
 </body>
 </html>

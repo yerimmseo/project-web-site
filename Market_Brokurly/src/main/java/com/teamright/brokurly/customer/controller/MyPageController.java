@@ -35,4 +35,25 @@ public class MyPageController {
 		
 		model.addAttribute("customer", customer);
 	}
+	
+	@RequestMapping("/review")
+	public void review(Model model) {
+		CustomerVO customer = customerMapper.getCustomerInfo("mongsoung");
+		
+		model.addAttribute("customer", customer);
+	}
+	
+	@RequestMapping("/inquiry")
+	public void inquiry(Model model) {
+		CustomerVO customer = customerMapper.getCustomerInfo("mongsoung");
+		
+		model.addAttribute("customer", customer);
+	}
+	
+	@RequestMapping("/coupon")
+	public void coupon(Model model) {
+		CustomerVO customer = customerMapper.getCustomerInfo("mongsoung");
+		
+		model.addAttribute("customer", customer);
+	}
 }

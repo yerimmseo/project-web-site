@@ -16,7 +16,10 @@
 <body>
 	<form action="orderlist" id="orderlistForm"></form>
 	<form action="destination" id="destinationForm"></form>
+	<form action="review" id="reviewForm"></form>
+	<form action="inquiry" id="inquiryForm"></form>
 	<form action="point" id="pointForm"></form>
+	<form action="coupon" id="couponForm"></form>
 	
 	<div class="header">
 		<jsp:include page="../../include/header.jsp"></jsp:include>
@@ -125,16 +128,16 @@
 	                            <li id="destination">
 	                                <a>배송지 관리</a>
 	                            </li>
-	                            <li>
+	                            <li id="review">
 	                                <a>상품 후기</a>
 	                            </li>
-	                            <li>
+	                            <li id="inquiry">
 	                                <a>상품 문의</a>
 	                            </li>
 	                            <li id="point" class="on">
 	                                <a>적립금</a>
 	                            </li>
-	                            <li>
+	                            <li id="coupon">
 	                                <a>쿠폰</a>
 	                            </li>
 	                            <li>
@@ -187,9 +190,32 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
+                                	<!-- 적립금 히스토리가 존재하지 않는 경우 -->
+                                    <tr style="display: none;">
                                         <td colspan="4" class="no_data">적립금 내역이 존재하지 않습니다.</td>
                                     </tr>
+                                    <!-- 적립금 히스토리가 존재하는 경우 -->
+                                    <tr>
+                                    	<td>21.06.04</td>
+                                    	<td class="info">
+                                    		<span class="link">[적립금소멸] 적립금 유효기간 만료</span>
+                                    	</td>
+                                    	<td></td>
+                                    	<td class="point minus">-7,000원</td>
+                                    </tr>
+                                    <tr>
+                                    	<td>21.06.01</td>
+                                    	<td class="info">
+                                    		<span class="link">[쇼핑지원금] 06/03까지 사용가능</span>
+                                    	</td>
+                                    	<td>
+                                    		<span>21.06.03</span>
+                                    	</td>
+                                    	<td class="point">
+                                    		<span>+</span>
+                                    		7,000원
+                                    	</td>
+                                    </tr>	
                                 </tbody>
                             </table>
                         </div>

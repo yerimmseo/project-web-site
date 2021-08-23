@@ -16,7 +16,10 @@
 <body>
 	<form action="orderlist" id="orderlistForm"></form>
 	<form action="destination" id="destinationForm"></form>
+	<form action="review" id="reviewForm"></form>
+	<form action="inquiry" id="inquiryForm"></form>
 	<form action="point" id="pointForm"></form>
+	<form action="coupon" id="couponForm"></form>
 	
 	<div class="header">
 		<jsp:include page="../../include/header.jsp"></jsp:include>
@@ -125,16 +128,16 @@
 	                            <li id="destination" class="on">
 	                                <a>배송지 관리</a>
 	                            </li>
-	                            <li>
+	                            <li id="review">
 	                                <a>상품 후기</a>
 	                            </li>
-	                            <li>
+	                            <li id="inquiry">
 	                                <a>상품 문의</a>
 	                            </li>
 	                            <li id="point">
 	                                <a>적립금</a>
 	                            </li>
-	                            <li>
+	                            <li id="coupon">
 	                                <a>쿠폰</a>
 	                            </li>
 	                            <li>
@@ -186,6 +189,30 @@
                                         </td>
                                         <td class="address">
                                             <span class="badge_default">기본 배송지</span>
+                                            <p class="addr">
+                                                경기 수원시 영통구 대학1로 14
+                                                안동빌 202호
+                                            </p>
+                                        </td>
+                                        <td class="name"></td>
+                                        <td class="phone"></td>
+                                        <td>
+                                            <span class="delivery star">샛별배송</span>
+                                        </td>
+                                        <td>
+                                            <button type="button" class="ico modify">수정하기</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="select type_radio">
+                                            <label class="skin_checkbox">
+                                                <input type="radio" name="addrNo">
+                                                <span class="ico"></span>
+                                                <span class="screen_out">선택하기</span>
+                                            </label>
+                                        </td>
+                                        <td class="address">
+                                            <span class="badge_default" style="display: none;">기본 배송지</span>
                                             <p class="addr">
                                                 경기 수원시 영통구 대학1로 14
                                                 안동빌 202호

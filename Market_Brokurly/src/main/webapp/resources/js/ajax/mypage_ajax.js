@@ -12,7 +12,20 @@ $(document).ready(function(e) {
 		$('#destinationForm').submit();
 	});
 	
+	$('#review').click(() => {
+		$('#reviewForm').submit();
+	});
+	
+	$('#inquiry').click(() => {
+		$('#inquiryForm').submit();
+	});
+	
 	$('#point').click(() => {
 		$('#pointForm').submit();
 	});
+	
+	$('#coupon').click(() => {
+		$('#couponForm').submit();
+	});
+	
 });

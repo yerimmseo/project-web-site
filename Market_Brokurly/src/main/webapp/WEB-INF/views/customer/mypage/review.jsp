@@ -122,13 +122,13 @@
 	                    <h2 class="tit_snb">마이브로컬리</h2>
 	                    <div class="inner_snb">
 	                        <ul class="list_menu">
-	                            <li id="orderlist" class="on">
+	                            <li id="orderlist">
 	                                <a>주문 내역</a>
 	                            </li>
 	                            <li id="destination">
 	                                <a>배송지 관리</a>
 	                            </li>
-	                            <li id="review">
+	                            <li id="review"  class="on">
 	                                <a>상품 후기</a>
 	                            </li>
 	                            <li id="inquiry">
@@ -150,69 +150,51 @@
 	                        1:1 문의하기
 	                    </a>
 	                </div>
-	                <div id="viewOrderList" class="page_section section_orderlist">
+					<div id="viewOrderList" class="page_section section_review">
 	                    <div class="head_article">
-	                        <h2 class="tit">
-	                            주문 내역
-	                            <span class="tit_sub">지난 3년간의 주문 내역 조회가 가능합니다</span>
-	                        </h2>
+	                        <h2 class="tit">상품 후기</h2>
 	                    </div>
-	                    <div class="search_date">
-	                        <h3 class="screen_out">기간 선택</h3>
-	                        <a class="btn_layer">
-	                            전체기간
-	                        </a>
-	                        <ul class="layer_search">
-	                            <li>
-	                                <a class="on">전체기간</a>
-	                            </li>
-	                            <li>
-	                                <a data-year="2021">2021 년</a>
-	                            </li>
-	                            <li>
-	                                <a data-year="2020">2020 년</a>
-	                            </li>
-	                            <li>
-	                                <a data-year="2019">2019 년</a>
-	                            </li>
-	                        </ul>
-	                    </div>
-	                    <ul class="list_order">
-	                        <!-- 최근 주문내역 없을 때 클래스 추가 -->
-	                        <!-- <li class="no_data">주문내역이 없습니다.</li>  -->
-	                        <li>
-	                            <div class="date">2021.05.13 (22시 02분)</div>
-	                            <div class="order_goods">
-	                                <div class="name">
-	                                    <a>[신규회원 이벤트] 삼다수 (500ml X 20 PET) 외 1건</a>
-	                                </div>
-	                                <div class="order_info">
-	                                    <div class="thumb">
-	                                        <img src="${path }/resources/img/product/maincategory10/12.jpg" alt="해당 주문 대표 상품 이미지">
-	                                    </div>
-	                                    <div class="desc">
-	                                        <dl>
-	                                            <dt>주문번호</dt>
-	                                            <dd>1616166</dd>
-	                                        </dl>
-	                                        <dl>
-	                                            <dt>결제금액</dt>
-	                                            <dd>10,820원</dd>
-	                                        </dl>
-	                                        <dl>
-	                                            <dt>주문상태</dt>
-	                                            <dd class="status end">배송완료</dd>
-	                                        </dl>
-	                                    </div>
-	                                </div>
-	                                <div class="order_status">
-	                                    <span class="inner_status">
-	                                        <a class="link ga_tracking_event">1:1 문의</a>
-	                                    </span>
-	                                </div>
-	                            </div>
-	                        </li>
-	                    </ul>
+                        <div id="">
+                            <div class="review_notice">
+                                <p>
+                                    <b>후기 작성 시 사진후기 100원, 글후기 50원을 적립해드립니다.</b>
+                                </p>
+                                - 퍼플, 더퍼플은
+                                <b>2배</b>
+                                적립 (사진 200원, 글 100원)
+                                <br>
+                                - 주간 베스트 후기로 선정 시
+                                <b>5,000원</b>
+                                을 추가 적립
+                                <br>
+                                * 후기 작성은 배송 완료일로부터 30일 이내 가능합니다.
+                            </div>
+                            <ul class="tab_menu">
+                                <!-- 누를 때 마다 class="on" 추가하고 before_view, after_view display 설정 -->
+                                <li class="write_available on">
+                                    <a>
+                                        작성가능 후기
+                                        <span>(0)</span>
+                                    </a>
+                                </li>
+                                <li class="write_complete">
+                                    <a>
+                                        작성완료 후기
+                                        <span>(0)</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="before_view">
+                            <ul class="list_before">
+                                <li class="no_data">작성가능 후기 내역이 없습니다.</li>
+                            </ul>
+                        </div>
+                        <div class="after_view">
+                            <ul class="list_after">
+                                <li class="no_data">작성한 후기가 없습니다.</li>
+                            </ul>
+                        </div>
 	                </div>
 	            </div>
             </div>
@@ -221,8 +203,8 @@
     <div class="footer_wrap">
 		<jsp:include page="../../include/footer.jsp"></jsp:include>
 	</div>
-    
-    <script src="${path }/resources/js/style/mypage.js"></script>
-    <script src="${path }/resources/js/ajax/mypage_ajax.js"></script>
+	
+	<script src="${path }/resources/js/style/mypage.js"></script>
+	<script src="${path }/resources/js/ajax/mypage_ajax.js"></script>
 </body>
 </html>
