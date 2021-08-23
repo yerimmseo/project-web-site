@@ -28,4 +28,8 @@ $(document).ready(function(e) {
 		$('#couponForm').submit();
 	});
 	
+	$('#myinfo').click(() => {
+		$('#myinfoForm').submit();
+	});
+	
 });

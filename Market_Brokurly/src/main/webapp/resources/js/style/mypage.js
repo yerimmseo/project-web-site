@@ -5,7 +5,6 @@ $(function() {
 	var write_complete = $('.write_complete');
 	var before_view = $('.before_view');
 	var after_view = $('.after_view');
-	var inp = $('.inp');
 
 	/* 계급별 색상 변경 */
 	if (grade_logo_value == '웰컴') {
@@ -36,7 +35,63 @@ $(function() {
 		after_view.css('display', 'block');
 	});
 	
-	inp.click(() => {
-        inp.css('border', 'solid 2px #ddd');
+});
+
+$(function() {
+    var pw_input = $('.pw_input');
+    var pw_guide = $('.pw_guide');
+    var new_pw_input = $('.new_pw_input');
+    var new_pw_guide = $('.new_pw_guide');
+    var chk_new_pw_input = $('.chk_new_pw_input');
+    var chk_new_pw_guide = $('.chk_new_pw_guide');
+    var other_chk_btn = $('.other_chk_btn');
+    var code_num = $('.code_num');
+    var code_num_guide = $('.code_num_guide');
+    var birth_input = $('.birth_input');
+    var birth_day = $('.birth_day');
+	var btn_choice = $('.btn_choice');
+	var layer_choice = $('.layer_choice');
+	var bg_dim = $('.bg_dim');
+	var btn_ok = $('.btn_ok');
+	var btn_close = $('.btn_close');
+
+    pw_input.click(() => {
+        pw_guide.css('display', 'block');
+    });
+
+    new_pw_input.click(() => {
+        new_pw_guide.css('display', 'block');
+    });
+
+    chk_new_pw_input.click(() => {
+        chk_new_pw_guide.css('display', 'block');
+    });
+
+    other_chk_btn.click(() => {
+        code_num.css('display', 'block');
+        code_num_guide.css('display', 'block');
+    });
+
+    birth_input.click(() => {
+        birth_day.css('border', 'solid 1px #333');
+    });
+
+    birth_input.blur(() => {
+        birth_day.css('border', 'solid 1px #ddd');
+    });
+
+	btn_choice.click(() => {
+		layer_choice.css('display', 'block');
+        bg_dim.css('display', 'block');
+	});
+	
+	btn_ok.click(() => {
+        layer_choice.css('display', 'none');
+        bg_dim.css('display', 'none');
+    });
+
+    btn_close.click(() => {
+        layer_choice.css('display', 'none');
+        bg_dim.css('display', 'none');
     });
 });

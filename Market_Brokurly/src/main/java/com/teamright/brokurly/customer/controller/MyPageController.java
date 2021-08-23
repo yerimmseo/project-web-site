@@ -56,4 +56,18 @@ public class MyPageController {
 		
 		model.addAttribute("customer", customer);
 	}
+	
+	@RequestMapping("/myinfo")
+	public void myinfo(Model model) {
+		CustomerVO customer = customerMapper.getCustomerInfo("mongsoung");
+		
+		model.addAttribute("customer", customer);
+	}
+	
+	@RequestMapping("/myinfo2")
+	public void myinfo2(Model model) {
+		CustomerVO customer = customerMapper.getCustomerInfo("mongsoung");
+		
+		model.addAttribute("customer", customer);
+	}
 }

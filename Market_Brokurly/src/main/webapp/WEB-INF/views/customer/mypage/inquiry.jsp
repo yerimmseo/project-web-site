@@ -20,6 +20,7 @@
 	<form action="inquiry" id="inquiryForm"></form>
 	<form action="point" id="pointForm"></form>
 	<form action="coupon" id="couponForm"></form>
+	<form action="myinfo" id="myinfoForm"></form>
 	
 	<div class="header">
 		<jsp:include page="../../include/header.jsp"></jsp:include>
@@ -140,7 +141,7 @@
 	                            <li id="coupon">
 	                                <a>쿠폰</a>
 	                            </li>
-	                            <li>
+	                            <li id="myinfo">
 	                                <a>개인 정보 수정</a>
 	                            </li>
 	                        </ul>

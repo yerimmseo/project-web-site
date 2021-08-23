@@ -21,6 +21,7 @@
 	<form action="point" id="pointForm"></form>
 	<form action="coupon" id="couponForm"></form>
 	<form action="myinfo" id="myinfoForm"></form>
+	<form action="myinfo2" id="myinfo2Form"></form>
 	
 	<div class="header">
 		<jsp:include page="../../include/header.jsp"></jsp:include>
@@ -117,95 +118,80 @@
 	                </div>
 	            </div>
         	</div>
-            <div class="top2">
-            	<div class="page_article article_type2">
-	                <div id="snb" class="snb_my">
-	                    <h2 class="tit_snb">마이브로컬리</h2>
-	                    <div class="inner_snb">
-	                        <ul class="list_menu">
-	                            <li id="orderlist">
-	                                <a>주문 내역</a>
-	                            </li>
-	                            <li id="destination">
-	                                <a>배송지 관리</a>
-	                            </li>
-	                            <li id="review">
-	                                <a>상품 후기</a>
-	                            </li>
-	                            <li id="inquiry">
-	                                <a>상품 문의</a>
-	                            </li>
-	                            <li id="point">
-	                                <a>적립금</a>
-	                            </li>
-	                            <li id="coupon" class="on">
-	                                <a>쿠폰</a>
-	                            </li>
-	                            <li id="myinfo">
-	                                <a>개인 정보 수정</a>
-	                            </li>
-	                        </ul>
-	                    </div>
-	                    <a href="" class="link_inquire">
-	                        <span class="emph">도움이 필요하신가요 ?</span>
-	                        1:1 문의하기
-	                    </a>
-	                </div>
-					<div id="viewOrderList" class="page_section section_coupon">
-	                    <div class="head_article">
-	                        <h2 class="tit">상품문의</h2>
-	                    </div>
-                        <div class="coupon_reg">
-                            <form action="" method="POST">
-                                <fieldset>
-                                    <legend>쿠폰 등록 폼</legend>
-                                    <div class="reg">
-                                        <input type="hidden" name="sno">
-                                        <input type="text" name="coupon_number" class="inp" placeholder="쿠폰을 입력해주세요">
-                                        <button type="submit" class="btn">쿠폰 등록</button>
-                                    </div>
-                                    <p class="notice">쿠폰에 하이픈("-")이 포함되어 있을 경우 하이픈("-")을 반드시 입력해주세요.</p>
-                                </fieldset>
-                            </form>
-                        </div>
-                        <div class="coupon_count">
-                            <span class="ico"></span>
-                            <p class="txt">
-                                쿠폰은 적용 가능한 상품이 따로 적용되어 있는 경우 해당 상품 구매 시에만 사용이 가능합니다.
-                            </p>
-                            <p class="count">
-                                <span class="tit">사용가능쿠폰</span>
-                                : 0장
-                            </p>
-                        </div>
-                        <table class="tbl tbl_type1">
-                            <caption>적립 사용 내역 상세보기</caption>
-                            <colgroup>
-                                <col style="width: auto;">
-                                <col style="width: 58px;">
-                                <col style="width: 101px;">
-                                <col style="width: 139px;">
-                                <col style="width: 101px;">
-                            </colgroup>
-                            <thead>
-                                <tr>
-                                    <th class="name">쿠폰명</th>
-                                    <th>기능</th>
-                                    <th>할인/적립</th>
-                                    <th>사용가능기간</th>
-                                    <th>사용여부</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="no_data" colspan="5">주문 쿠폰이 없습니다.</td>
-                                </tr>
-                            </tbody>
-                        </table>
-	                </div>
-	            </div>
-            </div>
-        </div>
+			<div class="top2">
+				<div class="page_article article_type2">
+					<div id="snb" class="snb_my">
+						<h2 class="tit_snb">마이브로컬리</h2>
+						<div class="inner_snb">
+							<ul class="list_menu">
+								<li id="orderlist">
+									<a>주문 내역</a>
+								</li>
+								<li id="destination">
+									<a>배송지 관리</a>
+								</li>
+								<li id="review">
+									<a>상품 후기</a>
+								</li>
+								<li id="inquiry">
+									<a>상품 문의</a>
+								</li>
+								<li id="point">
+									<a>적립금</a>
+								</li>
+								<li id="coupon">
+									<a>쿠폰</a>
+								</li>
+								<li id="myinfo" class="on">
+									<a>개인 정보 수정</a>
+								</li>
+							</ul>
+						</div>
+						<a href="" class="link_inquire">
+							<span class="emph">도움이 필요하신가요 ?</span>
+							1:1 문의하기
+						</a>
+					</div>
+					<div id="chk_password_box" class="page_section section_myinfo">
+						<div class="head_article">
+							<h2 class="tit">개인 정보 수정</h2>
+						</div>
+						<div class="type_form member_join member_pw">
+							<div class="field_pw">
+								<h3 class="tit">비밀번호 재확인</h3>
+								<p class="sub">회원님의 정보를 안전하게 보호하기 위해 비밀번호를 다시 한번 확인해주세요.</p>
+								<form action="" method="POST">
+									<table class="tbl_comm">
+										<tbody>
+											<tr class="fst">
+												<th>아이디</th>
+												<td>
+													<input type="text" value="mongsoung" class="inp_read">
+												</td>
+											</tr>
+											<tr>
+												<th>
+													비밀번호 
+													<span class="ico">
+													 *
+														<span class="screen_out">필수항목</span>
+													</span>
+												</th>
+												<td>
+													<input type="hidden" name="mode"> 
+													<input type="password" name="confirm_password" class="inp_pw">
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									<button type="submit" class="btn active pw_chk">확인</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
     </div>
     <div class="footer_wrap">
 		<jsp:include page="../../include/footer.jsp"></jsp:include>
