@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 .main img {border: 0; max-width: 100%;}
 .main a {background-color: transparent; text-decoration: none; color: inherit; cursor: pointer;}
 .main ol, .main ul {list-style-type: none;}
@@ -16,18 +18,18 @@
 
 .main .page_article {margin: 0 auto;}
 
-/* µî±Şº° Ãß°¡ÇÒ ½ºÅ¸ÀÏ ÁöÁ¤ */
-/* À£ÄÄ */
+/* ë“±ê¸‰ë³„ ì¶”ê°€í•  ìŠ¤íƒ€ì¼ ì§€ì • */
+/* ì›°ì»´ */
 .class0 {border: solid 1px rgb(123, 145, 132); background-color: #fff; color: rgb(123, 145, 132);}
-/* ÀÏ¹İ */
+/* ì¼ë°˜ */
 .class1 {border: solid 1px darkseagreen; background-color: #fff; color: darkseagreen;}
-/* ÇÁ·»Áî */
+/* í”„ë Œì¦ˆ */
 .class2 {border: solid 1px rgb(132, 240, 179); background-color: #fff; color: rgb(132, 240, 179);}
-/* ±×¸° */
+/* ê·¸ë¦° */
 .class3 {border: solid 1px rgb(101, 209, 148); background-color: #fff; color: rgb(101, 209, 148);}
-/* ¾Æ½ºÆÄ¶ó°Å½º */
+/* ì•„ìŠ¤íŒŒë¼ê±°ìŠ¤ */
 .class4 {border: solid 1px rgb(77, 173, 119); background-color: #fff; color: rgb(77, 173, 119);}
-/* ºê·ÎÄÃ¸® */
+/* ë¸Œë¡œì»¬ë¦¬ */
 .class5 {border: solid 1px seagreen; background-color: #fff; color: seagreen;}
 
 .screen_out {display: block; overflow: hidden; position: absolute; left: -9999px; width: 1px; height: 300px; font-size: 0; line-height: 0; text-align: -9999px; margin-block-start: 0.83em; margin-block-end: 0.83em; margin-inline-start: 0px; margin-inline-end: 0px;}
@@ -94,7 +96,7 @@
 
 .search_date {position: relative; z-index: 1;}
 .search_date .btn_layer {overflow: hidden; position: absolute; right: 0; top: -74px; width: 157px; height: 44px; padding: 11px 0 0 15px; border: solid 1px #ddd; font-size: 14px; color: #666; line-height: 18px; letter-spacing: -.5px;}
-.search_date .btn_layer::after {content: "¡å"; position: absolute; left: 128px; top: 10px; width: 12px; background-size: 12px 8px;}
+.search_date .btn_layer::after {content: "â–¼"; position: absolute; left: 128px; top: 10px; width: 12px; background-size: 12px 8px;}
 .search_date .btn_layer.on::after {transform: rotate(-180deg);}
 
 .search_date .layer_search {display: none; position: absolute; right: 0; top: -30px; width: 157px; border: solid 1px #dddfe1; border-top: 0;}
@@ -105,12 +107,12 @@
 
 .section_orderlist .list_order {padding-top: 10px; border-top: solid 2px #333;}
 .section_orderlist .list_order .date {padding-top: 20px; font-size: 16px; line-height: 24px; font-weight: 700; color: #666;}
-/* ÁÖ¹® ³»¿ªÀÌ ¾øÀ» ¶§ ³ªÅ¸³ª´Â ½ºÅ¸ÀÏ */
+/* ì£¼ë¬¸ ë‚´ì—­ì´ ì—†ì„ ë•Œ ë‚˜íƒ€ë‚˜ëŠ” ìŠ¤íƒ€ì¼ */
 .section_orderlist .list_order .no_data {border-bottom: solid 1px #dddfe1;}
 
 .page_article .no_data {padding: 50px 0; font-size: 13px; color: #757575; text-align: center;}
 
-/* ÁÖ¹® °Ç¼ö°¡ ÀÖÀ» ¶§ ³ªÅ¸³ª´Â ½ºÅ¸ÀÏ */
+/* ì£¼ë¬¸ ê±´ìˆ˜ê°€ ìˆì„ ë•Œ ë‚˜íƒ€ë‚˜ëŠ” ìŠ¤íƒ€ì¼ */
 .section_orderlist .list_order .order_goods {position: relative; margin-top: 10px; padding: 0 20px; border: solid 1px #dddfe1;}
 .section_orderlist .list_order .name {padding: 20px 0 13px; border-bottom: solid 1px #dddfe1;}
 .section_orderlist .list_order .name a {display: block; overflow: hidden; background: url("../img/icon/ico_arrow_10x15.png") no-repeat 100% 1px; font-size: 16px; line-height: 24px; font-weight: 700; color: #000; cursor: pointer;}
@@ -128,7 +130,7 @@
 .section_orderlist .list_order .inner_status {display: table-cell; vertical-align: middle;}
 .section_orderlist .list_order .order_status .link {display: block; width: 100px; height: 34px; border: solid 1px seagreen; background-color: #fff; font-size: 12px; color: seagreen; line-height: 32px; text-align: center; cursor: pointer;}
 
-/* ¹è¼ÛÁö °ü¸® */
+/* ë°°ì†¡ì§€ ê´€ë¦¬ */
 .section_destination .new_address {position: relative;}
 .section_destination .new_address .btn {position: absolute; right: 3px; bottom: 7px; border: 0 none; background-color: #fff; font-weight: 700; font-size: 16px; color: #333; line-height: 24px; letter-spacing: -0.5px; text-align: right;}
 .section_destination button {outline: none; text-transform: none; overflow: visible; border-radius: 0; font: inherit; margin: 0; padding: 0; text-rendering: auto; text-indent: 0px; display: inline-block; align-items: flex-start; max-width: 100%; cursor: pointer;}
@@ -176,7 +178,7 @@
 .section_destination .tbl_type1 .modify {width: 24px; height: 24px; border: 0 none; background: url("../img/icon/ico_modify.png") no-repeat 50% 50%; font-size: 0; line-height: 0;}
 
 
-/* Àû¸³±İ */
+/* ì ë¦½ê¸ˆ */
 .page_article caption, .page_article legend {display: none;}
 .section_point colgroup {display: table-column-group;}
 .section_point table {border-collapse: collapse; border-spacing: 0; text-indent: initial;}
@@ -204,7 +206,7 @@
 .section_point tr:first-child td {border-top: solid 2px #ddd;}
 .page_article .tbl_type1 tr:first-child td {border-top: solid 1px #333;}
 
-/* »óÇ° ÈÄ±â */
+/* ìƒí’ˆ í›„ê¸° */
 .section_review p {word-break: break-all;}
 .section_review .review_notice {font-size: 14px; color: #999; line-height: 22px; letter-spacing: -.3px;}
 .section_review .review_notice b {font-weight: 700;}
@@ -219,7 +221,7 @@
 .section_review .list_after li.no_data, .section_review .list_before .no_data {padding: 50px 0; border: 0;}
 .section_review .after_view {display: none;}
 
-/* »óÇ° ¹®ÀÇ */
+/* ìƒí’ˆ ë¬¸ì˜ */
 .section_review .head_article {padding-bottom: 20px;}
 
 .board-container {height: 100%;}
@@ -243,7 +245,7 @@
 .board-item-container .inquiry-notice-list > li.inquiry-empty {font-size: 16px; font-weight: 500; counter-reset: #333; padding: 117px 0; text-align: center; cursor: default;}
 .board-inquiry-area {position: relative;}
 
-/* ÄíÆù */
+/* ì¿ í° */
 .page_article fieldset {display: block; padding: 0; margin: 0; border: 0;}
 .page_article caption, .page_article legend {display: none;}
 .section_coupon .coupon_reg {padding: 19px 0 14px 29px; border: solid 1px #ddd;}
@@ -266,7 +268,7 @@
 .section_coupon colgroup {display: table-column-group;}
 .section_coupon thead {display: table-header-group; vertical-align: middle; border-color: inherit;}
 
-/* °³ÀÎÁ¤º¸ ¼öÁ¤ */
+/* ê°œì¸ì •ë³´ ìˆ˜ì • */
 .section_myinfo [type=submit] {border-radius: 0;}
 .field_pw .tit {color: rgb(68, 68, 68);}
 
@@ -298,7 +300,7 @@
 
 .section_myinfo input:focus {border: solid 1px #666;}
 
-/* -- ºñ¹Ğ¹øÈ£ ÀÏÄ¡½Ã °³ÀÎÁ¤º¸ ¼öÁ¤È­¸é */
+/* -- ë¹„ë°€ë²ˆí˜¸ ì¼ì¹˜ì‹œ ê°œì¸ì •ë³´ ìˆ˜ì •í™”ë©´ */
 .member_mod {width: 820px;}
 .member_mod table {border-collapse: collapse; border-spacing: 0; border-color: grey;}
 .member_mod tbody {display: table-row-group; vertical-align: middle; border-color: inherit;}
