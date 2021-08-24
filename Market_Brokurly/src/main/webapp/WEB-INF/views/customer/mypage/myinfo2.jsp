@@ -169,13 +169,13 @@
 												</span>
 											</th>
 											<td>
-												<input type="text" value="yerim7386" class="inp_read">
+												<input type="text" value="${customer.customer_id }" class="inp_read" readonly="readonly">
 											</td>
 										</tr>
 										<tr>
 											<th>현재 비밀번호</th>
 											<td>
-												<input type="password" class="pw_input">
+												<input type="password" class="pw_input" id="now_customer_pw" />
 												<p class="txt_guide square pw_guide">
 													<span class="txt txt_case4">
 														현재 비밀번호를 확인해주세요
@@ -186,18 +186,18 @@
 										<tr class="member_pwd">
 											<th>새 비밀번호</th>
 											<td>
-												<input type="password" class="reg_pw new_pw_input">
+												<input type="password" class="reg_pw new_pw_input" id="update_pw">
 												<p class="txt_guide square new_pw_guide">
-													<span class="txt txt_case4">
+													<span class="txt" id="pwcheck_now">
 														현재 비밀번호와 다르게 입력
 													</span>
-													<span class="txt txt_case1">
-														10자 이상 입력
+													<span class="txt" id="pwcheck_length">
+														8자 이상 입력
 													</span>
-													<span class="txt txt_case2">
+													<span class="txt" id="pwcheck_language">
 														영문/숫자/특수문자(공백 제외)만 허용하며, 2개 이상 조합
 													</span>
-													<span class="txt txt_case3">
+													<span class="txt" id="pwcheck_num">
 														동일한 숫자 3개 이상 연속 사용 불가
 													</span>
 												</p>
@@ -206,9 +206,9 @@
 										<tr class="member_pwd">
 											<th>새 비밀번호 확인</th>
 											<td>
-												<input type="password" class="confirm_pw chk_new_pw_input">
+												<input type="password" class="confirm_pw chk_new_pw_input" id="chk_update_pw">
 												<p class="txt_guide square chk_new_pw_guide">
-													<span class="txt txt_case1">
+													<span class="txt" id="confirm_pw">
 														동일한 비밀번호를 입력해주세요.
 													</span>
 												</p>
@@ -223,7 +223,7 @@
 												</span>
 											</th>
 											<td>
-												<input type="text" value="서예림" placeholder="이름을 입력해주세요">
+												<input type="text" value="${customer.customer_name }" placeholder="이름을 입력해주세요">
 											</td>
 										</tr>
 										<tr>
@@ -235,7 +235,7 @@
 												</span>
 											</th>
 											<td>
-												<input type="text" value="yerim7386@naver.com" size="30" placeholder="예: marketbrokurly@brokurly.com">
+												<input type="text" value="${customer.customer_email }" size="30" placeholder="예: marketbrokurly@brokurly.com">
 												<a class="btn default">중복확인</a>
 											</td>
 										</tr>
@@ -249,7 +249,7 @@
 											</th>
 											<td>
 												<div class="phone_num">
-													<input type="text" value="01011111111" class="inp" placeholder="숫자만 입력해주세요">
+													<input type="text" value="${customer.customer_tel }" class="inp" placeholder="숫자만 입력해주세요">
 													<button class="btn default other_chk_btn" type="button">다른번호 인증</button>
 												</div>
 												<div class="code_num" style="display: none;">
@@ -393,7 +393,7 @@
 								</table>
 								<div class="form_footer">
 									<a class="btn default">탈퇴하기</a>
-									<button type="submit" class="btn active">회원정보수정</button>
+									<a type="button" class="btn active" id="update_btn">회원정보수정</a>
 								</div>
 							</form>
 						</div>

@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+* {user-select: none;}
 .main img {border: 0; max-width: 100%;}
 .main a {background-color: transparent; text-decoration: none; color: inherit; cursor: pointer;}
 .main ol, .main ul {list-style-type: none;}

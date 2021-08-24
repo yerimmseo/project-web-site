@@ -160,13 +160,13 @@
 							<div class="field_pw">
 								<h3 class="tit">비밀번호 재확인</h3>
 								<p class="sub">회원님의 정보를 안전하게 보호하기 위해 비밀번호를 다시 한번 확인해주세요.</p>
-								<form action="" method="POST">
+								<form method="GET">
 									<table class="tbl_comm">
 										<tbody>
 											<tr class="fst">
 												<th>아이디</th>
 												<td>
-													<input type="text" value="mongsoung" class="inp_read">
+													<input type="text" value="${customer_id }" class="inp_read" id="customer_id" readonly="readonly" />
 												</td>
 											</tr>
 											<tr>
@@ -178,13 +178,12 @@
 													</span>
 												</th>
 												<td>
-													<input type="hidden" name="mode"> 
-													<input type="password" name="confirm_password" class="inp_pw">
+													<input type="password" name="confirm_password" class="inp_pw" id="customer_pw" />
 												</td>
 											</tr>
 										</tbody>
 									</table>
-									<button type="submit" class="btn active pw_chk">확인</button>
+									<a type="button" class="btn active pw_chk" id="pw_chk_btn">확인</a>
 								</form>
 							</div>
 						</div>

@@ -38,8 +38,6 @@ $(function() {
 });
 
 $(function() {
-    var pw_input = $('.pw_input');
-    var pw_guide = $('.pw_guide');
     var new_pw_input = $('.new_pw_input');
     var new_pw_guide = $('.new_pw_guide');
     var chk_new_pw_input = $('.chk_new_pw_input');
@@ -54,10 +52,6 @@ $(function() {
 	var bg_dim = $('.bg_dim');
 	var btn_ok = $('.btn_ok');
 	var btn_close = $('.btn_close');
-
-    pw_input.click(() => {
-        pw_guide.css('display', 'block');
-    });
 
     new_pw_input.click(() => {
         new_pw_guide.css('display', 'block');
