@@ -21,7 +21,7 @@ window.onload = function navi_fix() {
     }
 }
 
-/* ----------------------------- ╟М╟╢╪╬ем гою╖╦ч╢╨ е╛╦╞╫ц Ё╙е╦Ё╡ ---------------------------- */
+/* ----------------------------- ЙЁ═Й╟²Л└╪М└╟ М∙≤Л°└К╘■К┴╢ М│╢К╕╜Л▀° К┌≤М┐─К┌╗ ---------------------------- */
 check = true;
 function Mclick_service() {
     const service_menu = document.querySelector('#service_menu');

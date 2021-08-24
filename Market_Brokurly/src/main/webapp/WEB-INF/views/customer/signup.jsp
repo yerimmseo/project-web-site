@@ -446,8 +446,8 @@
 		<jsp:include page="../include/footer.jsp"></jsp:include>
 	</div>
 
-    <script type="text/javascript" src="${path }/resources/js/style/signup.js" charset="UTF-8" ></script>
-    <script type="text/javascript" src="${path }/resources/js/ajax/signup_ajax.js" charset="UTF-8" ></script>
+    <script type="text/javascript" src="${path }/resources/js/style/signup.js" ></script>
+    <script type="text/javascript" src="${path }/resources/js/ajax/signup_ax.js" ></script>
 	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 </body>
 </html>

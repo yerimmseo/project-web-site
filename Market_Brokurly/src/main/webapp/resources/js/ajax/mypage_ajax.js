@@ -2,7 +2,7 @@
  * 
  */
 
-$(document).ready(function(e) {
+ $(document).ready(function(e) {
 	
 	$('#orderlist').click(() => {
 		$('#orderlistForm').submit();

@@ -2,7 +2,7 @@
  * 
  */
 
-$(document).ready(function(e) {
+ $(document).ready(function(e) {
 	var id_check_bool = false;
 	var email_check_bool = false;
 	var tel_check_bool = false;
