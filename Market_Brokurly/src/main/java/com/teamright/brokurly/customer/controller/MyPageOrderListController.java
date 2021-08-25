@@ -8,7 +8,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.teamright.brokurly.customer.mapper.CustomerInfoMapper;
-import com.teamright.brokurly.customer.mapper.OrderListMapper;
+import com.teamright.brokurly.customer.mapper.MyPageOrderListMapper;
+import com.teamright.brokurly.customer.service.MyPageOrderListService;
 import com.teamright.brokurly.model.CustomerVO;
 
 @Controller
@@ -18,7 +19,9 @@ public class MyPageOrderListController {
 	@Autowired
 	CustomerInfoMapper customerInfoMapper;
 	@Autowired
-	OrderListMapper orderListMapper;
+	MyPageOrderListMapper orderListMapper;
+	@Autowired
+	MyPageOrderListService orderListService;
 	
 	@RequestMapping("/")
 	public void myPageHome(Model model) {}
@@ -31,6 +34,8 @@ public class MyPageOrderListController {
 		
 		model.addAttribute("customer_info", customerInfoMapper.getCustomerInfo(customer_id));
 		model.addAttribute("coupon_count", customerInfoMapper.getCouponCount(customer_id));
-		model.addAttribute("order_list", orderListMapper.getOrder(customer_id));
+		model.addAttribute("total_price", orderListMapper.getTotalPrice(customer_id)); // 주문번호와 비교하여 총합계 출력
+		model.addAttribute("deli_status", orderListMapper.getDeliStatus(customer_id)); // 주문번호와 비교하여 배송 상태 출력
+		model.addAttribute("order_list", orderListService.getOrderList(customer_id));
 	}
 }

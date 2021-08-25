@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.teamright.brokurly.customer.mapper.MyPageOrderListMapper">
+	<!-- 대표 주문 내역 조회 -->
+	<select id="getOrder" resultType="com.teamright.brokurly.model.OrderVO">
+		SELECT * FROM order_table WHERE customer_id=#{customer_id}
+	</select>
+	<!-- 주문번호별 총 금액 조회 -->
+	<select id="getTotalPrice" resultType="com.teamright.brokurly.model.DetailOrderVO">
+		SELECT order_id, sum(product_price) as total_price FROM order_table 
+											INNER JOIN detailorder_table USING (order_id) 
+											INNER JOIN product_table USING (product_id) 
+											WHERE customer_id=#{customer_id} GROUP BY order_id
+	</select>
+	<!-- 고객이 가지고 있는 모든 주문내역 조회 -->
+	<select id="getOrderList" resultType="com.teamright.brokurly.model.DetailOrderVO">
+		SELECT * FROM order_table INNER JOIN detailorder_table USING (order_id) WHERE customer_id=#{customer_id}
+	</select>
+	<!-- 입력받은 고객 아이디별 주문내역 조회: 주문번호 당 상품개수 조회 -->
+	<resultMap type="com.teamright.brokurly.model.DetailOrderVO" id="getOrderIdAndCount">
+		<result property="order_id" column="order_id" />
+		<result property="count" column="count" />
+	</resultMap>
+	<select id="getOrderIdAndCount" resultType="com.teamright.brokurly.model.DetailOrderVO" resultMap="getOrderIdAndCount">
+		SELECT order_id, count(*) as count FROM order_table INNER JOIN detailorder_table USING (order_id) 
+								  WHERE customer_id=#{customer_id} GROUP BY order_id
+	</select>
+	<!-- 주문번호별 상품 정보 목록 받기 -->
+	<select id="getListByOrder" resultType="com.teamright.brokurly.model.ProductVO">
+		SELECT * FROM order_table INNER JOIN detailorder_table USING (order_id) 
+								  INNER JOIN product_table USING (product_id)
+								  INNER JOIN subcategory_table USING (subcate_id)
+								  WHERE customer_id=#{customer_id}
+	</select>
+	<!-- 주문번호별 배송상태 조회 -->
+	<select id="getDeliStatus" resultType="com.teamright.brokurly.model.DeliveryVO">
+		SELECT order_id, delivery_status FROM order_table INNER JOIN delivery_table USING (order_id) 
+										 WHERE customer_id=#{customer_id}
+	</select>
+</mapper>

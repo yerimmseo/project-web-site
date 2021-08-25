@@ -179,34 +179,48 @@
 	                        </ul>
 	                    </div>
 	                    <ul class="list_order">
-	                        <!-- 최근 주문내역 없을 때 클래스 추가 -->
-	                        <!-- <li class="no_data">주문내역이 없습니다.</li>  -->
 	                        <c:forEach var="i" begin="0" end="${order_list.size() - 1 }">
+	                        <!-- 최근 주문내역 없을 때 출력되는 li -->
+	                        <c:if test="${order_list.size() == 0}">
+	                        <li class="no_data">주문내역이 없습니다.</li>
+	                        </c:if>
 	                        <li>
 	                            <div class="date">
-	                            	<fmt:formatDate var="orderDate" value="${order_list.get(i).order_time }" pattern="yyyy.MM.dd (HH시 mm분)"/>
+	                            	<fmt:formatDate var="orderDate" value="${order_list.get(i).get(0).order_time }" pattern="yyyy.MM.dd (HH시 mm분)"/>
 	                            	${orderDate }
 	                            </div>
 	                            <div class="order_goods">
 	                                <div class="name">
-	                                    <a>[신규회원 이벤트] 삼다수 (500ml X 20 PET) 외 1건</a>
+	                                    <a>${order_list.get(i).get(0).product_name } 외 ${order_list.get(i).size() - 1 }건</a>
 	                                </div>
 	                                <div class="order_info">
 	                                    <div class="thumb">
-	                                        <img src="${path }/resources/img/product/maincategory10/12.jpg" alt="해당 주문 대표 상품 이미지">
+	                                        <img src="${path }/resources/img/product/maincategory${order_list.get(i).get(0).maincate_id }/${order_list.get(i).get(0).product_id }.jpg" alt="해당 주문 대표 상품 이미지">
 	                                    </div>
 	                                    <div class="desc">
 	                                        <dl>
 	                                            <dt>주문번호</dt>
-	                                            <dd>1616166</dd>
+	                                            <dd>${order_list.get(i).get(0).order_id }</dd>
 	                                        </dl>
 	                                        <dl>
 	                                            <dt>결제금액</dt>
-	                                            <dd>10,820원</dd>
+	                                            <dd>
+	                                            <c:forEach var="j" begin="0" end="${total_price.size() - 1 }">
+	                                            	<c:if test="${order_list.get(i).get(0).order_id == total_price.get(j).order_id }">
+	                                            	<fmt:formatNumber value="${total_price.get(j).total_price }" pattern="#,###,###" />원	
+	                                            	</c:if>
+	                                            </c:forEach>
+	                                            </dd>
 	                                        </dl>
 	                                        <dl>
 	                                            <dt>주문상태</dt>
-	                                            <dd class="status end">배송완료</dd>
+	                                            <dd class="status">
+	                                            <c:forEach var="k" begin="0" end="${deli_status.size() - 1 }">
+	                                            	<c:if test="${order_list.get(i).get(0).order_id == deli_status.get(k).order_id }">
+	                                            	${deli_status.get(k).delivery_status }
+	                                            	</c:if>
+	                                            </c:forEach>
+	                                            </dd>
 	                                        </dl>
 	                                    </div>
 	                                </div>

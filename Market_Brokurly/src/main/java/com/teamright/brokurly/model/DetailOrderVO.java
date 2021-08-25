@@ -18,4 +18,5 @@ public class DetailOrderVO {
 	private Date order_time;
 	private Integer product_id;
 	private Integer count;
+	private Integer total_price;
 }

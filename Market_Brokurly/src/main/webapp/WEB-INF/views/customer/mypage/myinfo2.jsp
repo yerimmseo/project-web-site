@@ -409,5 +409,6 @@
 	
 	<script src="${path }/resources/js/style/mypage.js"></script>
 	<script src="${path }/resources/js/ajax/mypage_ajax.js"></script>
+	<script src="${path }/resources/js/ajax/myinfo2_ajax.js"></script>
 </body>
 </html>

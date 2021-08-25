@@ -35,10 +35,13 @@ public class MyPageController {
 	}
 	
 	@RequestMapping("/destination")
-	public void destination(Model model) {
-		CustomerVO customer = customerMapper.getCustomerInfo("mongsoung");
+	public void destination(HttpSession session, Model model) {
+		session.setAttribute("customer_id", "mongsoung1");
 		
-		model.addAttribute("customer", customer);
+		String customer_id = (String)session.getAttribute("customer_id");
+		
+		model.addAttribute("customer_info", customerMapper.getCustomerInfo(customer_id));
+		model.addAttribute("coupon_count", customerMapper.getCouponCount(customer_id));
 	}
 	
 	@RequestMapping("/point")

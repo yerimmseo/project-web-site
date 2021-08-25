@@ -1,5 +1,8 @@
 package com.teamright.brokurly.model;
 
+import java.util.Date;
+
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Component;
 
 import lombok.AllArgsConstructor;
@@ -24,4 +27,11 @@ public class ProductVO {
 	private String product_origin;
 	private String product_unit;
 	private Integer event_id;
+	private Integer order_id;
+	private String customer_id;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private Date order_time;
+	private Integer order_count;
+	private Integer maincate_id;
+	private String subcate_name;
 }

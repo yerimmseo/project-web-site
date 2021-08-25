@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <c:set var="path" value="${pageContext.request.contextPath }" />
-<c:set var="grade" value="${customer.customer_grade }"/>
+<c:set var="grade" value="${customer_info.customer_grade }"/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,7 +42,7 @@
 	                                	<c:if test="${grade eq 'NORMAL' }">일반</c:if>
 	                                	<c:if test="${grade eq 'WELCOME' }">웰컴</c:if>
 	                                </div>
-	                                <strong class="name">${customer.customer_name }님</strong>
+	                                <strong class="name">${customer_info.customer_name }님</strong>
 	                            </div>
 	                            <div class="grade_benefit">
 	                                <!---->
@@ -80,7 +80,7 @@
 	                                    </div>
 	                                    <div class="spacer"></div>
 	                                    <p class="info">
-	                                    	<fmt:formatNumber value="${customer.customer_mileage }" pattern="#,###,###" /> 원
+	                                    	<fmt:formatNumber value="${customer_info.customer_mileage }" pattern="#,###,###" /> 원
 	                                        <span class="expire">소멸 예정 0원</span>
 	                                    </p>
 	                                </a>
@@ -90,7 +90,7 @@
 	                                        <img src="${path }/resources/img/icon/ico_arrow_right.png" alt="" class="arrow_right">
 	                                    </div>
 	                                    <div class="spacer"></div>
-	                                    <p class="info">${customer.customer_coupon } 개</p>
+	                                    <p class="info">${coupon_count } 개</p>
 	                                </a>
 	                                <a href="" class="link_wrap">
 	                                    <div class="link_title">
