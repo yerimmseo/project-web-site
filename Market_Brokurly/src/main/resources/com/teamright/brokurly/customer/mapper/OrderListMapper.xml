@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.teamright.brokurly.customer.mapper.OrderListMapper">
+	<!-- 대표 주문 내역 조회 -->
+	<select id="getOrder" resultType="com.teamright.brokurly.model.OrderVO">
+		SELECT * FROM order_table WHERE customer_id=#{customer_id}
+	</select>
+	<!-- 고객이 가지고 있는 모든 주문내역 조회 -->
+	<select id="getOrderList" resultType="com.teamright.brokurly.model.DetailOrderVO">
+		SELECT * FROM order_table INNER JOIN detailorder_table USING (order_id) WHERE customer_id=#{customer_id}
+	</select>
+	<!-- 입력받은 고객 아이디별 주문내역 조회: 주문번호 당 상품개수 조회 -->
+	<resultMap type="com.teamright.brokurly.model.DetailOrderVO" id="getOrderIdAndCount">
+		<result property="order_id" column="order_id" />
+		<result property="count" column="count" />
+	</resultMap>
+	<select id="getOrderIdAndCount" resultType="com.teamright.brokurly.model.DetailOrderVO" resultMap="getOrderIdAndCount">
+		SELECT order_id, count(*) as count, FROM order_table INNER JOIN detailorder_table USING (order_id) 
+								  WHERE customer_id=#{customer_id} GROUP BY order_id
+	</select>
+</mapper>

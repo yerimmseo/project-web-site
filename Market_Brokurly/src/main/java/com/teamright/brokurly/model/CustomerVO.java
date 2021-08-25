@@ -34,7 +34,6 @@ public class CustomerVO {
     private Integer customer_mileage;
     private String customer_grade;
     private Integer customer_totalpay;
-    private Integer customer_coupon;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date customer_joindate;
     @NonNull
@@ -42,4 +41,5 @@ public class CustomerVO {
     private String customer_year;
     private String customer_month;
     private String customer_day;
+    private Integer count;
 }

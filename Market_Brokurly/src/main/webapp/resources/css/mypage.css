@@ -296,8 +296,9 @@
 .member_pw th {width: 259px; padding-left: 120px;}
 .member_join th .ico {color: #ee6a7b;}
 .member_pw .active {display: block; width: 240px; height: 56px; margin: 40px auto 0; font-size: 16px; line-height: 54px;}
+.member_pw a {text-align: center;}
 
-.type_form .btn.active {border: solid 1px seagreen; border-radius: 3px; background-color: seagreen; color: #fff;}
+.type_form .btn.active {border: solid 1px seagreen; border-radius: 3px; background-color: seagreen; color: #fff; text-align: center;}
 
 .section_myinfo input:focus {border: solid 1px #666;}
 

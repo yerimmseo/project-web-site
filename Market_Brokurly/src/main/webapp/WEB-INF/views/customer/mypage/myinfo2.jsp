@@ -187,6 +187,7 @@
 											<th>새 비밀번호</th>
 											<td>
 												<input type="password" class="reg_pw new_pw_input" id="update_pw">
+												<input type="hidden" class="now_pw" value="${customer_pw }">
 												<p class="txt_guide square new_pw_guide">
 													<span class="txt" id="pwcheck_now">
 														현재 비밀번호와 다르게 입력
@@ -223,7 +224,7 @@
 												</span>
 											</th>
 											<td>
-												<input type="text" value="${customer.customer_name }" placeholder="이름을 입력해주세요">
+												<input type="text" value="${customer.customer_name }" id="customer_name" placeholder="이름을 입력해주세요">
 											</td>
 										</tr>
 										<tr>
@@ -235,8 +236,8 @@
 												</span>
 											</th>
 											<td>
-												<input type="text" value="${customer.customer_email }" size="30" placeholder="예: marketbrokurly@brokurly.com">
-												<a class="btn default">중복확인</a>
+												<input type="text" value="${customer.customer_email }" id="customer_email" size="30" placeholder="예: marketbrokurly@brokurly.com">
+												<a class="btn default" id="email_chk_btn">중복확인</a>
 											</td>
 										</tr>
 										<tr class="field_phone">
@@ -258,7 +259,7 @@
 													<p class="count_down"></p>
 												</div>
 												<p class="txt_guide code_num_guide">
-													<span class="txt txt_case1 receive">
+													<span class="txt receive">
 														인증번호가 오지 않는다면, 통신사 스팸 차단 서비스 혹은 휴대폰 번호
 														차단 여부를 확인해주세요. (마켓브로컬리 1611-1111)
 													</span>

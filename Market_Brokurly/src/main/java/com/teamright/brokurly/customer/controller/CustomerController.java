@@ -7,14 +7,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.teamright.brokurly.customer.mapper.MyPageMapper;
+import com.teamright.brokurly.customer.mapper.CustomerInfoMapper;
 import com.teamright.brokurly.model.CustomerVO;
 
 @Controller
 @RequestMapping("/customer")
 public class CustomerController {
 	@Autowired
-	MyPageMapper customerMapper;
+	CustomerInfoMapper customerMapper;
 
 	@GetMapping("/signup")
 	public void signup() {}

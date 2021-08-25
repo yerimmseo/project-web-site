@@ -2,6 +2,7 @@ package com.teamright.brokurly.customer.mapper;
 
 import java.util.List;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,23 +16,31 @@ import lombok.extern.log4j.Log4j;
 @Log4j
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("file:src/main/webapp/WEB-INF/spring/root-context.xml")
-public class TestCustomerMapper {
+public class TestCustomerInfoMapper {
 	
 	@Autowired
-	MyPageMapper customerMapper;
+	CustomerInfoMapper customerInfoMapper;
 	
+	@Ignore
 	@Test
 	public void getCustomerInfoTest() {
-		List<CustomerVO> customerList = customerMapper.getAllCustomerList();
+		List<CustomerVO> customerList = customerInfoMapper.getAllCustomerList();
 		
 		for (CustomerVO customer : customerList) {
 			log.info(customer);
 		}
 	}
 	
+	@Ignore
 	@Test
 	public void getCustomerInfo() {
-		CustomerVO customer = customerMapper.getCustomerInfo("mongsoung");
+		CustomerVO customer = customerInfoMapper.getCustomerInfo("mongsoung");
 		log.info(customer);
+	}
+
+	@Test
+	public void getCouponCountTest() {
+		int couponCount = customerInfoMapper.getCouponCount("mongsoung1");
+		log.info(couponCount);
 	}
 }
