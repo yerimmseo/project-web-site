@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.teamright.brokurly.model.AddressVO;
 import com.teamright.brokurly.model.CustomerVO;
 
 import lombok.extern.log4j.Log4j;
@@ -38,9 +39,16 @@ public class TestCustomerInfoMapper {
 		log.info(customer);
 	}
 
+	@Ignore
 	@Test
 	public void getCouponCountTest() {
 		int couponCount = customerInfoMapper.getCouponCount("mongsoung1");
 		log.info(couponCount);
+	}
+	
+	@Test
+	public void getAddressListTest() {
+		List<AddressVO> address = customerInfoMapper.getAddressList("mongsoung1");
+		log.info(address);
 	}
 }

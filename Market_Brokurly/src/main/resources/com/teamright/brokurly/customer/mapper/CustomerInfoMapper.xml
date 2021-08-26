@@ -16,4 +16,7 @@
 		SELECT count(*) as count FROM customer_coupon_table INNER JOIN coupon_table USING (coupon_id) 
 						WHERE customer_id=#{customer_id} GROUP BY customer_id
 	</select>
+	<select id="getAddressList" resultType="com.teamright.brokurly.model.AddressVO">
+		SELECT * FROM address_table WHERE customer_id=#{customer_id}
+	</select>
 </mapper>

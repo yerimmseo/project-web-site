@@ -14,6 +14,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
+	${main_addr }
 	<form action="orderlist" id="orderlistForm"></form>
 	<form action="destination" id="destinationForm"></form>
 	<form action="review" id="reviewForm"></form>
@@ -21,7 +22,7 @@
 	<form action="point" id="pointForm"></form>
 	<form action="coupon" id="couponForm"></form>
 	<form action="myinfo" id="myinfoForm"></form>
-	
+	<form action="popup" id="popupForm"></form>
 	<div class="header">
 		<jsp:include page="../../include/header.jsp"></jsp:include>
 	</div>
@@ -178,21 +179,30 @@
                                     </tr>
                                 </thead>
                                 <tbody id="">
-                                    <!-- 테이블 바디 안에서 반복문 돌리기.
-                                    체크박스 클릭 시 기본배송지로 지정됨 -->
+                                    <!-- 테이블 바디 안에서 반복문 돌리기. 체크박스 클릭 시 기본배송지로 지정됨 -->
+                                    <c:forEach var="i" begin="0" end="${address_list.size() - 1 }">
                                     <tr>
                                         <td class="select type_radio">
                                             <label class="skin_checkbox">
+                                            	<c:if test="${address_list.get(i).address_check == 1 }">
                                                 <input type="radio" name="addrNo" checked>
+                                            	</c:if>
+                                            	<c:if test="${address_list.get(i).address_check == 0 }">
+                                            	<input type="radio" name="addrNo">
+                                            	</c:if>
                                                 <span class="ico"></span>
                                                 <span class="screen_out">선택하기</span>
                                             </label>
                                         </td>
                                         <td class="address">
+                                        	<c:if test="${address_list.get(i).address_check == 1 }">
                                             <span class="badge_default">기본 배송지</span>
+                                        	</c:if>
                                             <p class="addr">
-                                                경기 수원시 영통구 대학1로 14
-                                                안동빌 202호
+                                            	<input type="hidden" id="main_addr" name="main_addr" value="">
+                                            	<input type="hidden" id="sub_addr" name="sub_addr">
+                                            	<span>${address_list.get(i).address_main }</span>
+                                            	<span>${address_list.get(i).address_detail }</span>
                                             </p>
                                         </td>
                                         <td class="name"></td>
@@ -204,30 +214,7 @@
                                             <button type="button" class="ico modify">수정하기</button>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td class="select type_radio">
-                                            <label class="skin_checkbox">
-                                                <input type="radio" name="addrNo">
-                                                <span class="ico"></span>
-                                                <span class="screen_out">선택하기</span>
-                                            </label>
-                                        </td>
-                                        <td class="address">
-                                            <span class="badge_default" style="display: none;">기본 배송지</span>
-                                            <p class="addr">
-                                                경기 수원시 영통구 대학1로 14
-                                                안동빌 202호
-                                            </p>
-                                        </td>
-                                        <td class="name"></td>
-                                        <td class="phone"></td>
-                                        <td>
-                                            <span class="delivery star">샛별배송</span>
-                                        </td>
-                                        <td>
-                                            <button type="button" class="ico modify">수정하기</button>
-                                        </td>
-                                    </tr>
+                                    </c:forEach>
                                 </tbody>
                             </table>
                         </div>
@@ -242,5 +229,12 @@
 	
 	<script src="${path }/resources/js/style/mypage.js"></script>
 	<script src="${path }/resources/js/ajax/mypage_ajax.js"></script>
+	<script src="${path }/resources/js/ajax/destination_ajax.js"></script>
+	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+	<script type="text/javascript">
+		/* if ($('.main_addr').val() != '') {
+			window.open("/brokurly/customer/mypage/destination_popup", "새 배송지 입력", "width=500, height=550");
+		} */
+	</script>
 </body>
 </html>

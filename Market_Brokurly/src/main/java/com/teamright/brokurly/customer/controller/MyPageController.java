@@ -34,16 +34,6 @@ public class MyPageController {
 		model.addAttribute("customer", customer);
 	}
 	
-	@RequestMapping("/destination")
-	public void destination(HttpSession session, Model model) {
-		session.setAttribute("customer_id", "mongsoung1");
-		
-		String customer_id = (String)session.getAttribute("customer_id");
-		
-		model.addAttribute("customer_info", customerMapper.getCustomerInfo(customer_id));
-		model.addAttribute("coupon_count", customerMapper.getCouponCount(customer_id));
-	}
-	
 	@RequestMapping("/point")
 	public void point(Model model) {
 		CustomerVO customer = customerMapper.getCustomerInfo("mongsoung");
