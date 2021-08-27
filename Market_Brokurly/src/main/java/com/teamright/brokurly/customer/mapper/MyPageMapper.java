@@ -16,6 +16,8 @@ public interface MyPageMapper {
 	public List<ProductVO> getListByOrder(String customer_id);
 	public List<DeliveryVO> getDeliStatus(String customer_id);
 	public void insertNewAddr(AddressVO addressVo); // 새 배송지 등록
-	public void updateAddrChk(String customer_id);  // 새 배송지 추가시 기본배송지를 체크하면, 등록되어있는 배송지 모두 0으로 변경
-	public void updatePopup1(AddressVO addressVo);  // 기본배송지에서의 배송지 정보 업데이트
+	public void updateAddrChk(String customer_id);  // 새 배송지 추가시 기본 배송지를 체크하면, 등록되어있는 배송지 모두 0으로 변경
+	public void updatePopup1(AddressVO addressVo);  // 기본 배송지 팝업에서의 정보 업데이트
+	public void updatePopup0(AddressVO addressVo);	// 나머지 배송지 팝업에서의 정보 업데이트
+	public void deletePopup0(AddressVO addressVo);
 }

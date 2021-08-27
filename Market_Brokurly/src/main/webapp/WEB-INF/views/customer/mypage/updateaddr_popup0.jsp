@@ -20,27 +20,30 @@
             <div id="inputForm">
                 <div class="modify only_pc">
                     <div class="field">
-                        <div class="address">서울 강남구</div>
-                        <input type="text" placeholder="나머지 주소를 입력해주세요">
+                        <div class="address">${address_main }</div>
+                        <input type="hidden" id="address_main" value="${address_main }" />
+                        <input type="text" id="address_detail" placeholder="나머지 주소를 입력해주세요" value="${address_detail }">
                     </div>
                     <div class="field">
                         <label class="label_block">받으실 분</label>
-                        <input type="text" placeholder="이름을 입력해주세요">
+                        <input type="text" id="receive_customer" placeholder="이름을 입력해주세요" value="${receive_customer }">
                     </div>
                     <div class="field">
                         <label class="label_block">휴대폰</label>
-                        <input type="text" placeholder="번호를 입력해주세요">
+                        <input type="text" id="receive_tel" placeholder="번호를 입력해주세요" value="${receive_tel }">
                     </div>
                     <label class="label_default">
-                        <input type="checkbox">
+                        <input type="checkbox" id="default_chk">
                         <span class="ico"></span>
                         기본 배송지로 저장
                     </label>
-                    <button type="button" class="btn active">저장</button>
-                    <button type="button" class="btn normal">삭제</button>
+                    <button type="button" class="btn active" id="popup0_save_btn">저장</button>
+                    <button type="button" class="btn normal" id="popup0_del_btn">삭제</button>
                 </div>
             </div>
         </div>
     </div>
+    
+    <script type="text/javascript" src="${path }/resources/js/ajax/destination_ajax.js"></script>
 </body>
 </html>

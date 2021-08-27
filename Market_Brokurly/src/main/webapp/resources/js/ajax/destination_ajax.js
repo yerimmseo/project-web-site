@@ -5,6 +5,8 @@ $(function() {
 	var receive_tel_input = $('#receive_tel');
 	var address_detail_input = $('#address_detail');
 	var popup1_btn = $('#popup1_btn');
+	var popup0_save_btn = $('#popup0_save_btn');
+	var popup0_del_btn = $('#popup0_del_btn');
 	
 	var replaceNotInt = /[^0-9]/gi;
 	var telNumberCheck = /^01([0|1|6|7|8|9])-?([0-9]{3,4})-?([0-9]{4})$/;
@@ -68,7 +70,7 @@ $(function() {
 		var default_chk = $('#default_chk').is(':checked');
 		
 		if (address_detail === '') {
-			alert('세부 배송지를 입력해주세요.');
+			alert('나머지 주소를 입력해주세요.');
 			return;
 		}
 		
@@ -87,7 +89,7 @@ $(function() {
 					opener.parent.location.reload();
 				},
 				error: function() {
-					alert('서버에러');
+					alert('서버오류');
 				}
 			});
 		}
@@ -106,7 +108,7 @@ $(function() {
 	});
 	
 	popup1_btn.click(() => {
-		if (!telNumberCheck.test(receive_tel_input.val())) {
+		if (!telNumberCheck.test(receive_tel_input.val()) && receive_tel_input.val().length != 0) {
 			alert('핸드폰 번호를 정확히 입력해주세요.');
 			return;
 		}
@@ -127,6 +129,56 @@ $(function() {
 					opener.parent.location.reload();
 				},
 				arror: function() {
+					alert('서버오류');
+				}
+			});
+		}
+	});
+	
+	popup0_save_btn.click(() => {
+		if (!telNumberCheck.test(receive_tel_input.val()) && receive_tel_input.val().length != 0) {
+			alert('핸드폰 번호를 정확히 입력해주세요.');
+			return;
+		}
+		if (address_detail_input.val() === '') {
+			alert('나머지 주소를 입력해주세요.');
+		} else {
+			$.ajax({
+				url: '/brokurly/customer/mypage/p0update',
+				type: 'GET',
+				data: {
+					'address_main': $('#address_main').val(),
+					'address_detail': $('#address_detail').val(),
+					'default_chk': $('#default_chk').is(':checked'),
+					'receive_customer': $('#receive_customer').val(),
+					'receive_tel': $('#receive_tel').val(),
+				},
+				success: function() {
+					self.close();
+					opener.parent.location.reload();
+				},
+				error: function() {
+					alert('서버오류');
+				}
+			});
+		}
+	});
+	
+	popup0_del_btn.click(() => {
+		var confirm_msg = confirm('배송지를 삭제하시겠습니까?');
+		
+		if (confirm_msg == true) {
+			$.ajax({
+				url: '/brokurly/customer/mypage/p0delete',
+				type: 'GET',
+				data: {
+					'address_main': $('#address_main').val()
+				},
+				success: function() {
+					self.close();
+					opener.parent.location.reload();
+				},
+				error: function() {
 					alert('서버오류');
 				}
 			});

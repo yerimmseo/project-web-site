@@ -50,4 +50,12 @@
 		UPDATE address_table SET address_detail=#{address_detail}, receive_customer=#{receive_customer}, receive_tel=#{receive_tel}
 							 WHERE customer_id=#{customer_id} AND address_main=#{address_main}
 	</update>
+	<update id="updatePopup0">
+		UPDATE address_table SET address_detail=#{address_detail}, receive_customer=#{receive_customer},
+								 receive_tel=#{receive_tel}, address_check=#{address_check} 
+								 WHERE customer_id=#{customer_id} AND address_main=#{address_main}
+	</update>
+	<delete id="deletePopup0">
+		DELETE FROM address_table WHERE customer_id=#{customer_id} AND address_main=#{address_main}
+	</delete>
 </mapper>

@@ -25,7 +25,7 @@ public class MyPageDestinationController {
 
 	@RequestMapping("/destination")
 	public void addressList(HttpSession session, Model model) {
-		session.setAttribute("customer_id", "mongsoung1");
+		session.setAttribute("customer_id", "mongsoung1"); // 임시로. 세션 연결 시켜야 함.
 		
 		String customer_id = (String)session.getAttribute("customer_id");
 		
@@ -42,7 +42,7 @@ public class MyPageDestinationController {
 		model.addAttribute("address_main", address_main);
 	}
 	
-	// 검색한 주소를 세션에 저장해 팝업창으로 보내주는 매핑
+	// 검색한 주소를 세션에 저장해 팝업창으로 보내주기 위함
 	@RequestMapping(value = "/address", method = RequestMethod.GET, produces = "application/text; charset=utf8")
 	@ResponseBody
 	public String popup(HttpSession session, HttpServletRequest request) {
@@ -92,22 +92,63 @@ public class MyPageDestinationController {
 	
 	@RequestMapping(value = "/p1update", method = RequestMethod.GET, produces = "application/text; charset=utf-8")
 	@ResponseBody
-	public String update(HttpSession session, HttpServletRequest request) {
+	public String updateP1(HttpSession session, HttpServletRequest request) {
 		String customer_id = (String)session.getAttribute("customer_id");
 		String address_main = request.getParameter("address_main");
 		String address_detail = request.getParameter("address_detail");
 		String receive_customer = request.getParameter("receive_customer");
 		String receive_tel = request.getParameter("receive_tel");
 
-		myPageService.getUpdatPopup1(customer_id, address_main, address_detail, receive_customer, receive_tel);
+		myPageService.getUpdatePopup1(customer_id, address_main, address_detail, receive_customer, receive_tel);
 		
 		return "redirect:/customer/mypage/destination";
 	}
 	
 	// 일반 배송지 일때(address_chk == 0) 업데이트 팝업
 	@RequestMapping(value = "/updateaddr_popup0", method = RequestMethod.GET, produces = "application/text; charset=utf-8")
-	public void updateAddress0(HttpServletRequest request) {
-		String main_addr = request.getParameter("main_addr");
+	public void updateAddress0(HttpSession session, HttpServletRequest request, Model model) {
+		String address_main = (String)session.getAttribute("address_main");
+		String address_detail = (String)session.getAttribute("address_detail");
+		String receive_customer = (String)session.getAttribute("receive_customer");
+		String receive_tel = (String)session.getAttribute("receive_tel");
 		
+		model.addAttribute("address_main", address_main);
+		model.addAttribute("address_detail", address_detail);
+		model.addAttribute("receive_customer", receive_customer);
+		model.addAttribute("receive_tel", receive_tel);
+	}
+	
+	@RequestMapping(value = "/popup0", method = RequestMethod.GET, produces = "application/text; charset=utf-8")
+	@ResponseBody
+	public String popupP0(HttpSession session, HttpServletRequest request) {
+		session.setAttribute("address_main", request.getParameter("address_main"));
+		session.setAttribute("address_detail", request.getParameter("address_detail"));
+		session.setAttribute("receive_customer", request.getParameter("receive_customer"));
+		session.setAttribute("receive_tel", request.getParameter("receive_tel"));
+		session.setAttribute("default_chk", request.getParameter("default_chk"));
+		
+		return "/customer/mypage/destination/updateaddr_popup0";
+	}
+		
+	@RequestMapping(value = "p0update", method = RequestMethod.GET, produces = "application/text; charset=utf-8")
+	@ResponseBody
+	public void updateP0(HttpSession session, HttpServletRequest request) {
+		String customer_id = (String)session.getAttribute("customer_id");
+		String address_main = request.getParameter("address_main");
+		String address_detail = request.getParameter("address_detail");
+		String receive_customer = request.getParameter("receive_customer");
+		String receive_tel = request.getParameter("receive_tel");
+		String default_chk = request.getParameter("default_chk");
+		
+		myPageService.getUpdatePopup0(customer_id, address_main, address_detail, receive_customer, receive_tel, default_chk);
+	}
+	
+	@RequestMapping(value = "p0delete", method = RequestMethod.GET, produces = "application/text; charset=utf-8")
+	@ResponseBody
+	public void deleteP0(HttpSession session, HttpServletRequest request) {
+		String customer_id = (String)session.getAttribute("customer_id");
+		String address_main = request.getParameter("address_main");
+		
+		myPageService.getDeletePopup0(customer_id, address_main);
 	}
 }
