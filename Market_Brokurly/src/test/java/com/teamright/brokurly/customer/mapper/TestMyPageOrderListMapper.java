@@ -24,7 +24,7 @@ import lombok.extern.log4j.Log4j;
 public class TestMyPageOrderListMapper {
 
 	@Autowired
-	MyPageOrderListMapper orderListMapper;
+	MyPageMapper orderListMapper;
 	
 	@Ignore
 	@Test
@@ -61,6 +61,7 @@ public class TestMyPageOrderListMapper {
 		log.info(products);
 	}
 	
+	@Ignore
 	@Test
 	public void getDeliStatusTest() {
 		List<DeliveryVO> status = orderListMapper.getDeliStatus("mongsoung1");

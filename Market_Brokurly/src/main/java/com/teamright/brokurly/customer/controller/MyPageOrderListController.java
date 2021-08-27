@@ -8,7 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.teamright.brokurly.customer.mapper.CustomerInfoMapper;
-import com.teamright.brokurly.customer.mapper.MyPageOrderListMapper;
+import com.teamright.brokurly.customer.mapper.MyPageMapper;
 import com.teamright.brokurly.customer.service.MyPageOrderListService;
 import com.teamright.brokurly.model.CustomerVO;
 
@@ -19,7 +19,7 @@ public class MyPageOrderListController {
 	@Autowired
 	CustomerInfoMapper customerInfoMapper;
 	@Autowired
-	MyPageOrderListMapper orderListMapper;
+	MyPageMapper orderListMapper;
 	@Autowired
 	MyPageOrderListService orderListService;
 	

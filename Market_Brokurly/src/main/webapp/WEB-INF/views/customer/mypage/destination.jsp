@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <c:set var="path" value="${pageContext.request.contextPath }" />
 <c:set var="grade" value="${customer_info.customer_grade }"/>
@@ -14,7 +15,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
-	${main_addr }
 	<form action="orderlist" id="orderlistForm"></form>
 	<form action="destination" id="destinationForm"></form>
 	<form action="review" id="reviewForm"></form>
@@ -22,7 +22,7 @@
 	<form action="point" id="pointForm"></form>
 	<form action="coupon" id="couponForm"></form>
 	<form action="myinfo" id="myinfoForm"></form>
-	<form action="popup" id="popupForm"></form>
+	
 	<div class="header">
 		<jsp:include page="../../include/header.jsp"></jsp:include>
 	</div>
@@ -179,19 +179,18 @@
                                     </tr>
                                 </thead>
                                 <tbody id="">
-                                    <!-- 테이블 바디 안에서 반복문 돌리기. 체크박스 클릭 시 기본배송지로 지정됨 -->
                                     <c:forEach var="i" begin="0" end="${address_list.size() - 1 }">
                                     <tr>
                                         <td class="select type_radio">
                                             <label class="skin_checkbox">
                                             	<c:if test="${address_list.get(i).address_check == 1 }">
-                                                <input type="radio" name="addrNo" checked>
+                                                <input type="radio" name="addrNo" value=1 checked>
                                             	</c:if>
                                             	<c:if test="${address_list.get(i).address_check == 0 }">
-                                            	<input type="radio" name="addrNo">
+                                            	<input type="radio" name="addrNo" value=0 >
                                             	</c:if>
                                                 <span class="ico"></span>
-                                                <span class="screen_out">선택하기</span>
+                                                <span class="screen_out chk_count">선택하기</span>
                                             </label>
                                         </td>
                                         <td class="address">
@@ -199,19 +198,33 @@
                                             <span class="badge_default">기본 배송지</span>
                                         	</c:if>
                                             <p class="addr">
-                                            	<input type="hidden" id="main_addr" name="main_addr" value="">
-                                            	<input type="hidden" id="sub_addr" name="sub_addr">
+                                            	<input type="hidden" id="address_main" name="address_main" value="${address_list.get(i).address_main }">
+                                            	<input type="hidden" id="address_detail" name="address_detail" value="${address_list.get(i).address_detail }">
                                             	<span>${address_list.get(i).address_main }</span>
                                             	<span>${address_list.get(i).address_detail }</span>
                                             </p>
                                         </td>
-                                        <td class="name"></td>
-                                        <td class="phone"></td>
+                                        <td class="name">
+                                        	<input type="hidden" name="receive_customer" value="${address_list.get(i).receive_customer }" />
+                                        	${address_list.get(i).receive_customer }
+                                        </td>
+                                        <td class="phone">
+                                        	<input type="hidden" name="receive_tel" value="${address_list.get(i).receive_tel }" />
+                                        	<c:set var="phone_num" value="${address_list.get(i).receive_tel }" />
+                                        	<c:if test="${!(phone_num eq null) }">
+                                        		<c:if test="${fn:length(phone_num) == 10 }">
+                                        		${fn:substring(phone_num, 0, 3) }-${fn:substring(phone_num, 3, 6) }-${fn:substring(phone_num, 6, 10) }
+                                        		</c:if>
+                                        		<c:if test="${fn:length(phone_num) == 11 }">
+				                                ${fn:substring(phone_num, 0, 3) }-${fn:substring(phone_num, 3, 7) }-${fn:substring(phone_num, 7, 11) }
+                                        		</c:if>
+                                        	</c:if>
+                                        </td>
                                         <td>
                                             <span class="delivery star">샛별배송</span>
                                         </td>
                                         <td>
-                                            <button type="button" class="ico modify">수정하기</button>
+                                            <button type="button" class="ico modify" id="update_addr_btn" onclick="openPopup(${address_list.get(i).address_check}, this)">수정하기</button>
                                         </td>
                                     </tr>
                                     </c:forEach>
@@ -230,11 +243,7 @@
 	<script src="${path }/resources/js/style/mypage.js"></script>
 	<script src="${path }/resources/js/ajax/mypage_ajax.js"></script>
 	<script src="${path }/resources/js/ajax/destination_ajax.js"></script>
+	<script src="${path }/resources/js/ajax/destination_onclick.js"></script>
 	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-	<script type="text/javascript">
-		/* if ($('.main_addr').val() != '') {
-			window.open("/brokurly/customer/mypage/destination_popup", "새 배송지 입력", "width=500, height=550");
-		} */
-	</script>
 </body>
 </html>

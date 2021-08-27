@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.teamright.brokurly.customer.mapper.MyPageOrderListMapper">
+<mapper namespace="com.teamright.brokurly.customer.mapper.MyPageMapper">
 	<!-- 대표 주문 내역 조회 -->
 	<select id="getOrder" resultType="com.teamright.brokurly.model.OrderVO">
 		SELECT * FROM order_table WHERE customer_id=#{customer_id}
@@ -39,4 +39,15 @@
 		SELECT order_id, delivery_status FROM order_table INNER JOIN delivery_table USING (order_id) 
 										 WHERE customer_id=#{customer_id}
 	</select>
+	<insert id="insertNewAddr">
+		INSERT INTO address_table(customer_id, address_main, address_detail, address_check) 
+		VALUES(#{customer_id}, #{address_main}, #{address_detail}, #{address_check})
+	</insert>
+	<update id="updateAddrChk">
+		UPDATE address_table SET address_check = 0 WHERE customer_id=#{customer_id}
+	</update>
+	<update id="updatePopup1">
+		UPDATE address_table SET address_detail=#{address_detail}, receive_customer=#{receive_customer}, receive_tel=#{receive_tel}
+							 WHERE customer_id=#{customer_id} AND address_main=#{address_main}
+	</update>
 </mapper>

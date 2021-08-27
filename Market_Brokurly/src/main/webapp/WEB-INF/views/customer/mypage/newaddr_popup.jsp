@@ -7,8 +7,9 @@
 <head>
 <meta charset="UTF-8">
 <title>마켓브로콜리 :: 새 배송지 등록</title>
+<link rel="stylesheet" href="${path }/resources/css/font.css" />
+<link rel="stylesheet" href="${path }/resources/css/popup.css" />
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Sharp|Material+Icons+Two+Tone" rel="stylesheet">
-<link rel="stylesheet" href="${path }/resources/css/destination_popup.css" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
@@ -22,22 +23,22 @@
                 </p>
                 <div class="field">
                     <div class="address_search">
-                        <input type="text" id="main_addr" name="main_addr" class="" readonly value="${main_addr }">
-                        <button type="button" class="btn">
+                        <input type="text" id="address_main" name="address_main" class="" readonly value="${address_main }">
+                        <button type="button" class="btn" id="research_btn">
                             <span class="material-icons-sharp ico">
                                 search
                             </span>
                             재검색
                         </button>
                     </div>
-                    <input type="text" id="sub_addr" name="sub_addr" placeholder="나머지 주소를 입력해주세요">
+                    <input type="text" id="address_detail" name="address_detail" placeholder="나머지 주소를 입력해주세요">
                 </div>
                 <label class="label_default">
-                    <input type="checkbox" name="is_default">
+                    <input type="checkbox" name="is_default" id="default_chk">
                     <span class="ico"></span>
                     기본 배송지로 저장
                 </label>
-                <button type="button" class="btn active">저장</button>
+                <button type="button" class="btn active" id="add_addr_btn">저장</button>
                 <div class="no_delivery">
                     <h3 class="tit">
                         <span class="ico">
@@ -53,6 +54,7 @@
         </div>
     </div>
     
+    <script type="text/javascript" src="${path }/resources/js/ajax/destination_ajax.js"></script>
    	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 </body>
 </html>
