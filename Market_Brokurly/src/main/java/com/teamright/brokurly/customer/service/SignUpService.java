@@ -1,5 +1,6 @@
 package com.teamright.brokurly.customer.service;
 
+import com.teamright.brokurly.model.AddressVO;
 import com.teamright.brokurly.model.CustomerVO;
 
 public interface SignUpService {
@@ -11,4 +12,6 @@ public interface SignUpService {
 	public String telCheck(String customer_tel);
 	//회원 가입
 	public void signUp(CustomerVO customerVO);
+	//주소 입력
+	public void insertAddress(AddressVO addressVO);
 }

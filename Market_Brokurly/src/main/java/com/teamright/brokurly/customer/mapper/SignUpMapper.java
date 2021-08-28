@@ -1,5 +1,6 @@
 package com.teamright.brokurly.customer.mapper;
 
+import com.teamright.brokurly.model.AddressVO;
 import com.teamright.brokurly.model.CustomerVO;
 
 public interface SignUpMapper {
@@ -11,4 +12,6 @@ public interface SignUpMapper {
 	public String telCheck(String customer_tel);
 	//회원가입
 	public void signUp(CustomerVO customerVO);
+	//주소입력
+	public void insertAddress(AddressVO addressVO);
 }

@@ -5,10 +5,12 @@ import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.teamright.brokurly.customer.mapper.SignUpMapper;
+import com.teamright.brokurly.model.AddressVO;
 import com.teamright.brokurly.model.CustomerVO;
 
 @Service
@@ -19,17 +21,20 @@ public class SignUpServiceImpl implements SignUpService{
 	
 	@Override
 	public String idCheck(String customer_id) {
-		return signupMapper.idCheck(customer_id);
+		String result = signupMapper.idCheck(customer_id);
+		return result;
 	}
 	
 	@Override
 	public String emailCheck(String customer_email) {
-		return signupMapper.emailCheck(customer_email);
+		String result = signupMapper.emailCheck(customer_email);
+		return result;
 	}
 	
 	@Override
 	public String telCheck(String customer_tel) {
-		return signupMapper.telCheck(customer_tel);
+		String result = signupMapper.telCheck(customer_tel);
+		return result;
 	}
 
 	@Override
@@ -46,5 +51,11 @@ public class SignUpServiceImpl implements SignUpService{
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
 		}
+	}
+
+	@Override
+	//주소 입력
+	public void insertAddress(AddressVO addressVO) {
+		signupMapper.insertAddress(addressVO);
 	}
 }

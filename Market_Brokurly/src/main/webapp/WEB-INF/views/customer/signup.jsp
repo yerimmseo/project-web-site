@@ -8,10 +8,10 @@
 <head>
 <meta charset="UTF-8">
 <title>마켓브로컬리 :: 내일의 장보기, 마켓브로컬리</title>
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Sharp|Material+Icons+Two+Tone" rel="stylesheet">
-<link rel="stylesheet" href="${path }/resources/css/signup.css">
 <link rel="stylesheet" href="${path }/resources/css/font.css" />
-<script type="text/javascript" src="${path }/resources/js/ajax/sha512.min.js"></script>
+<link rel="stylesheet" href="${path }/resources/css/signup.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Sharp|Material+Icons+Two+Tone" rel="stylesheet">
+<script type="text/javascript" src="${path }/resources/js/sha512.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
@@ -103,14 +103,14 @@
                                     <span>주소 검색</span>
                                 </a>
                                 <div class="main_sub_wrap">
-                                    <input type="text" id="customer_address" name="customer_address" readonly>
+                                    <input type="text" id="address_main" name="address_main" readonly>
                                     <button class="btn_cert research" type="button" id="refindAddr">
                                         <span class="material-icons-sharp">
                                             search
                                         </span>
-                                        <span>재검색</span>
+                                        <span>재검색</spa n>
                                     </button>
-                                    <input type="text" id="customer_detailaddress" name="customer_detailaddress" placeholder="나머지 주소를 입력해주세요">
+                                    <input type="text" id="address_detail" name="address_detail" placeholder="나머지 주소를 입력해주세요">
                                 </div>
                                 <p class="txt_guide">
                                     배송지에 따라 상품 정보가 달라질 수 있습니다.
@@ -445,9 +445,10 @@
     <div class="footer_wrap">
 		<jsp:include page="../include/footer.jsp"></jsp:include>
 	</div>
-
-    <script type="text/javascript" src="${path }/resources/js/style/signup.js" ></script>
-    <script type="text/javascript" src="${path }/resources/js/ajax/signup_ax.js" ></script>
+	
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="${path }/resources/js/signup.js"></script>
+    <script src="${path }/resources/js/signup_ajax.js" ></script>
 	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 </body>
 </html>

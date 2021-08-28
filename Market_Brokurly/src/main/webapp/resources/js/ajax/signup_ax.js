@@ -1,8 +1,7 @@
 /**
  * 
  */
-
- $(document).ready(function(e) {
+$(document).ready(function(e) {
 	var id_check_bool = false;
 	var email_check_bool = false;
 	var tel_check_bool = false;
@@ -24,7 +23,7 @@
 
 	// 아이디를 타이핑 할 때 마다 함수 발생
 	$('#customer_id').keyup(function() {
-		var id_inputLength = $(this).val().length; // 입력한 값의 글자수
+		var id_inputLength = $(this).val().length; //입력한 값의 글자수
 		var id_remain = 13 - id_inputLength;  // 13글자에서 남은 글자수
 		
 		
@@ -225,9 +224,9 @@
 				// 우편번호와 주소 정보를 해당 필드에 넣는다.
 //				document.getElementById('member_post').value = data.zonecode;
 				if (roadAddr !== '') {
-					document.getElementById("customer_address").value = roadAddr;
+					document.getElementById("address_main").value = roadAddr;
 				} else if (jibunAddr !== '') {
-					document.getElementById("customer_address").value = jibunAddr;
+					document.getElementById("address_main").value = jibunAddr;
 				}
 			}
 		}).open();	
@@ -247,9 +246,9 @@
 				// 우편번호와 주소 정보를 해당 필드에 넣는다.
 //				document.getElementById('member_post').value = data.zonecode;
 				if (roadAddr !== '') {
-					document.getElementById("customer_address").value = roadAddr;
+					document.getElementById("address_main").value = roadAddr;
 				} else if (jibunAddr !== '') {
-					document.getElementById("customer_address").value = jibunAddr;
+					document.getElementById("address_main").value = jibunAddr;
 				}
 			}
 		}).open();	
@@ -299,8 +298,8 @@
 		const customer_name = $('#customer_name').val();
 		const customer_email = $('#customer_email').val();
 		const customer_tel = $('#customer_tel').val();
-		const cusotmer_address = $('#customer_address').val();
-		const customer_detailaddress = $('#customer_detailaddress').val();
+		const cusotmer_address = $('#address_main').val();
+		const customer_detailaddress = $('#address_detail').val();
 		const customer_gender = $('#customer_gender').val();
 		const customer_birth = $('#customer_bitrh').val();
 		const customer_year = $('#customer_year').val();
@@ -365,12 +364,12 @@
 			return;
 		}  
 
-		if (customer_address == '') {
+		if ($('#address_main').val() == '') {
 			alert("주소를 검색해주세요.");
 			return;
 		}
 
-		if (customer_detailaddress == '') {
+		if ($('#address_detail') == '') {
 			alert("상세주소를 입력해주세요.");
 			return;
 		}
