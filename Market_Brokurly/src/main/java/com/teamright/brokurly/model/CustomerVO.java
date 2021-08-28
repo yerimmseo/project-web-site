@@ -17,25 +17,24 @@ import lombok.RequiredArgsConstructor;
 @AllArgsConstructor
 @RequiredArgsConstructor
 public class CustomerVO {
-    @NonNull
-    private String customer_id;
-    @NonNull
-    private String customer_pw;
-    @NonNull
-    private String customer_name;
-    @NonNull
-    private String customer_email;
-    @NonNull
-    private String customer_tel;
-    @NonNull
-    private String customer_address;
-    private String customer_birth;
-    private String customer_gender;
-    private Integer customer_mileage;
-    private String customer_grade;
-    private Integer customer_totalpay;
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private Date customer_joindate;
+	@NonNull
+	private String customer_id;
+	@NonNull
+	private String customer_pw;
+	@NonNull
+	private String customer_name;
+	@NonNull
+	private String customer_email;
+	@NonNull
+	private String customer_tel;
+	private String customer_birth;
+	private String customer_gender;
+	private Integer customer_mileage;
+	private String customer_grade;
+	private Integer customer_totalpay;
+	private Integer customer_coupon;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private Date customer_joindate;
     @NonNull
     private String customer_detailaddress;
     private String customer_year;
