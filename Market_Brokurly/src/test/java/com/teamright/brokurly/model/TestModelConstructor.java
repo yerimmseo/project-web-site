@@ -34,8 +34,9 @@ public class TestModelConstructor {
 	
 	@Test
 	public void TestCartVO() {
-		CartVO cart = new CartVO(3, 21, "customer1");
-		log.info(cart);
+		/*
+		 * CartVO cart = new CartVO(3, 21, "customer1"); log.info(cart);
+		 */
 	}
 	
 	@Test
@@ -46,9 +47,11 @@ public class TestModelConstructor {
 	
 	@Test
 	public void TestCustomerVO() {
-		CustomerVO customer = new CustomerVO("customer22", "12채소12", "홍길동", 
-									"gildong@naver.com", "010-4444-1241", "서울 강남", "202동 101호");
-		log.info(customer);
+		/*
+		 * CustomerVO customer = new CustomerVO("customer22", "12채소12", "홍길동",
+		 * "gildong@naver.com", "010-4444-1241", "서울 강남", "202동 101호");
+		 * log.info(customer);
+		 */
 	}
 	
 	@Test
