@@ -11,6 +11,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.teamright.brokurly.model.AddressVO;
 import com.teamright.brokurly.model.CustomerVO;
+import com.teamright.brokurly.model.MileageHistoryVO;
 
 import lombok.extern.log4j.Log4j;
 
@@ -46,9 +47,16 @@ public class TestCustomerInfoMapper {
 		log.info(couponCount);
 	}
 	
+	@Ignore
 	@Test
 	public void getAddressListTest() {
 		List<AddressVO> address = customerInfoMapper.getAddressList("mongsoung1");
 		log.info(address);
+	}
+	
+	@Test
+	public void getMileageHistoryListTest() {
+		List<MileageHistoryVO> mHistory = customerInfoMapper.getMHistoryList("mongsoung1");
+		log.info(mHistory);
 	}
 }

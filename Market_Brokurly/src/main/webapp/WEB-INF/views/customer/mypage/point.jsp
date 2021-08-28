@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <c:set var="path" value="${pageContext.request.contextPath }" />
-<c:set var="grade" value="${customer.customer_grade }"/>
+<c:set var="grade" value="${customer_info.customer_grade }"/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,7 +42,7 @@
 	                                	<c:if test="${grade eq 'NORMAL' }">일반</c:if>
 	                                	<c:if test="${grade eq 'WELCOME' }">웰컴</c:if>
 	                                </div>
-	                                <strong class="name">${customer.customer_name }님</strong>
+	                                <strong class="name">${customer_info.customer_name }님</strong>
 	                            </div>
 	                            <div class="grade_benefit">
 	                                <!---->
@@ -80,7 +80,7 @@
 	                                    </div>
 	                                    <div class="spacer"></div>
 	                                    <p class="info">
-	                                    	<fmt:formatNumber value="${customer.customer_mileage }" pattern="#,###,###" /> 원
+	                                    	<fmt:formatNumber value="${customer_info.customer_mileage }" pattern="#,###,###" /> 원
 	                                        <span class="expire">소멸 예정 0원</span>
 	                                    </p>
 	                                </a>
@@ -90,7 +90,7 @@
 	                                        <img src="${path }/resources/img/icon/ico_arrow_right.png" alt="" class="arrow_right">
 	                                    </div>
 	                                    <div class="spacer"></div>
-	                                    <p class="info">${customer.customer_coupon } 개</p>
+	                                    <p class="info">${coupon_count } 개</p>
 	                                </a>
 	                                <a href="" class="link_wrap">
 	                                    <div class="link_title">
@@ -163,7 +163,7 @@
                                 <div class="point_view">
                                     <h3 class="tit">현재 적립금</h3>
                                     <strong class="point">
-                                        <fmt:formatNumber value="${customer.customer_mileage }" pattern="#,###,###" />
+                                        <fmt:formatNumber value="${customer_info.customer_mileage }" pattern="#,###,###" />
                                         <span class="won">원</span>
                                     </strong>
                                 </div>
@@ -191,32 +191,36 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                	<c:if test="${point_history.size() == 0 }">
                                 	<!-- 적립금 히스토리가 존재하지 않는 경우 -->
-                                    <tr style="display: none;">
+                                    <tr>
                                         <td colspan="4" class="no_data">적립금 내역이 존재하지 않습니다.</td>
                                     </tr>
-                                    <!-- 적립금 히스토리가 존재하는 경우 -->
-                                    <tr>
-                                    	<td>21.06.04</td>
-                                    	<td class="info">
-                                    		<span class="link">[적립금소멸] 적립금 유효기간 만료</span>
-                                    	</td>
-                                    	<td></td>
-                                    	<td class="point minus">-7,000원</td>
-                                    </tr>
-                                    <tr>
-                                    	<td>21.06.01</td>
-                                    	<td class="info">
-                                    		<span class="link">[쇼핑지원금] 06/03까지 사용가능</span>
-                                    	</td>
-                                    	<td>
-                                    		<span>21.06.03</span>
-                                    	</td>
-                                    	<td class="point">
-                                    		<span>+</span>
-                                    		7,000원
-                                    	</td>
-                                    </tr>	
+                                	</c:if>
+                                	<c:if test="${point_history.size() != 0 }">
+                                		<c:forEach var="i" begin="0" end="${point_history.size() - 1 }">
+	                                    <!-- 적립금 히스토리가 존재하는 경우 -->
+	                                    <tr>
+	                                    	<td>
+	                                    		<fmt:formatDate var="saveDate" value="${point_history.get(i).history_date }" pattern="yyyy.MM.dd"/>
+	                                    		${saveDate }
+	                                    	</td>
+	                                    	<td class="info">
+	                                    		<span class="link">${point_history.get(i).history_content }</span>
+	                                    	</td>
+	                                    	<td>
+	                                    		<fmt:formatDate var="validityDate" value="${point_history.get(i).history_validity }" pattern="yyyy.MM.dd"/>
+	                                    		${validityDate }
+	                                    	</td>
+	                                    	<c:if test="${point_history.get(i).history_amount < 0 }">
+	                                    	<td class="point minus">${point_history.get(i).history_amount }원</td>
+	                                    	</c:if>
+	                                    	<c:if test="${point_history.get(i).history_amount > 0 }">
+	                                    	<td class="point plus">+${point_history.get(i).history_amount }원</td>
+	                                    	</c:if>
+	                                    </tr>
+                                		</c:forEach>
+                                	</c:if>
                                 </tbody>
                             </table>
                         </div>

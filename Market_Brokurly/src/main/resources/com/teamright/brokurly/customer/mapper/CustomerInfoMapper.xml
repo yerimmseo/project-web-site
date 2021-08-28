@@ -19,4 +19,7 @@
 	<select id="getAddressList" resultType="com.teamright.brokurly.model.AddressVO">
 		SELECT * FROM address_table WHERE customer_id=#{customer_id}
 	</select>
+	<select id="getMHistoryList" resultType="com.teamright.brokurly.model.MileageHistoryVO">
+		SELECT * FROM mileagehistory_table WHERE customer_id=#{customer_id}
+	</select>
 </mapper>

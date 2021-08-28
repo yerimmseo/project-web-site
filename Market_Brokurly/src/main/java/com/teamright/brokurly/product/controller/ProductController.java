@@ -40,4 +40,9 @@ public class ProductController {
 		
 		model.addAttribute("detail", contents);
 	}
+	
+	@RequestMapping("/cart")
+	public void cart() {
+		
+	}
 }
