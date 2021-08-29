@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <c:set var="path" value="${pageContext.request.contextPath }" />
-<c:set var="grade" value="${customer.customer_grade }"/>
+<c:set var="grade" value="${customer_info.customer_grade }"/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,7 +42,7 @@
 	                                	<c:if test="${grade eq 'NORMAL' }">일반</c:if>
 	                                	<c:if test="${grade eq 'WELCOME' }">웰컴</c:if>
 	                                </div>
-	                                <strong class="name">${customer.customer_name }님</strong>
+	                                <strong class="name">${customer_info.customer_name }님</strong>
 	                            </div>
 	                            <div class="grade_benefit">
 	                                <!---->
@@ -80,8 +80,17 @@
 	                                    </div>
 	                                    <div class="spacer"></div>
 	                                    <p class="info">
-	                                    	<fmt:formatNumber value="${customer.customer_mileage }" pattern="#,###,###" /> 원
-	                                        <span class="expire">소멸 예정 0원</span>
+	                                    	<fmt:formatNumber value="${customer_info.customer_mileage }" pattern="#,###,###" /> 원
+	                                        <span class="expire">
+	                                        소멸 예정 
+	                                        <c:if test="${disappear_point eq null }">
+	                                        0
+	                                        </c:if>
+	                                        <c:if test="${disappear_point ne null }">
+	                                        ${disappear_point }
+	                                        </c:if>
+	                                        원
+	                                        </span>
 	                                    </p>
 	                                </a>
 	                                <a href="" class="link_wrap">
@@ -90,7 +99,7 @@
 	                                        <img src="${path }/resources/img/icon/ico_arrow_right.png" alt="" class="arrow_right">
 	                                    </div>
 	                                    <div class="spacer"></div>
-	                                    <p class="info">${customer.customer_coupon } 개</p>
+	                                    <p class="info">${coupon_count } 개</p>
 	                                </a>
 	                                <a href="" class="link_wrap">
 	                                    <div class="link_title">
@@ -156,17 +165,15 @@
 	                        <h2 class="tit">상품문의</h2>
 	                    </div>
                         <div class="coupon_reg">
-                            <form action="" method="POST">
-                                <fieldset>
-                                    <legend>쿠폰 등록 폼</legend>
-                                    <div class="reg">
-                                        <input type="hidden" name="sno">
-                                        <input type="text" name="coupon_number" class="inp" placeholder="쿠폰을 입력해주세요">
-                                        <button type="submit" class="btn">쿠폰 등록</button>
-                                    </div>
-                                    <p class="notice">쿠폰에 하이픈("-")이 포함되어 있을 경우 하이픈("-")을 반드시 입력해주세요.</p>
-                                </fieldset>
-                            </form>
+                            <fieldset>
+                                <legend>쿠폰 등록 폼</legend>
+                                <div class="reg">
+                                    <input type="hidden" name="sno">
+                                    <input type="text" name="coupon_number" class="inp" placeholder="쿠폰을 입력해주세요" id="code_input">
+                                    <button type="button" class="btn" id="add_coupon_btn">쿠폰 등록</button>
+                                </div>
+                                <p class="notice">쿠폰에 하이픈("-")이 포함되어 있을 경우 하이픈("-")을 반드시 입력해주세요.</p>
+                            </fieldset>
                         </div>
                         <div class="coupon_count">
                             <span class="ico"></span>
@@ -175,7 +182,8 @@
                             </p>
                             <p class="count">
                                 <span class="tit">사용가능쿠폰</span>
-                                : 0장
+                                : ${coupon_count }장
+                                <!-- 미사용인 쿠폰 조회하는걸로 변경해야 함 -->
                             </p>
                         </div>
                         <table class="tbl tbl_type1">
@@ -197,9 +205,41 @@
                                 </tr>
                             </thead>
                             <tbody>
+                            	<c:if test="${coupon_list.size() == 0 }">
                                 <tr>
                                     <td class="no_data" colspan="5">주문 쿠폰이 없습니다.</td>
                                 </tr>
+                            	</c:if>
+                            	<c:if test="${coupon_list.size() != 0 }">
+                            	<c:forEach var="i" begin="0" end="${coupon_list.size() - 1 }">
+                            		<tr>
+                            			<td>${coupon_list.get(i).coupon_name }</td>
+                            			<td>${coupon_list.get(i).coupon_function }</td>
+                            			<td>
+                            				<c:if test="${coupon_list.get(i).coupon_discountrate != 0 }">
+                            				${coupon_list.get(i).coupon_discountrate }%
+                            				</c:if>
+                            				<c:if test="${coupon_list.get(i).coupon_discountprice != 0 }">
+                            				<fmt:formatNumber value="${coupon_list.get(i).coupon_discountprice }" pattern="#,###,###" /> 원
+                            				</c:if>
+                            			</td>
+                            			<td>
+                            				<fmt:formatDate var="couponTerm" value="${coupon_list.get(i).coupon_term }" pattern="yyyy.MM.dd"/>
+                            				${couponTerm }
+                            			</td>
+                            			<c:if test="${coupon_list.get(i).coupon_confirm eq '미사용' }">
+                            			<td style="color: seagreen;">
+                            			${coupon_list.get(i).coupon_confirm }
+                            			</td>
+                            			</c:if>
+                            			<c:if test="${coupon_list.get(i).coupon_confirm eq '사용완료' }">
+                            			<td style="color: #ddd;">
+                            			${coupon_list.get(i).coupon_confirm }
+                            			</td>
+                            			</c:if>
+                            		</tr>
+                            	</c:forEach>
+                            	</c:if>
                             </tbody>
                         </table>
 	                </div>

@@ -4,9 +4,12 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.teamright.brokurly.product.mapper.ProductMapper">
 	<select id="getListBySub" resultType="com.teamright.brokurly.model.ProductVO">
-		SELECT * FROM product_table WHERE subcate_id = #{subcate_id}
+		SELECT * FROM product_table WHERE subcate_id=#{subcate_id}
 	</select>
 	<select id="getListByMain" resultType="com.teamright.brokurly.model.ProductVO">
-		SELECT * FROM product_table INNER JOIN subcategory_table USING (subcate_id) WHERE maincate_id = #{maincate_id}
+		SELECT * FROM product_table INNER JOIN subcategory_table USING (subcate_id) WHERE maincate_id=#{maincate_id}
+	</select>
+	<select id="getProductInfo" resultType="com.teamright.brokurly.model.ProductVO">
+		SELECT * FROM product_table WHERE product_id=#{product_id}
 	</select>
 </mapper>

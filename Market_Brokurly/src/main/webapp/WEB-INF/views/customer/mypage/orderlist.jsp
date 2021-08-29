@@ -21,6 +21,7 @@
 	<form action="point" id="pointForm"></form>
 	<form action="coupon" id="couponForm"></form>
 	<form action="myinfo" id="myinfoForm"></form>
+	<form action="orderview" id="orderviewForm"></form>
 	
 	<div class="header">
 		<jsp:include page="../../include/header.jsp"></jsp:include>
@@ -191,7 +192,8 @@
 	                            </div>
 	                            <div class="order_goods">
 	                                <div class="name">
-	                                    <a>${order_list.get(i).get(0).product_name } 외 ${order_list.get(i).size() - 1 }건</a>
+	                                	<input type="hidden" name="order_id" value="${order_list.get(i).get(0).order_id }" />
+	                                    <a onclick="viewOrderList(${order_list.get(i).get(0).order_id})">${order_list.get(i).get(0).product_name } 외 ${order_list.get(i).size() - 1 }건</a>
 	                                </div>
 	                                <div class="order_info">
 	                                    <div class="thumb">
@@ -241,8 +243,9 @@
     <div class="footer_wrap">
 		<jsp:include page="../../include/footer.jsp"></jsp:include>
 	</div>
-    
+	
     <script src="${path }/resources/js/style/mypage.js"></script>
+    <script src="${path }/resources/js/ajax/mypage_onclick.js"></script>
     <script src="${path }/resources/js/ajax/mypage_ajax.js"></script>
 </body>
 </html>

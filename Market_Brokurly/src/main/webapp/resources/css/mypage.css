@@ -255,7 +255,7 @@
 .section_coupon input[type="hidden"] {display: none; appearance: none; background-color: initial; cursor: default; border: initial;}
 .section_coupon .coupon_reg .inp {float: left; width: 210px; height: 34px; padding: 0 10px; margin-right: 20px; border: solid 1px #514859; font-size: 12px; color: #000; line-height: 32px; letter-spacing: -.6px;}
 .section_coupon .coupon_reg .inp:focus {border: solid 2px #666; border-radius: 2px;}
-.section_coupon .coupon_reg .btn {float: left; width: 140px; height: 34px; border: 0; background-color: seagreen; font-size: 12px; color: #fff; line-height: 32px;}
+.section_coupon .coupon_reg .btn {float: left; width: 140px; height: 34px; border: 0; background-color: seagreen; font-size: 12px; color: #fff; line-height: 32px; cursor: pointer;}
 .section_coupon [type=submit] {border-radius: 0;}
 .section_coupon button {overflow: visible; outline: none; text-transform: none;}
 .section_coupon .coupon_reg .notice {padding-top: 13px; font-size: 12px; color: #b3130b; line-height: 18px;}
@@ -266,6 +266,7 @@
 .section_coupon .coupon_count .tit {padding-right: 9px;}
 .section_coupon .tbl_type1 {border-bottom: solid 1px #f4f4f4;}
 .section_coupon table {border-collapse: collapse; border-spacing: 0;}
+.section_coupon td {padding-top: 16px; padding-bottom: 16px; font-size: 14px; color: #000; line-height: 20px; text-align: center;}
 .section_coupon colgroup {display: table-column-group;}
 .section_coupon thead {display: table-header-group; vertical-align: middle; border-color: inherit;}
 
@@ -386,3 +387,51 @@
 #update_myinfo_box .btn.default {border: solid 1px seagreen; background-color: #fff; color: seagreen;}
 #update_myinfo_box .btn.active {border: solid 1px seagreen; background-color: seagreen; color: #fff;}
 .member_join input::placeholder {color: #ddd;}
+
+/* 주문내역 상세 조회 */
+.page_article .head_section .tit {font-weight: 700; font-size: 16px; color: gray; line-height: 24px;}
+.page_article .tbl_type2 {border-top: solid 2px #333; border-bottom: solid 1px #f4f4f4;}
+
+.section_orderview .head_section {padding: 63px 0 22px;}
+.section_orderview .link_type {position: relative; padding: 0 0 21px;}
+.section_orderview .head_section .tit {font-size: 20px; color: #333; letter-spacing: -.4px;}
+.section_orderview .link_type .link {position: absolute; right: 1px; top: 5px; font-size: 12px; color: #666; text-align: right;}
+.section_orderview .link_type .link a {padding-right: 11px; background-size: 6px 9px; font-size: 12px; color: seagreen; line-height: 22px;}
+
+.section_orderview form {display: block;}
+.section_orderview table {border-collapse: collapse; border-spacing: 0; border-color: grey;}
+.section_orderview colgroup {display: table-column-group;}
+.section_orderview tbody {display: table-row-group; vertical-align: middle; border-color: inherit;}
+
+.section_orderview .tbl_type1 {border-top: solid 2px #333;}
+.section_orderview .tbl_type1 .thumb {padding: 25px 0 24px;}
+.section_orderview .tbl_type1 td {border-bottom: solid 1px #f4f4f4;}
+.section_orderview .tbl_type1 .thumb a {display: block; overflow: hidden; width: 60px; height: 78px; background-color: #f4f4f4; background-repeat: no-repeat; background-position: 50% 50%; background-size: cover;}
+.section_orderview .tbl_type1 .info {padding: 20px 0;}
+.section_orderview .tbl_type1 .name .link {font-weight: 700; font-size: 16px; color: #333; line-height: 24px;}
+.section_orderview .tbl_type1 .desc {padding-top: 9px; line-height: 20px;}
+.section_orderview .tbl_type1 .price {padding-right: 5px; font-weight: 700; font-size: 14px; color: #333;}
+.section_orderview .tbl_type1 .cost {padding-right: 8px; font-size: 14px; color: #999; text-decoration: line-through;}
+.section_orderview .tbl_type1 .ea {font-size: 14px; color: #333;}
+.section_orderview .tbl_type1 .ea::before {content: ""; display: inline-block; width: 1px; height: 14px; margin-right: 8px; background-color: #ddd; vertical-align: -2px;}
+.section_orderview .tbl_type1 .progress .end,
+.section_orderview .tbl_type1 .progress.end {color: #333;}
+.section_orderview .tbl_type1 .progress {font-weight: 700; font-size: 16px; color: seagreen; line-height: 24px; text-align: right;}
+.section_orderview .tbl_type1 .action {padding-left: 40px;}
+.section_orderview .tbl_type1 .btn:first-child {margin-top: 0;}
+.section_orderview .tbl_type1 .btn_cart {border: solid 1px seagreen; color: seagreen; cursor: pointer;}
+.section_orderview .tbl_type1 .btn {display: block; width: 96px; height: 36px; margin-top: 8px; border-radius: 3px; background-color: #fff; font-weight: 700; font-size: 12px; line-height: 32px; text-align: center; cursor: pointer;}
+
+.section_orderview .order_cancel {padding: 40px 0 0; text-align: center;}
+.section_orderview .order_cancel .inner_cancel {display: inline-block; overflow: hidden; padding-left: 12px;}
+.section_orderview .order_cancel .inner_cancel .btn_cart {border: solid 1px seagreen; background-color: #fff; color: seagreen;}
+.section_orderview .order_cancel .btn {float: left; width: 200px; height: 56px; padding-bottom: 2px; margin-right: 12px; border: solid 1px #ddd; border-radius: 3px; background-color: #fff; font-weight: 700; font-size: 16px; color: #333; line-height: 24px;}
+.section_orderview .order_cancel .btn.off {color: #ddd;}
+.section_orderview .order_cancel .cancel_notice {padding-top: 39px; font-size: 14px; color: #666; line-height: 20px;}
+
+.section_orderview .order_delivery {padding-top: 65px;}
+.section_orderview .tbl_type2 tr:first-child th,
+.section_orderview .tbl_type2 tr:first-child td {padding-top: 24px;}
+.section_orderview .tbl_type2 th {padding-bottom: 24px; font-size: 16px; color: #666; line-height: 24px; text-align: left; vertical-align: top;}
+.section_orderview .tbl_type2 td {font-size: 16px; color: #333; line-height: 24px; vertical-align: top;}
+.section_orderview .tbl_type3 td {text-align: right;}

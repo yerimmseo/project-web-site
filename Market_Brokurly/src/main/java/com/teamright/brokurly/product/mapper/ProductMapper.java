@@ -5,6 +5,7 @@ import java.util.List;
 import com.teamright.brokurly.model.ProductVO;
 
 public interface ProductMapper {
-	public List<ProductVO> getListBySub(int subCategory);
-	public List<ProductVO> getListByMain(int mainCategory);
+	public List<ProductVO> getListBySub(int subcategory_id);
+	public List<ProductVO> getListByMain(int maincategory_id);
+	public ProductVO getProductInfo(int product_id);
 }

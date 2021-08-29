@@ -16,18 +16,26 @@ import com.teamright.brokurly.customer.service.MyPageDestinationService;
 @Controller
 @RequestMapping("/customer/mypage")
 public class MyPageDestinationController {
+
+	private static String customer_id;
+	private static String address_main;
+	private static String address_detail;
+	private static String receive_customer;
+	private static String receive_tel;
+	private static String default_chk;
 	
 	@Autowired
 	CustomerInfoMapper customerInfoMapper;
 	
 	@Autowired
 	MyPageDestinationService myPageService;
+	
 
 	@RequestMapping("/destination")
 	public void addressList(HttpSession session, Model model) {
 		session.setAttribute("customer_id", "mongsoung1"); // 임시로. 세션 연결 시켜야 함.
 		
-		String customer_id = (String)session.getAttribute("customer_id");
+		customer_id = (String)session.getAttribute("customer_id");
 		
 		model.addAttribute("customer_info", customerInfoMapper.getCustomerInfo(customer_id));
 		model.addAttribute("coupon_count", customerInfoMapper.getCouponCount(customer_id));
@@ -37,8 +45,6 @@ public class MyPageDestinationController {
 	// 새 배송지 추가 팝업
 	@RequestMapping(value = "/newaddr_popup", method = RequestMethod.GET, produces = "application/text; charset=utf8")
 	public void newAddress(HttpSession session, Model model) {
-		String address_main = (String)session.getAttribute("address_main");
-		
 		model.addAttribute("address_main", address_main);
 	}
 	
@@ -46,19 +52,17 @@ public class MyPageDestinationController {
 	@RequestMapping(value = "/address", method = RequestMethod.GET, produces = "application/text; charset=utf8")
 	@ResponseBody
 	public String popup(HttpSession session, HttpServletRequest request) {
-		String address_main = request.getParameter("address_main");
+		address_main = request.getParameter("address_main");
 		
-		session.setAttribute("address_main", address_main);
 		return "/destination_popup";
 	}
 	
 	@RequestMapping(value = "/newAddr", method = RequestMethod.GET, produces = "application/text; charset=utf8")
 	@ResponseBody
 	public String addAddr(HttpSession session, HttpServletRequest request) {
-		String customer_id = (String)session.getAttribute("customer_id");
-		String address_main = request.getParameter("address_main");
-		String address_detail = request.getParameter("address_detail");
-		String default_chk = request.getParameter("default_chk");
+		address_main = request.getParameter("address_main");
+		address_detail = request.getParameter("address_detail");
+		default_chk = request.getParameter("default_chk");
 
 		myPageService.insertNewAddr(customer_id, address_main, address_detail, default_chk);
 		
@@ -68,11 +72,6 @@ public class MyPageDestinationController {
 	// 기본 배송지 일때(address_chk == 1) 업데이트 팝업
 	@RequestMapping(value = "/updateaddr_popup1", method = RequestMethod.GET, produces = "application/text; charset=utf-8")
 	public void updateAddress1(HttpSession session, HttpServletRequest request, Model model) {
-		String address_main = (String)session.getAttribute("address_main");
-		String address_detail = (String)session.getAttribute("address_detail");
-		String receive_customer = (String)session.getAttribute("receive_customer");
-		String receive_tel = (String)session.getAttribute("receive_tel");
-
 		model.addAttribute("address_main", address_main);
 		model.addAttribute("address_detail", address_detail);
 		model.addAttribute("receive_customer", receive_customer);
@@ -82,10 +81,10 @@ public class MyPageDestinationController {
 	@RequestMapping(value = "/popup1", method = RequestMethod.GET, produces = "application/text; charset=utf-8")
 	@ResponseBody
 	public String popup1(HttpSession session, HttpServletRequest request) {
-		session.setAttribute("address_main", request.getParameter("address_main"));
-		session.setAttribute("address_detail", request.getParameter("address_detail"));
-		session.setAttribute("receive_customer", request.getParameter("receive_customer"));
-		session.setAttribute("receive_tel", request.getParameter("receive_tel"));
+		address_main = request.getParameter("address_main");
+		address_detail = request.getParameter("address_detail");
+		receive_customer = request.getParameter("receive_customer");
+		receive_tel = request.getParameter("receive_tel");
 		
 		return "/customer/mypage/destination/updateaddr_popup1";
 	}
@@ -93,11 +92,10 @@ public class MyPageDestinationController {
 	@RequestMapping(value = "/p1update", method = RequestMethod.GET, produces = "application/text; charset=utf-8")
 	@ResponseBody
 	public String updateP1(HttpSession session, HttpServletRequest request) {
-		String customer_id = (String)session.getAttribute("customer_id");
-		String address_main = request.getParameter("address_main");
-		String address_detail = request.getParameter("address_detail");
-		String receive_customer = request.getParameter("receive_customer");
-		String receive_tel = request.getParameter("receive_tel");
+		address_main = request.getParameter("address_main");
+		address_detail = request.getParameter("address_detail");
+		receive_customer = request.getParameter("receive_customer");
+		receive_tel = request.getParameter("receive_tel");
 
 		myPageService.getUpdatePopup1(customer_id, address_main, address_detail, receive_customer, receive_tel);
 		
@@ -107,11 +105,6 @@ public class MyPageDestinationController {
 	// 일반 배송지 일때(address_chk == 0) 업데이트 팝업
 	@RequestMapping(value = "/updateaddr_popup0", method = RequestMethod.GET, produces = "application/text; charset=utf-8")
 	public void updateAddress0(HttpSession session, HttpServletRequest request, Model model) {
-		String address_main = (String)session.getAttribute("address_main");
-		String address_detail = (String)session.getAttribute("address_detail");
-		String receive_customer = (String)session.getAttribute("receive_customer");
-		String receive_tel = (String)session.getAttribute("receive_tel");
-		
 		model.addAttribute("address_main", address_main);
 		model.addAttribute("address_detail", address_detail);
 		model.addAttribute("receive_customer", receive_customer);
@@ -121,11 +114,11 @@ public class MyPageDestinationController {
 	@RequestMapping(value = "/popup0", method = RequestMethod.GET, produces = "application/text; charset=utf-8")
 	@ResponseBody
 	public String popupP0(HttpSession session, HttpServletRequest request) {
-		session.setAttribute("address_main", request.getParameter("address_main"));
-		session.setAttribute("address_detail", request.getParameter("address_detail"));
-		session.setAttribute("receive_customer", request.getParameter("receive_customer"));
-		session.setAttribute("receive_tel", request.getParameter("receive_tel"));
-		session.setAttribute("default_chk", request.getParameter("default_chk"));
+		address_main = request.getParameter("address_main");
+		address_detail = request.getParameter("address_detail");
+		receive_customer = request.getParameter("receive_customer");
+		receive_tel = request.getParameter("receive_tel");
+		default_chk = request.getParameter("default_chk");
 		
 		return "/customer/mypage/destination/updateaddr_popup0";
 	}
@@ -133,12 +126,11 @@ public class MyPageDestinationController {
 	@RequestMapping(value = "p0update", method = RequestMethod.GET, produces = "application/text; charset=utf-8")
 	@ResponseBody
 	public void updateP0(HttpSession session, HttpServletRequest request) {
-		String customer_id = (String)session.getAttribute("customer_id");
-		String address_main = request.getParameter("address_main");
-		String address_detail = request.getParameter("address_detail");
-		String receive_customer = request.getParameter("receive_customer");
-		String receive_tel = request.getParameter("receive_tel");
-		String default_chk = request.getParameter("default_chk");
+		address_main = request.getParameter("address_main");
+		address_detail = request.getParameter("address_detail");
+		receive_customer = request.getParameter("receive_customer");
+		receive_tel = request.getParameter("receive_tel");
+		default_chk = request.getParameter("default_chk");
 		
 		myPageService.getUpdatePopup0(customer_id, address_main, address_detail, receive_customer, receive_tel, default_chk);
 	}
@@ -146,8 +138,7 @@ public class MyPageDestinationController {
 	@RequestMapping(value = "p0delete", method = RequestMethod.GET, produces = "application/text; charset=utf-8")
 	@ResponseBody
 	public void deleteP0(HttpSession session, HttpServletRequest request) {
-		String customer_id = (String)session.getAttribute("customer_id");
-		String address_main = request.getParameter("address_main");
+		address_main = request.getParameter("address_main");
 		
 		myPageService.getDeletePopup0(customer_id, address_main);
 	}

@@ -14,12 +14,21 @@
 	</resultMap>
 	<select id="getCouponCount" resultType="int" resultMap="getCouponCount">
 		SELECT count(*) as count FROM customer_coupon_table INNER JOIN coupon_table USING (coupon_id) 
-						WHERE customer_id=#{customer_id} GROUP BY customer_id
+						WHERE customer_id=#{customer_id} AND coupon_confirm='미사용' GROUP BY customer_id
+	</select>
+	<!-- 소멸되기 2주 이전의 포인트만 조회 -->
+	<select id="getDisappearPoint" resultType="String">
+		SELECT sum(history_amount) FROM mileagehistory_table WHERE customer_id=#{customer_id} 
+															 AND history_amount > 0 
+															 AND (TRUNC(history_validity - sysdate)) <![CDATA[<=]]> 14
 	</select>
 	<select id="getAddressList" resultType="com.teamright.brokurly.model.AddressVO">
 		SELECT * FROM address_table WHERE customer_id=#{customer_id}
 	</select>
 	<select id="getMHistoryList" resultType="com.teamright.brokurly.model.MileageHistoryVO">
 		SELECT * FROM mileagehistory_table WHERE customer_id=#{customer_id}
+	</select>
+	<select id="getCouponList" resultType="com.teamright.brokurly.model.CouponVO">
+		SELECT * FROM customer_coupon_table INNER JOIN coupon_table USING (coupon_id) WHERE customer_id=#{customer_id}
 	</select>
 </mapper>

@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>마켓브로컬리 :: 내일의 장보기, 마켓브로컬리</title>
 <link rel="stylesheet" href="${path }/resources/css/main.css" />
 <link rel="stylesheet" href="${path }/resources/css/font.css" />
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet" />

@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>마켓브로컬리 :: 내일의 장보기, 마켓브로컬리</title>
 <link rel="stylesheet" href="${path }/resources/css/signin.css" />
 <link rel="stylesheet" href="${path }/resources/css/font.css" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -24,7 +24,7 @@
                 <h3 class="tit_login">로그인</h3>
                 <div class="write_form">
                     <div class="write_view login_view">
-                        <form id="login_form" action="${path}/customer/logindo" method="post">
+                        <form id="login_form" action="${path}/customer/main" method="POST">
                             <input type="text" id="customer_id" name="customer_id" size="20" tabindex="1" placeholder="아이디를 입력해주세요">
                             <input type="password" id="customer_pw" name="customer_pw" size="20" tabindex="2" placeholder="비밀번호를 입력해주세요">
                             <div class="checkbox_save">

@@ -1,0 +1,57 @@
+@charset "UTF-8";
+
+/* total */
+.main body, .main input, .main select, .main textarea, .main button {line-height: 1; letter-spacing: -.05em; color: #4c4c4c; font-size: 12px; max-width: 100%;}
+.main div {display: block;}
+.main *, .main *:after, .main *:before {box-sizing: border-box; margin: 0; padding: 0;}
+.main div, .main th, .main td, .main li, .main dt, .main dd, .main p {word-break: break-all;}
+.main ul {display: block; list-style-type: disc; margin-block-start: 1em; margin-block-end: 1em; margin-inline-start: 0px; margin-inline-end: 0px; padding-inline-start: 40px;}
+.main ol, .main ul {list-style-type: none;}
+.main a {background-color: transparent; text-decoration: none;}
+.content {padding-bottom: 100px;}
+
+.menu_event {position: fixed; top: 270px; left: 50%; min-width: 150px; text-align: right;}
+.menu_event {left: 0; margin: 0;}
+.menu_event .menu li {margin-bottom: 20px;}
+.menu_event a {font-weight: 500; font-size: 16px; color: #999; letter-spacing: -.4px;}
+.menu_event .menu a {position: relative; padding-right: 15px;}
+.menu_event .menu a.on {color: rgb(117, 214, 159);}
+.menu_event .menu a:after {position: absolute; top: 9px; right: 0; width: 6px; height: 6px; border-radius: 6px; background-color: #c8c8c8; opacity: .5; content: "";}
+.menu_event .menu a.on:after {background-color: rgb(117, 214, 159);}
+
+.page_event {min-width: 1050px; color: #666;}
+
+.total_view {width: 820px; margin: 0 auto;}
+
+.screen_out {display: block; overflow: hidden; position: absolute; left: -9999px; width: 1px; height: 1px; font-size: 0; line-height: 0; text-indent: -9999px;}
+
+.event_list {padding-top: 65px;}
+.event_list .item {display: table; width: 100%; padding: 44px 0; border-bottom: 1px solid #eee; line-height: 1.5;}
+.event_list .item:first-child {border-top: 1px solid #eee;}
+.event_list .link_event {display: table-cell; width: 260px; vertical-align: middle;}
+.event_list .tit_total {display: block; font-weight: 600; font-size: 27px; letter-spacing: -1px; color: #282828;}
+.event_list .txt_ex {margin: 1px 0 0 3px; font-size: 14px; color: rgb(89, 192, 134);}
+
+.ico_comm {display: inline-block; vertical-align: middle;}
+.event_list .ico_comm {width: 24px; height: 24px; margin-top: -2px;}
+.event_list .ico_gift {background-image: url(https://res.kurly.com/images/event/fixed/common/ico-gift-s.svg);}
+.event_list .ico_won {background-image: url(https://res.kurly.com/images/event/fixed/common/ico-won-s.svg);}
+.event_list .txt_info {display: table-cell; font-weight: 300; font-size: 16px; line-height: 28px; letter-spacing: -.7px; word-break: keep-all; vertical-align: top;}
+
+.event_bnr {margin-top: 58px;}
+.event_bnr .link_bnr {display: block; margin-bottom: 12px; padding: 18px 0 27px; font-weight: 300; font-size: 14px; color: #fff; text-align: center;}
+.event_bnr .bg_purple {background-color: rgb(26, 102, 59);}
+.event_bnr .bg_dark {background-color: #1d1d1d;}
+.event_bnr .link_bnr .tit {display: block; padding: 0 0 4px 20px; font-weight: 500; font-size: 20px; line-height: 32px;}
+
+.ico_arr_b, .ico_arr_w {width: 32px; height: 32px;}
+.ico_arr_w {background-image: url(https://res.kurly.com/images/event/fixed/common/ico-arr-w.svg);}
+
+.event_bnr .link_bnr .ico_arr_w {margin-top: -4px;}
+
+@media screen and (max-width: 1110px) {
+	.menu_event {
+		left: 0;
+		margin: 0;
+	}
+} 

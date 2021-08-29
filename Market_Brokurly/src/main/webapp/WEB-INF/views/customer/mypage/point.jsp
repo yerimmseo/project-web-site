@@ -81,7 +81,16 @@
 	                                    <div class="spacer"></div>
 	                                    <p class="info">
 	                                    	<fmt:formatNumber value="${customer_info.customer_mileage }" pattern="#,###,###" /> 원
-	                                        <span class="expire">소멸 예정 0원</span>
+	                                        <span class="expire">
+	                                        소멸 예정 
+	                                        <c:if test="${disappear_point eq null }">
+	                                        0
+	                                        </c:if>
+	                                        <c:if test="${disappear_point ne null }">
+	                                        ${disappear_point }
+	                                        </c:if>
+	                                        원
+	                                        </span>
 	                                    </p>
 	                                </a>
 	                                <a href="" class="link_wrap">
@@ -171,7 +180,15 @@
                                     <span class="subject no_day">
                                         소멸예정 적립금
                                     </span>
-                                    <span class="num">0원</span>
+                                    <span class="num">
+	                                    <c:if test="${disappear_point eq null }">
+		                                0
+		                                </c:if>
+		                                <c:if test="${disappear_point ne null }">
+		                                ${disappear_point }
+		                                </c:if>
+		                                원
+                                    </span>
                                 </span>
                             </div>
                             <table class="tbl tbl_type1">
@@ -215,7 +232,7 @@
 	                                    	<c:if test="${point_history.get(i).history_amount < 0 }">
 	                                    	<td class="point minus">${point_history.get(i).history_amount }원</td>
 	                                    	</c:if>
-	                                    	<c:if test="${point_history.get(i).history_amount > 0 }">
+	                                    	<c:if test="${point_history.get(i).history_amount >= 0 }">
 	                                    	<td class="point plus">+${point_history.get(i).history_amount }원</td>
 	                                    	</c:if>
 	                                    </tr>

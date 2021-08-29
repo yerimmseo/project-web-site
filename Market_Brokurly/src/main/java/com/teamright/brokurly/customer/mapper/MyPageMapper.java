@@ -2,7 +2,10 @@ package com.teamright.brokurly.customer.mapper;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
+
 import com.teamright.brokurly.model.AddressVO;
+import com.teamright.brokurly.model.CouponVO;
 import com.teamright.brokurly.model.DeliveryVO;
 import com.teamright.brokurly.model.DetailOrderVO;
 import com.teamright.brokurly.model.OrderVO;
@@ -20,4 +23,9 @@ public interface MyPageMapper {
 	public void updatePopup1(AddressVO addressVo);  // 기본 배송지 팝업에서의 정보 업데이트
 	public void updatePopup0(AddressVO addressVo);	// 나머지 배송지 팝업에서의 정보 업데이트
 	public void deletePopup0(AddressVO addressVo);
+	public List<ProductVO> getOrderView(@Param("customer_id")String customer_id, 
+										@Param("order_id")Integer order_id);
+	public Integer getSumOrderList(@Param("customer_id")String customer_id,
+								   @Param("order_id")Integer order_id);
+	public List<CouponVO> getCouponList();
 }

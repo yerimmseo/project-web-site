@@ -26,4 +26,7 @@ public class CouponVO {
 	private Integer coupon_discountprice;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date coupon_term;
+	private String coupon_function;
+	private String customer_id;
+	private String coupon_confirm;
 }

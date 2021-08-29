@@ -34,4 +34,9 @@ public class ProductVO {
 	private Integer order_count;
 	private Integer maincate_id;
 	private String subcate_name;
+	
+	private String event_name;
+	private Integer event_discount;
+	private Integer delivery_id;
+	private String delivery_status;
 }

@@ -41,13 +41,6 @@ public class MyPageController {
 		model.addAttribute("customer", customer);
 	}
 	
-	@RequestMapping("/coupon")
-	public void coupon(Model model) {
-		CustomerVO customer = customerMapper.getCustomerInfo("mongsoung");
-		
-		model.addAttribute("customer", customer);
-	}
-	
 	@RequestMapping("/myinfo")
 	public void info(Model model, HttpSession session) {
 		session.setAttribute("customer_id", "mongsoung1");

@@ -46,4 +46,11 @@ public class MyPageOrderListServiceImpl implements MyPageOrderListService {
 		
 		return orderList;
 	}
+
+	// 입력받은 쿠폰 시리얼 넘버가 같은지 확인
+	@Override
+	public boolean checkCouponCode() {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }

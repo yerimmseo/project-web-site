@@ -58,4 +58,23 @@
 	<delete id="deletePopup0">
 		DELETE FROM address_table WHERE customer_id=#{customer_id} AND address_main=#{address_main}
 	</delete>
+	<select id="getOrderView" resultType="com.teamright.brokurly.model.ProductVO">
+		SELECT * FROM order_table INNER JOIN detailorder_table USING (order_id)
+								  INNER JOIN product_table USING (product_id)
+								  INNER JOIN subcategory_table USING (subcate_id)
+								  INNER JOIN event_table USING (event_id)
+								  INNER JOIN delivery_table USING (order_id)
+								  WHERE customer_id=#{customer_id} AND order_id=#{order_id}
+	</select>
+	<select id="getSumOrderList" resultType="int">
+		SELECT sum(product_price) FROM order_table INNER JOIN detailorder_table USING (order_id)
+												   INNER JOIN product_table USING (product_id) 
+												   INNER JOIN subcategory_table USING (subcate_id) 
+												   INNER JOIN event_table USING (event_id) 
+												   INNER JOIN delivery_table USING (order_id) 
+												   WHERE customer_id=#{customer_id} AND order_id=#{order_id}
+	</select>
+	<select id="getCouponList" resultType="com.teamright.brokurly.model.CouponVO">
+		SELECT * FROM coupon_table
+	</select>
 </mapper>

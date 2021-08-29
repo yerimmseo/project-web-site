@@ -84,3 +84,24 @@ $(function() {
         });
     });
 });
+
+$(function() {
+	var add_coupon_btn = $('#add_coupon_btn');
+	var code_input = $('#code_input');
+	
+	add_coupon_btn.click(() => {
+		$.ajax({
+			url: '/brokurly/customer/mypage/codecheck',
+			type: 'GET',
+			data: {
+				'coupon_code': code_input.val()
+			},
+			success: function(data) {
+				
+			},
+			error: function() {
+				alert('서버오류');
+			}
+		});
+	});
+});

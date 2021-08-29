@@ -23,6 +23,7 @@ public class TestProductMapper {
 	@Autowired
 	ProductMapper productMapper;
 	
+	@Ignore
 	@Test
 	public void getInfoAsSearchSubCateTest() {
 		// 서브 카테고리가 22번인 상품들을 조회 (서브 카테고리로 상품을 조회)
@@ -32,7 +33,9 @@ public class TestProductMapper {
 			log.info(product);
 		}
 	}
-		@Test
+	
+	@Ignore
+	@Test
 	public void getListByMainTest() {
 		// 메인 카테고리가 10번인 상품들을 조회 (메인 카테고리로 상품을 조회)
 		List<ProductVO> productList = productMapper.getListByMain(10);
@@ -41,5 +44,9 @@ public class TestProductMapper {
 			log.info(product);
 		}
 	}
-
+	
+	@Test
+	public void getProductInfoTest() {
+		productMapper.getProductInfo(15);
+	}
 }

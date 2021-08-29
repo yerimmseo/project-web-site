@@ -10,6 +10,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.teamright.brokurly.model.AddressVO;
+import com.teamright.brokurly.model.CouponVO;
 import com.teamright.brokurly.model.CustomerVO;
 import com.teamright.brokurly.model.MileageHistoryVO;
 
@@ -47,6 +48,12 @@ public class TestCustomerInfoMapper {
 		log.info(couponCount);
 	}
 	
+	@Test
+	public void getDisapperPointTest() {
+		String disappearPoint = customerInfoMapper.getDisappearPoint("mongsoung1");
+		log.info(disappearPoint);
+	}
+	
 	@Ignore
 	@Test
 	public void getAddressListTest() {
@@ -54,9 +61,17 @@ public class TestCustomerInfoMapper {
 		log.info(address);
 	}
 	
+	@Ignore
 	@Test
 	public void getMileageHistoryListTest() {
 		List<MileageHistoryVO> mHistory = customerInfoMapper.getMHistoryList("mongsoung1");
 		log.info(mHistory);
+	}
+	
+	@Ignore
+	@Test
+	public void getCouponListTest() {
+		List<CouponVO> coupons = customerInfoMapper.getCouponList("mongsoung1");
+		log.info(coupons);
 	}
 }
