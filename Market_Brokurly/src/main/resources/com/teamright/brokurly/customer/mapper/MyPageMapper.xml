@@ -77,4 +77,7 @@
 	<select id="getCouponList" resultType="com.teamright.brokurly.model.CouponVO">
 		SELECT * FROM coupon_table
 	</select>
+	<insert id="insertCoupon">
+		INSERT INTO customer_coupon_table VALUES(#{customer_id}, #{coupon_id}, '미사용')
+	</insert>
 </mapper>

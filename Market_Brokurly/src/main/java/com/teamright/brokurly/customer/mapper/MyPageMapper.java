@@ -28,4 +28,6 @@ public interface MyPageMapper {
 	public Integer getSumOrderList(@Param("customer_id")String customer_id,
 								   @Param("order_id")Integer order_id);
 	public List<CouponVO> getCouponList();
+	public void insertCoupon(@Param("customer_id")String customer_id,
+							 @Param("coupon_id")Integer coupon_id);
 }

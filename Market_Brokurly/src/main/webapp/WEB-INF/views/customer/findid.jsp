@@ -38,6 +38,6 @@
 		<jsp:include page="../include/footer.jsp"></jsp:include>
 	</div>
 	
-	<script src="${path }/resources/js/find_ajax.js"></script>
+	<script src="${path }/resources/js/ajax/find_ajax.js"></script>
 </body>
 </html>

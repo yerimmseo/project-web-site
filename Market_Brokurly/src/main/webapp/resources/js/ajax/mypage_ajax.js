@@ -24,6 +24,14 @@
 		$('#pointForm').submit();
 	});
 	
+	$('#point_top').click(() => {
+		$('#pointForm').submit();
+	});
+	
+	$('#coupon_top').click(() => {
+		$('#couponForm').submit();
+	});
+	
 	$('#coupon').click(() => {
 		$('#couponForm').submit();
 	});
@@ -97,7 +105,12 @@ $(function() {
 				'coupon_code': code_input.val()
 			},
 			success: function(data) {
-				
+				if (data === "true") {
+					alert('쿠폰이 등록되었습니다.');
+					location.reload();
+				} else {
+					alert('쿠폰 번호를 확인해주세요.');
+				}
 			},
 			error: function() {
 				alert('서버오류');

@@ -447,8 +447,8 @@
 	</div>
 	
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="${path }/resources/js/signup.js"></script>
-    <script src="${path }/resources/js/signup_ajax.js" ></script>
+    <script src="${path }/resources/js/style/signup.js"></script>
+    <script src="${path }/resources/js/ajax/signup_ajax.js" ></script>
 	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 </body>
 </html>

@@ -73,7 +73,7 @@
 	                        </div>
 	                        <div class="list_mypage">
 	                            <div class="list">
-	                                <a href="" class="link_wrap">
+	                                <a class="link_wrap" id="point_top">
 	                                    <div class="link_title">
 	                                        적립금
 	                                        <img src="${path }/resources/img/icon/ico_arrow_right.png" alt="" class="arrow_right">
@@ -93,7 +93,7 @@
 	                                        </span>
 	                                    </p>
 	                                </a>
-	                                <a href="" class="link_wrap">
+	                                <a class="link_wrap" id="coupon_top">
 	                                    <div class="link_title">
 	                                        쿠폰
 	                                        <img src="${path }/resources/img/icon/ico_arrow_right.png" alt="" class="arrow_right">

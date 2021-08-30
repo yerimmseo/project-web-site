@@ -83,9 +83,16 @@ public class TestMyPageMapper {
 		log.info(total);
 	}
 	
+	@Ignore
 	@Test
 	public void getCouponListTest() {
 		List<CouponVO> coupon = myPageMapper.getCouponList();
 		log.info(coupon);
+	}
+	
+	@Test
+	public void insertCouponTest() {
+		myPageMapper.insertCoupon("mongsoung1", 2);
+		log.info(log);
 	}
 }

@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.teamright.brokurly.customer.mapper.MyPageMapper;
+import com.teamright.brokurly.model.CouponVO;
 import com.teamright.brokurly.model.DetailOrderVO;
 import com.teamright.brokurly.model.ProductVO;
 
@@ -49,8 +50,15 @@ public class MyPageOrderListServiceImpl implements MyPageOrderListService {
 
 	// 입력받은 쿠폰 시리얼 넘버가 같은지 확인
 	@Override
-	public boolean checkCouponCode() {
-		// TODO Auto-generated method stub
+	public boolean checkCouponCode(String customer_id, String coupon_code) {
+		List<CouponVO> coupons = myPageMapper.getCouponList();
+		
+		for (CouponVO coupon : coupons) {
+			if (coupon.getCoupon_code().equals(coupon_code)) {
+				myPageMapper.insertCoupon(customer_id, coupon.getCoupon_id());
+				return true;
+			}
+		}
 		return false;
 	}
 }

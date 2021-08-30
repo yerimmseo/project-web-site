@@ -9,4 +9,13 @@ public class EventController {
 
 	@RequestMapping("/total")
 	public void goTotal() {}
+	
+	@RequestMapping("/lovers")
+	public void goLovers() {}
+	
+	@RequestMapping("/friend")
+	public void goFriend() {}
+	
+	@RequestMapping("/basket")
+	public void goBasket() {}
 }

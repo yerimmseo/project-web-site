@@ -40,23 +40,7 @@ public class MyPageController {
 		
 		model.addAttribute("customer", customer);
 	}
-	
-	@RequestMapping("/myinfo")
-	public void info(Model model, HttpSession session) {
-		session.setAttribute("customer_id", "mongsoung1");
-	}
-	
-	@RequestMapping("/myinfo2")
-	public void myinfo2(HttpSession session, HttpServletRequest request, Model model) {
-		String customer_id = (String)session.getAttribute("customer_id");
-		String customer_pw = request.getParameter("customer_pw");
-		
-		CustomerVO customerInfo = customerMapper.getCustomerInfo(customer_id);
-		
-		model.addAttribute("customer", customerInfo);
-		model.addAttribute("customer_pw", customer_pw); // 암호화 하지 않은 패스워드 hidden에 저장하기
-	}
-	
+
 	@RequestMapping(value = "/nowpwchk", method = RequestMethod.GET, produces = "application/text; charset=utf8")
 	@ResponseBody
 	public String nowPwChk(HttpSession session, HttpServletRequest request) throws Exception {

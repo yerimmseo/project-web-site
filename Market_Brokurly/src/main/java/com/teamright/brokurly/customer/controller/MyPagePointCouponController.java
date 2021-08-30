@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.teamright.brokurly.customer.mapper.CustomerInfoMapper;
+import com.teamright.brokurly.customer.service.MyPageOrderListService;
 
 @Controller
 @RequestMapping("/customer/mypage")
@@ -19,6 +20,9 @@ public class MyPagePointCouponController {
 
 	@Autowired
 	CustomerInfoMapper customerInfoMapper;
+	
+	@Autowired
+	MyPageOrderListService myPageService;
 	
 	@RequestMapping("/point")
 	public void point(HttpSession session, Model model) {
@@ -46,8 +50,14 @@ public class MyPagePointCouponController {
 	
 	@RequestMapping(value = "/codecheck")
 	@ResponseBody
-	public void checkCode(HttpServletRequest request) {
-		System.out.println(request.getParameter("coupon_code"));
-		/* return "redirect:/customer/mypage/coupon"; */
+	public String checkCode(HttpServletRequest request) {
+		String coupon_code = request.getParameter("coupon_code");
+		
+		boolean result = myPageService.checkCouponCode(customer_id, coupon_code);
+		if (result) {
+			return "true";
+		} else {
+			return "false";
+		}
 	}
 }
