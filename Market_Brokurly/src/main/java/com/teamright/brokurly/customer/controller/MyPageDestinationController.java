@@ -39,6 +39,7 @@ public class MyPageDestinationController {
 		
 		model.addAttribute("customer_info", customerInfoMapper.getCustomerInfo(customer_id));
 		model.addAttribute("coupon_count", customerInfoMapper.getCouponCount(customer_id));
+		model.addAttribute("disappear_point", customerInfoMapper.getDisappearPoint(customer_id));
 		model.addAttribute("address_list", customerInfoMapper.getAddressList(customer_id));
 	}
 	

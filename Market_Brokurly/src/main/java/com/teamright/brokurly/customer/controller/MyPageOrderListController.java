@@ -46,6 +46,7 @@ public class MyPageOrderListController {
 		
 		model.addAttribute("customer_info", customerInfoMapper.getCustomerInfo(customer_id));
 		model.addAttribute("coupon_count", customerInfoMapper.getCouponCount(customer_id));
+		model.addAttribute("disappear_point", customerInfoMapper.getDisappearPoint(customer_id));
 		model.addAttribute("total_price", myPageMapper.getTotalPrice(customer_id)); // 주문번호와 비교하여 총합계 출력
 		model.addAttribute("deli_status", myPageMapper.getDeliStatus(customer_id)); // 주문번호와 비교하여 배송 상태 출력
 		model.addAttribute("order_list", myPageService.getOrderList(customer_id));

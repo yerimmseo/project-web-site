@@ -36,16 +36,16 @@
                     <div id="eventMenu">
                         <ul class="menu">
                             <li>
-                                <a>전체보기</a>
+                                <a href="${path }/event/total">전체보기</a>
                             </li>
                             <li>
-                                <a>회원혜택</a>
+                                <a href="${path }/event/lovers">회원혜택</a>
                             </li>
                             <li>
-                                <a>친구초대</a>
+                                <a href="${path }/event/friend">친구초대</a>
                             </li>
                             <li>
-                                <a class="on">장바구니</a>
+                                <a href="${path }/event/basket" class="on">장바구니</a>
                             </li>
                         </ul>
                     </div>
@@ -223,7 +223,7 @@
                                         <span class="emph">적립금 1만원</span>
                                     </strong>
                                     <p class="txt">
-                                        매월 인스타그램, 블로그에 #마켓컬리를 포스팅한 분 중
+                                        매월 인스타그램, 블로그에 #마켓브로컬리를 포스팅한 분 중
                                         <br>
                                         베스트 후기 각 3분을 선정해 적립금 1만원을 드려요.
                                     </p>
@@ -236,7 +236,7 @@
                                         베스트 후기에 선정된 3분께는 개별 연락 후 적립금이 지급됩니다.
                                     </li>
                                     <li>
-                                        당첨된 포스팅은 마켓컬리 인스타그램 / 블로그 계정으로 공유되며, 이에 동의해주신 분에 한해
+                                        당첨된 포스팅은 마켓브로컬리 인스타그램 / 블로그 계정으로 공유되며, 이에 동의해주신 분에 한해
                                         <br>
                                         적립금이 지급됩니다.
                                     </li>

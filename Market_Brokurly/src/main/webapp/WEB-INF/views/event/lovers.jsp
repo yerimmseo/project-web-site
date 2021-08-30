@@ -36,16 +36,16 @@
                     <div id="eventMenu">
                         <ul class="menu">
                             <li>
-                                <a>전체보기</a>
+                                <a href="${path }/event/total">전체보기</a>
                             </li>
                             <li>
-                                <a class="on">회원혜택</a>
+                                <a href="${path }/event/lovers" class="on">회원혜택</a>
                             </li>
                             <li>
-                                <a>친구초대</a>
+                                <a href="${path }/event/friend">친구초대</a>
                             </li>
                             <li>
-                                <a>장바구니</a>
+                                <a href="${path }/event/basket">장바구니</a>
                             </li>
                         </ul>
                     </div>
@@ -69,17 +69,17 @@
                                             <p class="txt">
                                                 <span class="num">7</span>
                                                 %
-                                                <span class="ico_comm ico_arr"></span>
+                                                〉
                                             </p>
                                         </a>
                                     </div>
                                     <div class="item">
                                         <a href="#none" class="btn_grade">
-                                            <strong class="tit">아스파라거스</strong>
+                                            <strong class="tit">아스파<br>라거스</strong>
                                             <p class="txt">
                                                 <span class="num">7</span>
                                                 %
-                                                <span class="ico_comm ico_arr"></span>
+                                                〉
                                             </p>
                                         </a>
                                     </div>
@@ -89,7 +89,7 @@
                                             <p class="txt">
                                                 <span class="num">5</span>
                                                 %
-                                                <span class="ico_comm ico_arr"></span>
+                                                〉
                                             </p>
                                         </a>
                                     </div>
@@ -99,7 +99,7 @@
                                             <p class="txt">
                                                 <span class="num">3</span>
                                                 %
-                                                <span class="ico_comm ico_arr"></span>
+                                                〉
                                             </p>
                                         </a>
                                     </div>
@@ -109,7 +109,7 @@
                                             <p class="txt">
                                                 <span class="num">1</span>
                                                 %
-                                                <span class="ico_comm ico_arr"></span>
+                                                〉
                                             </p>
                                         </a>
                                     </div>
@@ -119,7 +119,7 @@
                                             <p class="txt">
                                                 <span class="num">5</span>
                                                 %
-                                                <span class="ico_comm ico_arr"></span>
+                                                〉
                                             </p>
                                         </a>
                                     </div>
@@ -136,22 +136,30 @@
                                         </div>
                                         <ul class="list_info">
                                             <li>
-                                                <span class="ico_comm ico_won"></span>
+                                                <span class="ico_comm ico_won" style="color: seagreen">￦</span>
                                                 <span class="txt_info">적립
                                                     <span class="num">7</span>
                                                     %
                                                 </span>
                                             </li>
                                             <li>
-                                                <span class="ico_comm ico_double"></span>
+                                                <span class="ico_comm ico_double" style="color: seagreen">X2</span>
                                                 <span class="txt_info">더블 추가 적립금</span>
                                             </li>
                                             <li>
-                                                <span class="ico_comm ico_gift"></span>
+                                                <span class="ico_comm ico_gift">
+                                                	<span class="material-icons-outlined" style="font-size: 18px; color: seagreen">
+													card_giftcard
+													</span>
+												</span>
                                                 <span class="txt_info">매월 브로컬리 선물</span>
                                             </li>
                                             <li>
-                                                <span class="ico_comm ico_coupon"></span>
+                                                <span class="ico_comm ico_coupon">
+                                                <span class="material-icons-outlined" style="color: seagreen">
+												crop_16_9
+												</span>
+                                                </span>
                                                 <span class="txt_info">
                                                     최대
                                                     <span class="num">2</span>
@@ -167,7 +175,7 @@
                                     </div>
                                     <div class="item">
                                         <div class="wrap_tit">
-                                            <strong class="tit">아스파라거스</strong>
+                                            <strong class="tit" style="color: rgb(77, 173, 119);">아스파라거스</strong>
                                             <p class="txt">
                                                 전월 실적 100만원 이상
                                                 <br>
@@ -176,18 +184,22 @@
                                         </div>
                                         <ul class="list_info">
                                             <li>
-                                                <span class="ico_comm ico_won"></span>
+                                                <span class="ico_comm ico_won" style="color: rgb(77, 173, 119);">￦</span>
                                                 <span class="txt_info">적립
                                                     <span class="num">7</span>
                                                     %
                                                 </span>
                                             </li>
                                             <li>
-                                                <span class="ico_comm ico_double"></span>
+                                                <span class="ico_comm ico_double" style="color: rgb(77, 173, 119);">X2</span>
                                                 <span class="txt_info">더블 추가 적립금</span>
                                             </li>
                                             <li>
-                                                <span class="ico_comm ico_coupon"></span>
+                                                <span class="ico_comm ico_coupon">
+                                                <span class="material-icons-outlined" style="color: rgb(77, 173, 119);">
+												crop_16_9
+												</span>
+                                                </span>
                                                 <span class="txt_info">
                                                     최대
                                                     <span class="num">1</span>
@@ -204,7 +216,7 @@
 
                                     <div class="item">
                                         <div class="wrap_tit">
-                                            <strong class="tit">그린</strong>
+                                            <strong class="tit" style="color: rgb(101, 209, 148);">그린</strong>
                                             <p class="txt">
                                                 전월 실적 50만원 이상
                                                 <br>
@@ -213,14 +225,18 @@
                                         </div>
                                         <ul class="list_info">
                                             <li>
-                                                <span class="ico_comm ico_won"></span>
+                                                <span class="ico_comm ico_won" style="color: rgb(101, 209, 148);">￦</span>
                                                 <span class="txt_info">적립
                                                     <span class="num">5</span>
                                                     %
                                                 </span>
                                             </li>
                                             <li>
-                                                <span class="ico_comm ico_coupon"></span>
+                                                <span class="ico_comm ico_coupon">
+                                                <span class="material-icons-outlined" style="color: rgb(101, 209, 148);">
+												crop_16_9
+												</span>
+                                                </span>
                                                 <span class="txt_info">
                                                     최대
                                                     <span class="num">1</span>
@@ -237,7 +253,7 @@
 
                                     <div class="item">
                                         <div class="wrap_tit">
-                                            <strong class="tit">프렌즈</strong>
+                                            <strong class="tit" style="color: rgb(132, 240, 179);">프렌즈</strong>
                                             <p class="txt">
                                                 전월 실적 30만원 이상
                                                 <br>
@@ -246,14 +262,18 @@
                                         </div>
                                         <ul class="list_info">
                                             <li>
-                                                <span class="ico_comm ico_won"></span>
+                                                <span class="ico_comm ico_won" style="color: rgb(132, 240, 179);">￦</span>
                                                 <span class="txt_info">적립
                                                     <span class="num">3</span>
                                                     %
                                                 </span>
                                             </li>
                                             <li>
-                                                <span class="ico_comm ico_coupon"></span>
+                                                <span class="ico_comm ico_coupon">
+                                                <span class="material-icons-outlined" style="color: rgb(132, 240, 179);">
+												crop_16_9
+												</span>
+                                                </span>
                                                 <span class="txt_info">
                                                     최대
                                                     <span class="num">7</span>
@@ -270,7 +290,7 @@
 
                                     <div class="item">
                                         <div class="wrap_tit">
-                                            <strong class="tit">일반</strong>
+                                            <strong class="tit" style="color: darkseagreen;">일반</strong>
                                             <p class="txt">
                                                 전월 실적 15만원 이상
                                                 <br>
@@ -279,14 +299,18 @@
                                         </div>
                                         <ul class="list_info">
                                             <li>
-                                                <span class="ico_comm ico_won"></span>
+                                                <span class="ico_comm ico_won" style="color: darkseagreen;">￦</span>
                                                 <span class="txt_info">적립
                                                     <span class="num">1</span>
                                                     %
                                                 </span>
                                             </li>
                                             <li>
-                                                <span class="ico_comm ico_coupon"></span>
+                                                <span class="ico_comm ico_coupon">
+                                                <span class="material-icons-outlined" style="color: darkseagreen;">
+												crop_16_9
+												</span>
+                                                </span>
                                                 <span class="txt_info">
                                                     최대
                                                     <span class="num">6</span>
@@ -303,7 +327,7 @@
 
                                     <div class="item">
                                         <div class="wrap_tit">
-                                            <strong class="tit">웰컴</strong>
+                                            <strong class="tit" style="color: rgb(123, 145, 132);">웰컴</strong>
                                             <p class="txt">
                                                 전월 실적 15만원 미만
                                                 <br>
@@ -312,7 +336,7 @@
                                         </div>
                                         <ul class="list_info">
                                             <li>
-                                                <span class="ico_comm ico_won"></span>
+                                                <span class="ico_comm ico_won" style="color: rgb(123, 145, 132);">￦</span>
                                                 <span class="txt_info">적립
                                                     <span class="num">5</span>
                                                     %

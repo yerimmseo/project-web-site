@@ -39,19 +39,16 @@
                     <div id="eventMenu">
                         <ul class="menu">
                             <li>
-                                <a>전체보기</a>
+                                <a href="${path }/event/total">전체보기</a>
                             </li>
                             <li>
-                                <a>회원혜택</a>
+                                <a href="${path }/event/lovers">회원혜택</a>
                             </li>
                             <li>
-                                <a class="on">친구초대</a>
+                                <a href="${path }/event/friend" class="on">친구초대</a>
                             </li>
                             <li>
-                                <a>장바구니</a>
-                            </li>
-                            <li>
-                                <a>결제혜택</a>
+                                <a href="${path }/event/basket">장바구니</a>
                             </li>
                         </ul>
                     </div>

@@ -82,7 +82,16 @@
 	                                    <div class="spacer"></div>
 	                                    <p class="info">
 	                                    	<fmt:formatNumber value="${customer_info.customer_mileage }" pattern="#,###,###" /> 원
-	                                        <span class="expire">소멸 예정 0원</span>
+	                                        <span class="expire">
+	                                        소멸 예정 
+	                                        <c:if test="${disappear_point eq null }">
+	                                        0
+	                                        </c:if>
+	                                        <c:if test="${disappear_point ne null }">
+	                                        ${disappear_point }
+	                                        </c:if>
+	                                        원
+	                                        </span>
 	                                    </p>
 	                                </a>
 	                                <a class="link_wrap" id="coupon_top">
@@ -112,7 +121,7 @@
 	                            </div>
 	                        </div>
 	                    </div>
-	                    <a href="" class="bnr_event">
+	                    <a href="${path }/event/friend" class="bnr_event">
 	                        <img src="" alt="">
 	                    </a>
 	                </div>

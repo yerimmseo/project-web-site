@@ -111,7 +111,7 @@
 	                            </div>
 	                        </div>
 	                    </div>
-	                    <a href="" class="bnr_event">
+	                    <a href="${path }/event/friend" class="bnr_event">
 	                        <img src="" alt="">
 	                    </a>
 	                </div>

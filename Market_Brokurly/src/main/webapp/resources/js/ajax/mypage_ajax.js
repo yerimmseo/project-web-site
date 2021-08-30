@@ -60,7 +60,7 @@ $(function() {
                     alert('비밀번호를 정확하게 입력해주세요.');
                     return;
                 } else {
-                    $('#myinfo2Form').submit();
+					location.href = '/brokurly/customer/mypage/myinfo2';
                 }
             },
             error: function() {

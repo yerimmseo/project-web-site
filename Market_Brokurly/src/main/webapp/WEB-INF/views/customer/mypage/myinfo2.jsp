@@ -81,7 +81,16 @@
 	                                    <div class="spacer"></div>
 	                                    <p class="info">
 	                                    	<fmt:formatNumber value="${customer_info.customer_mileage }" pattern="#,###,###" /> 원
-	                                        <span class="expire">소멸 예정 0원</span>
+	                                        <span class="expire">
+	                                        소멸 예정 
+	                                        <c:if test="${disappear_point eq null }">
+	                                        0
+	                                        </c:if>
+	                                        <c:if test="${disappear_point ne null }">
+	                                        ${disappear_point }
+	                                        </c:if>
+	                                        원
+	                                        </span>
 	                                    </p>
 	                                </a>
 	                                <a class="link_wrap" id="coupon_top">
@@ -111,7 +120,7 @@
 	                            </div>
 	                        </div>
 	                    </div>
-	                    <a href="" class="bnr_event">
+	                    <a href="${path }/event/friend" class="bnr_event">
 	                        <img src="" alt="">
 	                    </a>
 	                </div>
@@ -169,12 +178,13 @@
 												</span>
 											</th>
 											<td>
-												<input type="text" value="${customer.customer_id }" class="inp_read" readonly="readonly">
+												<input type="text" value="${customer_info.customer_id }" class="inp_read" readonly="readonly">
 											</td>
 										</tr>
 										<tr>
 											<th>현재 비밀번호</th>
 											<td>
+												<input type="hidden" class="now_pw" id="now_pw" value="${customer_pw }">
 												<input type="password" class="pw_input" id="now_customer_pw" />
 												<p class="txt_guide square pw_guide">
 													<span class="txt txt_case4">
@@ -187,7 +197,6 @@
 											<th>새 비밀번호</th>
 											<td>
 												<input type="password" class="reg_pw new_pw_input" id="update_pw">
-												<input type="hidden" class="now_pw" value="${customer_pw }">
 												<p class="txt_guide square new_pw_guide">
 													<span class="txt" id="pwcheck_now">
 														현재 비밀번호와 다르게 입력
@@ -224,7 +233,7 @@
 												</span>
 											</th>
 											<td>
-												<input type="text" value="${customer.customer_name }" id="customer_name" placeholder="이름을 입력해주세요">
+												<input type="text" value="${customer_info.customer_name }" id="customer_name" placeholder="이름을 입력해주세요">
 											</td>
 										</tr>
 										<tr>
@@ -236,7 +245,7 @@
 												</span>
 											</th>
 											<td>
-												<input type="text" value="${customer.customer_email }" id="customer_email" size="30" placeholder="예: marketbrokurly@brokurly.com">
+												<input type="text" value="${customer_info.customer_email }" id="customer_email" size="30" placeholder="예: marketbrokurly@brokurly.com">
 												<a class="btn default" id="email_chk_btn">중복확인</a>
 											</td>
 										</tr>
@@ -250,8 +259,8 @@
 											</th>
 											<td>
 												<div class="phone_num">
-													<input type="text" value="${customer.customer_tel }" class="inp" placeholder="숫자만 입력해주세요">
-													<button class="btn default other_chk_btn" type="button">다른번호 인증</button>
+													<input type="text" value="${customer_info.customer_tel }" class="inp" id="customer_tel" placeholder="숫자만 입력해주세요">
+													<button class="btn default other_chk_btn" type="button" id="tel_check">다른번호 인증</button>
 												</div>
 												<div class="code_num" style="display: none;">
 													<input type="text" size="6">
@@ -409,6 +418,6 @@
 	
 	<script src="${path }/resources/js/style/mypage.js"></script>
 	<script src="${path }/resources/js/ajax/mypage_ajax.js"></script>
-	<script src="${path }/resources/js/ajax/myinfo2_ajax.js"></script>
+	<script src="${path }/resources/js/ajax/myinfo_ajax.js"></script>
 </body>
 </html>

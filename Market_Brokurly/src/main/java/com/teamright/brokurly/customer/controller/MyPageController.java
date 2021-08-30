@@ -41,26 +41,7 @@ public class MyPageController {
 		model.addAttribute("customer", customer);
 	}
 
-	@RequestMapping(value = "/nowpwchk", method = RequestMethod.GET, produces = "application/text; charset=utf8")
-	@ResponseBody
-	public String nowPwChk(HttpSession session, HttpServletRequest request) throws Exception {
-		String customer_id = (String)session.getAttribute("customer_id");
-		String customer_pw = request.getParameter("customer_pw");
-		
-		String result = signInService.pwCheck(customer_id);
-		
-		if (result.equals(signInService.getSHA512(customer_pw))) {
-			return result;
-		} else {
-			return null;
-		}
-	}
-	
-	@RequestMapping(value = "/emailchk", method = RequestMethod.GET, produces = "application/text; charset=utf8")
-	@ResponseBody
-	public String emailChk(HttpServletRequest request) {
-		String result = signUpService.emailCheck(request.getParameter("customer_email"));
-		return result;
-	}
+
+
 	
 }
