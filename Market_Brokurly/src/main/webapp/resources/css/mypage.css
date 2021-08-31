@@ -104,6 +104,7 @@
 .search_date .layer_search a {display: block; overflow: hidden; height: 32px; padding: 7px 0 0 8px; font-size: 12px; color: #666; line-height: 18px; letter-spacing: -.2px;}
 .search_date .layer_search li:first-child {border-top: 0;}
 .search_date .layer_search li {background-color: #fff; border-top: solid 1px #dddfe1;}
+.search_date .layer-search li > a:hover {background-color: #f7f7f7;}
 .search_date .layer_search a.on {background-color: #f7f7f7;}
 
 .section_orderlist .list_order {padding-top: 10px; border-top: solid 2px #333;}

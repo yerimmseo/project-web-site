@@ -62,6 +62,12 @@ public class TestMyPageMapper {
 		log.info(products);
 	}
 	
+	@Test
+	public void getOrderListYearTest() {
+		List<ProductVO> products = myPageMapper.getListByOrderYear("mongsoung1", "2021");
+		log.info(products);
+	}
+	
 	@Ignore
 	@Test
 	public void getDeliStatusTest() {
@@ -90,6 +96,7 @@ public class TestMyPageMapper {
 		log.info(coupon);
 	}
 	
+	@Ignore
 	@Test
 	public void insertCouponTest() {
 		myPageMapper.insertCoupon("mongsoung1", 2);

@@ -68,7 +68,7 @@
 
 .grade_list {display: flex; position: relative; padding-top: 50px; justify-content: space-between;}
 .grade_list .item {width: 120px; margin: auto 0 0; border: 1px solid seagreen; border-radius: 5px 0 0 0; text-align: center; box-sizing: border-box; transition: background-color .3s ease-in-out;}
-.grade_list .item:first-child {height: 90px;}
+.grade_list .item:first-child {height: 90px; color: seagreen}
 .grade_list .item:nth-child(2) {height: 80px; border-color: rgb(77, 173, 119); margin-left: 9.9px;}
 .grade_list .item:nth-child(3) {height: 70px; border-color: rgb(101, 209, 148); margin-left: 9.9px;}
 .grade_list .item:nth-child(4) {height: 60px; border-color: rgb(132, 240, 179); margin-left: 9.9px;}

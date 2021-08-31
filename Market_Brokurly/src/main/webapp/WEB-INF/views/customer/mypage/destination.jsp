@@ -36,8 +36,8 @@
 	                        <div class="grade_user">
 	                            <div class="grade_wrap">
 	                                <div class="grade_logo">
-	                                	<c:if test="${grade eq 'BROCCOLI' }">브로컬리</c:if>
-	                                	<c:if test="${grade eq 'ASPARAGUS' }">아스파라거스</c:if>
+	                                	<c:if test="${grade eq 'BROCCOLI' }">브로<br>컬리</c:if>
+	                                	<c:if test="${grade eq 'ASPARAGUS' }">아스파<br>라거스</c:if>
 	                                	<c:if test="${grade eq 'GREEN' }">그린</c:if>
 	                                	<c:if test="${grade eq 'FRIENDS' }">프렌즈</c:if>
 	                                	<c:if test="${grade eq 'NORMAL' }">일반</c:if>
@@ -68,7 +68,7 @@
 	                                <div class="benefit"></div>
 	                            </div>
 	                            <div class="next">
-	                                <a href="" class="total_grade">전체등급 보기</a>
+	                                <a href="${path }/event/lovers" class="total_grade">전체등급 보기</a>
 	                                <a href="" class="next_month">다음 달 예상등급 보기</a>
 	                            </div>
 	                        </div>

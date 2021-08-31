@@ -34,6 +34,12 @@
 								  INNER JOIN subcategory_table USING (subcate_id)
 								  WHERE customer_id=#{customer_id}
 	</select>
+	<select id="getListByOrderYear" resultType="com.teamright.brokurly.model.ProductVO">
+		SELECT * FROM order_table INNER JOIN detailorder_table USING (order_id) 
+								  INNER JOIN product_table USING (product_id)
+								  INNER JOIN subcategory_table USING (subcate_id)
+								  WHERE customer_id=#{customer_id} AND TO_CHAR(order_time, 'YYYY')=#{year}
+	</select>
 	<!-- 주문번호별 배송상태 조회 -->
 	<select id="getDeliStatus" resultType="com.teamright.brokurly.model.DeliveryVO">
 		SELECT order_id, delivery_status FROM order_table INNER JOIN delivery_table USING (order_id) 

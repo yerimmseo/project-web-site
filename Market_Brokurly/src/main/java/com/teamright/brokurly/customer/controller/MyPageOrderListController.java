@@ -3,17 +3,18 @@ package com.teamright.brokurly.customer.controller;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.teamright.brokurly.customer.mapper.CustomerInfoMapper;
 import com.teamright.brokurly.customer.mapper.MyPageMapper;
 import com.teamright.brokurly.customer.service.MyPageOrderListService;
-import com.teamright.brokurly.model.CustomerVO;
 import com.teamright.brokurly.product.mapper.ProductMapper;
 
 @Controller
@@ -22,6 +23,7 @@ public class MyPageOrderListController {
 	
 	private static String customer_id;
 	private static Integer order_id;
+	private static String year;
 
 	@Autowired
 	CustomerInfoMapper customerInfoMapper;
@@ -49,13 +51,14 @@ public class MyPageOrderListController {
 		model.addAttribute("disappear_point", customerInfoMapper.getDisappearPoint(customer_id));
 		model.addAttribute("total_price", myPageMapper.getTotalPrice(customer_id)); // 주문번호와 비교하여 총합계 출력
 		model.addAttribute("deli_status", myPageMapper.getDeliStatus(customer_id)); // 주문번호와 비교하여 배송 상태 출력
-		model.addAttribute("order_list", myPageService.getOrderList(customer_id));
+		model.addAttribute("order_list", myPageService.getAllOrderList(customer_id));
 	}
 	
 	@RequestMapping("/orderview")
 	public void orderView(HttpSession session, HttpServletRequest request, Model model) {
 		model.addAttribute("customer_info", customerInfoMapper.getCustomerInfo(customer_id));
 		model.addAttribute("coupon_count", customerInfoMapper.getCouponCount(customer_id));
+		model.addAttribute("disappear_point", customerInfoMapper.getDisappearPoint(customer_id));
 		model.addAttribute("order_list", myPageMapper.getOrderView(customer_id, order_id));
 		model.addAttribute("total_price", myPageMapper.getSumOrderList(customer_id, order_id));
 	}
@@ -66,6 +69,15 @@ public class MyPageOrderListController {
 		order_id = Integer.parseInt(request.getParameter("order_id")); 
 		
 		return "redirect:/customer/mypage/orderview";
+	}
+	
+	@RequestMapping(value = "/year", method = RequestMethod.GET, produces = "application/text; charset=utf8")
+	@ResponseBody
+	public void getYear(@RequestParam String term, Model model) {
+		System.out.println(term);
+		year = term;
+		System.out.println(myPageService.getOrderListByYear(customer_id, year));
+		model.addAttribute("order_list", myPageService.getOrderListByYear(customer_id, term));
 	}
 	
 	// 하나의 상품만 장바구니에 다시 담을 기능 (임시)

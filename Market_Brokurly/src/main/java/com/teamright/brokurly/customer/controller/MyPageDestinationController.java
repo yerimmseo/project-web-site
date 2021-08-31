@@ -49,7 +49,6 @@ public class MyPageDestinationController {
 		model.addAttribute("address_main", address_main);
 	}
 	
-	// 검색한 주소를 세션에 저장해 팝업창으로 보내주기 위함
 	@RequestMapping(value = "/address", method = RequestMethod.GET, produces = "application/text; charset=utf8")
 	@ResponseBody
 	public String popup(HttpSession session, HttpServletRequest request) {

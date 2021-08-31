@@ -42,8 +42,6 @@ $(function() {
     var new_pw_guide = $('.new_pw_guide');
     var chk_new_pw_input = $('.chk_new_pw_input');
     var chk_new_pw_guide = $('.chk_new_pw_guide');
-    var code_num = $('.code_num');
-    var code_num_guide = $('.code_num_guide');
     var birth_input = $('.birth_input');
     var birth_day = $('.birth_day');
 	var btn_choice = $('.btn_choice');
@@ -51,6 +49,9 @@ $(function() {
 	var bg_dim = $('.bg_dim');
 	var btn_ok = $('.btn_ok');
 	var btn_close = $('.btn_close');
+	var btn_layer = $('.btn_layer');
+	var layer_search = $('.layer_search');
+	var term = $('.term');
 
     new_pw_input.click(() => {
         new_pw_guide.css('display', 'block');
@@ -82,4 +83,14 @@ $(function() {
         layer_choice.css('display', 'none');
         bg_dim.css('display', 'none');
     });
+
+	btn_layer.click(() => {
+		if (layer_search.css('display') === 'none') {
+			btn_layer.addClass('on');
+			layer_search.css('display', 'block');
+		} else {
+			btn_layer.removeClass('on');
+			layer_search.css('display', 'none');
+		}
+	});
 });

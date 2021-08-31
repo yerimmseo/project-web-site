@@ -36,8 +36,8 @@
 	                        <div class="grade_user">
 	                            <div class="grade_wrap">
 	                                <div class="grade_logo">
-	                                	<c:if test="${grade eq 'BROCCOLI' }">브로컬리</c:if>
-	                                	<c:if test="${grade eq 'ASPARAGUS' }">아스파라거스</c:if>
+	                                	<c:if test="${grade eq 'BROCCOLI' }">브로<br>컬리</c:if>
+	                                	<c:if test="${grade eq 'ASPARAGUS' }">아스파<br>라거스</c:if>
 	                                	<c:if test="${grade eq 'GREEN' }">그린</c:if>
 	                                	<c:if test="${grade eq 'FRIENDS' }">프렌즈</c:if>
 	                                	<c:if test="${grade eq 'NORMAL' }">일반</c:if>
@@ -68,7 +68,7 @@
 	                                <div class="benefit"></div>
 	                            </div>
 	                            <div class="next">
-	                                <a href="" class="total_grade">전체등급 보기</a>
+	                                <a href="${path }/event/lovers" class="total_grade">전체등급 보기</a>
 	                                <a href="" class="next_month">다음 달 예상등급 보기</a>
 	                            </div>
 	                        </div>
@@ -175,25 +175,26 @@
 	                        </a>
 	                        <ul class="layer_search">
 	                            <li>
-	                                <a class="on">전체기간</a>
+	                                <a class="term">전체기간</a>
 	                            </li>
 	                            <li>
-	                                <a data-year="2021">2021 년</a>
+	                                <a type="button" onclick="yearSearch(2021);">2021 년</a>
 	                            </li>
 	                            <li>
-	                                <a data-year="2020">2020 년</a>
+	                                <a type="button" onclick="yearSearch(2020);">2020 년</a>
 	                            </li>
 	                            <li>
-	                                <a data-year="2019">2019 년</a>
+	                                <a type="button" onclick="yearSearch(2019);">2019 년</a>
 	                            </li>
 	                        </ul>
 	                    </div>
 	                    <ul class="list_order">
-	                        <c:forEach var="i" begin="0" end="${order_list.size() - 1 }">
 	                        <!-- 최근 주문내역 없을 때 출력되는 li -->
-	                        <c:if test="${order_list.size() == 0}">
+	                        <c:if test="${order_list.get(0).size() == 0}">
 	                        <li class="no_data">주문내역이 없습니다.</li>
 	                        </c:if>
+	                        <c:if test="${order_list.get(0).size() != 0}">
+	                        <c:forEach var="i" begin="0" end="${order_list.size() - 1 }">
 	                        <li>
 	                            <div class="date">
 	                            	<fmt:formatDate var="orderDate" value="${order_list.get(i).get(0).order_time }" pattern="yyyy.MM.dd (HH시 mm분)"/>
@@ -243,6 +244,7 @@
 	                            </div>
 	                        </li>
 	                        </c:forEach>
+	                        </c:if>
 	                    </ul>
 	                </div>
 	            </div>
@@ -256,5 +258,27 @@
     <script src="${path }/resources/js/style/mypage.js"></script>
     <script src="${path }/resources/js/ajax/mypage_onclick.js"></script>
     <script src="${path }/resources/js/ajax/mypage_ajax.js"></script>
+    
+    <script type="text/javascript">
+	    function yearSearch(term) {
+	    	/* const year = $(ths).parents('li').find('input[name=year]');*/
+	    	
+	    	console.log(term);
+	    	
+	    	$.ajax({
+	    		url: '/brokurly/customer/mypage/year',
+	    		type: 'GET',
+	    		data: {
+	    			'term': term
+	    		},
+	    		success: function() {
+	    			opener.parent.location.reload();
+	    		},
+	    		error: function() {
+	    			alert('서버오류');
+	    		}
+	    	});
+	    }
+    </script>
 </body>
 </html>
