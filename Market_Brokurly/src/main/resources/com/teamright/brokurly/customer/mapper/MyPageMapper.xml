@@ -80,4 +80,15 @@
 	<insert id="insertCoupon">
 		INSERT INTO customer_coupon_table VALUES(#{customer_id}, #{coupon_id}, '미사용')
 	</insert>
+	<update id="updateInfo">
+		UPDATE customer_table SET 
+								customer_pw=#{customer_pw},
+								customer_name=#{customer_name},
+								customer_email=#{customer_email},
+								customer_tel=#{customer_tel},
+								customer_gender=#{customer_gender},
+								customer_birth=#{customer_birth} 
+							  WHERE 
+							    customer_id=#{customer_id}
+	</update>
 </mapper>

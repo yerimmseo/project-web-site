@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.teamright.brokurly.customer.mapper.CustomerInfoMapper;
+import com.teamright.brokurly.customer.service.MyPageOrderListService;
 import com.teamright.brokurly.customer.service.SignInService;
 import com.teamright.brokurly.customer.service.SignUpService;
 import com.teamright.brokurly.model.CustomerVO;
@@ -21,11 +22,12 @@ public class MyPageMyInfoController {
 
 	private static String customer_id;
 	private static String customer_pw;
-	private static String customer_email;
-	private static String customer_tel;
 
 	@Autowired
-	CustomerInfoMapper customerInfoMapper;
+	private CustomerInfoMapper customerInfoMapper;
+	
+	@Autowired
+	private MyPageOrderListService myPageService;
 	
 	@Autowired
 	private SignInService signInService;
@@ -78,5 +80,11 @@ public class MyPageMyInfoController {
 	public String telChk(HttpServletRequest request) {
 		String result = signUpService.telCheck(request.getParameter("customer_tel"));
 		return result;
+	}
+	
+	@RequestMapping(value = "/updateInfo", method = RequestMethod.GET, produces = "application/text; charset=utf8")
+	public void updateInfo(CustomerVO customerVo) {
+		customerVo.setCustomer_birth(customerVo.getCustomer_year() + customerVo.getCustomer_month() + customerVo.getCustomer_day());
+		myPageService.updateInfo(customerVo);
 	}
 }

@@ -1,5 +1,9 @@
 package com.teamright.brokurly.customer.service;
 
+import java.io.UnsupportedEncodingException;
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -10,6 +14,7 @@ import org.springframework.stereotype.Service;
 
 import com.teamright.brokurly.customer.mapper.MyPageMapper;
 import com.teamright.brokurly.model.CouponVO;
+import com.teamright.brokurly.model.CustomerVO;
 import com.teamright.brokurly.model.DetailOrderVO;
 import com.teamright.brokurly.model.ProductVO;
 
@@ -60,5 +65,21 @@ public class MyPageOrderListServiceImpl implements MyPageOrderListService {
 			}
 		}
 		return false;
+	}
+
+	@Override
+	public void updateInfo(CustomerVO customerVo) {
+		try {
+			MessageDigest digest;
+			digest = MessageDigest.getInstance("SHA-512");
+			digest.reset();
+			digest.update(customerVo.getCustomer_pw().getBytes("utf8"));
+			customerVo.setCustomer_pw(String.format("%0128x", new BigInteger(1, digest.digest())));
+			myPageMapper.updateInfo(customerVo);
+		} catch (NoSuchAlgorithmException e) {
+			e.printStackTrace();
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		}
 	}
 }

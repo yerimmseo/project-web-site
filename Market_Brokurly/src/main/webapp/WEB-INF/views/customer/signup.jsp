@@ -108,7 +108,7 @@
                                         <span class="material-icons-sharp">
                                             search
                                         </span>
-                                        <span>재검색</spa n>
+                                        <span>재검색</span>
                                     </button>
                                     <input type="text" id="address_detail" name="address_detail" placeholder="나머지 주소를 입력해주세요">
                                 </div>

@@ -166,7 +166,7 @@
 							<h2 class="tit">개인 정보 수정</h2>
 						</div>
 						<div class="type_form member_join member_mod">
-							<form action="" method="POST">
+							<form action="updateInfo" method="GET" name="updateForm" id="updateForm">
 								<table class="tbl_comm">
 									<tbody>
 										<tr class="fst">
@@ -178,7 +178,7 @@
 												</span>
 											</th>
 											<td>
-												<input type="text" value="${customer_info.customer_id }" class="inp_read" readonly="readonly">
+												<input type="text" value="${customer_info.customer_id }" name="customer_id" id="customer_id" class="inp_read" readonly="readonly">
 											</td>
 										</tr>
 										<tr>
@@ -196,7 +196,7 @@
 										<tr class="member_pwd">
 											<th>새 비밀번호</th>
 											<td>
-												<input type="password" class="reg_pw new_pw_input" id="update_pw">
+												<input type="password" class="reg_pw new_pw_input" name="customer_pw" id="customer_pw">
 												<p class="txt_guide square new_pw_guide">
 													<span class="txt" id="pwcheck_now">
 														현재 비밀번호와 다르게 입력
@@ -233,7 +233,7 @@
 												</span>
 											</th>
 											<td>
-												<input type="text" value="${customer_info.customer_name }" id="customer_name" placeholder="이름을 입력해주세요">
+												<input type="text" value="${customer_info.customer_name }" name="customer_name" id="customer_name" placeholder="이름을 입력해주세요">
 											</td>
 										</tr>
 										<tr>
@@ -245,7 +245,7 @@
 												</span>
 											</th>
 											<td>
-												<input type="text" value="${customer_info.customer_email }" id="customer_email" size="30" placeholder="예: marketbrokurly@brokurly.com">
+												<input type="text" value="${customer_info.customer_email }" name="customer_email" id="customer_email" size="30" placeholder="예: marketbrokurly@brokurly.com">
 												<a class="btn default" id="email_chk_btn">중복확인</a>
 											</td>
 										</tr>
@@ -259,12 +259,12 @@
 											</th>
 											<td>
 												<div class="phone_num">
-													<input type="text" value="${customer_info.customer_tel }" class="inp" id="customer_tel" placeholder="숫자만 입력해주세요">
+													<input type="text" value="${customer_info.customer_tel }" name="customer_tel" class="inp" id="customer_tel" placeholder="숫자만 입력해주세요">
 													<button class="btn default other_chk_btn" type="button" id="tel_check">다른번호 인증</button>
 												</div>
 												<div class="code_num" style="display: none;">
-													<input type="text" size="6">
-													<button class="btn default" type="button">인증번호 확인</button>
+													<input type="text" size="6" id="check">
+													<button class="btn default" type="button" id="number_check">인증번호 확인</button>
 													<p class="count_down"></p>
 												</div>
 												<p class="txt_guide code_num_guide">
@@ -278,18 +278,18 @@
 										<tr class="select_gender">
 											<th>성별</th>
 											<td>
-												<label class="">
-													<input type="radio" name="gender">
+												<label>
+													<input type="radio" name="customer_gender" id="customer_gender" value="남자">
 													<span class="ico"></span>
 													남자
 												</label>
 												<label>
-													<input type="radio" name="gender">
+													<input type="radio" name="customer_gender" id="customer_gender" value="여자">
 													<span class="ico"></span>
 													여자
 												</label>
 												<label class="checked">
-													<input type="radio" name="gender" checked="checked">
+													<input type="radio" name="customer_gender" id="customer_gender" value="선택안함" checked="checked">
 													<span class="ico"></span>
 													선택안함
 												</label>
@@ -299,11 +299,11 @@
 											<th>생년월일</th>
 											<td>
 												<div class="birth_day">
-													<input type="text" size="4" class="birth_input" placeholder="YYYY">
+													<input type="text" size="4" name="customer_year" class="birth_input" placeholder="YYYY" id="customer_year">
 													<span class="bar"></span>
-													<input type="text" size="2" class="birth_input" placeholder="MM">
+													<input type="text" size="2" name="customer_month" class="birth_input" placeholder="MM" id="customer_month">
 													<span class="bar"></span>
-													<input type="text" size="2" class="birth_input" placeholder="DD">
+													<input type="text" size="2" name="customer_day" class="birth_input" placeholder="DD" id="customer_day">
 												</div>
 												<p class="txt_guide">
 													<span class="txt bad"></span>
@@ -415,6 +415,7 @@
     <div class="footer_wrap">
 		<jsp:include page="../../include/footer.jsp"></jsp:include>
 	</div>
+	
 	
 	<script src="${path }/resources/js/style/mypage.js"></script>
 	<script src="${path }/resources/js/ajax/mypage_ajax.js"></script>

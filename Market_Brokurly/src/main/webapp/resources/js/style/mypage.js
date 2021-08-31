@@ -42,7 +42,6 @@ $(function() {
     var new_pw_guide = $('.new_pw_guide');
     var chk_new_pw_input = $('.chk_new_pw_input');
     var chk_new_pw_guide = $('.chk_new_pw_guide');
-    var other_chk_btn = $('.other_chk_btn');
     var code_num = $('.code_num');
     var code_num_guide = $('.code_num_guide');
     var birth_input = $('.birth_input');
@@ -59,11 +58,6 @@ $(function() {
 
     chk_new_pw_input.click(() => {
         chk_new_pw_guide.css('display', 'block');
-    });
-
-    other_chk_btn.click(() => {
-        code_num.css('display', 'block');
-        code_num_guide.css('display', 'block');
     });
 
     birth_input.click(() => {
