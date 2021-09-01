@@ -2,17 +2,15 @@ package com.teamright.brokurly.customer.controller;
 
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.teamright.brokurly.customer.service.SignUpService;
+import com.teamright.brokurly.model.AddressVO;
 import com.teamright.brokurly.model.CustomerVO;
 
 import lombok.extern.log4j.Log4j;
@@ -26,11 +24,20 @@ public class SignUpController {
 	SignUpService signupService;
 	
 	@RequestMapping(value="/signupPage", method=RequestMethod.GET, produces="application/text; charset=utf8") 
-	public String signUp(CustomerVO customerVO) {
+	public String signUp(CustomerVO customerVO, AddressVO addressVO, Model model) {
 		customerVO.setCustomer_birth(customerVO.getCustomer_year() + customerVO.getCustomer_month() + customerVO.getCustomer_day());
+		
 		signupService.signUp(customerVO);
 		
-		return "/customer/signin";
+		addressVO.setReceive_customer(customerVO.getCustomer_name());
+		addressVO.setReceive_tel(customerVO.getCustomer_tel());
+		
+		signupService.insertAddress(addressVO);
+		model.addAttribute("signup_id", customerVO.getCustomer_id());
+		model.addAttribute("signup_name", customerVO.getCustomer_name());
+		model.addAttribute("signup_email", customerVO.getCustomer_email());
+		
+		return "/customer/joinok";
 	}
 	
 	//produces는 ajax가 데이터 넘겨받을때 깨짐 방지
