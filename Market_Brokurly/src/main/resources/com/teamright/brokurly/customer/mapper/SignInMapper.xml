@@ -12,4 +12,10 @@
     <select id="getName" resultType="String">
     	SELECT customer_name FROM customer_table WHERE customer_id=#{customer_id}
     </select>
+    <select id="getAddress" resultType="com.teamright.brokurly.model.AddressVO">
+    	SELECT * FROM address_table WHERE customer_id=#{customer_id} AND address_check=1
+    </select>
+    <select id="getGrade" resultType="String">
+    	SELECT customer_grade FROM customer_table WHERE customer_id=#{customer_id}
+    </select>
 </mapper>
