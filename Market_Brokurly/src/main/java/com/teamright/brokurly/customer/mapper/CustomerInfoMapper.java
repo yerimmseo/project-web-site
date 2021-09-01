@@ -15,4 +15,5 @@ public interface CustomerInfoMapper {
 	public List<AddressVO> getAddressList(String customer_id);
 	public List<MileageHistoryVO> getMHistoryList(String customer_id);
 	public List<CouponVO> getCouponList(String customer_id);
+	public Integer getMonthPay(String customer_id);
 }

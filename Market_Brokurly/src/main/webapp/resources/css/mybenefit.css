@@ -1,0 +1,68 @@
+@charset "UTF-8";
+
+.wrap *, .wrap *:after, .wrap *:before {box-sizing: border-box; margin: 0; padding: 0;}
+.wrap div, .wrap th, .wrap td, .wrap li, .wrap dt, .wrap dd, .wrap p {word-break: break-all;}
+.wrap ol, .wrap ul {list-style-type: none;}
+.wrap b, .wrap strong {font-weight: 700;}
+.wrap img {border: 0;}
+.wrap p {display: block; margin-block-start: 1em; margin-block-end: 1em; margin-inline-start: 0px; margin-inline-end: 0px;}
+.wrap a {background-color: transparent; text-decoration: none; color: inherit;}
+.wrap input, .wrap select, .wrap textarea, .wrap button {line-height: 1; letter-spacing: -.05em; color: #4c4c4c; font-size: 12px; max-width: 100%;}
+
+.section_benefit {padding-top: 70px; background-color: #f9f9f9; color: #514859; letter-spacing: 0;}
+.section_benefit .next_benefit {padding: 50px 22px 0 23px; background-color: #fff;}
+.section_benefit .next_benefit .tit {font-size: 24px; line-height: 36px; font-weight: 700; text-align: center; letter-spacing: 0.2px;}
+.section_benefit .next_benefit .ico_grade {width: 68px; height: 68px; margin: 24px auto 0; background-color: #641898; border-radius: 3px; font-size: 18px; line-height: 22px; color: #fff; text-align: center; letter-spacing: 0.5px;}
+
+#benefitView {width: 1050px; margin: 0 auto;}
+#benefitView.gradeType1 .ico_grade {background-color: #fff; color: rgb(123, 145, 132);}
+
+.section_benefit .next_benefit .ico_grade .inner_grade {display: table; width: 100%; height: 68px;}
+.section_benefit .next_benefit .ico_grade .in_grade {display: table-cell; width: 100%; vertical-align: middle;}
+.section_benefit .next_benefit .desc {display: block; height: 103px; padding: 26px 0 0; font-size: 14px; line-height: 18px; font-weight: 700; color: #514859; text-align: center;}
+.section_benefit .next_benefit .txt_info {margin-bottom: 10px; color: #666;}
+
+.section_benefit .benefit_info {overflow: hidden; padding: 0 0 22px; text-align: center;}
+.section_benefit .benefit_info .list {float: left; width: 167px; height: 550px; border: 1px solid #dcdbde; border-right: 0 none;}
+.section_benefit .benefit_info .list li {width: 148px; margin: 0 auto; text-align: center;}
+.section_benefit .benefit_info .list .name {display: block; position: relative; padding: 39px 0 23px; border-bottom: 1px solid #dcdbde; font-size: 12px; line-height: 18px;}
+.section_benefit .benefit_info .list .grade {display: block; width: 48px; height: 48px; padding-top: 13px; margin: 0 auto; border-radius: 3px; font-size: 14px; line-height: 18px; color: #fff;}
+.section_benefit .benefit_info .list_grade1 .grade {border: 1px solid rgb(123, 145, 132); background-color: #fff; color: rgb(123, 145, 132);}
+.section_benefit .benefit_info .list .desc_grade {display: block; padding-top: 7px;}
+
+#benefitView.gradeType1 .select {display: block; border: 2px solid rgb(101, 122, 110);}
+
+.section_benefit .benefit_info .list .select {display: none; position: absolute; left: -10px; top: -1px; width: 168px; height: 550px;}
+.section_benefit .benefit_info .list .point {padding: 40px 0 49px;}
+.section_benefit .benefit_info .list img {display: block; width: 32px; height: 32px; margin: 0 auto;}
+.section_benefit .benefit_info .list .info {display: block; padding-top: 9px; font-size: 16px; color: #000;}
+.section_benefit .benefit_info .list_grade2 .grade {border: 1px solid darkseagreen; background-color: darkseagreen;}
+.section_benefit .benefit_info .list_grade3 .grade {border: 1px solid rgb(132, 240, 179); background-color: rgb(132, 240, 179);}
+.section_benefit .benefit_info .list_grade4 .grade {border: 1px solid rgb(101, 209, 148); background-color: rgb(101, 209, 148);}
+.section_benefit .benefit_info .list_grade5 .grade {border: 1px solid rgb(77, 173, 119); background-color: rgb(77, 173, 119);}
+.section_benefit .benefit_info .list_grade6 {border-right: 1px solid #dcdbde;}
+.section_benefit .benefit_info .list_grade6 .grade {border: 1px solid seagreen; background-color: seagreen;}
+.section_benefit .benefit_info .list .gift {position: relative; padding-top: 49px;}
+
+.section_benefit .notice_benefit {margin-top: 70px; padding-bottom: 80px; color: #514859;}
+.section_benefit .notice_benefit .tit {display: block; padding-top: 17px; font-size: 14px; line-height: 18px; font-weight: 700;}
+.section_benefit .notice_benefit .list {padding-bottom: 11px;}
+.section_benefit .notice_benefit li {padding-top: 10px; font-size: 12px; line-height: 16px;}
+
+#container a:-webkit-any-link {color: -webkit-link; cursor: pointer; text-decoration: underline;}
+.img {display: inline-block; width:36px; font-size: 18px; margin: auto; margin-bottom: 5px; padding: 4px; border: solid 1px seagreen; border-radius: 100%; color: seagreen;}
+.img_pen {font-size: 18px; padding: 5px; border: solid 1px seagreen; border-radius: 100%; color: seagreen;}
+.img_gift {font-size: 18px; padding: 5px; border: solid 1px seagreen; border-radius: 100%; color: seagreen;}
+
+/* 웰컴 */
+.class0 {border: solid 1px rgb(123, 145, 132); background-color: #fff; color: rgb(123, 145, 132); border-radius: 5px;}
+/* 일반 */
+.class1 {border: solid 1px darkseagreen; background-color: #fff; color: darkseagreen; border-radius: 5px;}
+/* 프렌즈 */
+.class2 {border: solid 1px rgb(132, 240, 179); background-color: #fff; color: rgb(132, 240, 179); border-radius: 5px;}
+/* 그린 */
+.class3 {border: solid 1px rgb(101, 209, 148); background-color: #fff; color: rgb(101, 209, 148); border-radius: 5px;}
+/* 아스파라거스 */
+.class4 {border: solid 1px rgb(77, 173, 119); background-color: #fff; color: rgb(77, 173, 119); border-radius: 5px;}
+/* 브로컬리 */
+.class5 {border: solid 1px seagreen; background-color: #fff; color: seagreen; border-radius: 5px;}

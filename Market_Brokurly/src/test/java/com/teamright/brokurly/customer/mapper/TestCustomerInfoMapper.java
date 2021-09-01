@@ -48,6 +48,7 @@ public class TestCustomerInfoMapper {
 		log.info(couponCount);
 	}
 	
+	@Ignore
 	@Test
 	public void getDisapperPointTest() {
 		String disappearPoint = customerInfoMapper.getDisappearPoint("mongsoung1");
@@ -73,5 +74,11 @@ public class TestCustomerInfoMapper {
 	public void getCouponListTest() {
 		List<CouponVO> coupons = customerInfoMapper.getCouponList("mongsoung1");
 		log.info(coupons);
+	}
+	
+	@Test
+	public void getMonthPayTest() {
+		int monthPay = customerInfoMapper.getMonthPay("mongsoung1");
+		log.info(monthPay);
 	}
 }

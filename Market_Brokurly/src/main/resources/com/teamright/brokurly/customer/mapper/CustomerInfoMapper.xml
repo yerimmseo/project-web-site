@@ -31,4 +31,10 @@
 	<select id="getCouponList" resultType="com.teamright.brokurly.model.CouponVO">
 		SELECT * FROM customer_coupon_table INNER JOIN coupon_table USING (coupon_id) WHERE customer_id=#{customer_id}
 	</select>
+	<select id="getMonthPay" resultType="int">
+		SELECT sum(product_price) as sum FROM order_table 
+								         INNER JOIN detailorder_table USING (order_id) 
+								         INNER JOIN product_table USING (product_id)
+								         WHERE customer_id=#{customer_id} AND (TRUNC(order_time - sysdate)) <![CDATA[<=]]> 30
+	</select>
 </mapper>

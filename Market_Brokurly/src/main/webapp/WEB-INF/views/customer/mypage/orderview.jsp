@@ -68,7 +68,7 @@
 	                            </div>
 	                            <div class="next">
 	                                <a href="${path }/event/lovers" class="total_grade">전체등급 보기</a>
-	                                <a href="" class="next_month">다음 달 예상등급 보기</a>
+	                                <a href="${path }/event/mybenefit" class="next_month">다음 달 예상등급 보기</a>
 	                            </div>
 	                        </div>
 	                        <div class="list_mypage">
