@@ -201,10 +201,10 @@
 	                        </ul>
 	                    </div>
 	                    <ul class="list_order">
-	                        <c:if test="${order_list.get(0).size() == 0}">
+	                        <c:if test="${empty order_list }">
 	                        <li class="no_data">주문내역이 없습니다.</li>
 	                        </c:if>
-	                        <c:if test="${order_list.get(0).size() != 0}">
+	                        <c:if test="${!empty order_list}">
 	                        <c:forEach var="i" begin="0" end="${order_list.size() - 1 }">
 	                        <li>
 	                            <div class="date">
