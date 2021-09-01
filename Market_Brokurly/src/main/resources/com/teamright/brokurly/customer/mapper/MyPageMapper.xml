@@ -32,7 +32,7 @@
 		SELECT * FROM order_table INNER JOIN detailorder_table USING (order_id) 
 								  INNER JOIN product_table USING (product_id)
 								  INNER JOIN subcategory_table USING (subcate_id)
-								  WHERE customer_id=#{customer_id}
+								  WHERE customer_id=#{customer_id} AND TO_CHAR(order_time, 'YYYY')<![CDATA[<=]]>#{year}
 	</select>
 	<select id="getListByOrderYear" resultType="com.teamright.brokurly.model.ProductVO">
 		SELECT * FROM order_table INNER JOIN detailorder_table USING (order_id) 

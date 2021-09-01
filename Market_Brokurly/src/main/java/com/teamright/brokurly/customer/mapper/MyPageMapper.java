@@ -17,7 +17,8 @@ public interface MyPageMapper {
 	public List<DetailOrderVO> getTotalPrice(String customer_id); 
 	public List<DetailOrderVO> getOrderList(String customer_id);
 	public List<DetailOrderVO> getOrderIdAndCount(String customer_id);
-	public List<ProductVO> getListByOrder(String customer_id);
+	public List<ProductVO> getListByOrder(@Param("customer_id")String customer_id,
+			  							  @Param("year")String year);
 	public List<ProductVO> getListByOrderYear(@Param("customer_id")String customer_id,
 											  @Param("year")String year);
 	public List<DeliveryVO> getDeliStatus(String customer_id);

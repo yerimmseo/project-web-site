@@ -55,13 +55,13 @@ public class TestMyPageMapper {
 		log.info(totalPrice);
 	}
 	
-	@Ignore
 	@Test
 	public void getListByOrderTest() {
-		List<ProductVO> products = myPageMapper.getListByOrder("mongsoung1");
+		List<ProductVO> products = myPageMapper.getListByOrder("mongsoung1", "2021");
 		log.info(products);
 	}
 	
+	@Ignore
 	@Test
 	public void getOrderListYearTest() {
 		List<ProductVO> products = myPageMapper.getListByOrderYear("mongsoung1", "2021");

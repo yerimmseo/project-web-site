@@ -42,7 +42,7 @@
 	                                	<c:if test="${grade eq 'NORMAL' }">일반</c:if>
 	                                	<c:if test="${grade eq 'WELCOME' }">웰컴</c:if>
 	                                </div>
-	                                <strong class="name">${customer.customer_name }님</strong>
+	                                <strong class="name">${customer_info.customer_name }님</strong>
 	                            </div>
 	                            <div class="grade_benefit">
 	                                <!---->
@@ -80,6 +80,9 @@
 	                                    </div>
 	                                    <div class="spacer"></div>
 	                                    <p class="info">
+	                                    	<c:if test="${customer_info.customer_mileage eq null }">
+	                                    	0
+	                                    	</c:if>
 	                                    	<fmt:formatNumber value="${customer_info.customer_mileage }" pattern="#,###,###" /> 원
 	                                        <span class="expire">
 	                                        소멸 예정 
@@ -99,7 +102,10 @@
 	                                        <img src="${path }/resources/img/icon/ico_arrow_right.png" alt="" class="arrow_right">
 	                                    </div>
 	                                    <div class="spacer"></div>
-	                                    <p class="info">${coupon_count } 개</p>
+	                                    <p class="info">
+	                                    <c:if test="${coupon_count eq null }">0</c:if>
+	                                    ${coupon_count } 개
+	                                    </p>
 	                                </a>
 	                                <a href="" class="link_wrap">
 	                                    <div class="link_title">
