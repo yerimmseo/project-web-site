@@ -27,7 +27,7 @@ ul {list-style: none;}
 #delivery_info {flex-direction: row; background-color: transparent; width: 120px;}
 #delivery_info > a > img {padding-top: 5px; cursor: pointer;}
 
-#user_info {flex-direction: row-reverse; background-color: white; width: 190px; font-size: 11px;}
+#user_info {flex-direction: row-reverse; background-color: white; width: 300px; font-size: 11px;}
 
 #service_center {height: 20px;}
 
@@ -36,10 +36,15 @@ ul {list-style: none;}
 #login_menu > li > a {text-decoration: none; color: black;}
 #login_menu > li :hover {color: rgb(57, 175, 63);}
 
-#service_menu {position: relative; left: 940px; top: -15px; width: 90px; background-color: white; border: rgb(209, 209, 209) solid 1px; font-size: 11px; padding-top: 8px; padding-left: 5px; visibility: hidden; z-index: 100;}
+#service_menu {position: relative; left: 100px; top: -15px; width: 90px; background-color: white; border: rgb(209, 209, 209) solid 1px; font-size: 11px; padding-top: 8px; padding-left: 5px; visibility: hidden; z-index: 100;}
 #service_menu > li {color: rgb(75, 75, 75); list-style: none; padding-bottom: 8px; font-weight: bold;}
 #service_menu > li > a {text-decoration: none; color: black;}
 #service_menu > li :hover {color: rgb(57, 175, 63);}
+
+#customer_menu {position: relative; left: 865px; top: -15px; width: 90px; background-color: white; border: rgb(209, 209, 209) solid 1px; font-size: 11px; padding-top: 8px; padding-left: 5px; visibility: hidden; z-index: 100;}
+#customer_menu > li {color: rgb(75, 75, 75); list-style: none; padding-bottom: 8px; font-weight: bold;}
+#customer_menu > li > a {text-decoration: none; color: black;}
+#customer_menu > li :hover {color: rgb(57, 175, 63);}
 
 #user_info > * {float: left; margin-top: 10px; padding-left: 10px; padding-right: 8px;}
 #user_info > * > * {cursor: pointer;}
@@ -246,4 +251,29 @@ ul {list-style: none;}
 @keyframes text_slowlyVisible {
   0% {opacity: 0%;}
   100% {opacity: 100%;}
+}
+/* 웰컴 */
+.class0 {border: solid 1px rgb(123, 145, 132); color: rgb(123, 145, 132);}
+/* 일반 */
+.class1 {border: solid 1px darkseagreen; color: darkseagreen;}
+/* 프렌즈 */
+.class2 {border: solid 1px rgb(132, 240, 179); color: rgb(132, 240, 179);}
+/* 그린 */
+.class3 {border: solid 1px rgb(101, 209, 148); color: rgb(101, 209, 148);}
+/* 아스파라거스 */
+.class4 {border: solid 1px rgb(77, 173, 119); color: rgb(77, 173, 119);}
+/* 브로컬리 */
+.class5 {border: solid 1px seagreen; color: seagreen;}
+
+.ico_grade {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 20px;
+    height: 16px;
+    padding: 0 4px;
+    border-radius: 30px;
+    font-size: 9px;
+    line-height: 7px;
+    text-align: center;
 }
