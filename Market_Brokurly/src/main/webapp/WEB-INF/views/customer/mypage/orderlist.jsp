@@ -171,11 +171,23 @@
 	                    <div class="search_date">
 	                        <h3 class="screen_out">기간 선택</h3>
 	                        <a class="btn_layer">
+	                        	<input type="hidden" value="${year }">
+	                        	<c:if test="${year eq null || year eq '' }">
 	                            전체기간
+	                        	</c:if>
+	                        	<c:if test="${year eq '2021' }">
+	                        	2021 년
+	                        	</c:if>
+	                        	<c:if test="${year eq '2020' }">
+	                        	2020 년
+	                        	</c:if>
+	                        	<c:if test="${year eq '2019' }">
+	                        	2019 년
+	                        	</c:if>
 	                        </a>
 	                        <ul class="layer_search">
 	                            <li>
-	                                <a class="term">전체기간</a>
+	                                <a class="term" onclick="yearSearch(null);">전체기간</a>
 	                            </li>
 	                            <li>
 	                                <a type="button" onclick="yearSearch(2021);">2021 년</a>
@@ -189,7 +201,6 @@
 	                        </ul>
 	                    </div>
 	                    <ul class="list_order">
-	                        <!-- 최근 주문내역 없을 때 출력되는 li -->
 	                        <c:if test="${order_list.get(0).size() == 0}">
 	                        <li class="no_data">주문내역이 없습니다.</li>
 	                        </c:if>
@@ -258,13 +269,8 @@
     <script src="${path }/resources/js/style/mypage.js"></script>
     <script src="${path }/resources/js/ajax/mypage_onclick.js"></script>
     <script src="${path }/resources/js/ajax/mypage_ajax.js"></script>
-    
     <script type="text/javascript">
 	    function yearSearch(term) {
-	    	/* const year = $(ths).parents('li').find('input[name=year]');*/
-	    	
-	    	console.log(term);
-	    	
 	    	$.ajax({
 	    		url: '/brokurly/customer/mypage/year',
 	    		type: 'GET',
@@ -272,7 +278,7 @@
 	    			'term': term
 	    		},
 	    		success: function() {
-	    			opener.parent.location.reload();
+	    			location.reload();
 	    		},
 	    		error: function() {
 	    			alert('서버오류');

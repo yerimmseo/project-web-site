@@ -51,7 +51,8 @@ public class MyPageOrderListController {
 		model.addAttribute("disappear_point", customerInfoMapper.getDisappearPoint(customer_id));
 		model.addAttribute("total_price", myPageMapper.getTotalPrice(customer_id)); // 주문번호와 비교하여 총합계 출력
 		model.addAttribute("deli_status", myPageMapper.getDeliStatus(customer_id)); // 주문번호와 비교하여 배송 상태 출력
-		model.addAttribute("order_list", myPageService.getAllOrderList(customer_id));
+		model.addAttribute("order_list", myPageService.getOrderList(customer_id, year));
+		model.addAttribute("year", year);
 	}
 	
 	@RequestMapping("/orderview")
@@ -73,11 +74,9 @@ public class MyPageOrderListController {
 	
 	@RequestMapping(value = "/year", method = RequestMethod.GET, produces = "application/text; charset=utf8")
 	@ResponseBody
-	public void getYear(@RequestParam String term, Model model) {
-		System.out.println(term);
+	public String getYear(@RequestParam String term) {
 		year = term;
-		System.out.println(myPageService.getOrderListByYear(customer_id, year));
-		model.addAttribute("order_list", myPageService.getOrderListByYear(customer_id, term));
+		return "redirect:/customer/mypage/orderlist";
 	}
 	
 	// 하나의 상품만 장바구니에 다시 담을 기능 (임시)
