@@ -8,4 +8,6 @@ public interface ProductMapper {
 	public List<ProductVO> getListBySub(int subcategory_id);
 	public List<ProductVO> getListByMain(int maincategory_id);
 	public ProductVO getProductInfo(int product_id);
+	
+	public List<ProductVO> getSearch(String product_name);
 }
