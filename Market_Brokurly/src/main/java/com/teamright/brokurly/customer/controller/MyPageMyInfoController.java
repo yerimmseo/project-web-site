@@ -36,9 +36,7 @@ public class MyPageMyInfoController {
 	private SignUpService signUpService;
 	
 	@RequestMapping("/myinfo")
-	public void myInfo(HttpSession session, Model model) {
-		session.setAttribute("customer_id", "mongsoung1");
-		
+	public void myInfo(HttpSession session, Model model) {		
 		customer_id = (String)session.getAttribute("customer_id"); 
 		
 		model.addAttribute("customer_info", customerInfoMapper.getCustomerInfo(customer_id));

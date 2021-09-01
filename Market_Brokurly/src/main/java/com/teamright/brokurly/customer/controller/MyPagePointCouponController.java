@@ -25,9 +25,7 @@ public class MyPagePointCouponController {
 	MyPageOrderListService myPageService;
 	
 	@RequestMapping("/point")
-	public void point(HttpSession session, Model model) {
-		session.setAttribute("customer_id", "mongsoung1"); // 세션 임시로. 연결시켜야 함.
-		
+	public void point(HttpSession session, Model model) {		
 		customer_id = (String)session.getAttribute("customer_id");
 		
 		model.addAttribute("customer_info", customerInfoMapper.getCustomerInfo(customer_id));
@@ -37,9 +35,7 @@ public class MyPagePointCouponController {
 	}
 	
 	@RequestMapping("/coupon")
-	public void coupon(HttpSession session, Model model) {
-		session.setAttribute("customer_id", "mongsoung1"); // 임시로. 세션 연결 시켜야 함.
-		
+	public void coupon(HttpSession session, Model model) {		
 		customer_id = (String)session.getAttribute("customer_id");
 		
 		model.addAttribute("customer_info", customerInfoMapper.getCustomerInfo(customer_id));

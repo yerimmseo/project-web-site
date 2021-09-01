@@ -21,7 +21,6 @@ public class MyPageReviewController {
 	// 상품 후기
 	@RequestMapping("/review")
 	public void review(HttpSession session, Model model) {
-		session.setAttribute("customer_id", "mongsoung1");
 		
 		customer_id = (String)session.getAttribute("customer_id"); 
 		
@@ -33,7 +32,6 @@ public class MyPageReviewController {
 	// 상품 문의
 	@RequestMapping("/inquiry")
 	public void inquiry(HttpSession session, Model model) {
-		session.setAttribute("customer_id", "mongsoung1");
 		
 		customer_id = (String)session.getAttribute("customer_id"); 
 		

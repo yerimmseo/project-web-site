@@ -42,7 +42,6 @@ public class MyPageOrderListController {
 		
 	@RequestMapping("/orderlist")
 	public void orderList(HttpSession session, Model model) {
-		session.setAttribute("customer_id", "mongsoung1");
 		
 		customer_id = (String)session.getAttribute("customer_id");
 		

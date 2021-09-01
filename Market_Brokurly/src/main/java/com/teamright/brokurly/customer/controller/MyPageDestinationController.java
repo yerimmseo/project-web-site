@@ -32,9 +32,7 @@ public class MyPageDestinationController {
 	
 
 	@RequestMapping("/destination")
-	public void addressList(HttpSession session, Model model) {
-		session.setAttribute("customer_id", "mongsoung1"); // 임시로. 세션 연결 시켜야 함.
-		
+	public void addressList(HttpSession session, Model model) {		
 		customer_id = (String)session.getAttribute("customer_id");
 		
 		model.addAttribute("customer_info", customerInfoMapper.getCustomerInfo(customer_id));
