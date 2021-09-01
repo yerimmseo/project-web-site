@@ -38,6 +38,6 @@
 		<jsp:include page="../include/footer.jsp"></jsp:include>
 	</div>
 	
-	<script src="${path }/resources/js/changepw_ajax.js"></script>
+	<script src="${path }/resources/js/ajax/changepw_ajax.js"></script>
 </body>
 </html>
