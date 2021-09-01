@@ -316,9 +316,11 @@
 	                        </div>								                    
 	                	</c:if>
 	                	<c:if test="${sessionScope.customer_id ne null }">
-	                		<div id="noAdd_text">${sessionScope.address_main } ${sessionScope.address_detail } </div>
-	                		<div id="button_double">
-	                			<button id="address_Btn">배송지 변경</button>
+	                		<div id="yesAddress">
+		                		<div id="noAdd_text">${sessionScope.address_main } ${sessionScope.address_detail } </div>
+		                		<div id="button_double">
+		                			<button id="address_Btn">배송지 변경</button>
+		                		</div>
 	                		</div>
 	                	</c:if>
                     </div>
