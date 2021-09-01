@@ -1,3 +1,4 @@
+  
 package com.teamright.brokurly.customer.controller;
 
 
@@ -14,7 +15,10 @@ public class CustomerController {
 
 	@GetMapping("/signin")
 	public void signin() {}
-
+	
+	@GetMapping("/joinok")
+	public void joinok() {}
+	
 	@GetMapping("/findid")
 	public void findid() {}
 
@@ -23,4 +27,5 @@ public class CustomerController {
 
 	@GetMapping("/updatepw")
 	public void pwchange() {}
+	
 }
