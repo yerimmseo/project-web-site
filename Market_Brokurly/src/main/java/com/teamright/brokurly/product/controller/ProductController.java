@@ -1,11 +1,18 @@
 package com.teamright.brokurly.product.controller;
 
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.teamright.brokurly.model.ProductVO;
 import com.teamright.brokurly.product.mapper.ProductDetailMapper;
 import com.teamright.brokurly.product.mapper.ProductMapper;
 import com.teamright.brokurly.product.mapper.SubCategoryMapper;
@@ -45,4 +52,13 @@ public class ProductController {
 	public void cart() {
 		
 	}
+	
+	@RequestMapping(value="/search", method=RequestMethod.GET, produces="application/text; charset=utf8")
+	@ResponseBody
+	public void searchMenu(HttpServletRequest request) {
+		String product_name = request.getParameter("search_name");
+		List<ProductVO> product_vo = productMapper.getSearch(product_name);
+		System.out.println(product_vo);
+	}
+	
 }
