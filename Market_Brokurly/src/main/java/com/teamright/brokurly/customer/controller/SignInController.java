@@ -1,10 +1,13 @@
 package com.teamright.brokurly.customer.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -12,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.teamright.brokurly.customer.service.SignInService;
+import com.teamright.brokurly.model.AddressVO;
 
 @Controller
 @RequestMapping("/customer")
@@ -21,13 +25,19 @@ public class SignInController {
 	private SignInService loginService;
 	
 	@PostMapping("/logindo")
-	public String postlogin(HttpSession session , 
+	public String postlogin(HttpSession session ,
 			@RequestParam(value="customer_id") String customer_id)  { 
 		
-		// 技记 历厘侩
+		// 技记历厘侩
 		session.setAttribute("customer_id", customer_id);
-
-		return "/customer/main";
+		
+		List<AddressVO> address_list = loginService.getAddress(customer_id);
+		
+		session.setAttribute("address_main", address_list.get(0).getAddress_main());
+		session.setAttribute("address_detail", address_list.get(0).getAddress_detail());
+		session.setAttribute("customer_grade", loginService.getGrade(customer_id));
+		System.out.println(loginService.getGrade(customer_id));
+		return "redirect:/main";
 	}
 
 	@RequestMapping(value="/login", method=RequestMethod.GET, produces="application/text; charset=utf8")
@@ -51,5 +61,12 @@ public class SignInController {
 			}
 		}
 		return result;
+	}
+	
+	@RequestMapping(value="/logout")
+	@ResponseBody
+	public String logout(HttpSession session) {
+		session.invalidate();
+		return null;
 	}
 }
