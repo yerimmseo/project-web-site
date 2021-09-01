@@ -12,4 +12,7 @@
 	<select id="getProductInfo" resultType="com.teamright.brokurly.model.ProductVO">
 		SELECT * FROM product_table WHERE product_id=#{product_id}
 	</select>
+	<select id="getSearch" resultType="com.teamright.brokurly.model.ProductVO">
+		SELECT * FROM product_table WHERE product_name LIKE '%'||#{product_name}||'%'
+	</select>
 </mapper>
