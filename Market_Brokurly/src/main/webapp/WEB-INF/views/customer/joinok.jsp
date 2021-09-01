@@ -1,3 +1,4 @@
+  
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -6,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>마켓브로컬리 :: 내일의 장보기, 마켓브로컬리</title>
+<title>Insert title here</title>
 <link rel="stylesheet" href="${path }/resources/css/joinok.css" />
 <link rel="stylesheet" href="${path }/resources/css/font.css" />
 </head>
@@ -27,29 +28,29 @@
                                     <li>
                                         <strong class="bolds">아이디</strong>
                                         <span>
-                                            <span>yerim7386</span>
+                                            <span>${signup_id } </span>
                                         </span>
                                     </li>
                                     <li>
                                         <strong class="bolds">이름</strong>
                                         <span>
-                                            <span>서예림</span>
+                                            <span>${signup_name }</span>
                                         </span>
                                     </li>
                                     <li>
                                         <strong class="bolds">이메일</strong>
                                         <span>
-                                            <span>yerim7386@naver.com</span>
+                                            <span>${signup_email } </span>
                                         </span>
                                     </li>
                                 </ul>
                             </div>
                             <p class="button">
-                                <a href="">
+                                <a href="${path}/customer/signin">
                                     <span class="bhs_button active">신규 혜택 100원 상품 보러가기</span>
                                 </a>
-                                <a href="">
-                                    <span class="bhs_button">마이페이지로 이동</span>
+                                <a href="${path}/customer/signin">
+                                    <span class="bhs_button">로그인화면으로</span>
                                 </a>
                             </p>
                         </div>
