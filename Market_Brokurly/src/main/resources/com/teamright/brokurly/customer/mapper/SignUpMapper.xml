@@ -18,6 +18,6 @@
 	</select>
 	<!-- 주소테이블을 새로 생성해서 회원가입시 주소테이블에 새로운 주소를 insert하여 customer_table에서 언제든 빼서 쓸수 있게끔 만드는 insert문 -->
 	<insert id="insertAddress">
-		INSERT INTO address_table VALUES (#{customer_id}, #{address_main}, #{address_detail}, 1)
+		INSERT INTO address_table VALUES (#{customer_id}, #{address_main}, #{address_detail}, 1, #{receive_customer}, ${receive_tel})
 	</insert>
 </mapper>
