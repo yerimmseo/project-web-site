@@ -16,6 +16,8 @@ import com.teamright.brokurly.customer.service.SignInService;
 @RequestMapping("/customer")
 public class FindController {
 	
+	private static String customer_id;
+	
 	@Autowired
 	FindService findService;
 	
@@ -36,14 +38,13 @@ public class FindController {
 	public String findPW(HttpSession session, HttpServletRequest request) {
 		String result = findService.getPW(
 				request.getParameter("customer_name"), request.getParameter("customer_id"), request.getParameter("customer_email"));
-		session.setAttribute("customer_id", request.getParameter("customer_id"));
+		customer_id = request.getParameter("customer_id");
 		return result;
 	}
 	
 	@RequestMapping(value="/changePw", method=RequestMethod.GET, produces="application/text; charset=utf8")
 	@ResponseBody
 	public String changePW(HttpSession session, HttpServletRequest request) throws Exception {
-		String customer_id = (String) session.getAttribute("customer_id");
 		String customer_pw = loginService.getSHA512(request.getParameter("customer_pw"));
 		
 		findService.changePW(customer_pw, customer_id);
