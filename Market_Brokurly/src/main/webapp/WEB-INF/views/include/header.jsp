@@ -9,8 +9,10 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="${path }/resources/css/header.css" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
+	<form action="/brokurly/main" method="GET" id="logoutForm"></form>
 	 <div id="header">
         <div id="user_menu">
             <!-- 배송안내버튼 -->
@@ -21,10 +23,43 @@
             </div>
             <!-- 우측 상단 메뉴 -->
             <div id="user_info">
-                <div id="sign_up"><a href=""><span style="color: green;">회원가입</span></a></div>
-                <div id="login"><a href=""><span>로그인</span></a></div>
-                <div id="service_center" onclick="Mclick_service()"><span>고객센터</span><span style="font-size: 5px;">▼</span></div>
+	            <c:if test="${sessionScope.customer_id eq null }">
+	                <div id="sign_up"><a href="${path}/customer/signup"><span style="color: green;">회원가입</span></a></div>
+	                <div id="login"><a href="${path}/customer/signin"><span>로그인</span></a></div>
+	            </c:if>
+	            <c:if test="${sessionScope.customer_id ne null }">	            	
+	                <c:if test="${sessionScope.customer_grade eq 'WELCOME' }">
+	                	<div class="ico_grade class0"><span>웰컴</span></div>
+	                </c:if>
+	                <c:if test="${sessionScope.customer_grade eq 'NORMAL' }">
+	                	<div class="ico_grade class1"><span>놀말</span></div>
+	                </c:if>
+	                <c:if test="${sessionScope.customer_grade eq 'FRIENDS' }">
+	                	<div class="ico_grade class2"><span>친구</span></div>
+	                </c:if>
+	                <c:if test="${sessionScope.customer_grade eq 'GREEN' }">
+	                	<div class="ico_grade class3"><span>초록</span></div>
+	                </c:if>
+	                <c:if test="${sessionScope.customer_grade eq 'ASPARAGUS' }">
+	                	<div class="ico_grade class4"><span>아파</span></div>
+	                </c:if>
+	                <c:if test="${sessionScope.customer_grade eq 'BROCCOLI' }">
+	                	<div class="ico_grade class5"><span>브콜</span></div>
+	                </c:if>
+	                <div id="login" onclick="Mclick_customer()"><span>${sessionScope.customer_name }님</span><span style="font-size: 5px;">▼</span></div>
+	            </c:if>
+	                <div id="service_center" onclick="Mclick_service()"><span>고객센터</span><span style="font-size: 5px;">▼</span></div>
             </div>
+            <ul id="customer_menu">
+            	<li><a href="${path}/customer/mypage/orderlist">주문 내역</a></li>
+            	<li><a href="${path}/customer/mypage/destination">배송지 관리</a></li>
+            	<li><a href="${path}/customer/mypage/review">상품 후기</a></li>
+            	<li><a href="${path}/customer/mypage/inquiry">상품 문의</a></li>
+            	<li><a href="${path}/customer/mypage/point">적립금</a></li>
+            	<li><a href="${path}/customer/mypage/coupon">쿠폰</a></li>
+            	<li><a href="${path}/customer/mypage/myinfo">개인 정보 수정</a></li>
+            	<li><a type="button" id="logout">로그아웃</a></li>            	
+            </ul>
             <ul id="service_menu" >
                 <li><a href="">공지사항</a></li>
                 <li><a href="">자주하는 질문</a></li>
@@ -34,7 +69,7 @@
         </div>
         <div id="title">
             <div id="logo">
-                <a href="">
+                <a href="${path}/main">
                     <img src="${path }/resources/img/icon/ico_logo.jpg" alt="Logo">
                 </a>
             </div> <!-- 로고 -->
@@ -261,7 +296,7 @@
                     <!--  검색창  -->
                     <div id="inSearch">
                         <input id="search" type="text" placeholder="검색어를 입력해주세요">
-                        <span id="reading_glasses" class="material-icons"><a href="">search</a></span>
+                        <span id="reading_glasses" class="material-icons"><a type="button" id="search_a">search</a></span>
                     </div>
                 </div>
                 <!-- 배송지 아이콘  -->
@@ -269,27 +304,36 @@
                     <span id="room" class="material-icons-outlined" style="font-size: 30px;">room
                     </span>
                     <div id="location">
-                        <div id="noAddress">
-                            <div id="noAdd_text">
-                                <span style="color: seagreen;">배송지를 등록</span>하고 <br> 구매 가능한 상품을 확인하세요!
-                            </div>
-                            <div id="button_double">
-                                <button id="login_Btn" onclick="location.href=''">로그인</button>
-                                <button id="address_Btn">주소검색</button>
-                            </div>
-                        </div>
+	                    <c:if test="${sessionScope.customer_id eq null }">
+	                        <div id="noAddress">
+	                            <div id="noAdd_text">
+	                                <span style="color: seagreen;">배송지를 등록</span>하고 <br> 구매 가능한 상품을 확인하세요!
+	                            </div>
+	                            <div id="button_double">
+	                                <button id="login_Btn" onclick="location.href='${path}/customer/signin'">로그인</button>
+	                                <button id="address_Btn">주소검색</button>
+	                            </div>
+	                        </div>								                    
+	                	</c:if>
+	                	<c:if test="${sessionScope.customer_id ne null }">
+	                		<div id="noAdd_text">${sessionScope.address_main } ${sessionScope.address_detail } </div>
+	                		<div id="button_double">
+	                			<button id="address_Btn">배송지 변경</button>
+	                		</div>
+	                	</c:if>
                     </div>
                 </div>
                 <!-- 장바구니 아이콘 -->
                 <div class="gnb_menus">
-                    <a href="">
+                    <a href="${path}/product/cartlist">
                         <span id="cart" class="material-icons-outlined" style="font-size: 30px;">shopping_cart</span>
-                    </a>
+               	  	</a>
                 </div>
                 <div class="gnb_menus"> </div>
             </div>
         </div> <!-- gnb_menu -->
     </div>
     <script src="${path }/resources/js/style/header.js"></script>
+    
 </body>
 </html>
