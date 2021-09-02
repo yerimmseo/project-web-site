@@ -51,7 +51,6 @@ public class ProductDetailController {
 	public String productDetailPage(@RequestParam("product_id") int product_id, Model model, HttpSession session) {
     	String customer_id = (String)session.getAttribute("customer_id");
     	//customer_id = "mongsoung";
-    	System.out.println(customer_id); //세션 없으면 널값 
     	
     	model.addAttribute("customer_id", customer_id);
     	model.addAttribute("product_id", product_id);
@@ -83,7 +82,7 @@ public class ProductDetailController {
 			model.addAttribute("cart_count", count);
 		    		
 		}else {
-			System.out.println("안돼");
+			model.addAttribute("nonono", discount.get(0).getProduct_price());
 		}
 
 		

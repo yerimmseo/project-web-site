@@ -29,9 +29,9 @@
 	        <div class="info">
 	            <div id="goods_title">
 	                <span class="main_name">${proM.getProduct_name() }</span>
-	            </div>      
+	            </div>    
             <c:if test="${discont > 0 }">
-	            <p class="goods_dcinfo">회원할인가</p>
+	           <br> <p class="goods_dcinfo" style="position: relative; right: 117px; top: 10px;">회원할인가</p> 
             </c:if>
                 <span class="price_box">
                     <span class="dc_price">${discont_price }
@@ -72,7 +72,7 @@
 				    </c:when>
 				    <c:otherwise>  
 				       <div class="not_login">
-	                    	<span class="ico_grade"><strong>${grade } &nbsp ${percentage }%</strong>
+	                    	<span class="ico_grade_deta"><strong>${grade } &nbsp ${percentage }%</strong>
 		                    	<span class="point">개당 <strong>${accumulate }원 적립</strong></span>
 	                    	</span>
 	                	</div>  
@@ -107,16 +107,7 @@
 	            <div id="cart_put">
 	                <dl class="de_list list_padding">
 	                    <dt class="de_tit" id="purchase_text">구매수량</dt>
-	                    <dd class="de_desc option">0
-<!-- 	                        <div class="count"> -->
-<!-- 	                            <button type="button" class="btn down" onclick="btn_click('minus')"> -->
-<!-- 	                                <span class="material-icons-outlined btnUD">remove</span> -->
-<!-- 	                            </button> -->
-<!-- 	                            <input class="inp" type="text" name="ct_qty" id="ct_qty" value="1" readonly="readonly"> -->
-<!-- 	                            <button type="button" class="btn up" onclick="btn_click('plus')"> -->
-<!-- 	                                <span class="material-icons-outlined btnUD">add</span> -->
-<!-- 	                            </button> -->
-<!-- 	                        </div>  -->		
+	                    <dd class="de_desc option">0	
 	                    </dd>
 	                </dl>
 	                <div class="total">
@@ -158,7 +149,7 @@
 	                    <li id="tab1" class="view_tab_li" onclick="get_tab_id(this.id)">상품설명</li>
 	                    <li id="tab2" class="view_tab_li" onclick="get_tab_id(this.id)">상세정보</li>
 	                    <li id="tab3" class="view_tab_li" onclick="get_tab_id(this.id)">후기
-	                        <span class="count_review">(51643)</span>
+<!-- 	                        <span class="count_review">(51643)</span> -->
 	                    </li>
 	                    <li id="tab4" class="view_tab_li" onclick="get_tab_id(this.id)">문의</li>
 	                    <li></li>

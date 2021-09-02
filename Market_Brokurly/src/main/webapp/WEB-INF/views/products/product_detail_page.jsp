@@ -26,33 +26,7 @@
 	        </div>
 	        <div class="info">
 	            <div id="goods_title">
-	                <span class="main_name">${proM.getProduct_name() }</span>
-<!-- 	                <div id="share_icon_box"> -->
-<!-- 	                	 <span class="material-icons-outlined" id="share-icon"> -->
-<!-- 	                        share -->
-<!-- 	                    </span> -->
-<!-- 	                   	<div class="inner_layersns"> -->
-<!-- 							<ul class="list_share"> -->
-<!-- 								<li> -->
-<!-- 									<a class="btn_sns" data-sns-name="페이스북" data-sns="facebook" href="#none"> -->
-<!-- 										<img src="https://res.kurly.com/mobile/service/goodsview/1804/ico_facebook.png" alt="페이스북"> -->
-<!-- 										<span class="txt_sns">공유하기</span> -->
-<!-- 									</a> -->
-<!-- 								</li> -->
-<!-- 								<li> -->
-<!-- 									<a class="btn_sns" data-sns-name="트위터" data-sns="twitter" href="#none"> -->
-<!-- 										<img src="https://res.kurly.com/mobile/service/goodsview/1804/ico_twitter.png" alt="트위터"> -->
-<!-- 										<span class="txt_sns">트윗하기</span> -->
-<!-- 									</a> -->
-<!-- 								</li> -->
-<!-- 								<li class="btn_url"> -->
-<!-- 									<input type="text" class="inp_sns" value="" readonly="readonly">  -->
-<!-- 									<a class="btn_copy" data-sns-name="링크 복사" data-sns="copy" href="#none">URL 복사 -->
-<!-- 									</a> -->
-<!-- 								</li> -->
-<!-- 							</ul> -->
-<!-- 						</div> -->
-<!-- 	                </div> -->
+	                <span class="main_name">${proM.getProduct_name() }</span>       
 	            </div>      
             <c:if test="${discont > 0 }">
 	            <p class="goods_dcinfo">회원할인가</p>
@@ -96,7 +70,7 @@
 				    </c:when>
 				    <c:otherwise>  
 				       <div class="not_login">
-	                    	<span class="ico_grade"><strong>${grade } &nbsp ${percentage }%</strong>
+	                    	<span class="ico_grade_deta"><strong>${grade } &nbsp ${percentage }%</strong>
 		                    	<span class="point">개당 <strong>${accumulate }원 적립</strong></span>
 	                    	</span>
 	                	</div>  
@@ -145,14 +119,6 @@
 	                </dl>
 	                <div class="total">
 	                    <div class="total_price">
-	                    <c:choose>
-	                    	<c:when test=""></c:when>
-	                    
-	                    </c:choose>
-	                    
-	                    
-	                    
-	                    
 	                        <strong class="tpat">총 상품금액: </strong>
 	                        <span class="sum">
 	                            <span class="num sum_num">${discont_price }</span> 
@@ -175,9 +141,22 @@
 	                    <div id="restock">
 	                        <button type="button" class="restock_btn">재입고 알림</button>
 	                    </div>
-	                    <span class="btn_type1">
-	                        <div class="basket">장바구니 담기</div> 
-	                    </span>
+	                    
+	                    <c:choose>
+		                <c:when test="${customer_id ne null }">
+		                    <span class="btn_type1">
+		                        <div class="basket">장바구니 담기</div> 
+		                    </span>
+		                </c:when>
+		                <c:otherwise>
+		                	<span class="btn_type1">
+		                        <a href="http://localhost:8080/brokurly/customer/signin" 
+		                        class="login_btn" style="font-weight: normal; font-size: 16px;">로그인 후 사용가능합니다.</a> 
+		                    </span>
+		                </c:otherwise>
+	                </c:choose>
+	                    
+	                    
 	                </div>
 	            </div>
 	        </div>
@@ -190,7 +169,7 @@
 	                    <li id="tab1" class="view_tab_li" onclick="get_tab_id(this.id)">상품설명</li>
 	                    <li id="tab2" class="view_tab_li" onclick="get_tab_id(this.id)">상세정보</li>
 	                    <li id="tab3" class="view_tab_li" onclick="get_tab_id(this.id)">후기
-	                        <span class="count_review">(51643)</span>
+<!-- 	                        <span class="count_review">(51643)</span> -->
 	                    </li>
 	                    <li id="tab4" class="view_tab_li" onclick="get_tab_id(this.id)">문의</li>
 	                    <li></li>

@@ -220,7 +220,7 @@
 	color: #666;
 }
 
-.ico_grade {
+.ico_grade_deta {
 	font-size: 15px;
 	color: #949296;
 }
@@ -413,18 +413,19 @@
 }
 
 /* 장바구니 버튼 */
-.basket {
+.basket, .login_btn {
 	text-align:center;
 	display:table-cell;
 	vertical-align:middle;
     padding: 0px;
     width: 407.87px;
     height: 56px;
-    background-color: rgb(18, 99, 0);
+/*     background-color: rgb(18, 99, 0); */
+    background-color: seagreen;
     color: white;
     font-weight: bold;
     font-size: 15px;
-    border: 1px solid rgb(0, 0, 0);
+/*     border: 1px solid seagreen; */
     border-radius: 4px;
     cursor:pointer;
 }

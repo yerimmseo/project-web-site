@@ -72,17 +72,17 @@
             <div class="view_port">
                 <ul id="event_list">
                     <li class="events">
-                        <div onclick="location.href=''"><img src="${path }/resources/img/event/main/event1.jpg" alt="events"></div> 
-                        <span class="event_name"><a href="">솔가 최대 46% 할인</a></span> <br>
+                        <div><img src="${path }/resources/img/event/main/event1.jpg" alt="events"></div> 
+                        <span class="event_name"><a href="http://localhost:8080/brokurly/products/product_detail_page?product_id=91">영양제 최대 46% 할인</a></span> <br>
                         <span class="event_info">미국에서 온 프리미엄 영양제</span>
                     </li>
                     <li class="events">
-                        <div onclick="location.href=''"><img src="${path }/resources/img/event/main/event2.jpg" alt="events"></div> 
+                        <div><img src="${path }/resources/img/event/main/event2.jpg" alt="events"></div> 
                         <span class="event_name"><a href="">스텐 주방용품 최대 15% 할인</a></span> <br>
                         <span class="event_info">디자인과 내구성, 모두 잡고 싶다면</span>
                     </li>
                     <li class="events">
-                        <div onclick="location.href=''"><img src="${path }/resources/img/event/main/event3.jpg" alt="events"></div> 
+                        <div><img src="${path }/resources/img/event/main/event3.jpg" alt="events"></div> 
                         <span class="event_name"><a href="">Kurly's 간편식 최대 20% 할인</a></span> <br>
                         <span class="event_info">컬리답게 만든</span>
                     </li>
@@ -563,4 +563,5 @@
    <!-- <script type="text/javascript" src="${path }/resources/js/main_ajax.js"></script> -->
 </body>
 <script type="text/javascript" src="${path }/resources/js/style/main.js"></script>
+<script src="${path }/resources/js/ajax/product_detail_ajax.js"></script>
 </html>

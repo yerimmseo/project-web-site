@@ -44,12 +44,13 @@ $(document).ready(function(e) {
 
   //+,- 버튼 클릭시 수량 변경 및 가격 변동
   let sum_number = document.getElementsByClassName('sum_num')[0];
-  let accumulate = document.getElementById('accumulate');
   let number = sum_number.innerText;
-  let accumulate_num = accumulate.innerText;
   var basic_amount = parseInt(number.replace(",", ""));
+
+  let accumulate = document.getElementById('accumulate');
+  let accumulate_num = accumulate.innerText;
   var accumulated_fund = parseInt(accumulate_num.replace(",", ""));
-  
+
   function btn_click(type){
     var min_qty = 0;
     var this_qty = $("#ct_qty").val() * 1;
@@ -74,6 +75,7 @@ $(document).ready(function(e) {
     $("#it_pay").val(show_total_amount);
     $(".sum_num").html(show_total_amount.format());
 	$("#accumulate").html(show_accumulate.format());
+
 }
 
 
