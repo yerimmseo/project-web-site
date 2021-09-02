@@ -47,19 +47,20 @@
 		                    <span class="price">${price }
 		                        <span class="won_two">원</span>
 		                    </span>
+		                    <div id="question_mark">
+		                        <span class="material-icons-outlined" style="font-size: 16px;">
+		                            help_outline
+		                        </span>
+		                        <div id="price_info">
+		                            <strong id="title_lay">컬리판매가 기준 할인</strong>
+		                            <div id="sub_text">
+		                                동일 품질 상품의 주요 온/오프라인 유통사 가격과 비교하여 컬리가 설정한 가격에서 할인된 가격입니다.                   
+		                                적용된 할인가는 대표 상품의 가격으로 옵션에 따라 할인 혜택이 다를 수 있습니다. 할인 혜택은 당사 사정에 따라 변경될 수 있습니다. 
+		                            </div>
+		                        </div>
+	                    	</div>
 		                </div>
-	                    <div id="question_mark">
-	                        <span class="material-icons-outlined" style="font-size: 16px;">
-	                            help_outline
-	                        </span>
-	                        <div id="price_info">
-	                            <strong id="title_lay">컬리판매가 기준 할인</strong>
-	                            <div id="sub_text">
-	                                동일 품질 상품의 주요 온/오프라인 유통사 가격과 비교하여 컬리가 설정한 가격에서 할인된 가격입니다.                   
-	                                적용된 할인가는 대표 상품의 가격으로 옵션에 따라 할인 혜택이 다를 수 있습니다. 할인 혜택은 당사 사정에 따라 변경될 수 있습니다. 
-	                            </div>
-	                        </div>
-	                    </div>
+	                    
 	                </a>
                 </c:if>
                 <c:choose>  

@@ -15,9 +15,10 @@
     margin: auto;
     grid-template-columns: 1fr 540px;
     width: 1050px;
-    height: 950px;
     padding-top: 20px;
-    padding-bottom: 30px;
+    padding-bottom: 90px;
+    box-sizing:border-box;
+    
 }
 
 .inner_layersns {
@@ -99,10 +100,6 @@
     width: 450px;
 }
 
-.main_name {
-	float:left;
-}
-
 /* 공유하기 아이콘 설정 */
 #share_icon_box {
     background-color: white;
@@ -128,7 +125,7 @@
     overflow: hidden;
     width: 100%;
     clear: both;
-    padding-top: 10px;
+    /*padding-top: 10px;*/
 }
 
 .dc_price {
@@ -160,6 +157,10 @@
 	padding: 10px 0px 20px;
 }
 
+.main_name {
+	display:block;
+}
+
 /* ----------------------- 물음표 아이콘에 마우스 올릴시 나오는 정보 설정 ----------------------- */
 
 .origin_price_sub {
@@ -175,6 +176,8 @@
 
 .price {
     display: inline;
+    float:left;
+    text-decoration: line-through;
 }
 
 .won_two {
@@ -182,10 +185,9 @@
 }
 
 #question_mark {
-    position: relative;
-    height: 20px;
-    top: -20.5px;
-    left: 60px;
+	display:inline;
+    margin-left:10px;
+    line-height:26px;    
 }
 
 .material-icons-outlined:hover + #price_info {
@@ -477,7 +479,7 @@ ul {
     브라우저 화면의 상대 위치를 기준으로 위치가 결정된다. */
     top: 55px;
     left: 0;
-    z-index: 999;
+    z-index: 50;
 }
 
 /* ------------------------------ 상품 사진, 텍스트 정렬 ----------------------------- */
