@@ -31,7 +31,7 @@
 	                <span class="main_name">${proM.getProduct_name() }</span>
 	            </div>    
             <c:if test="${discont > 0 }">
-	           <br> <p class="goods_dcinfo" style="position: relative; right: 117px; top: 10px;">회원할인가</p> 
+	           <p class="goods_dcinfo">회원할인가</p> 
             </c:if>
                 <span class="price_box">
                     <span class="dc_price">${discont_price }
@@ -563,5 +563,6 @@
 </div>
 
 </body>
+<script src="${path }/resources/js/style/product_detail.js"></script>
 <script src="${path }/resources/js/ajax/preparing_product_ajax.js"></script>
 </html>

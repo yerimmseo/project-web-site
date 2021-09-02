@@ -572,5 +572,6 @@
 	<jsp:include page="../include/footer.jsp"></jsp:include>
 </div>
 </body>
+<script src="${path }/resources/js/style/product_detail.js"></script>
 <script src="${path }/resources/js/ajax/product_detail_ajax.js"></script>
 </html>
