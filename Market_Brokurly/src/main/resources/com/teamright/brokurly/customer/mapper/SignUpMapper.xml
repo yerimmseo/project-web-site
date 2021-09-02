@@ -20,4 +20,16 @@
 	<insert id="insertAddress">
 		INSERT INTO address_table VALUES (#{customer_id}, #{address_main}, #{address_detail}, 1, #{receive_customer}, ${receive_tel})
 	</insert>
+	<delete id="deleteId">
+		DELETE FROM customer_table WHERE customer_id=#{csutomer_id}
+	</delete>
+	<delete id="deleteAddress">
+		DELETE FROM address_table WHERE customer_id=#{customer_id}
+	</delete>
+	<delete id="deleteCart">
+		DELETE FROM cart_table WHERE customer_id=#{customer_id}
+	</delete>
+	<delete id="deleteCoupon">
+		DELETE FROM customer_coupon_table WHERE customer_id=#{customer_id}
+	</delete>
 </mapper>

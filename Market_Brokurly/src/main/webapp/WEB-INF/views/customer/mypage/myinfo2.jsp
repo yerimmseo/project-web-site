@@ -21,6 +21,7 @@
 	<form action="point" id="pointForm"></form>
 	<form action="coupon" id="couponForm"></form>
 	<form action="myinfo" id="myinfoForm"></form>
+	<form action="${path }/main" id="deleteForm"></form>
 	
 	<div class="header">
 		<jsp:include page="../../include/header.jsp"></jsp:include>
@@ -68,7 +69,7 @@
 	                            </div>
 	                            <div class="next">
 	                                <a href="${path }/event/lovers" class="total_grade">전체등급 보기</a>
-	                                <a href="${path }/event/mybenefit" class="next_month">다음 달 예상등급 보기</a>
+	                                <a href="" class="next_month">다음 달 예상등급 보기</a>
 	                            </div>
 	                        </div>
 	                        <div class="list_mypage">
@@ -408,7 +409,7 @@
 									</tbody>
 								</table>
 								<div class="form_footer">
-									<a class="btn default">탈퇴하기</a>
+									<a type="button" class="btn default" id="delete_btn">탈퇴하기</a>
 									<a type="button" class="btn active" id="update_btn">회원정보수정</a>
 								</div>
 							</form>

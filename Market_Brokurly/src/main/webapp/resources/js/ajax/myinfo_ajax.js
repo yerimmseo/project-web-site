@@ -32,6 +32,7 @@
     var number_check = $('#number_check');
     var check = $('#check');
     var update_btn = $('#update_btn');
+    var delete_btn = $('#delete_btn');
     var code_num = $('.code_num');
     var code_num_guide = $('.code_num_guide');
 
@@ -205,31 +206,26 @@
 
         if (update_pw.length < 8 || update_pw.length > 16) {
 			alert("비밀번호는 8자리 ~ 16자리 이내로 입력해주세요.");
-			update_pw.focus();
 			return;
 		} 
 
 		if (!chk_new_password.test(update_pw)) {
 			alert("영문, 숫자, 특수문자를 혼합하여 입력해주세요.");
-			update_pw.focus();
 			return;
 		} 
 
 		if (update_pw != chk_update_pw){
 			alert("비밀번호가 다릅니다");
-			update_pw.focus();
 			return;
 		}
 
         if (customer_name.length < 2 || customer_name.length > 13) {
 			alert("이름은 2글자에서 13글자까지만 가능합니다.");
-			customer_name.focus();
 			return;
 		}
 
         if (customer_email == '') {
 			alert("이메일을 입력해주세요");
-			customer_email.focus();
 			return;
 		}
 
@@ -280,5 +276,25 @@
             alert("회원정보수정에 성공하셨습니다.")
 			$('#updateForm').submit();
         }
+    });
+    
+    delete_btn.click(() => {
+    	var select = confirm("정말로 탈퇴하시겠습니까");
+    	if(select) {
+    		$.ajax({
+    			url: "/brokurly/customer/delete",
+    			type: "POST",
+    			data: {
+    				"customer_id": $('#customer_id').val()
+    			},
+    			success:function(){
+    				alert("탈퇴가 정상적으로 이루어졌습니다.");
+    				$('#deleteForm').submit();
+    			},
+    			error:function(){
+    				alert("서버에러");
+    			}
+    		});    		
+    	}
     });
 });

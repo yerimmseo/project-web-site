@@ -90,3 +90,8 @@ $('#logout').click(function(){
 		}
 	});
 });
+
+/* ------------------------------- 주소지 변경 누를시 함수 ----------------------------------- */
+$('#address_Btn').click(function(){
+	$('#destination_btn').submit();
+});

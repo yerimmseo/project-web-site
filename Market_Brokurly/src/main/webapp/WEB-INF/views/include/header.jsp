@@ -12,6 +12,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
+	<form action="/brokurly/customer/mypage/destination" id="destination_btn"></form>
 	<form action="/brokurly/main" method="GET" id="logoutForm"></form>
 	 <div id="header">
         <div id="user_menu">

@@ -2,6 +2,8 @@ package com.teamright.brokurly.customer.controller;
 
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -60,6 +62,17 @@ public class SignUpController {
 	public String telCheck(HttpServletRequest request) {
 		String result = signupService.telCheck(request.getParameter("customer_tel"));
 		return result;
+	}
+	
+	@RequestMapping(value="/delete", method=RequestMethod.POST, produces="application/text; charset=utf8")
+	@ResponseBody
+	public void delete(HttpServletRequest request, HttpSession session) {
+		session.invalidate();
+		String customer_id = request.getParameter("customer_id");
+		signupService.deleteCart(customer_id);
+		signupService.deleteAddress(customer_id);
+		signupService.deleteCoupon(customer_id);
+		signupService.deleteId(customer_id);
 	}
 	
 }

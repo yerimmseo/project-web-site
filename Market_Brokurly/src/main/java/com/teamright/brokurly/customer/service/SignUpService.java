@@ -14,4 +14,10 @@ public interface SignUpService {
 	public void signUp(CustomerVO customerVO);
 	//주소 입력
 	public void insertAddress(AddressVO addressVO);
+	
+	//탈퇴하기에 쓰는 매퍼
+	public void deleteId(String customer_id);
+	public void deleteCart(String customer_id);
+	public void deleteAddress(String customer_id);
+	public void deleteCoupon(String customer_id);
 }

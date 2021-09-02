@@ -54,8 +54,27 @@ public class SignUpServiceImpl implements SignUpService{
 	}
 
 	@Override
-	//주소 입력
 	public void insertAddress(AddressVO addressVO) {
 		signupMapper.insertAddress(addressVO);
+	}
+
+	@Override
+	public void deleteId(String customer_id) {
+		signupMapper.deleteId(customer_id);
+	}
+
+	@Override
+	public void deleteCart(String customer_id) {
+		signupMapper.deleteCart(customer_id);
+	}
+
+	@Override
+	public void deleteAddress(String customer_id) {
+		signupMapper.deleteAddress(customer_id);
+	}
+
+	@Override
+	public void deleteCoupon(String customer_id) {
+		signupMapper.deleteCoupon(customer_id);
 	}
 }
