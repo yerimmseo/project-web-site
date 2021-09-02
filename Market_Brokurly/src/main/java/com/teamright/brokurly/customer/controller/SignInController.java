@@ -36,7 +36,6 @@ public class SignInController {
 		session.setAttribute("address_main", address_list.get(0).getAddress_main());
 		session.setAttribute("address_detail", address_list.get(0).getAddress_detail());
 		session.setAttribute("customer_grade", loginService.getGrade(customer_id));
-		System.out.println(loginService.getGrade(customer_id));
 		return "redirect:/main";
 	}
 

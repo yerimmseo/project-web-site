@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<!-- 다른 mapper와 중복되지 않도록 네임스페이스 기재 -->
+<mapper namespace="com.teamright.brokurly.product.mapper.CartMapper">
+	
+	<resultMap type="com.teamright.brokurly.model.CartVO" id="cart">
+		<result column="money" property="money" />
+		<result column="trueMoney" property="trueMoney" />
+		<result column="salesPrice" property="salesPrice" />								
+	</resultMap> 
+    
+    <select id="listCart" resultType="com.teamright.brokurly.model.CartVO" resultMap="cart">
+       SELECT 
+        	cart_id, cart_count, CEIL(product_price * ((100 - event_discount) / 100))salesPrice,
+            product_id, product_name, customer_id, (cart_count*CEIL(product_price * ((100 - event_discount) / 100)))money,
+            (cart_count * product_price)trueMoney, maincate_id        	
+        FROM
+            cart_table
+        INNER JOIN
+            customer_table USING (customer_id)
+        INNER JOIN 
+            product_table USING (product_id)
+        INNER JOIN 
+            event_table USING (event_id)
+        INNER JOIN 
+            subcategory_table USING (subcate_id)
+        WHERE
+          customer_id=#{customer_id}
+    </select>
+    
+    <delete id="deleteAll">
+        DELETE FROM cart_table WHERE customer_id=#{customer_id}
+    </delete>
+    
+    <delete id="delete">
+        DELETE FROM cart_table WHERE cart_id=#{cart_id}
+    </delete>
+    
+    <select id="sumMoney" resultType="String">
+        SELECT 
+        	nvl(SUM((cart_count*product_price)), 0)sum FROM cart_table 
+        INNER JOIN 
+        	product_table USING (product_id)
+		WHERE 
+			customer_id=#{customer_id}
+ 	</select>
+ 	
+ 	<select id="diff" resultType="String">
+ 		SELECT 
+ 			nvl(SUM((cart_count * product_price) - (cart_count*CEIL(product_price * ((100 - event_discount) / 100)))),0)
+        FROM 
+        	cart_table
+   	 	INNER JOIN
+   	 		product_table USING (product_id)
+    	INNER JOIN
+    		event_table USING (event_id)
+    	WHERE 
+    		customer_id=#{customer_id}
+ 	</select>
+ 	
+ 	<update id="modify">
+ 		UPDATE cart_table SET cart_count=#{cart_count} WHERE customer_id=#{customer_id} AND product_id=#{product_id} 
+ 	</update>
+
+</mapper>

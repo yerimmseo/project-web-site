@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="${path }/resources/css/font.css" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
-<body>
+<body onload="noBack();" onpageshow="if(event.persisted) noBack();" onunload="">
 	<form action="findid" id="findidForm"></form>
 	<form action="findpw" id="findpwForm"></form>
 	<div class="header">
@@ -55,7 +55,10 @@
     <div class="footer_wrap">
 		<jsp:include page="../include/footer.jsp"></jsp:include>
 	</div>
-	
+	<script type="text/javascript">
+      window.history.forward();
+      function noBack(){window.history.forward();}
+   	</script>
 	<script src="${path }/resources/js/ajax/signin_ajax.js"></script>
 </body>
 </html>

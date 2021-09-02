@@ -11,11 +11,14 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CartVO {
-   private Integer cart_id;
-   private Integer cart_count;
-   private Integer product_id;
-   private Integer product_price;
-   private String product_name;
-   private String customer_id;
-   private String money;
+	private Integer cart_id;
+	private Integer cart_count;
+	private Integer product_id;
+	private Integer product_price;
+	private String product_name;
+	private String customer_id;
+	private String money;
+	private String trueMoney;
+	private String salesPrice;
+	private Integer maincate_id;
 }
