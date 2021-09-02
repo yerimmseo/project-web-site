@@ -6,4 +6,10 @@
 	<select id="getMainCateList" resultType="com.teamright.brokurly.model.MainCategoryVO">
 		SELECT * FROM maincategory_table
 	</select>
+	<select id="getMainCateName" resultType="String">
+		SELECT maincate_name FROM maincategory_table WHERE maincate_id=#{maingcate_id}		
+	</select>
+	<select id="getMainCateId" resultType="int">
+		SELECT maincate_id FROM maincategory_table WHERE maincate_id=#{maingcate_id}		
+	</select>
 </mapper>
