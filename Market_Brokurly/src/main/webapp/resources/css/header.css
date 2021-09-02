@@ -109,7 +109,7 @@
 #main_category_box {background-color: white; border: rgb(209, 209, 209) solid 1px; width: 219px; height: 684px; position: relative; left: 0; top: 15px; display: none;}
 
 #main_category {padding-left: 0;}
-#main_category > li {position: relative; top: -15px; color: rgb(75, 75, 75); height: 18px; font-weight: bold; padding-top: 9px; padding-left: 1px; padding-bottom: 11px;}
+#main_category > li {cursor:pointer; position: relative; top: -15px; color: rgb(75, 75, 75); height: 18px; font-weight: bold; padding-top: 9px; padding-left: 1px; padding-bottom: 11px;}
 .mainCate_text > a {position: relative; top: 0px; padding-right: 0px; padding-left: 14px; padding-top: 8px; padding-bottom: 8px;}
 
 .subs > a {padding-right: 10px; padding-left: -10px; padding-top: 8px; padding-bottom: 9px;}

@@ -3,8 +3,8 @@
  */
 
 // gnb_menu fixed
+window.addEventListener('load', function navi_fix() {
 
-window.onload = function navi_fix() {
     
     document.addEventListener('scroll', onscroll, {passive:true});
 
@@ -19,7 +19,9 @@ window.onload = function navi_fix() {
             gnb.classList.remove('fix');
         }
     }
-}
+	
+});
+
 
 /* ----------------------------- 고객센터 하위메뉴 클릭시 나타남 ---------------------------- */
 check = true;
@@ -95,3 +97,61 @@ $('#logout').click(function(){
 $('#address_Btn').click(function(){
 	$('#destination_btn').submit();
 });
+
+
+
+/* ----------------------------- AJAX MAINCATEGORY ---------------------------- */
+
+
+$(document).ready(function(e) {
+	$('.mca').click(function(){
+		$.ajax({
+	        type : "GET",
+	        url : "/brokurly/products/product_main_id",
+			data: {
+				"maincate_id": $(this).attr('value')
+			},
+	        error : function() {
+	            alert('통신실패!!');
+	        },
+	        success : function(data) {
+				console.log('성공!!!!!!	');
+				console.log(data);
+				location.href="http://localhost:8080/brokurly/products/product_list";
+				
+	        }
+		})
+    });
+});
+
+/* ----------------------------- AJAX SUBCATEGORY ---------------------------- */
+
+$(document).ready(function(e) {
+	$('.subs').click(function(){
+		$.ajax({
+	        type : "GET",
+	        url : "/brokurly/products/product_subcate",
+			data: {
+				"subcate_id": $(this).attr('value')
+			},
+	        error : function() {
+	            alert('통신실패!!');
+	        },
+	        success : function(data) {
+				console.log('성공!!!!!!	');
+				console.log(data);
+				location.href="http://localhost:8080/brokurly/products/product_list";
+				
+	        }
+		})
+    });
+});
+
+
+
+
+
+
+
+
+

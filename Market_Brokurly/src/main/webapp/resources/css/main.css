@@ -1,81 +1,409 @@
 @charset "UTF-8";
 
+
 /* --------------------------------- import --------------------------------- */
-#main {background-color: white; width: 100%; height: auto;}
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500;700;900&display=swap');/* Noto Sans KR */
+
+
+#main {
+    background-color: white;
+    width: 100%;
+    height: 4000px;
+}
+
+a {
+	text-decoration: none;
+}
 
 /* -------------------------------- 이벤트 정보 배너 ------------------------------- */
-#goods {background-color: transparent; width: 100%; height: 370px; margin-bottom: 0px;}
+#event_box {
+    background-color: transparent;
+    width: 100%;
+    height: 370px;
+    margin-bottom: 0px;
+    min-width: 1050px;
+}
 
-#event_slide {margin: 0; padding: 0; height: 100%; width: 100%;}
-#event {background-image: url(../assets/goods1.jpg); background-position: 50% 50%; background-repeat: no-repeat; float: left; width: 100%; min-width: 1050px; min-height: 360px; transition: all 0.5s ease;}
-#event_selector {width: 180px; height: 20px; padding: 0; margin: auto; text-align: center;}
-#event_selector > li {float: left; width: 20px; height: 20px; margin: auto; padding: 5px 5px 5px 5px;}
+#event_slide {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+#event {
+    background-image: url(/brokurly/resources/img/event/main/goods1.jpg);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    float: left;
+    width: 100%;
+    min-width: 1050px;
+    min-height: 360px;
+    transition: all 0.5s ease;
+}
 
-.select > div {width: 10px; height: 10px; border-radius: 50px; margin: auto; background-color: rgb(210, 210, 210); cursor: pointer; transition: all 0.3s ease;}
+
+#event_selector {
+    width: 180px;
+    height: 20px;
+    padding: 0;
+    margin: auto;
+    text-align: center;
+}
+
+#event_selector > li {
+    float: left;
+    width: 20px;
+    height: 20px;
+    margin: auto;
+    padding: 5px 5px 5px 5px;
+}
+
+.select > div {
+    width: 10px;
+    height: 10px;
+    border-radius: 50px;
+    margin: auto;
+    background-color: rgb(210, 210, 210);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+
+
+
+
+
+
 
 /* -------------------------------- 상품 추천 목록 ------------------------------- */
-#product_list {width: 100%; height: 660px;}
-#product_list2 {width: 100%; height: 690px;}
+#product_list {width: 100%;height: 660px; }
+#product_list2 {width: 100%;height: 690px; }
+#main_event {width: 100%;height: 660px; }
 
-#main_event {width: 100%; height: 660px;}
 
 /* ---------------------------------- title --------------------------------- */
-#tit {padding: 79px 0px 35px; color: #333; margin: 0px;}
-#tit_goods{width: 100%; min-width: 1050px; text-align: center; font-size: 26px; font-family: 'Noto Sans KR', sans-serif;}
-#tit_main {padding: 79px 0 10px; color: #333; margin: 0px;}
-#tit_under {margin: 0 0 35px; font-size: 18px; font-weight: 400; color: rgb(75, 75, 75);}
+#tit_goods{
+    width: 100%;
+    min-width: 1050px;
+    text-align: center;
+    font-size: 26px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
 
-.view_port {width: 1064px; position: relative; min-width: 1050px; height: 500px; padding-left: 0; margin: auto; overflow: hidden;}
+#tit {
+    padding: 79px 0px 35px;
+    color: #333;
+    margin: 0px;
+}
+
+#tit_main {
+    padding: 79px 0 10px;
+    color: #333;
+    margin: 0px;
+}
+
+#tit_under {
+    margin: 0 0 35px;
+    font-size: 18px;
+    font-weight: 400;
+    color: rgb(75, 75, 75);
+}
+
+/* 상품진열 */
+.view_port {
+    width: 1064px;
+    position: relative;
+    min-width: 1050px;
+    height: 500px;
+    padding-left: 0;
+    margin: auto;
+    overflow: hidden;
+}
 
 /* -------------------------------- 이 상품 어때요? ------------------------------- */
-.items {background-color: white; margin-left: 14px; float: left;}
-.view_port > ul > li > div > img {width: 100%; height: 320px; cursor: pointer; transition: all 0.5s ease-in-out; transform: scale(1); overflow: hidden;}
+/* ul */
+
+/* 상품들 li */
+.items {
+    background-color: transparent;
+    margin-left: 14px;
+    float: left;
+}
+
+.view_port > ul > li > div > img {
+    width: 100%;
+    height: 320px;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    transform: scale(1);
+    overflow: hidden;
+}
 
 /* --------------------------------- 특가 / 혜택 -------------------------------- */
-#event_list {width: 100%; padding-left: 0; margin-top: 0; height: 10px; position: relative; left: 0px; transition: all 0.5s ease;}
+/* ul */
+#event_list {
+    width: 100%;
+    padding-left: 0;
+    margin-top: 0;
+    height: 10px;
+    position: relative;
+    left: 0px;
+    transition: all 0.5s ease; 
+}
 
-.events {margin-left: 26px; float: left; text-align: center;}
-.event_name {line-height: 40px; font-weight: 700; font-size: 19px; font-family: 'Noto Sans KR', sans-serif;}
-.event_info {color: rgb(143, 143, 143); font-size: 15px;}
+/* li */
+.events {
+    margin-left: 26px;
+    float: left;
+    text-align: center;
+}
+
+.event_name {
+    line-height: 40px;
+    font-weight: 700;
+    font-size: 19px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.event_info {
+    color: rgb(143, 143, 143);
+    font-size: 15px;
+}
 
 /* ------------------------------- 놓치면 후회할 가격 ------------------------------- */
-/* ---------------------------------- 중간 광고 --------------------------------- */
-#middle_ad1 {width: 1050px; height: 140px; background-image: url(../assets/LG전자할인배너.jpg); background-repeat: no-repeat; background-size: cover; margin: auto; cursor: pointer;}
-#middle_ad2 {width: 1050px; height: 140px; background-color: #cdece3; margin: auto; cursor: pointer;}
-#middle_ad2 > strong {width: 100%; padding: 35px 50px 0; display: block; font-size: 28px; font-family: 'Noto Sans KR', sans-serif; color: rgb(31, 100, 61);}
-#middle_ad2 > span {width: 100%; padding: 0px 50px 0; font-size: 17px; color: rgb(30, 63, 44);}
+/* ul */
 
-#last_ad {width: 1050px; height: 160px; background-image: url("../img/banner/last_banner_delivery.jpg"); background-repeat: no-repeat; background-size: cover; margin: auto; cursor: pointer;}
+
+/* ---------------------------------- 중간 광고 --------------------------------- */
+#middle_ad1 {
+    width: 1050px;
+    height: 140px;
+    background-image: url(/brokurly/resources/img/event/main/adBanner1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: auto;
+    cursor: pointer;
+}
+#middle_ad2 {
+    width: 1050px;
+    height: 140px;
+    background-color: #cdece3;
+    margin: auto;
+    cursor: pointer;
+}
+#middle_ad2 > strong {
+    width: 100%;
+    padding: 35px 50px 0;
+    display: block;
+    font-size: 28px;
+    font-family: 'Noto Sans KR', sans-serif;
+    color: rgb(31, 100, 61);
+}
+
+#middle_ad2 > span {
+    width: 100%;
+    padding: 0px 50px 0;
+    font-size: 17px;
+    color: rgb(30, 63, 44);
+}
+
+
+#last_ad {
+    width: 1050px;
+    height: 160px;
+    background-image: url(/brokurly/resources/img/event/main/adBanner2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: auto;
+    cursor: pointer;
+}
+
 
 /* --------------------------------- MD의 추천 --------------------------------- */
-#md_recommend {padding-bottom: 100px;}
+#md_recommend { padding-bottom: 100px;}
 
-#list_category {width: 1050px; height: 180px; padding: 0 0 20px; margin: auto; background-color: white; font-size: 14px; font-family: 'Noto Sans KR', sans-serif; font-weight: 500; color: #333; text-align: center;}
-#list_category > li {display: inline-block; background-color: transparent; padding: 0px 5px 20px; margin-bottom: 20px;}
-#list_category > li > a {position: relative; top: 10px; background-color: #f5f5f5; padding: 9px 20px 9px 19px; border-radius: 20px;}
-#list_category > li > a:hover {background-color: rgb(216, 233, 214); color: rgb(0, 107, 14);}
+#list_category {
+    width: 1050px;
+    height: 180px;
+    padding: 0 0 20px;
+    margin: auto;
+    background-color: white;
+    font-size: 14px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 500;
+    color: #333;
+    text-align: center;
+}
 
-#link_cate {margin: auto; width: 514px; height: 38px; font-size: 16px; background-color: white; border: rgb(209, 209, 209) solid 1px; text-align: center; padding-top: 16px; font-family: 'Noto Sans KR', sans-serif; font-weight: 400;}
+#list_category > li {
+    display: inline-block;
+    background-color: transparent;
+    padding: 0px 5px 20px;
+    margin-bottom: 20px;
+}
 
-/* ------------------------------- 지금 가장 핫한 상품 ------------------------------ */
+#list_category > li > a {
+    position: relative;
+    top: 10px;
+    background-color: #f5f5f5;
+    padding: 9px 20px 9px 19px;
+    border-radius: 20px;
+}
+
+#list_category > li > a:hover {
+    background-color: rgb(216, 233, 214);
+    color: rgb(0, 107, 14);
+}
+
+
+
+
+
+
+#link_cate {
+    margin: auto;
+    width: 514px;
+    height: 38px;
+    font-size: 16px;
+    background-color: white;
+    border: rgb(209, 209, 209) solid 1px;
+    text-align: center;
+    padding-top: 16px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 400;
+    cursor:pointer;
+}
+
+
+/* ------------------------------- MD ------------------------------ */
+.on {
+	animation: fade-in 1s forward;
+}
+
+.off {
+	animation: fade-out 1s forward;
+}
+
+#md_view ul {
+	width: 10000px;
+    padding-left: 0;
+    margin-top: 0;
+    height: 10px;
+    position: relative;
+    left: 0px;
+	display:none;
+}
+
+#md_view {
+	opacity: 0%;
+	
+	
+}
+
+
 /* ----------------------------------- 공통 ----------------------------------- */
 /* 이미지 크기 조정 및 확대효과 */
-.view_port > ul > li > div {overflow: hidden; height: 320px; margin-bottom: 5px;}
-.view_port > ul > li > div > img:hover {transform: scale(1.08);}
+.view_port > ul > li > div {
+    overflow: hidden;
+    height: 320px;
+    margin-bottom: 5px;
+}
+.view_port > ul > li > div > img:hover {
+    transform: scale(1.08);
+}
+/* ul */
+.item_list {
+    width: 10000px;
+    padding-left: 0;
+    margin-top: 0;
+    height: 10px;
+    position: relative;
+    left: 0px;
+    transition: all 0.5s ease;
+}
+/* 제품 정보 */
 
-.item_list {width: 10000px; padding-left: 0; margin-top: 0; height: 10px; position: relative; left: 0px; transition: all 0.5s ease;}
+.product_name {
+    margin-top: 12px;
+    font-weight: 500;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.product_name > a {
+    width: 248.85px;
+    height: 32px;
+    display: block;
+    white-space: nowrap;
+    overflow:hidden;
+    text-overflow: ellipsis;
+}
 
-.product_name {margin-top: 12px; font-weight: 500; font-family: 'Noto Sans KR', sans-serif;}
-.product_name > a {width: 248.85px;height: 28px; display: block;}
+.price_tag {
+    text-overflow: ellipsis;
+    width: 248.85px;
+    display: block;
+}
 
-.price {color: rgb(143, 143, 143); font-size: 15px; font-weight: 700; text-decoration: line-through;}
-.price_tag {text-overflow: ellipsis; width: 248.85px; display: block;}
-.discounted_price {color: orangered; font-weight: 900; font-size: 17px;}
+.discounted_price {
+    color: orangered;
+    font-weight: 900;
+    font-size: 17px;
+}
 
-.items{transition: all 0.5s ease; width: 248.58px;}
 
-.pre-ani{opacity: 0%;}
+.price {
+    color: rgb(143, 143, 143);
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: line-through;
+}
+
+.items{
+    transition: all 0.5s ease;
+    width: 248.58px;
+}
+
 
 /* -------------------------------- 이미지 슬라이드 -------------------------------- */
-.right_btn {position: relative; background-color: white; width: 50px; height: 50px; border-radius: 50px; border: rgb(209, 209, 209) solid 1px; display: flex; justify-content: center; align-items: center; top: -250px; left: 1010px; cursor: pointer; overflow: visible;}
-.left_btn {position: relative; background-color: white; width: 50px; height: 50px; border-radius: 50px; border: rgb(209, 209, 209) solid 1px; display: flex; visibility: hidden; justify-content: center; align-items: center; cursor: pointer; top: -300px; left: 1px; overflow: visible;}
+
+.right_btn {
+    position: relative;
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    border: rgb(209, 209, 209) solid 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    top: -250px;
+    left: 1010px;
+    cursor: pointer;
+    overflow: visible;
+}
+.left_btn {
+    position: relative;
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    border: rgb(209, 209, 209) solid 1px;
+    display: flex;
+    visibility: hidden;
+    justify-content: center;
+    align-items: center;  
+    cursor: pointer;
+    top: -300px;
+    left: 1px;
+    overflow: visible;
+}
+
+
+@keyframes fade-in {
+  0% { opacity: 0%; }
+  100% {opacity: 100%; }
+}
+
+@keyframes fade-out {
+   0% { opacity: 100%; }
+  100% {opacity: 0%; }
+}

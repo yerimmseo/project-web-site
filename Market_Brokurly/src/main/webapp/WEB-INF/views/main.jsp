@@ -1,39 +1,35 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <c:set var="path" value="${pageContext.request.contextPath }" />
 <!DOCTYPE html>
-<% 
-response.setHeader("Pragma", "no-cache"); 
-response.setHeader("Cache-Control", "no-cache"); 
-response.setHeader("Cache-Control", "no-store"); 
-response.setDateHeader("Expires", 0L); 
-%>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>마켓브로컬리 :: 내일의 장보기, 마켓브로컬리</title>
+<title>BroKurly</title>
 <link rel="stylesheet" href="${path }/resources/css/main.css" />
 <link rel="stylesheet" href="${path }/resources/css/font.css" />
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet" />
+<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
-<body>
-	<div class="header">
-		<jsp:include page="include/header.jsp"></jsp:include>
-	</div>
-	<div id="main">
+<body onload='getPath(""+"${path }")'>
+   <div class="header">
+      <jsp:include page="include/header.jsp"></jsp:include>
+   </div>
+   <div id="main">
         <!-- 상단 광고 -->
-        <div id="goods">
+        <div id="event_box">
             <div id="event_slide">
                 <div id="event"></div>
             </div>
             <ul id="event_selector">
-                <li class="select"><div id="e_1" onclick="getEventId(this.id)"></div></li>
-                <li class="select"><div id="e_2" onclick="getEventId(this.id)"></div></li>
-                <li class="select"><div id="e_3" onclick="getEventId(this.id)"></div></li>
-                <li class="select"><div id="e_4" onclick="getEventId(this.id)"></div></li>
-                <li class="select"><div id="e_5" onclick="getEventId(this.id)"></div></li>
-                <li class="select"><div id="e_6" onclick="getEventId(this.id)"></div></li>
+	                <li class="select"><div id="e_1" onclick="getEventId(this.id)"></div></li>
+	                <li class="select"><div id="e_2" onclick="getEventId(this.id)"></div></li>
+	                <li class="select"><div id="e_3" onclick="getEventId(this.id)"></div></li>
+	                <li class="select"><div id="e_4" onclick="getEventId(this.id)"></div></li>
+	                <li class="select"><div id="e_5" onclick="getEventId(this.id)"></div></li>
+	                <li class="select"><div id="e_6" onclick="getEventId(this.id)"></div></li>
             </ul>
         </div>
         <!-- 이 상품 어때요 -->
@@ -43,102 +39,16 @@ response.setDateHeader("Expires", 0L);
             </div>
             <div class="view_port">
                 <ul class="item_list">
-                    <li class="items">
-                        <div onclick="location.href='https://www.kurly.com/shop/goods/goods_view.php?&goodsno=81561'"><img src='../assets/감자.jpg' alt='items'></div>     
-                        <span class='product_name'><a href=''>[바븐] 민물장어 (자포니카) 400g 내외 (생물)</a></span> <br>  
-                        <span class="price_tag"><span class='discounted_price'>6%</span>&emsp;<span style='font-size: 17px; color: #333; font-weight: 1000;'>27,180원</span></span>
-                        <span class='price'>29,000원</span>              
-                    </li>
-                    <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
-                        <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
-                        <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
-                        <span class="price">14,800원</span>              
-                    </li>
-                    <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
-                        <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
-                        <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
-                        <span class="price">14,800원</span>               
-                    </li>
-                    <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
-                        <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
-                        <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
-                        <span class="price">14,800원</span></span>                
-                    </li>
-                    <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
-                        <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
-                        <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
-                        <span class="price">14,800원</span></span>                
-                    </li>
-                    <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
-                        <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
-                        <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
-                        <span class="price">14,800원</span></span>                
-                    </li>
-                    <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
-                        <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
-                        <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
-                        <span class="price">14,800원</span></span>                
-                    </li>
-                    <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
-                        <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
-                        <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
-                        <span class="price">14,800원</span></span>                
-                    </li>
-                    <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="kimchi"></div> 
-                        <span class="product_name"><a href="">[비비고] 썰은 배추김치</a></span> <br>
-                        <span class="price_tag"><span class="discounted_price">7%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">5,440원</span></span>
-                        <span class="price">5,900원</span></span>                
-                    </li>
-                    <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="kimchi"></div> 
-                        <span class="product_name"><a href="">[비비고] 썰은 배추김치</a></span> <br>
-                        <span class="price_tag"><span class="discounted_price">7%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">5,440원</span></span>
-                        <span class="price">5,900원</span></span>                
-                    </li>
-                    <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="kimchi"></div> 
-                        <span class="product_name"><a href="">[비비고] 썰은 배추김치</a></span> <br>
-                        <span class="price_tag"><span class="discounted_price">7%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">5,440원</span></span>
-                        <span class="price">5,900원</span></span>                
-                    </li>
-                    <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="kimchi"></div> 
-                        <span class="product_name"><a href="">[비비고] 썰은 배추김치</a></span> <br>
-                        <span class="price_tag"><span class="discounted_price">7%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">5,440원</span></span>
-                        <span class="price">5,900원</span></span>                
-                    </li>
-                    <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="kimchi"></div> 
-                        <span class="product_name"><a href="">[비비고] 썰은 배추김치</a></span> <br>
-                        <span class="price_tag"><span class="discounted_price">7%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">5,440원</span></span>
-                        <span class="price">5,900원</span></span>                
-                    </li>
-                    <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="kimchi"></div> 
-                        <span class="product_name"><a href="">[비비고] 썰은 배추김치</a></span> <br>
-                        <span class="price_tag"><span class="discounted_price">7%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">5,440원</span></span>
-                        <span class="price">5,900원</span></span>                
-                    </li>
-                    <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="kimchi"></div> 
-                        <span class="product_name"><a href="">[비비고] 썰은 배추김치</a></span> <br>
-                        <span class="price_tag"><span class="discounted_price">7%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">5,440원</span></span>
-                        <span class="price">5,900원</span></span>                
-                    </li>
-                    <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="kimchi"></div> 
-                        <span class="product_name"><a href="">[비비고] 썰은 배추김치</a></span> <br>
-                        <span class="price_tag"><span class="discounted_price">7%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">5,440원</span></span>
-                        <span class="price">5,900원</span></span>                
-                    </li>
+                	<c:forEach var="i" begin="0" end="15" items="${product }" >
+			                    <li class="items">
+		                	        <div onclick="location.href=''"><img src='/brokurly/resources/img/product/all/${i.product_id }.jpg' alt='items'></div>     
+		            	            <span class='product_name'><a href=''> ${i.product_name } </a></span>  
+		        	                <span class="price_tag">
+		        	                <c:if test="${i.event_discount != 0 }"><span class="discounted_price">${i.event_discount }%</span>&nbsp;</c:if>
+		        	                <span style='font-size: 17px; color: #333; font-weight: 1000;'><fmt:formatNumber value="${i.discount_price }" pattern="#,###,###" />원</span></span>
+		        	                <c:if test="${i.event_discount != 0 }"><span class="price"><fmt:formatNumber value="${i.product_price }" pattern="#,###,###" />원</span></c:if>
+		    	                </li>
+                    </c:forEach>
                 </ul>
                 <div class="right_btn">
                     <span style="color: rgb(80, 80, 80); font-size: 25px;" class="material-icons-outlined">
@@ -162,17 +72,17 @@ response.setDateHeader("Expires", 0L);
             <div class="view_port">
                 <ul id="event_list">
                     <li class="events">
-                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="events"></div> 
+                        <div onclick="location.href=''"><img src="${path }/resources/img/event/main/event1.jpg" alt="events"></div> 
                         <span class="event_name"><a href="">솔가 최대 46% 할인</a></span> <br>
                         <span class="event_info">미국에서 온 프리미엄 영양제</span>
                     </li>
                     <li class="events">
-                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="events"></div> 
+                        <div onclick="location.href=''"><img src="${path }/resources/img/event/main/event2.jpg" alt="events"></div> 
                         <span class="event_name"><a href="">스텐 주방용품 최대 15% 할인</a></span> <br>
                         <span class="event_info">디자인과 내구성, 모두 잡고 싶다면</span>
                     </li>
                     <li class="events">
-                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="events"></div> 
+                        <div onclick="location.href=''"><img src="${path }/resources/img/event/main/event3.jpg" alt="events"></div> 
                         <span class="event_name"><a href="">Kurly's 간편식 최대 20% 할인</a></span> <br>
                         <span class="event_info">컬리답게 만든</span>
                     </li>
@@ -188,78 +98,16 @@ response.setDateHeader("Expires", 0L);
             </div>
             <div class="view_port">
                 <ul class="item_list">
-                    <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
-                        <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
-                        <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
-                        <span class="price">14,800원</span></span>                
-                    </li>
-                    <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
-                        <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
-                        <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
-                        <span class="price">14,800원</span></span>                
-                    </li>
-                    <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
-                        <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
-                        <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
-                        <span class="price">14,800원</span></span>                
-                    </li>
-                    <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
-                        <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
-                        <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
-                        <span class="price">14,800원</span></span>                
-                    </li>
-                    <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="kimchi"></div> 
-                        <span class="product_name"><a href="">[비비고] 썰은 배추김치</a></span> <br>
-                        <span class="price_tag"><span class="discounted_price">7%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">5,440원</span></span>
-                        <span class="price">5,900원</span></span>                
-                    </li>
-                    <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="kimchi"></div> 
-                        <span class="product_name"><a href="">[비비고] 썰은 배추김치</a></span> <br>
-                        <span class="price_tag"><span class="discounted_price">7%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">5,440원</span></span>
-                        <span class="price">5,900원</span></span>                
-                    </li>
-                    <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="kimchi"></div> 
-                        <span class="product_name"><a href="">[비비고] 썰은 배추김치</a></span> <br>
-                        <span class="price_tag"><span class="discounted_price">7%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">5,440원</span></span>
-                        <span class="price">5,900원</span></span>                
-                    </li>
-                    <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="kimchi"></div> 
-                        <span class="product_name"><a href="">[비비고] 썰은 배추김치</a></span> <br>
-                        <span class="price_tag"><span class="discounted_price">7%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">5,440원</span></span>
-                        <span class="price">5,900원</span></span>                
-                    </li>
-                    <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="kimchi"></div> 
-                        <span class="product_name"><a href="">[비비고] 썰은 배추김치</a></span> <br>
-                        <span class="price_tag"><span class="discounted_price">7%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">5,440원</span></span>
-                        <span class="price">5,900원</span></span>                
-                    </li>
-                    <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="kimchi"></div> 
-                        <span class="product_name"><a href="">[비비고] 썰은 배추김치</a></span> <br>
-                        <span class="price_tag"><span class="discounted_price">7%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">5,440원</span></span>
-                        <span class="price">5,900원</span></span>                
-                    </li>
-                    <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="kimchi"></div> 
-                        <span class="product_name"><a href="">[비비고] 썰은 배추김치</a></span> <br>
-                        <span class="price_tag"><span class="discounted_price">7%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">5,440원</span></span>
-                        <span class="price">5,900원</span></span>                
-                    </li>
-                    <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="kimchi"></div> 
-                        <span class="product_name"><a href="">[비비고] 썰은 배추김치</a></span> <br>
-                        <span class="price_tag"><span class="discounted_price">7%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">5,440원</span></span>
-                        <span class="price">5,900원</span></span>                
-                    </li>
+                	<c:forEach var="i" begin="16" end="27" items="${product }" >
+			                    <li class="items">
+		                	        <div onclick="location.href=''"><img src='/brokurly/resources/img/product/all/${i.product_id }.jpg' alt='items'></div>     
+		            	            <span class='product_name'><a href=''> ${i.product_name } </a></span>  
+		        	                <span class="price_tag">
+		        	                <c:if test="${i.event_discount != 0 }"><span class="discounted_price">${i.event_discount }%</span>&nbsp;</c:if>
+		        	                <span style='font-size: 17px; color: #333; font-weight: 1000;'><fmt:formatNumber value="${i.discount_price }" pattern="#,###,###" />원</span></span>
+		        	                <c:if test="${i.event_discount != 0 }"><span class="price"><fmt:formatNumber value="${i.product_price }" pattern="#,###,###" />원</span></c:if>
+		    	                </li>
+                    </c:forEach>
                 </ul>
                 <div class="right_btn">
                     <span style="color: rgb(80, 80, 80); font-size: 25px;" class="material-icons-outlined">
@@ -278,80 +126,250 @@ response.setDateHeader("Expires", 0L);
             <div id="middle_ad1" onclick="location.href=''"></div>
         </div>
         <!-- MD의 추천 -->
+	           		 <form id="md_form" action="/main_code" method="GET">
         <div id="md_recommend">
             <div id="tit_goods"> <!-- title -->
                 <h3 id="tit">MD의 추천</h3>
             </div>
             <div id="md_category"><!-- 카테고리 -->
                 <ul id="list_category">
-                    <li><a id="list_1"  data-title="채소"  onclick="getId(this.id)" class="md_list" href="#none">채소</a></li>
-                    <li><a id="list_2"  data-title="과일"  onclick="getId(this.id)" class="md_list" href="#none">과일·견과·쌀</a></li>
-                    <li><a id="list_3"  data-title="수산"  onclick="getId(this.id)" class="md_list" href="#none">수산·해산·건어물</a></li>
-                    <li><a id="list_4"  data-title="정육" onclick="getId(this.id)" class="md_list" href="#none">정육·계란</a></li>
-                    <li><a id="list_5"  data-title="국" onclick="getId(this.id)" class="md_list" href="#none">국·반찬·메인요리</a></li>
-                    <li><a id="list_6"  data-title="샐러드" onclick="getId(this.id)" class="md_list" href="#none">샐러드·간편식</a></li>
-                    <li><a id="list_7"  data-title="면" onclick="getId(this.id)" class="md_list" href="#none">면·양념·오일</a></li>
-                    <li><a id="list_8"  data-title="생수" onclick="getId(this.id)" class="md_list" href="#none">생수·음료·우유·커피</a></li>
-                    <li><a id="list_9"  data-title="간식" onclick="getId(this.id)" class="md_list" href="#none">간식·과자·떡</a></li>
-                    <li><a id="list_10" data-title="베이커리" onclick="getId(this.id)"  class="md_list" href="#none">베이커리·치즈·델리</a></li>
-                    <li><a id="list_11" data-title="건강식품" onclick="getId(this.id)"  class="md_list" href="#none">건강식품</a></li>
-                    <li><a id="list_12" data-title="생활용품" onclick="getId(this.id)"  class="md_list" href="#none">생활용품·리빙</a></li>
-                    <li><a id="list_13" data-title="스킨케어" onclick="getId(this.id)"  class="md_list" href="#none">스킨케어·메이크업</a></li>
-                    <li><a id="list_14" data-title="헤어" onclick="getId(this.id)"  class="md_list" href="#none">헤어·바디·구강</a></li>
-                    <li><a id="list_15" data-title="주방용품" onclick="getId(this.id)"  class="md_list" href="#none">주방용품</a></li>
-                    <li><a id="list_16" data-title="가전제품" onclick="getId(this.id)"  class="md_list" href="#none">가전제품</a></li>
-                    <li><a id="list_17" data-title="베이비" onclick="getId(this.id)"  class="md_list" href="#none">베이비·키즈</a></li>
-                    <li><a id="list_18" data-title="반려동물" onclick="getId(this.id)"  class="md_list" href="#none">반려동물</a></li>
+                    <li><a value="10" id="list_1"  data-title="채소" onclick="getId(this.id)" class="md_list" href="#none">채소</a></li>
+                    <li><a value="20" id="list_2"  data-title="과일"  onclick="getId(this.id)" class="md_list" href="#none">과일·견과·쌀</a></li>
+                    <li><a value="30" id="list_3"  data-title="수산"  onclick="getId(this.id)" class="md_list" href="#none">수산·해산·건어물</a></li>
+                    <li><a value="40" id="list_4"  data-title="정육" onclick="getId(this.id)" class="md_list" href="#none">정육·계란</a></li>
+                    <li><a value="50" id="list_5"  data-title="국" onclick="getId(this.id)" class="md_list" href="#none">국·반찬·메인요리</a></li>
+                    <li><a value="60" id="list_6"  data-title="샐러드" onclick="getId(this.id)" class="md_list" href="#none">샐러드·간편식</a></li>
+                    <li><a value="70" id="list_7"  data-title="면" onclick="getId(this.id)" class="md_list" href="#none">면·양념·오일</a></li>
+                    <li><a value="80" id="list_8"  data-title="생수" onclick="getId(this.id)" class="md_list" href="#none">생수·음료·우유·커피</a></li>
+                    <li><a value="90" id="list_9"  data-title="간식" onclick="getId(this.id)" class="md_list" href="#none">간식·과자·떡</a></li>
+                    <li><a value="100" id="list_10" data-title="베이커리" onclick="getId(this.id)"  class="md_list" href="#none">베이커리·치즈·델리</a></li>
+                    <li><a value="110" id="list_11" data-title="건강식품" onclick="getId(this.id)"  class="md_list" href="#none">건강식품</a></li>
+                    <li><a value="120" id="list_12" data-title="생활용품" onclick="getId(this.id)"  class="md_list" href="#none">생활용품·리빙</a></li>
+                    <li><a value="130" id="list_13" data-title="스킨케어" onclick="getId(this.id)"  class="md_list" href="#none">스킨케어·메이크업</a></li>
+                    <li><a value="140" id="list_14" data-title="헤어" onclick="getId(this.id)"  class="md_list" href="#none">헤어·바디·구강</a></li>
+                    <li><a value="150" id="list_15" data-title="주방용품" onclick="getId(this.id)"  class="md_list" href="#none">주방용품</a></li>
+                    <li><a value="160" id="list_16" data-title="가전제품" onclick="getId(this.id)"  class="md_list" href="#none">가전제품</a></li>
+                    <li><a value="170" id="list_17" data-title="베이비" onclick="getId(this.id)"  class="md_list" href="#none">베이비·키즈</a></li>
+                    <li><a value="180" id="list_18" data-title="반려동물" onclick="getId(this.id)"  class="md_list" href="#none">반려동물</a></li>
                 </ul>
             </div>
-            <div class="view_port">
-                <ul id="md_list" class="item_list">
-                    <li class="items" class='pre-ani'>
-                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
-                        <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
-                        <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
-                        <span class="price">14,800원</span></span>                
-                    </li>
-                    <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
-                        <span class="product_name"><a href="">호박잎 150g</a></span> <br>
-                        <span class="price_tag"><span style="font-size: 17px; color: #333; font-weight: 1000;">2,490원</span></span>
-                    </li>
-                    <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
-                        <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
-                        <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
-                        <span class="price">14,800원</span></span>                
-                    </li>
-                    <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
-                        <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
-                        <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
-                        <span class="price">14,800원</span></span>                
-                    </li>
-                    <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
-                        <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
-                        <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
-                        <span class="price">14,800원</span></span>                
-                    </li>
-                    <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
-                        <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
-                        <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
-                        <span class="price">14,800원</span></span>                
-                    </li>
-                </ul>
-                <div class="right_btn">
-                    <span style="color: rgb(80, 80, 80); font-size: 25px;" class="material-icons-outlined">
-                        arrow_forward_ios
-                    </span>
-                </div>
-                <div class="left_btn">
-                    <span style="color: rgb(80, 80, 80); font-size: 25px;" class="material-icons-outlined">
-                        arrow_back_ios
-                    </span>
-                </div>
+            <div id="md_view" class="view_port">
+               		<ul id="md_list" class="on">
+               			<c:forEach var="i" begin="0" end="19" items="${md_list }" step="5">
+			                    <li class="items">
+		                	        <div id="items_div" onclick="location.href=''"><img id="md_img" src='/brokurly/resources/img/product/all/${i.product_id }.jpg' alt='items'></div>     
+		            	            <span class='product_name'><a href=''> ${i.product_name } </a></span>  
+		        	                <span class="price_tag">
+		        	                <c:if test="${i.event_discount != 0 }"><span class="discounted_price">${i.event_discount }%</span>&nbsp;</c:if>
+		        	                <span style='font-size: 17px; color: #333; font-weight: 1000;'><fmt:formatNumber value="${i.discount_price }" pattern="#,###,###" />원</span></span>
+		        	                <c:if test="${i.event_discount != 0 }"><span class="price"><fmt:formatNumber value="${i.product_price }" pattern="#,###,###" />원</span></c:if>
+		    	                </li>
+                   		</c:forEach>
+ 	              	</ul>
+ 	              	<ul id="md_list">
+               			<c:forEach var="i" begin="20" end="39" items="${md_list }" step="5" >
+			                    <li class="items">
+		                	        <div id="items_div" onclick="location.href=''"><img id="md_img" src='/brokurly/resources/img/product/all/${i.product_id }.jpg' alt='items'></div>     
+		            	            <span class='product_name'><a href=''> ${i.product_name } </a></span>  
+		        	                <span class="price_tag">
+		        	                <c:if test="${i.event_discount != 0 }"><span class="discounted_price">${i.event_discount }%</span>&nbsp;</c:if>
+		        	                <span style='font-size: 17px; color: #333; font-weight: 1000;'><fmt:formatNumber value="${i.discount_price }" pattern="#,###,###" />원</span></span>
+		        	                <c:if test="${i.event_discount != 0 }"><span class="price"><fmt:formatNumber value="${i.product_price }" pattern="#,###,###" />원</span></c:if>
+		    	                </li>
+                   		</c:forEach>
+ 	              	</ul>
+ 	              	<ul id="md_list">
+               			<c:forEach var="i" begin="40" end="59" items="${md_list }" step="5" >
+			                    <li class="items">
+		                	        <div id="items_div" onclick="location.href=''"><img id="md_img" src='/brokurly/resources/img/product/all/${i.product_id }.jpg' alt='items'></div>     
+		            	            <span class='product_name'><a href=''> ${i.product_name } </a></span>  
+		        	                <span class="price_tag">
+		        	                <c:if test="${i.event_discount != 0 }"><span class="discounted_price">${i.event_discount }%</span>&nbsp;</c:if>
+		        	                <span style='font-size: 17px; color: #333; font-weight: 1000;'><fmt:formatNumber value="${i.discount_price }" pattern="#,###,###" />원</span></span>
+		        	                <c:if test="${i.event_discount != 0 }"><span class="price"><fmt:formatNumber value="${i.product_price }" pattern="#,###,###" />원</span></c:if>
+		    	                </li>
+                   		</c:forEach>
+ 	              	</ul>
+ 	              	<ul id="md_list">
+               			<c:forEach var="i" begin="60" end="79" items="${md_list }" step="5" >
+			                    <li class="items">
+		                	        <div id="items_div" onclick="location.href=''"><img id="md_img" src='/brokurly/resources/img/product/all/${i.product_id }.jpg' alt='items'></div>     
+		            	            <span class='product_name'><a href=''> ${i.product_name } </a></span>  
+		        	                <span class="price_tag">
+		        	                <c:if test="${i.event_discount != 0 }"><span class="discounted_price">${i.event_discount }%</span>&nbsp;</c:if>
+		        	                <span style='font-size: 17px; color: #333; font-weight: 1000;'><fmt:formatNumber value="${i.discount_price }" pattern="#,###,###" />원</span></span>
+		        	                <c:if test="${i.event_discount != 0 }"><span class="price"><fmt:formatNumber value="${i.product_price }" pattern="#,###,###" />원</span></c:if>
+		    	                </li>
+                   		</c:forEach>
+ 	              	</ul>
+ 	              	<ul id="md_list">
+               			<c:forEach var="i" begin="80" end="99" items="${md_list }" step="5" >
+			                    <li class="items">
+		                	        <div id="items_div" onclick="location.href=''"><img id="md_img" src='/brokurly/resources/img/product/all/${i.product_id }.jpg' alt='items'></div>     
+		            	            <span class='product_name'><a href=''> ${i.product_name } </a></span>  
+		        	                <span class="price_tag">
+		        	                <c:if test="${i.event_discount != 0 }"><span class="discounted_price">${i.event_discount }%</span>&nbsp;</c:if>
+		        	                <span style='font-size: 17px; color: #333; font-weight: 1000;'><fmt:formatNumber value="${i.discount_price }" pattern="#,###,###" />원</span></span>
+		        	                <c:if test="${i.event_discount != 0 }"><span class="price"><fmt:formatNumber value="${i.product_price }" pattern="#,###,###" />원</span></c:if>
+		    	                </li>
+                   		</c:forEach>
+ 	              	</ul>
+ 	              	<ul id="md_list">
+               			<c:forEach var="i" begin="100" end="119" items="${md_list }" step="5" >
+			                    <li class="items">
+		                	        <div id="items_div" onclick="location.href=''"><img id="md_img" src='/brokurly/resources/img/product/all/${i.product_id }.jpg' alt='items'></div>     
+		            	            <span class='product_name'><a href=''> ${i.product_name } </a></span>  
+		        	                <span class="price_tag">
+		        	                <c:if test="${i.event_discount != 0 }"><span class="discounted_price">${i.event_discount }%</span>&nbsp;</c:if>
+		        	                <span style='font-size: 17px; color: #333; font-weight: 1000;'><fmt:formatNumber value="${i.discount_price }" pattern="#,###,###" />원</span></span>
+		        	                <c:if test="${i.event_discount != 0 }"><span class="price"><fmt:formatNumber value="${i.product_price }" pattern="#,###,###" />원</span></c:if>
+		    	                </li>
+                   		</c:forEach>
+ 	              	</ul>
+ 	              	<ul id="md_list">
+               			<c:forEach var="i" begin="120" end="139" items="${md_list }" step="5" >
+			                    <li class="items">
+		                	        <div id="items_div" onclick="location.href=''"><img id="md_img" src='/brokurly/resources/img/product/all/${i.product_id }.jpg' alt='items'></div>     
+		            	            <span class='product_name'><a href=''> ${i.product_name } </a></span>  
+		        	                <span class="price_tag">
+		        	                <c:if test="${i.event_discount != 0 }"><span class="discounted_price">${i.event_discount }%</span>&nbsp;</c:if>
+		        	                <span style='font-size: 17px; color: #333; font-weight: 1000;'><fmt:formatNumber value="${i.discount_price }" pattern="#,###,###" />원</span></span>
+		        	                <c:if test="${i.event_discount != 0 }"><span class="price"><fmt:formatNumber value="${i.product_price }" pattern="#,###,###" />원</span></c:if>
+		    	                </li>
+                   		</c:forEach>
+ 	              	</ul>
+ 	              	<ul id="md_list">
+               			<c:forEach var="i" begin="140" end="159" items="${md_list }" step="5" >
+			                    <li class="items">
+		                	        <div id="items_div" onclick="location.href=''"><img id="md_img" src='/brokurly/resources/img/product/all/${i.product_id }.jpg' alt='items'></div>     
+		            	            <span class='product_name'><a href=''> ${i.product_name } </a></span>  
+		        	                <span class="price_tag">
+		        	                <c:if test="${i.event_discount != 0 }"><span class="discounted_price">${i.event_discount }%</span>&nbsp;</c:if>
+		        	                <span style='font-size: 17px; color: #333; font-weight: 1000;'><fmt:formatNumber value="${i.discount_price }" pattern="#,###,###" />원</span></span>
+		        	                <c:if test="${i.event_discount != 0 }"><span class="price"><fmt:formatNumber value="${i.product_price }" pattern="#,###,###" />원</span></c:if>
+		    	                </li>
+                   		</c:forEach>
+ 	              	</ul>
+ 	              	<ul id="md_list">
+               			<c:forEach var="i" begin="160" end="179" items="${md_list }" step="5" >
+			                    <li class="items">
+		                	        <div id="items_div" onclick="location.href=''"><img id="md_img" src='/brokurly/resources/img/product/all/${i.product_id }.jpg' alt='items'></div>     
+		            	            <span class='product_name'><a href=''> ${i.product_name } </a></span>  
+		        	                <span class="price_tag">
+		        	                <c:if test="${i.event_discount != 0 }"><span class="discounted_price">${i.event_discount }%</span>&nbsp;</c:if>
+		        	                <span style='font-size: 17px; color: #333; font-weight: 1000;'><fmt:formatNumber value="${i.discount_price }" pattern="#,###,###" />원</span></span>
+		        	                <c:if test="${i.event_discount != 0 }"><span class="price"><fmt:formatNumber value="${i.product_price }" pattern="#,###,###" />원</span></c:if>
+		    	                </li>
+                   		</c:forEach>
+ 	              	</ul>
+ 	              	<ul id="md_list">
+               			<c:forEach var="i" begin="180" end="199" items="${md_list }" step="5" >
+			                    <li class="items">
+		                	        <div id="items_div" onclick="location.href=''"><img id="md_img" src='/brokurly/resources/img/product/all/${i.product_id }.jpg' alt='items'></div>     
+		            	            <span class='product_name'><a href=''> ${i.product_name } </a></span>  
+		        	                <span class="price_tag">
+		        	                <c:if test="${i.event_discount != 0 }"><span class="discounted_price">${i.event_discount }%</span>&nbsp;</c:if>
+		        	                <span style='font-size: 17px; color: #333; font-weight: 1000;'><fmt:formatNumber value="${i.discount_price }" pattern="#,###,###" />원</span></span>
+		        	                <c:if test="${i.event_discount != 0 }"><span class="price"><fmt:formatNumber value="${i.product_price }" pattern="#,###,###" />원</span></c:if>
+		    	                </li>
+                   		</c:forEach>
+ 	              	</ul>
+ 	              	<ul id="md_list">
+               			<c:forEach var="i" begin="200" end="219" items="${md_list }" step="5" >
+			                    <li class="items">
+		                	        <div id="items_div" onclick="location.href=''"><img id="md_img" src='/brokurly/resources/img/product/all/${i.product_id }.jpg' alt='items'></div>     
+		            	            <span class='product_name'><a href=''> ${i.product_name } </a></span>  
+		        	                <span class="price_tag">
+		        	                <c:if test="${i.event_discount != 0 }"><span class="discounted_price">${i.event_discount }%</span>&nbsp;</c:if>
+		        	                <span style='font-size: 17px; color: #333; font-weight: 1000;'><fmt:formatNumber value="${i.discount_price }" pattern="#,###,###" />원</span></span>
+		        	                <c:if test="${i.event_discount != 0 }"><span class="price"><fmt:formatNumber value="${i.product_price }" pattern="#,###,###" />원</span></c:if>
+		    	                </li>
+                   		</c:forEach>
+ 	              	</ul>
+ 	              	<ul id="md_list">
+               			<c:forEach var="i" begin="220" end="239" items="${md_list }" step="5" >
+			                    <li class="items">
+		                	        <div id="items_div" onclick="location.href=''"><img id="md_img" src='/brokurly/resources/img/product/all/${i.product_id }.jpg' alt='items'></div>     
+		            	            <span class='product_name'><a href=''> ${i.product_name } </a></span>  
+		        	                <span class="price_tag">
+		        	                <c:if test="${i.event_discount != 0 }"><span class="discounted_price">${i.event_discount }%</span>&nbsp;</c:if>
+		        	                <span style='font-size: 17px; color: #333; font-weight: 1000;'><fmt:formatNumber value="${i.discount_price }" pattern="#,###,###" />원</span></span>
+		        	                <c:if test="${i.event_discount != 0 }"><span class="price"><fmt:formatNumber value="${i.product_price }" pattern="#,###,###" />원</span></c:if>
+		    	                </li>
+                   		</c:forEach>
+ 	              	</ul>
+ 	              	<ul id="md_list">
+               			<c:forEach var="i" begin="240" end="259" items="${md_list }" step="5" >
+			                    <li class="items">
+		                	        <div id="items_div" onclick="location.href=''"><img id="md_img" src='/brokurly/resources/img/product/all/${i.product_id }.jpg' alt='items'></div>     
+		            	            <span class='product_name'><a href=''> ${i.product_name } </a></span>  
+		        	                <span class="price_tag">
+		        	                <c:if test="${i.event_discount != 0 }"><span class="discounted_price">${i.event_discount }%</span>&nbsp;</c:if>
+		        	                <span style='font-size: 17px; color: #333; font-weight: 1000;'><fmt:formatNumber value="${i.discount_price }" pattern="#,###,###" />원</span></span>
+		        	                <c:if test="${i.event_discount != 0 }"><span class="price"><fmt:formatNumber value="${i.product_price }" pattern="#,###,###" />원</span></c:if>
+		    	                </li>
+                   		</c:forEach>
+ 	              	</ul>
+ 	              	<ul id="md_list">
+               			<c:forEach var="i" begin="260" end="279" items="${md_list }" step="5" >
+			                    <li class="items">
+		                	        <div id="items_div" onclick="location.href=''"><img id="md_img" src='/brokurly/resources/img/product/all/${i.product_id }.jpg' alt='items'></div>     
+		            	            <span class='product_name'><a href=''> ${i.product_name } </a></span>  
+		        	                <span class="price_tag">
+		        	                <c:if test="${i.event_discount != 0 }"><span class="discounted_price">${i.event_discount }%</span>&nbsp;</c:if>
+		        	                <span style='font-size: 17px; color: #333; font-weight: 1000;'><fmt:formatNumber value="${i.discount_price }" pattern="#,###,###" />원</span></span>
+		        	                <c:if test="${i.event_discount != 0 }"><span class="price"><fmt:formatNumber value="${i.product_price }" pattern="#,###,###" />원</span></c:if>
+		    	                </li>
+                   		</c:forEach>
+ 	              	</ul>
+ 	              	<ul id="md_list">
+               			<c:forEach var="i" begin="280" end="299" items="${md_list }" step="5" >
+			                    <li class="items">
+		                	        <div id="items_div" onclick="location.href=''"><img id="md_img" src='/brokurly/resources/img/product/all/${i.product_id }.jpg' alt='items'></div>     
+		            	            <span class='product_name'><a href=''> ${i.product_name } </a></span>  
+		        	                <span class="price_tag">
+		        	                <c:if test="${i.event_discount != 0 }"><span class="discounted_price">${i.event_discount }%</span>&nbsp;</c:if>
+		        	                <span style='font-size: 17px; color: #333; font-weight: 1000;'><fmt:formatNumber value="${i.discount_price }" pattern="#,###,###" />원</span></span>
+		        	                <c:if test="${i.event_discount != 0 }"><span class="price"><fmt:formatNumber value="${i.product_price }" pattern="#,###,###" />원</span></c:if>
+		    	                </li>
+                   		</c:forEach>
+ 	              	</ul>
+ 	              	<ul id="md_list">
+               			<c:forEach var="i" begin="300" end="319" items="${md_list }" step="5" >
+			                    <li class="items">
+		                	        <div id="items_div" onclick="location.href=''"><img id="md_img" src='/brokurly/resources/img/product/all/${i.product_id }.jpg' alt='items'></div>     
+		            	            <span class='product_name'><a href=''> ${i.product_name } </a></span>  
+		        	                <span class="price_tag">
+		        	                <c:if test="${i.event_discount != 0 }"><span class="discounted_price">${i.event_discount }%</span>&nbsp;</c:if>
+		        	                <span style='font-size: 17px; color: #333; font-weight: 1000;'><fmt:formatNumber value="${i.discount_price }" pattern="#,###,###" />원</span></span>
+		        	                <c:if test="${i.event_discount != 0 }"><span class="price"><fmt:formatNumber value="${i.product_price }" pattern="#,###,###" />원</span></c:if>
+		    	                </li>
+                   		</c:forEach>
+ 	              	</ul>
+ 	              	<ul id="md_list">
+               			<c:forEach var="i" begin="320" end="339" items="${md_list }" step="5" >
+			                    <li class="items">
+		                	        <div id="items_div" onclick="location.href=''"><img id="md_img" src='/brokurly/resources/img/product/all/${i.product_id }.jpg' alt='items'></div>     
+		            	            <span class='product_name'><a href=''> ${i.product_name } </a></span>  
+		        	                <span class="price_tag">
+		        	                <c:if test="${i.event_discount != 0 }"><span class="discounted_price">${i.event_discount }%</span>&nbsp;</c:if>
+		        	                <span style='font-size: 17px; color: #333; font-weight: 1000;'><fmt:formatNumber value="${i.discount_price }" pattern="#,###,###" />원</span></span>
+		        	                <c:if test="${i.event_discount != 0 }"><span class="price"><fmt:formatNumber value="${i.product_price }" pattern="#,###,###" />원</span></c:if>
+		    	                </li>
+                   		</c:forEach>
+ 	              	</ul>
+ 	              	<ul id="md_list">
+               			<c:forEach var="i" begin="340" end="359" items="${md_list }" step="5" >
+			                    <li class="items">
+		                	        <div id="items_div" onclick="location.href=''"><img id="md_img" src='/brokurly/resources/img/product/all/${i.product_id }.jpg' alt='items'></div>     
+		            	            <span class='product_name'><a href=''> ${i.product_name } </a></span>  
+		        	                <span class="price_tag">
+		        	                <c:if test="${i.event_discount != 0 }"><span class="discounted_price">${i.event_discount }%</span>&nbsp;</c:if>
+		        	                <span style='font-size: 17px; color: #333; font-weight: 1000;'><fmt:formatNumber value="${i.discount_price }" pattern="#,###,###" />원</span></span>
+		        	                <c:if test="${i.event_discount != 0 }"><span class="price"><fmt:formatNumber value="${i.product_price }" pattern="#,###,###" />원</span></c:if>
+		    	                </li>
+                   		</c:forEach>
+ 	              	</ul>
             </div>
             <div id="link_cate">
                 <a id="link_a" href="../TEST/채소.html"><span id="list_name">채소</span> 전체보기
@@ -361,6 +379,7 @@ response.setDateHeader("Expires", 0L);
                 </a>
             </div>
         </div>
+	             	  </form>
         <!-- 중간광고 -->
         <div>
             <div id="middle_ad2" onclick="location.href=''">
@@ -377,42 +396,16 @@ response.setDateHeader("Expires", 0L);
             </div>
             <div class="view_port">
                 <ul class="item_list">
-                    <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
-                        <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
-                        <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
-                        <span class="price">14,800원</span></span>                
-                    </li>
-                    <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
-                        <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
-                        <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
-                        <span class="price">14,800원</span></span>                
-                    </li>
-                    <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
-                        <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
-                        <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
-                        <span class="price">14,800원</span></span>                
-                    </li>
-                    <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
-                        <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
-                        <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
-                        <span class="price">14,800원</span></span>                
-                    </li>
-                    <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="kimchi"></div> 
-                        <span class="product_name"><a href="">[비비고] 썰은 배추김치</a></span> <br>
-                        <span class="price_tag"><span class="discounted_price">7%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">5,440원</span></span>
-                        <span class="price">5,900원</span></span>                
-                    </li>
-                    <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="kimchi"></div> 
-                        <span class="product_name"><a href="">[비비고] 썰은 배추김치</a></span> <br>
-                        <span class="price_tag"><span class="discounted_price">7%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">5,440원</span></span>
-                        <span class="price">5,900원</span></span>                
-                    </li>
+                	<c:forEach var="i" begin="28" end="33" items="${product }" >
+			                    <li class="items">
+		                	        <div onclick="location.href=''"><img src='/brokurly/resources/img/product/all/${i.product_id }.jpg' alt='items'></div>     
+		            	            <span class='product_name'><a href=''> ${i.product_name } </a></span>  
+		        	                <span class="price_tag">
+		        	                <c:if test="${i.event_discount != 0 }"><span class="discounted_price">${i.event_discount }%</span>&nbsp;</c:if>
+		        	                <span style='font-size: 17px; color: #333; font-weight: 1000;'><fmt:formatNumber value="${i.discount_price }" pattern="#,###,###" />원</span></span>
+		        	                <c:if test="${i.event_discount != 0 }"><span class="price"><fmt:formatNumber value="${i.product_price }" pattern="#,###,###" />원</span></c:if>
+		    	                </li>
+                    </c:forEach>
                 </ul>
                 <div class="right_btn">
                     <span style="color: rgb(80, 80, 80); font-size: 25px;" class="material-icons-outlined">
@@ -429,48 +422,22 @@ response.setDateHeader("Expires", 0L);
         <!-- 집콕을 즐겁게 최대 30% 할인 -->
         <div id="product_list" style="background-color: rgb(242, 242, 242);">
             <div id="tit_goods"> <!-- title -->
-                <h3 id="tit"><a href="">집콕을 즐겁게! 최대 30% 할인 <span style="color: #333; font-size: 25px;" class="material-icons-outlined">
+                <h3 id="tit"><a href="">집에 있으면 좋은 상품<span style="color: #333; font-size: 25px;" class="material-icons-outlined">
                     arrow_forward_ios
                 </span></a></h3>
             </div>
             <div class="view_port">
                 <ul class="item_list">
-                    <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
-                        <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
-                        <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
-                        <span class="price">14,800원</span></span>                
-                    </li>
-                    <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
-                        <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
-                        <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
-                        <span class="price">14,800원</span></span>                
-                    </li>
-                    <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
-                        <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
-                        <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
-                        <span class="price">14,800원</span></span>                
-                    </li>
-                    <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
-                        <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
-                        <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
-                        <span class="price">14,800원</span></span>                
-                    </li>
-                    <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="kimchi"></div> 
-                        <span class="product_name"><a href="">[비비고] 썰은 배추김치</a></span> <br>
-                        <span class="price_tag"><span class="discounted_price">7%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">5,440원</span></span>
-                        <span class="price">5,900원</span></span>                
-                    </li>
-                    <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="kimchi"></div> 
-                        <span class="product_name"><a href="">[비비고] 썰은 배추김치</a></span> <br>
-                        <span class="price_tag"><span class="discounted_price">7%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">5,440원</span></span>
-                        <span class="price">5,900원</span></span>                
-                    </li>
+                	<c:forEach var="i" begin="34" end="39" items="${product }" >
+			                    <li class="items">
+		                	        <div onclick="location.href=''"><img src='/brokurly/resources/img/product/all/${i.product_id }.jpg' alt='items'></div>     
+		            	            <span class='product_name'><a href=''> ${i.product_name } </a></span>  
+		        	                <span class="price_tag">
+		        	                <c:if test="${i.event_discount != 0 }"><span class="discounted_price">${i.event_discount }%</span>&nbsp;</c:if>
+		        	                <span style='font-size: 17px; color: #333; font-weight: 1000;'><fmt:formatNumber value="${i.discount_price }" pattern="#,###,###" />원</span></span>
+		        	                <c:if test="${i.event_discount != 0 }"><span class="price"><fmt:formatNumber value="${i.product_price }" pattern="#,###,###" />원</span></c:if>
+		    	                </li>
+                    </c:forEach>
                 </ul>
                 <div class="right_btn">
                     <span style="color: rgb(80, 80, 80); font-size: 25px;" class="material-icons-outlined">
@@ -494,42 +461,16 @@ response.setDateHeader("Expires", 0L);
             </div>
             <div class="view_port">
                 <ul class="item_list">
-                    <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
-                        <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
-                        <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
-                        <span class="price">14,800원</span></span>                
-                    </li>
-                    <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
-                        <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
-                        <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
-                        <span class="price">14,800원</span></span>                
-                    </li>
-                    <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
-                        <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
-                        <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
-                        <span class="price">14,800원</span></span>                
-                    </li>
-                    <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
-                        <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
-                        <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
-                        <span class="price">14,800원</span></span>                
-                    </li>
-                    <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="kimchi"></div> 
-                        <span class="product_name"><a href="">[비비고] 썰은 배추김치</a></span> <br>
-                        <span class="price_tag"><span class="discounted_price">7%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">5,440원</span></span>
-                        <span class="price">5,900원</span></span>                
-                    </li>
-                    <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="kimchi"></div> 
-                        <span class="product_name"><a href="">[비비고] 썰은 배추김치</a></span> <br>
-                        <span class="price_tag"><span class="discounted_price">7%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">5,440원</span></span>
-                        <span class="price">5,900원</span></span>                
-                    </li>
+                	<c:forEach var="i" begin="40" end="45" items="${product }" >
+			                    <li class="items">
+		                	        <div onclick="location.href=''"><img src='/brokurly/resources/img/product/all/${i.product_id }.jpg' alt='items'></div>     
+		            	            <span class='product_name'><a href=''> ${i.product_name } </a></span>  
+		        	                <span class="price_tag">
+		        	                <c:if test="${i.event_discount != 0 }"><span class="discounted_price">${i.event_discount }%</span>&nbsp;</c:if>
+		        	                <span style='font-size: 17px; color: #333; font-weight: 1000;'><fmt:formatNumber value="${i.discount_price }" pattern="#,###,###" />원</span></span>
+		        	                <c:if test="${i.event_discount != 0 }"><span class="price"><fmt:formatNumber value="${i.product_price }" pattern="#,###,###" />원</span></c:if>
+		    	                </li>
+                    </c:forEach>
                 </ul>
                 <div class="right_btn">
                     <span style="color: rgb(80, 80, 80); font-size: 25px;" class="material-icons-outlined">
@@ -552,42 +493,16 @@ response.setDateHeader("Expires", 0L);
             </div>
             <div class="view_port">
                 <ul class="item_list">
-                    <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
-                        <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
-                        <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
-                        <span class="price">14,800원</span></span>                
-                    </li>
-                    <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
-                        <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
-                        <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
-                        <span class="price">14,800원</span></span>                
-                    </li>
-                    <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
-                        <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
-                        <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
-                        <span class="price">14,800원</span></span>                
-                    </li>
-                    <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
-                        <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
-                        <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
-                        <span class="price">14,800원</span></span>                
-                    </li>
-                    <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="kimchi"></div> 
-                        <span class="product_name"><a href="">[비비고] 썰은 배추김치</a></span> <br>
-                        <span class="price_tag"><span class="discounted_price">7%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">5,440원</span></span>
-                        <span class="price">5,900원</span></span>                
-                    </li>
-                    <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="kimchi"></div> 
-                        <span class="product_name"><a href="">[비비고] 썰은 배추김치</a></span> <br>
-                        <span class="price_tag"><span class="discounted_price">7%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">5,440원</span></span>
-                        <span class="price">5,900원</span></span>                
-                    </li>
+                	<c:forEach var="i" begin="0" end="5" items="${product_160 }" >
+			                    <li class="items">
+		                	        <div onclick="location.href=''"><img src='/brokurly/resources/img/product/all/${i.product_id }.jpg' alt='items'></div>     
+		            	            <span class='product_name'><a href=''> ${i.product_name } </a></span>  
+		        	                <span class="price_tag">
+		        	                <c:if test="${i.event_discount != 0 }"><span class="discounted_price">${i.event_discount }%</span>&nbsp;</c:if>
+		        	                <span style='font-size: 17px; color: #333; font-weight: 1000;'><fmt:formatNumber value="${i.discount_price }" pattern="#,###,###" />원</span></span>
+		        	                <c:if test="${i.event_discount != 0 }"><span class="price"><fmt:formatNumber value="${i.product_price }" pattern="#,###,###" />원</span></c:if>
+		    	                </li>
+                    </c:forEach>
                 </ul>
                 <div class="right_btn">
                     <span style="color: rgb(80, 80, 80); font-size: 25px;" class="material-icons-outlined">
@@ -604,49 +519,23 @@ response.setDateHeader("Expires", 0L);
         <!-- 설레는 캠핑 -->
         <div id="product_list2">
             <div id="tit_goods"> <!-- title -->
-                <h3 id="tit_main"><a href="">설레는 캠핑<span style="color: #333; font-size: 25px;" class="material-icons-outlined">
+                <h3 id="tit_main"><a href="">필요한 것만 딱, 주방용품 특가<span style="color: #333; font-size: 25px;" class="material-icons-outlined">
                     arrow_forward_ios
                 </span></a></h3>
-                <h5 id="tit_under">캠핑 식재료부터 용품까지 맞춤 제안</h5>
+                <h5 id="tit_under">현명한 주부라면 당연한 선택!</h5>
             </div>
             <div class="view_port">
                 <ul class="item_list">
-                    <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
-                        <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
-                        <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
-                        <span class="price">14,800원</span></span>                
-                    </li>
-                    <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
-                        <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
-                        <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
-                        <span class="price">14,800원</span></span>                
-                    </li>
-                    <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
-                        <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
-                        <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
-                        <span class="price">14,800원</span></span>                
-                    </li>
-                    <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="items"></div> 
-                        <span class="product_name"><a href="">무농약 마틸다 토마토 2kg</a></span> <br>
-                        <span class="price_tag"><span class="discounted_price">10%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">13,392원</span></span>
-                        <span class="price">14,800원</span></span>                
-                    </li>
-                    <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="kimchi"></div> 
-                        <span class="product_name"><a href="">[비비고] 썰은 배추김치</a></span> <br>
-                        <span class="price_tag"><span class="discounted_price">7%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">5,440원</span></span>
-                        <span class="price">5,900원</span></span>                
-                    </li>
-                    <li class="items">
-                        <div onclick="location.href=''"><img src="../assets/감자.jpg" alt="kimchi"></div> 
-                        <span class="product_name"><a href="">[비비고] 썰은 배추김치</a></span> <br>
-                        <span class="price_tag"><span class="discounted_price">7%</span>&emsp;<span style="font-size: 17px; color: #333; font-weight: 1000;">5,440원</span></span>
-                        <span class="price">5,900원</span></span>                
-                    </li>
+                	<c:forEach var="i" begin="0" end="5" items="${product_150 }" >
+			                    <li class="items">
+		                	        <div onclick="location.href=''"><img src='/brokurly/resources/img/product/all/${i.product_id }.jpg' alt='items'></div>     
+		            	            <span class='product_name'><a href=''> ${i.product_name } </a></span>  
+		        	                <span class="price_tag">
+		        	                <c:if test="${i.event_discount != 0 }"><span class="discounted_price">${i.event_discount }%</span>&nbsp;</c:if>
+		        	                <span style='font-size: 17px; color: #333; font-weight: 1000;'><fmt:formatNumber value="${i.discount_price }" pattern="#,###,###" />원</span></span>
+		        	                <c:if test="${i.event_discount != 0 }"><span class="price"><fmt:formatNumber value="${i.product_price }" pattern="#,###,###" />원</span></c:if>
+		    	                </li>
+                    </c:forEach>
                 </ul>
                 <div class="right_btn">
                     <span style="color: rgb(80, 80, 80); font-size: 25px;" class="material-icons-outlined">
@@ -666,10 +555,12 @@ response.setDateHeader("Expires", 0L);
             <div id="last_ad" onclick="location.href=''"></div>
         </div>
         <div class="footer_wrap">
-			<jsp:include page="include/footer.jsp"></jsp:include>
-		</div>
+         <jsp:include page="include/footer.jsp"></jsp:include>
+      </div>
     </div>
-	
-	<script type="text/javascript" src="${path }/resources/js/style/main.js"></script>
+    <jsp:include page="include/topBtn.jsp"></jsp:include>
+   
+   <!-- <script type="text/javascript" src="${path }/resources/js/main_ajax.js"></script> -->
 </body>
+<script type="text/javascript" src="${path }/resources/js/style/main.js"></script>
 </html>

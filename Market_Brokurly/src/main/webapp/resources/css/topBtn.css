@@ -1,0 +1,49 @@
+@charset "UTF-8";
+
+/* --------------- 위로가기 버튼 ------------------*/
+  #top_btn {
+    width:50px;
+    height:50px;
+    background-color:white;
+    border-radius: 100px;
+    border: #b9b9b9 1px solid;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+ 	right: 30px;
+    opacity:0%;
+	cursor:pointer;
+  }
+
+  #top_btn > span {
+	  font-size: 35px;
+	  color: #444444;
+  }
+  
+  
+ .visible_on {
+ 	position: fixed;
+ 	animation: visible 0.8s forwards;
+ }
+ 
+ .visible_off {
+ 	position: fixed;
+ 	animation: invisible 0.8s forwards;
+ }
+ 
+ 
+ @keyframes visible {
+ 	0% {bottom:0px;}
+ 	100% {bottom:30px; opacity: 100%;}
+ }
+ 
+ @keyframes invisible {
+ 	0% {bottom:30px; opacity: 100%;}
+ 	100% {bottom:0px; opacity: 0%;}
+ }
+ 
+ @media screen and (max-width: 1200px) {
+ 	#top_btn {
+ 		display:none;
+ 	}
+ }
