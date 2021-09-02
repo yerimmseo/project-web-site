@@ -9,4 +9,58 @@
 	<select id="getProductDetail" parameterType="com.teamright.brokurly.model.ProductDetailVO" resultMap="getInfo">
 		SELECT * FROM product_detail WHERE product_id = #{product_id}
 	</select>
+	
+	<insert id="create_product_detail">
+		INSERT INTO product_detail VALUES (#{product_id}, #{detail_content})
+	</insert>
+	
+  	<select id="select_product_detail" resultType="com.teamright.brokurly.model.ProductDetailVO" resultMap="getInfo">
+  		SELECT * FROM product_detail WHERE product_id = #{product_id}
+  	</select>
+  	
+  	<select id="select_product" resultType="com.teamright.brokurly.model.ProductVO">
+  		SELECT * FROM product_table WHERE product_id = #{product_id}
+  	</select>
+  	                                               
+  	<select id="select_main_category" resultType="com.teamright.brokurly.model.MainCategoryVO">
+  		SELECT maincate_id FROM product_table inner join subcategory_table USING(subcate_id) WHERE product_id = #{product_id}
+  	</select>
+	
+  	<select id="select_product_discount" resultType="com.teamright.brokurly.model.ProductVO">
+  		SELECT CEIL(product_price * ((100 - e.event_discount) / 100)) as product_price,event_discount  
+  		FROM event_table e
+		INNER JOIN product_table p USING(event_id) WHERE product_id = #{product_id}
+  	</select>
+  	
+  	<insert id="set_detail_cart">
+        INSERT INTO cart_table(cart_id, cart_count, product_id, customer_id)
+        VALUES 
+        (cart_id_seq.nextval, #{cart_count}, #{product_id}, #{customer_id} )
+    </insert>
+    
+    <select id="get_customer_grade_percent" resultType="com.teamright.brokurly.model.CustomerVO">
+    	SELECT customer_grade,
+		 CASE
+	        WHEN customer_grade = 'WELCOME' THEN 5
+	        WHEN customer_grade = 'NORMAL'  THEN 1
+	        WHEN customer_grade = 'FRIENDS' THEN 3
+	        WHEN customer_grade = 'GREEN' THEN 5
+	        WHEN customer_grade = 'ASPARAGUS' THEN 7
+	        WHEN customer_grade = 'BROCCOLI' THEN 7
+		    END AS earned_percentage
+		 FROM customer_table WHERE customer_id = #{customer_id}
+    </select>
+    
+    <select id="get_cart_count_share" resultType="int">
+    	SELECT count(*) FROM cart_table WHERE customer_id = #{customer_id}
+    </select>
+    
+    <select id="get_count" resultType="int">
+    	SELECT count(*) FROM cart_table WHERE customer_id = #{customer_id} AND product_id = #{product_id}
+    </select>
+    
+    <update id="set_cart_count">
+    	UPDATE cart_table SET cart_count = cart_count + #{quantity} 
+    	WHERE customer_id = #{customer_id} AND product_id = #{product_id}
+    </update>
 </mapper>

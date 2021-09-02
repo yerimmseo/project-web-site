@@ -41,4 +41,5 @@ public class CustomerVO {
     private String customer_month;
     private String customer_day;
     private Integer count;
+    private Integer earned_percentage;
 }
