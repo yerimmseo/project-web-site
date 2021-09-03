@@ -55,6 +55,7 @@ public class TestMyPageMapper {
 		log.info(totalPrice);
 	}
 	
+	@Ignore
 	@Test
 	public void getListByOrderTest() {
 		List<ProductVO> products = myPageMapper.getListByOrder("mongsoung1", "2021");
@@ -78,7 +79,7 @@ public class TestMyPageMapper {
 	@Ignore
 	@Test
 	public void getOrderViewTest() {
-		List<ProductVO> orders = myPageMapper.getOrderView("mongsoung1", 12345);
+		List<ProductVO> orders = myPageMapper.getOrderView("mongsoung1", 23456);
 		log.info(orders);
 	}
 	
@@ -102,4 +103,5 @@ public class TestMyPageMapper {
 		myPageMapper.insertCoupon("mongsoung1", 2);
 		log.info(log);
 	}
+	
 }
