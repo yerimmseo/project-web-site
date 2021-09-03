@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <c:set var="path" value="${pageContext.request.contextPath }" />
 <c:set var="grade" value="${customer_info.customer_grade }"/>
@@ -250,20 +251,24 @@
 				                <tr>
 				                    <th>상품금액</th>
 				                    <td>
-				                    	<fmt:formatNumber value="${total_price }" pattern="#,###,###" />원
+				                    	<fmt:formatNumber value="${order_list.get(0).og_sum }" pattern="#,###,###" /> 원
 				                    </td>
 				                </tr>
 				                <tr>
 				                    <th>배송비</th>
 				                    <td>
-				                        <div>0 원</div>
+				                        <div>
+				                        	<fmt:formatNumber value="${order_list.get(0).shipping_fee }" pattern="#,###,###" /> 원
+				                        </div>
 				                    </td>
 				                </tr>
 				                <tr>
 				                    <th>상품할인금액</th>
 				                    <td>
 				                        -
-				                        <span>8,880</span>
+				                        <span>
+				                        	<fmt:formatNumber value="${order_list.get(0).discount_amount }" pattern="#,###,###" />
+				                        </span>
 				                        원
 				                    </td>
 				                </tr>
@@ -284,12 +289,15 @@
 				                <tr>
 				                    <th>결제금액</th>
 				                    <td>
-				                        10,820원
+				                        <fmt:formatNumber value="${order_list.get(0).total_money }" pattern="#,###,###" />
+				                        원
 				                    </td>
 				                </tr>
 				                <tr>
 				                    <th>적립예정금액</th>
-				                    <td>541원</td>
+				                    <td>
+				                    	<fmt:formatNumber value="${order_list.get(0).mileage }" pattern="#,###,###" /> 원
+				                    </td>
 				                </tr>
 				                <tr>
 				                    <th>결제방법</th>
@@ -321,8 +329,8 @@
 				                <tr>
 				                    <th>결제일시</th>
 				                    <td>
-				                    <fmt:formatDate var="orderDate" value="${order_list.get(i).order_time }" pattern="yyyy-MM-dd HH:mm:ss"/>
-				                    ${orderDate }
+					                    <fmt:formatDate var="orderDate" value="${order_list.get(i).order_time }" pattern="yyyy-MM-dd HH:mm:ss"/>
+					                    ${orderDate }
 				                    </td>
 				                </tr>
 				            </tbody>
@@ -338,11 +346,20 @@
 				            <tbody>
 				                <tr>
 				                    <th>받는분</th>
-				                    <td>서예림</td>
+				                    <td>
+				                    	${order_list.get(0).re_customer }
+				                    </td>
 				                </tr>
 				                <tr>
 				                    <th>핸드폰</th>
-				                    <td>010-1111-****</td>
+				                    <td>
+				                    	<c:if test="${fn:length(order_list.get(0).re_customer_tel) == 10 }">
+                                        	${fn:substring(order_list.get(0).re_customer_tel, 0, 3) }-${fn:substring(order_list.get(0).re_customer_tel, 3, 6) }-****
+                                        </c:if>
+                                        <c:if test="${fn:length(order_list.get(0).re_customer_tel) == 11 }">
+				                        	${fn:substring(order_list.get(0).re_customer_tel, 0, 3) }-${fn:substring(order_list.get(0).re_customer_tel, 3, 7) }-****
+                                        </c:if>
+				                    </td>
 				                </tr>
 				                <tr>
 				                    <th>배송방법</th>
@@ -350,7 +367,9 @@
 				                </tr>
 				                <tr>
 				                    <th>주소</th>
-				                    <td>등록된메인주소와 디테일주소</td>
+				                    <td>
+				                    	${order_list.get(0).re_addr_main } ${order_list.get(0).re_addr_sub }
+				                    </td>
 				                </tr>
 				                <tr>
 				                    <th>받으실 장소</th>
