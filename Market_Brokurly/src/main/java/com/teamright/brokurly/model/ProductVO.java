@@ -39,4 +39,14 @@ public class ProductVO {
 	private Integer event_discount;
 	private Integer delivery_id;
 	private String delivery_status;
+	
+	private Integer og_sum;
+	private Integer shipping_fee;
+	private Integer discount_amount;
+	private Integer total_money;
+	private Integer mileage;
+	private String re_customer;
+	private String re_customer_tel;
+	private String re_addr_main;
+	private String re_addr_sub;
 }

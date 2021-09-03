@@ -66,10 +66,10 @@ function oneCart(product_id) {
 		url: '/brokurly/customer/mypage/gocart',
 		type: 'GET',
 		data: {
-			'product': product_id
+			'product_id': product_id
 		},
 		success: function() {
-			
+			alert('장바구니에 상품을 담았습니다.');
 		},
 		error: function() {
 			alert('서버오류');
@@ -85,11 +85,10 @@ function allCart(order_id) {
 			'order_id': order_id
 		},
 		success: function() {
-			
+			alert('장바구니에 전체 상품을 담았습니다.');
 		},
 		error: function() {
 			alert('서버오류');
 		}
 	});
 }
-

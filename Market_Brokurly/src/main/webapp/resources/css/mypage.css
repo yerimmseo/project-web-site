@@ -19,6 +19,8 @@
 
 .main .page_article {margin: 0 auto;}
 
+.main .btn {cursor: pointer;}
+
 /* 등급별 추가할 스타일 지정 */
 /* 웰컴 */
 .class0 {border: solid 1px rgb(123, 145, 132); background-color: #fff; color: rgb(123, 145, 132);}

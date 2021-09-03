@@ -22,4 +22,14 @@ public class OrderVO {
 	private String customer_id;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date order_time;
+	
+	private Integer og_sum;
+	private Integer shipping_fee;
+	private Integer discount_amount;
+	private Integer total_money;
+	private Integer mileage;
+	private String re_customer;
+	private String re_customer_tel;
+	private String re_addr_main;
+	private String re_addr_sub;
 }
