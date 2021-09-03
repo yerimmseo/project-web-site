@@ -265,15 +265,9 @@ ul {list-style: none;}
 /* 브로컬리 */
 .class5 {border: solid 1px seagreen; color: seagreen;}
 
-.ico_grade {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-width: 20px;
-    height: 16px;
-    padding: 0 4px;
-    border-radius: 30px;
-    font-size: 9px;
-    line-height: 7px;
-    text-align: center;
-}
+/* 세션 로그인 시 배송지 디자인 */
+.ico_grade {display: flex; justify-content: center; align-items: center; min-width: 20px; height: 16px; padding: 0 4px; border-radius: 30px; font-size: 9px; line-height: 7px; text-align: center;}
+
+#yesAddress {background-color: white; width: 275px; height: 101px; position: relative; top: 10px; margin: auto; display: grid; grid-template-rows: 80px 31px;}
+#yesAddress #button_double {display:grid; grid-template-columns: 1fr;}
+#yesAddress #button_double #address_Btn {width : 100%;}
