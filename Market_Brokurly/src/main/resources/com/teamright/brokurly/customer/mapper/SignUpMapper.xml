@@ -8,7 +8,7 @@
 		INSERT INTO customer_table
 			(customer_id, customer_pw, customer_name, customer_email, customer_tel, customer_gender, customer_birth, customer_joindate, customer_grade) 
 		VALUES
-			(#{customer_id}, #{customer_pw}, #{customer_name}, #{customer_email}, #{customer_tel}, #{customer_gender}, #{customer_birth}, TO_CHAR(sysdate, 'YYYY/MM/DD'), 'WELCOME')
+			(#{customer_id}, #{customer_pw}, #{customer_name}, #{customer_email}, #{customer_tel}, #{customer_gender}, #{customer_birth}, TO_CHAR(current_date, 'YYYY/MM/DD'), 'WELCOME')
 	</insert>
 	<select id="emailCheck" resultType="String">
 		SELECT customer_email FROM customer_table WHERE customer_email=#{customer_email}

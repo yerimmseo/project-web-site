@@ -10,7 +10,14 @@
 		SELECT * FROM product_table WHERE product_id=#{product_id}
 	</select>
 	<select id="getSearch" resultType="com.teamright.brokurly.model.ProductVO">
-		SELECT * FROM product_table WHERE product_name LIKE '%'||#{product_name}||'%'
+		SELECT DISTINCT maincate_id, subcate_id, product_name, product_id, product_price, event_discount, CEIL(product_price * ((100 - e.event_discount) / 100)) 
+		AS discount_price 
+		FROM 
+			product_table p INNER JOIN 
+			event_table e USING(event_id) INNER JOIN 
+			subcategory_table USING(subcate_id) 
+		WHERE 
+			product_name LIKE '%'||#{product_name}||'%'
 	</select>
 	<select id="getListByMain" resultType="com.teamright.brokurly.model.ProductVO">
 		SELECT DISTINCT 

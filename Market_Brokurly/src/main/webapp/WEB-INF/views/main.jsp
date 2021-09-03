@@ -3,6 +3,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <c:set var="path" value="${pageContext.request.contextPath }" />
+<% 
+response.setHeader("Pragma", "no-cache"); 
+response.setHeader("Cache-Control", "no-cache"); 
+response.setHeader("Cache-Control", "no-store"); 
+response.setDateHeader("Expires", 0L); 
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +19,7 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet" />
 <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
-<body>
+<body ondragstart="return false">
    <div class="header">
       <jsp:include page="include/header.jsp"></jsp:include>
    </div>

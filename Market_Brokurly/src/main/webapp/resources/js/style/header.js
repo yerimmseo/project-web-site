@@ -64,13 +64,13 @@ function Mclick_customer() {
 $('#search_a').click(function(){
 	
 	$.ajax({
-		url: "/brokurly/products/search",
+		url: "/brokurly/products/productsearch_list",
 		type: "GET",
 		data: {
 			"search_name": $('#search').val()
 		},
 		success:function(){
-			alert("성공")
+			$('#searchForm').submit();
 		},
 		error:function(){
 			alert("에러");

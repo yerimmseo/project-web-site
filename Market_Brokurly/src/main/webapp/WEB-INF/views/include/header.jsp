@@ -11,14 +11,15 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
-<body>
+<body oncontextmenu="return false">
 	<form action="/brokurly/customer/mypage/destination" id="destination_btn"></form>
 	<form action="/brokurly/main" method="GET" id="logoutForm"></form>
+	<form action="/brokurly/products/productsearch_page" id="searchForm"></form>
 	 <div id="header">
         <div id="user_menu">
             <!-- 배송안내버튼 -->
             <div id="delivery_info">
-                <a href="">
+                <a onclick="window.open('${path}/deliverybyrisingstar','샛별배송','width=1000,height=500,location=no,status=no,scrollbars=yes');">
                     <img id="infoBtn" src="${path }/resources/img/icon/ico_delivery.png" alt="샛별 배송 안내">
                 </a>
             </div>

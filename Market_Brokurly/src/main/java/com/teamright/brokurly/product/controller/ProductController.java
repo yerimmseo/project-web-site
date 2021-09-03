@@ -35,8 +35,9 @@ public class ProductController {
 	@Autowired
 	private MainCategoryMapper mainCateMapper;
 	
-	int maincate_id, temp_mid;
-	int subcate_id, temp_sid;
+	private static int maincate_id, temp_mid;
+	private static int subcate_id, temp_sid;
+	private static List<ProductVO> product_vo;
 	
 	@GetMapping("/product_list")
 	public void searchAllProduct(Model model) {
@@ -110,12 +111,17 @@ public class ProductController {
 		
 	}
 	
-	@RequestMapping(value="/search", method=RequestMethod.GET, produces="application/text; charset=utf8")
-	@ResponseBody
-	public void searchMenu(HttpServletRequest request) {
+	@RequestMapping(value="/productsearch_list", method=RequestMethod.GET, produces="application/text; charset=utf8")
+	public String searchMenu(HttpServletRequest request) {
 		String product_name = request.getParameter("search_name");
-		List<ProductVO> product_vo = productMapper.getSearch(product_name);
-		System.out.println(product_vo);
+		product_vo = productMapper.getSearch(product_name);
+		
+		return "redirect:/products/productsearch_page";
+	}
+	
+	@GetMapping("/productsearch_page")
+	public void searchPage(Model model) {
+		model.addAttribute("search_product", product_vo);
 	}
 	
 	@GetMapping("/product_subcate")
