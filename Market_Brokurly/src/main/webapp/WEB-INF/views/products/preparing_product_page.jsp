@@ -67,7 +67,7 @@
                 <c:choose>  
 				    <c:when test="${customer_id eq null }">  
 				       <div class="not_login">
-	                    	<span>로그인 후, 회원할인가와 적립혜택이 제공됩니다.</span>
+	                    	<span style="color: seagreen;">로그인 후, 회원할인가와 적립혜택이 제공됩니다.</span>
 	                	</div> 
 				    </c:when>
 				    <c:otherwise>  
@@ -148,10 +148,10 @@
 	                    <li></li>
 	                    <li id="tab1" class="view_tab_li" onclick="get_tab_id(this.id)">상품설명</li>
 	                    <li id="tab2" class="view_tab_li" onclick="get_tab_id(this.id)">상세정보</li>
-	                    <li id="tab3" class="view_tab_li" onclick="get_tab_id(this.id)">후기
-<!-- 	                        <span class="count_review">(51643)</span> -->
-	                    </li>
-	                    <li id="tab4" class="view_tab_li" onclick="get_tab_id(this.id)">문의</li>
+<!-- 	                    <li id="tab3" class="view_tab_li" onclick="get_tab_id(this.id)">후기 -->
+<!--                        <span class="count_review">(51643)</span> -->
+<!-- 	                    </li> -->
+<!-- 	                    <li id="tab4" class="view_tab_li" onclick="get_tab_id(this.id)">문의</li> -->
 	                    <li></li>
 	                </ul>
 	            </div>
@@ -391,13 +391,13 @@
 	                                <p class="explanation_txt">배송관련, 주문(취소/교환/환불)관련 문의 및 요청사항은 마이컬리 내 <a href="#none" onclick="window.parent.location.href = '/shop/mypage/mypage_qna.php'" class="emph1_1">1:1 문의</a>
 	                                에 남겨주세요.</p>
 	                            </span>
-	                            <div class="sort" style="bottom:-9px">
-	                                <select onchange="this.form.sort.value=this.value;this.form.submit()">
-	                                    <option value="1">최근등록순</option>
-	                                    <option value="2">좋아요많은순</option>
-	                                    <option value="3">조회많은순</option>
-	                                </select>
-	                            </div>
+<!-- 	                            <div class="sort" style="bottom:-9px"> -->
+<!-- 	                                <select onchange="this.form.sort.value=this.value;this.form.submit()"> -->
+<!-- 	                                    <option value="1">최근등록순</option> -->
+<!-- 	                                    <option value="2">좋아요많은순</option> -->
+<!-- 	                                    <option value="3">조회많은순</option> -->
+<!-- 	                                </select> -->
+<!-- 	                            </div> -->
 	                        </div>
 	                    </div>
 	                    <table class="xans_board_listheader" width="100%" border="0" cellpadding="0" cellspacing="0">
@@ -547,17 +547,6 @@
 	        </div>
 	  </div>
 	</div>
-
-
-
-
-
-
-
-
-
-
-
 <div class="footer_wrap">
 	<jsp:include page="../include/footer.jsp"></jsp:include>
 </div>

@@ -469,7 +469,7 @@ function getMainCateId(mainCateId, subCateId) {
 		mainCate_icon.innerHTML='child_care';
 		mainCate_icon.style.color='rgb(255, 229, 173)';
 		
-		if (subCateid == 0) { /* 전체보기 */
+		if (subCateId == 0) { /* 전체보기 */
 		    cateList[0].style.color="seagreen";
 		    cateBg.style.right = "345px";
 		    cateBg.style.width = "48px";

@@ -7,7 +7,7 @@ $(document).ready(function(e) {
 				"subcate_id": $(this).attr('value')
 			},
 	        error : function() {
-	            alert('통신실패!!');
+		
 	        },
 	        success : function() {
 				location.href="http://localhost:8080/brokurly/products/product_list";
@@ -29,7 +29,7 @@ $(document).ready(function(e) {
 				alert(data);
 	        },
 	        error : function() {
-	            alert('통신실패!!');
+	         
 	        }
 		})
     });

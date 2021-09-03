@@ -2,6 +2,13 @@ package com.teamright.brokurly.product.mapper;
 
 import static org.junit.Assert.*;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.nio.charset.Charset;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,5 +37,34 @@ public class TestProductDetailMapper {
 		for(int i = 0; i < arr.length; i++) {
 			log.info(i + " : " + arr[i]);
 		}
+	}
+	
+	//디비에 상품설명 파일 저장
+	//@Ignore
+	@Test
+	public void test1() throws IOException {
+	
+		File file = new File("D:\\1)상세설명\\[야미얼스] 구미젤리 64g.txt");
+		StringBuilder sb = new StringBuilder();
+	
+		try (
+				FileReader reader = new FileReader(file, Charset.forName("UTF-8"));		
+				BufferedReader bf = new BufferedReader(reader);
+			){
+			String line = "";
+			while((line = bf.readLine()) != null) {
+				sb.append(line);
+				sb.append(System.getProperty("line.separator"));
+			}
+			
+			//상품아이디 잘 확인!!!!!!!!!!!!!!!
+			detailMapper.create_product_detail(675, sb.toString());
+		
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+		
 	}
 }

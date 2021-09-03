@@ -112,11 +112,9 @@ $(document).ready(function(e) {
 				"maincate_id": $(this).attr('value')
 			},
 	        error : function() {
-	            alert('통신실패!!');
+	            
 	        },
 	        success : function(data) {
-				console.log('성공!!!!!!	');
-				console.log(data);
 				location.href="http://localhost:8080/brokurly/products/product_list";
 				
 	        }
@@ -135,11 +133,9 @@ $(document).ready(function(e) {
 				"subcate_id": $(this).attr('value')
 			},
 	        error : function() {
-	            alert('통신실패!!');
+	            
 	        },
 	        success : function(data) {
-				console.log('성공!!!!!!	');
-				console.log(data);
 				location.href="http://localhost:8080/brokurly/products/product_list";
 				
 	        }

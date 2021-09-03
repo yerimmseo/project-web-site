@@ -11,7 +11,6 @@ window.onload = function() {
         const scrollposition = pageYOffset;
         const view_tab = document.querySelector('#view_tab');
 
-        //console.log(scrollposition);
         if(1000 < scrollposition) {
             view_tab.classList.add('fix_tab');
         } else {

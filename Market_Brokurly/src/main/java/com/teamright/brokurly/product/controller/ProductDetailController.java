@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.teamright.brokurly.model.CartVO;
 import com.teamright.brokurly.model.CustomerVO;
 import com.teamright.brokurly.model.MainCategoryVO;
 import com.teamright.brokurly.model.ProductDetailVO;
@@ -50,7 +51,6 @@ public class ProductDetailController {
     @GetMapping(value = "/product_detail_page")
 	public String productDetailPage(@RequestParam("product_id") int product_id, Model model, HttpSession session) {
     	String customer_id = (String)session.getAttribute("customer_id");
-    	//customer_id = "mongsoung";
     	
     	model.addAttribute("customer_id", customer_id);
     	model.addAttribute("product_id", product_id);
@@ -84,24 +84,11 @@ public class ProductDetailController {
 		}else {
 			model.addAttribute("nonono", discount.get(0).getProduct_price());
 		}
-
-		
-//		//적립금 구하고 적립금, 회원 등급, 적립 퍼센트 어트리 뷰트
-//		CustomerVO cvo = productDetailServiceImpl.get_customer_grade_percent(customer_id);
-//		int accumulate = 
-//				(int) Math.round(Math.abs(discount.get(0).getProduct_price() * 
-//				((100 - cvo.getEarned_percentage()) / 100.0) - discount.get(0).getProduct_price()));
-//		model.addAttribute("percentage", cvo.getEarned_percentage());
-//		model.addAttribute("grade", cvo.getCustomer_grade());
-//		model.addAttribute("accumulate", formatter.format(accumulate));
 		
 		//상품 설명을 리스트에 넣기
 		ArrayList<String> contente = productDetailServiceImpl.save_contente(product_id);
 		//메인 카테고리 id 가져오기
 		MainCategoryVO main = productDetailMapper.select_main_category(product_id);
-		
-//		String count = Integer.toString(productDetailMapper.get_cart_count_share(customer_id));
-//		model.addAttribute("cart_count", count);
 		
 		//리스트에 상품 설명이 들어있는지 확인. 있으면 상세 페이지로,없으면 상품 준비 중 페이지로 넘어간다
 		if (contente.isEmpty()) {
@@ -127,7 +114,6 @@ public class ProductDetailController {
     	int quantity = Integer.parseInt(request.getParameter("quantity"));
     	int product_id = Integer.parseInt(request.getParameter("product_id"));
     	String customer_id = (String)session.getAttribute("customer_id");
-    	//customer_id = "mongsoung";
     	
     	//상품 cart_table에 저장
     	int cart_count = productDetailServiceImpl.get_count(customer_id, product_id);
@@ -136,11 +122,8 @@ public class ProductDetailController {
     	}else {
     		productDetailServiceImpl.set_cart_count(quantity, customer_id, product_id);
     	}
-
-    	//cart_table에 해당 아이디 행 카운트 가져오기
-    	String count = Integer.toString(productDetailMapper.get_cart_count_share(customer_id));
-
-    	return count;
+    	
+    	return customer_id;
     }
   
 }

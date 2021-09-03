@@ -10,12 +10,6 @@ $(document).ready(function(e) {
                 "product_id": $(this).attr('value') //this는 우리가 클릭한 태그를 가져옴. 
             },                           		    //.attr()은 요소(element)의 속성(attribute)의 값을 가져오거나 속성을 추가
             success: function(data) {
-				if(data != '') {
-					console.log(data);
-				}else {
-					console.log('null');
-				}
-				
 				location.href="http://localhost:8080/brokurly/products/product_detail_page?product_id=" + data;
             },
             error : function() {
@@ -124,11 +118,8 @@ $(document).ready(function(e) {
             success: function(data) {
 				if(data != '') {
 					alert("장바구니 담기가 완료되었습니다.");
-					console.log(data);
 					//장바구니 아이콘에 상품 개수 적용
 					$('.cart_count').val(parseInt(data));
-				}else {
-					console.log('null');
 				}
 					 	
             },

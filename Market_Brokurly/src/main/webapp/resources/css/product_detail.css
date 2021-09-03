@@ -437,7 +437,8 @@
 .view_tab_group {
     padding: 0px;
     display: grid;
-    grid-template-columns: 1fr 262.5px 262.5px 262.5px 262.5px 1fr;
+    grid-template-columns: 1fr 525px 525px 1fr;
+/*     1fr 262.5px 262.5px 262.5px 262.5px 1fr; */
     min-width: 1050px;
     margin: 0px;
 }
