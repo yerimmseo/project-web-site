@@ -39,7 +39,7 @@ public class HomeController {
 
 	@RequestMapping(value = "/main", method = RequestMethod.GET)
 	public String home(Model model) {
-		
+
 		List<ProductVO> list = productService.getRandomList();
 		List<ProductVO> list2 = productService.getRandomMaincateList(160);
 		List<ProductVO> list3 = productService.getRandomMaincateList(150);
@@ -52,4 +52,6 @@ public class HomeController {
 
 		return "/main";
 	}
+	@GetMapping("/deliverybyrisingstar")
+	public void deliverybyrisingstar() {}
 }
