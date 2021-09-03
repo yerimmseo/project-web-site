@@ -26,7 +26,7 @@ function deleteValue(ths) {
    } 
    console.log(valueArr);
    if(list.length == 0){
-       alert("선택된 항목이 없습니다!");
+       alert("선택된 항목이 없습니다");
    } else {
        var chk = confirm("삭제하시겠습니까?");
 	   if(chk) {
@@ -38,7 +38,7 @@ function deleteValue(ths) {
            },
            success:function(jdata){
                if(jdata == "") {
-                   alert("해당 품목을 삭제하였습니다!!");
+                   alert("해당 품목을 삭제하였습니다");
                    location.href = "/brokurly/cart/cartlist";
                } else {
                    alert("삭제 실패");
@@ -104,7 +104,7 @@ $(function() {
                     url: "/brokurly/cart/address",
                     type: "GET",
                     data: {
-                        "address_main": $('#address_main').val()
+                        "address_main": $('#address_main').val(),
                     },
                     success: function() {
 						alert('배송지가 선택 되었습니다.');
@@ -132,7 +132,7 @@ $(function() {
                     url: '/brokurly/cart/address',
                     type: 'GET',
                     data: {
-                        'address_main': $('#address_main').val()
+                        "address_main": $('#address_main').val(),
                     },
                     success: function() {
 						alert('배송지가 변경 되었습니다.');

@@ -25,23 +25,21 @@ public class CartController {
 	@Autowired
 	CartService cartService;
 	
-	private static String address;
+	private static String addressMain;
 		
 	@GetMapping(value="/cartlist", produces="text/plain; charset=UTF-8")
     public String list(HttpSession session, Model model) {
-       
 		
 		Map<String, Object> map = new HashMap<>();
 		
         String customer_id = (String)session.getAttribute("customer_id"); 
         String grade = (String)session.getAttribute("customer_grade");
         
-        
         if(customer_id != null) { 
         	List<CartVO> list = cartService.listCart(customer_id);
             String sumMoney = cartService.sumMoney(customer_id);
             String diff = cartService.diff(customer_id);
-
+            
             int truesum = Integer.parseInt(sumMoney) - Integer.parseInt(diff);
             int fee;
             
@@ -73,7 +71,6 @@ public class CartController {
 	public String delete(@RequestParam(value="valueArr[]")String[] valueArr) {
 		System.out.println(valueArr);
 		String[] msg = valueArr;
-		System.out.println(msg);
 		int size = msg.length;
 		for(int i = 0; i < size; i++) {
 			System.out.println(msg[i]);
@@ -92,7 +89,7 @@ public class CartController {
     public String update(int product_id, int cart_count, HttpSession session) {
         String customer_id = (String)session.getAttribute("customer_id");
         CartVO cartVO = new CartVO();
-
+        
         cartVO.setCustomer_id(customer_id);
         cartVO.setProduct_id(product_id);
         cartVO.setCart_count(cart_count);
@@ -104,13 +101,14 @@ public class CartController {
 	
 	@RequestMapping("/address")
 	@ResponseBody
-	public void address(@RequestParam String address_main, Model model, HttpSession session) {
-		
-		address = address_main;
-		System.out.println(address);
-		
-		
-		session.setAttribute("main_address", address);
+	public void address(
+			@RequestParam String address_main,
+			Model model,
+			HttpSession session
+	) {
+		addressMain = address_main;
+
+		session.setAttribute("main_address", addressMain);
 		
 	}	
 }
