@@ -1,9 +1,9 @@
 package com.teamright.brokurly.customer.controller;
 
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,16 +26,11 @@ public class MyPageOrderListController {
 	private static String year;
 
 	@Autowired
-	CustomerInfoMapper customerInfoMapper;
-	
+	private CustomerInfoMapper customerInfoMapper;
 	@Autowired
-	MyPageMapper myPageMapper;
-	
+	private MyPageMapper myPageMapper;
 	@Autowired
-	MyPageOrderListService myPageService;
-	
-	@Autowired
-	ProductMapper productMapper;
+	private MyPageOrderListService myPageService;
 	
 	@RequestMapping("/")
 	public void myPageHome(Model model) {}
@@ -78,20 +73,21 @@ public class MyPageOrderListController {
 		return "redirect:/customer/mypage/orderlist";
 	}
 	
-	// 하나의 상품만 장바구니에 다시 담을 기능 (임시)
+	// 주문 내역 중 하나의 상품만 장바구니에 담기
 	@RequestMapping(value = "/gocart", method = RequestMethod.GET, produces = "application/text; charset=utf8")
 	@ResponseBody
 	public void getInfo(HttpServletRequest request) {
-		System.out.println(productMapper.getProductInfo(Integer.parseInt(request.getParameter("product"))));
+		Integer product_id = Integer.parseInt(request.getParameter("product_id"));
+
+		myPageService.insertOneProductCart(customer_id, product_id);
 	}
 
-	// 주문 내역에 있는 모든 상품 장바구니에 담기 (임시)
+	// 주문 내역에 있는 모든 상품 장바구니에 담기
 	@RequestMapping(value = "/goallcart", method = RequestMethod.GET, produces = "application/text; charset=utf8")
 	@ResponseBody
 	public void getAllInfo(HttpServletRequest request) {
 		order_id = Integer.parseInt(request.getParameter("order_id"));
 		
-		System.out.println(order_id);
-		System.out.println(myPageMapper.getOrderView(customer_id, order_id));
+		myPageService.insertAllProductCart(customer_id, order_id);
 	}
 }

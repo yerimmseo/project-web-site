@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 import com.teamright.brokurly.model.AddressVO;
+import com.teamright.brokurly.model.CartVO;
 import com.teamright.brokurly.model.CouponVO;
 import com.teamright.brokurly.model.CustomerVO;
 import com.teamright.brokurly.model.DeliveryVO;
@@ -35,4 +36,12 @@ public interface MyPageMapper {
 	public void insertCoupon(@Param("customer_id")String customer_id,
 							 @Param("coupon_id")Integer coupon_id);
 	public void updateInfo(CustomerVO customerVo);
+	public Integer getCartCount(@Param("customer_id")String customer_id,
+								@Param("product_id")Integer product_id);
+	public void insertOneProduct(@Param("customer_id")String customer_id,
+								  @Param("product_id")Integer product_id);
+	public void updateOneProduct(@Param("customer_id")String customer_id,
+								 @Param("product_id")Integer product_id);
+	public List<Integer> getProductId(@Param("customer_id")String customer_id,
+									  @Param("order_id")Integer order_id);
 }
