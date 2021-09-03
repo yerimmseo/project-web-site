@@ -20,13 +20,13 @@
 > * [Oracle XE](https://www.oracle.com/kr/database/technologies/xe-downloads.html "oracle XE link")
 > * [Oracle SQL Developer 20.4.1](https://www.oracle.com/tools/downloads/sqldev-downloads.html "oracle sql developer link")
 > * [Spring Framwork](https://spring.io/projects/spring-framework "spring framwork")
->   [Spring Legacy Project] - Spring MVC Project
->   [Maven repository] - Lombok(1.18.20 ver)
->                      - Hikari Connection Pool(4.0.3 ver)
->                      - MyBatis(3.4.6 ver)
->                      - Logging(slf4j, log4j(1.2.17 ver))
->                      - jstl(1.2 ver)
->                      - junit(4.12 ver)
+>   [Spring Legacy Project] - Spring MVC Project <br>
+>   [Maven repository] - Lombok(1.18.20 ver) <br>
+>                      - Hikari Connection Pool(4.0.3 ver) <br>
+>                      - MyBatis(3.4.6 ver) <br>
+>                      - Logging(slf4j, log4j(1.2.17 ver)) <br>
+>                      - jstl(1.2 ver) <br>
+>                      - junit(4.12 ver) <br>
 
 ### 🥦 diagram
 > * usecase diagram
