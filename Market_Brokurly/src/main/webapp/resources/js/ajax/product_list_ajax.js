@@ -10,7 +10,6 @@ $(document).ready(function(e) {
 	            alert('통신실패!!');
 	        },
 	        success : function() {
-				console.log('성공!!!!!!	');
 				location.href="http://localhost:8080/brokurly/products/product_list";
 	        }
 		})
@@ -22,17 +21,17 @@ $(document).ready(function(e) {
 	$('.basket').click(function(){
 		$.ajax({
 	        type : "GET",
-	        url : "/brokurly/products/product_subcate",
+	        url : "/brokurly/products/product_cart",
 			data: {
-				"product_id": $(this).attr('value')
+				"product_id": $(this).attr('value').trim()
 			},
+	        success : function(data) {
+				alert(data);
+	        },
 	        error : function() {
 	            alert('통신실패!!');
-	        },
-	        success : function() {
-				alert('장바구니에 상품을 담았습니다.')
-				//location.href="http://localhost:8080/brokurly/products/product_list";
 	        }
 		})
     });
 });
+

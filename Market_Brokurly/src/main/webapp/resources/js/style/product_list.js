@@ -1005,57 +1005,6 @@ function getId(getId, getMainCateId){
 		
 }
 
-
-
-
-
-
-
-
-/* ------------------------------------ 순 ----------------------------------- */
-
-const typeTitle = document.querySelector('#type-title');
-const typeName = document.querySelector('#type-name');
-const typeList = document.querySelector('#type-list');
-var checkType = true;
-
-typeTitle.onclick = function() {
-    console.log('click');
-
-    if(checkType){
-        typeList.style.visibility="visible";
-        checkType = false;
-    } else {
-        typeList.style.visibility="hidden";
-        checkType = true;
-    }
-}
-
-// t1 : 추천 / t2 : 인기상품 /  t3 : 낮은가격 / t4 : 높은가격
-function getTitle(getTitle) {
-    
-    if (getTitle == 't1') {
-        typeName.innerHTML="추천순"
-        typeList.style.visibility="hidden";
-        checkType = true;
-    } else if (getTitle == 't2') {
-        typeName.innerHTML="인기상품순"
-        typeList.style.visibility="hidden";
-        checkType = true;
-    } else if (getTitle == 't3') {
-        typeName.innerHTML="낮은 가격순"
-        typeList.style.visibility="hidden";
-        checkType = true;
-    } else if (getTitle == 't4') {
-        typeName.innerHTML="높은 가격순"
-        typeList.style.visibility="hidden";
-        checkType = true;
-    }
-
-}
-
-
-
 /* --------------------------------- 상품 페이징 --------------------------------- */
 
 const itemList = document.querySelectorAll('.lists');

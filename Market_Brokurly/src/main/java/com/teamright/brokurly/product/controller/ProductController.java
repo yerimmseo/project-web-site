@@ -35,13 +35,28 @@ public class ProductController {
 	@Autowired
 	private MainCategoryMapper mainCateMapper;
 	
-	int maincate_id;
-	int subcate_id;
+	int maincate_id, temp_mid;
+	int subcate_id, temp_sid;
 	
 	@GetMapping("/product_list")
 	public void searchAllProduct(Model model) {
-		// 각 번호마다 메인 카테고리 번호 지정해놓으면 번호 받아서 어트리뷰트 저장!
-		// 서브 카테고리 받아서 작은 메뉴들 출력해주기 
+		if(maincate_id == 0 && subcate_id == 0) {
+			if(temp_sid == 0) {
+				model.addAttribute("product", productMapper.getListByMain(temp_mid));
+				// 서브 카테고리로 검색하기 -> 서브카테고리 번호 받아서 검색하기
+			} else {
+				model.addAttribute("product", productService.getSubList(temp_sid));
+			}
+			model.addAttribute("menus", subCateMapper.searchByMainCategory(temp_mid));
+			// 메인 카테고리로 검색하기 -> 각 카테고리별 전체보기
+			model.addAttribute("mainName", mainCateMapper.getMainCateName(temp_mid));
+			// 메인 카테고리 이름 
+			model.addAttribute("mainId", temp_mid);
+			// 메인 카테고리 아이디
+			model.addAttribute("sub_id", temp_sid);
+			// 서브 카테고리 아이디
+			model.addAttribute("subcate", productService.getSubByMain(temp_mid));
+		} else {
 		if(maincate_id == 0) {
 			int get_main = subcate_id % 10;
 			maincate_id = subcate_id - get_main;
@@ -49,8 +64,6 @@ public class ProductController {
 				subcate_id = 0;
 			}
 		}
-		
-		
 		if(subcate_id == 0) {
 			model.addAttribute("product", productMapper.getListByMain(maincate_id));
 			// 서브 카테고리로 검색하기 -> 서브카테고리 번호 받아서 검색하기
@@ -66,6 +79,9 @@ public class ProductController {
 		model.addAttribute("sub_id", subcate_id);
 		// 서브 카테고리 아이디
 		model.addAttribute("subcate", productService.getSubByMain(maincate_id));
+		temp_mid = maincate_id;
+		temp_sid = subcate_id;
+		}
 		subcate_id = 0;
 		maincate_id = 0;
 	}
@@ -112,14 +128,29 @@ public class ProductController {
 	}
 	
 	
-	@GetMapping("/product_insertCart")
 	@ResponseBody
-	public String insertCart(HttpServletRequest request, HttpSession session) {
-		String product_id = request.getParameter("product_id");
+	@RequestMapping(value = "/product_cart", method=RequestMethod.GET, produces="application/text; charset=utf8")
+	//@GetMapping("/product_cart")
+	public String getCartInfo(HttpServletRequest request, HttpSession session) {
+		int product_id = Integer.parseInt(request.getParameter("product_id"));
 		String customer_id = (String)session.getAttribute("customer_id");
-		int get_count = productService.insertCart(Integer.parseInt(product_id), customer_id);
-		
-		return Integer.toString(get_count);
+		Integer check_pid = productService.cartCheckExist(product_id);
+				
+		if(check_pid == null) {
+			return "상품 준비 중 입니다.";
+		} else {
+			if(customer_id == null || customer_id.equals("")) {
+				return "로그인 후 이용 가능합니다.";
+			} else {
+				int cart_count = productService.cartSelect(product_id, customer_id);
+				if(cart_count == 0) {
+					productService.cartInsert(product_id, customer_id);
+				} else {
+					productService.cartUpdate(product_id, customer_id);
+				}
+				return "장바구니에 상품을 담았습니다.";
+			}
+		}
 	}
 	
 }

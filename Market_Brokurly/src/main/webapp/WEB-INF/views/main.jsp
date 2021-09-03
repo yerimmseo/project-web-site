@@ -13,7 +13,7 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet" />
 <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
-<body onload='getPath(""+"${path }")'>
+<body>
    <div class="header">
       <jsp:include page="include/header.jsp"></jsp:include>
    </div>
@@ -40,7 +40,7 @@
             <div class="view_port">
                 <ul class="item_list">
                 	<c:forEach var="i" begin="0" end="15" items="${product }" >
-			                    <li class="items">
+			                    <li class="items change_detail" value="<c:out value="${i.product_id }"/>">
 		                	        <div onclick="location.href=''"><img src='/brokurly/resources/img/product/all/${i.product_id }.jpg' alt='items'></div>     
 		            	            <span class='product_name'><a href=''> ${i.product_name } </a></span>  
 		        	                <span class="price_tag">
@@ -71,18 +71,18 @@
             </div>
             <div class="view_port">
                 <ul id="event_list">
-                    <li class="events">
-                        <div><img src="${path }/resources/img/event/main/event1.jpg" alt="events"></div> 
-                        <span class="event_name"><a href="http://localhost:8080/brokurly/products/product_detail_page?product_id=91">영양제 최대 46% 할인</a></span> <br>
+                    <li class="events mca" value="110">
+                        <div onclick="location.href=''"><img src="${path }/resources/img/event/main/event1.jpg" alt="events"></div> 
+                        <span class="event_name"><a href="">솔가 최대 46% 할인</a></span> <br>
                         <span class="event_info">미국에서 온 프리미엄 영양제</span>
                     </li>
-                    <li class="events">
-                        <div><img src="${path }/resources/img/event/main/event2.jpg" alt="events"></div> 
+                    <li class="events mca" value="150">
+                        <div onclick="location.href=''"><img src="${path }/resources/img/event/main/event2.jpg" alt="events"></div> 
                         <span class="event_name"><a href="">스텐 주방용품 최대 15% 할인</a></span> <br>
                         <span class="event_info">디자인과 내구성, 모두 잡고 싶다면</span>
                     </li>
-                    <li class="events">
-                        <div><img src="${path }/resources/img/event/main/event3.jpg" alt="events"></div> 
+                    <li class="events mca" value="60">
+                        <div onclick="location.href=''"><img src="${path }/resources/img/event/main/event3.jpg" alt="events"></div> 
                         <span class="event_name"><a href="">Kurly's 간편식 최대 20% 할인</a></span> <br>
                         <span class="event_info">컬리답게 만든</span>
                     </li>
@@ -99,7 +99,7 @@
             <div class="view_port">
                 <ul class="item_list">
                 	<c:forEach var="i" begin="16" end="27" items="${product }" >
-			                    <li class="items">
+			                    <li class="items change_detail" value="<c:out value="${i.product_id }"/>">
 		                	        <div onclick="location.href=''"><img src='/brokurly/resources/img/product/all/${i.product_id }.jpg' alt='items'></div>     
 		            	            <span class='product_name'><a href=''> ${i.product_name } </a></span>  
 		        	                <span class="price_tag">
@@ -155,8 +155,8 @@
             </div>
             <div id="md_view" class="view_port">
                		<ul id="md_list" class="on">
-               			<c:forEach var="i" begin="0" end="19" items="${md_list }" step="5">
-			                    <li class="items">
+               			<c:forEach var="i" begin="0" end="3" items="${md_list }">
+			                    <li class="items change_detail" value="<c:out value="${i.product_id }"/>">
 		                	        <div id="items_div" onclick="location.href=''"><img id="md_img" src='/brokurly/resources/img/product/all/${i.product_id }.jpg' alt='items'></div>     
 		            	            <span class='product_name'><a href=''> ${i.product_name } </a></span>  
 		        	                <span class="price_tag">
@@ -167,8 +167,8 @@
                    		</c:forEach>
  	              	</ul>
  	              	<ul id="md_list">
-               			<c:forEach var="i" begin="20" end="39" items="${md_list }" step="5" >
-			                    <li class="items">
+               			<c:forEach var="i" begin="4" end="7" items="${md_list }">
+			                    <li class="items change_detail" value="<c:out value="${i.product_id }"/>">
 		                	        <div id="items_div" onclick="location.href=''"><img id="md_img" src='/brokurly/resources/img/product/all/${i.product_id }.jpg' alt='items'></div>     
 		            	            <span class='product_name'><a href=''> ${i.product_name } </a></span>  
 		        	                <span class="price_tag">
@@ -179,8 +179,8 @@
                    		</c:forEach>
  	              	</ul>
  	              	<ul id="md_list">
-               			<c:forEach var="i" begin="40" end="59" items="${md_list }" step="5" >
-			                    <li class="items">
+               			<c:forEach var="i" begin="8" end="11" items="${md_list }">
+			                    <li class="items change_detail" value="<c:out value="${i.product_id }"/>">
 		                	        <div id="items_div" onclick="location.href=''"><img id="md_img" src='/brokurly/resources/img/product/all/${i.product_id }.jpg' alt='items'></div>     
 		            	            <span class='product_name'><a href=''> ${i.product_name } </a></span>  
 		        	                <span class="price_tag">
@@ -191,8 +191,8 @@
                    		</c:forEach>
  	              	</ul>
  	              	<ul id="md_list">
-               			<c:forEach var="i" begin="60" end="79" items="${md_list }" step="5" >
-			                    <li class="items">
+               			<c:forEach var="i" begin="12" end="15" items="${md_list }">
+			                    <li class="items change_detail" value="<c:out value="${i.product_id }"/>">
 		                	        <div id="items_div" onclick="location.href=''"><img id="md_img" src='/brokurly/resources/img/product/all/${i.product_id }.jpg' alt='items'></div>     
 		            	            <span class='product_name'><a href=''> ${i.product_name } </a></span>  
 		        	                <span class="price_tag">
@@ -203,8 +203,8 @@
                    		</c:forEach>
  	              	</ul>
  	              	<ul id="md_list">
-               			<c:forEach var="i" begin="80" end="99" items="${md_list }" step="5" >
-			                    <li class="items">
+               			<c:forEach var="i" begin="16" end="19" items="${md_list }">
+			                    <li class="items change_detail" value="<c:out value="${i.product_id }"/>">
 		                	        <div id="items_div" onclick="location.href=''"><img id="md_img" src='/brokurly/resources/img/product/all/${i.product_id }.jpg' alt='items'></div>     
 		            	            <span class='product_name'><a href=''> ${i.product_name } </a></span>  
 		        	                <span class="price_tag">
@@ -215,8 +215,8 @@
                    		</c:forEach>
  	              	</ul>
  	              	<ul id="md_list">
-               			<c:forEach var="i" begin="100" end="119" items="${md_list }" step="5" >
-			                    <li class="items">
+               			<c:forEach var="i" begin="20" end="23" items="${md_list }">
+			                    <li class="items change_detail" value="<c:out value="${i.product_id }"/>">
 		                	        <div id="items_div" onclick="location.href=''"><img id="md_img" src='/brokurly/resources/img/product/all/${i.product_id }.jpg' alt='items'></div>     
 		            	            <span class='product_name'><a href=''> ${i.product_name } </a></span>  
 		        	                <span class="price_tag">
@@ -227,8 +227,8 @@
                    		</c:forEach>
  	              	</ul>
  	              	<ul id="md_list">
-               			<c:forEach var="i" begin="120" end="139" items="${md_list }" step="5" >
-			                    <li class="items">
+               			<c:forEach var="i" begin="24" end="27" items="${md_list }">
+			                    <li class="items change_detail" value="<c:out value="${i.product_id }"/>">
 		                	        <div id="items_div" onclick="location.href=''"><img id="md_img" src='/brokurly/resources/img/product/all/${i.product_id }.jpg' alt='items'></div>     
 		            	            <span class='product_name'><a href=''> ${i.product_name } </a></span>  
 		        	                <span class="price_tag">
@@ -239,8 +239,8 @@
                    		</c:forEach>
  	              	</ul>
  	              	<ul id="md_list">
-               			<c:forEach var="i" begin="140" end="159" items="${md_list }" step="5" >
-			                    <li class="items">
+               			<c:forEach var="i" begin="28" end="31" items="${md_list }">
+			                    <li class="items change_detail" value="<c:out value="${i.product_id }"/>">
 		                	        <div id="items_div" onclick="location.href=''"><img id="md_img" src='/brokurly/resources/img/product/all/${i.product_id }.jpg' alt='items'></div>     
 		            	            <span class='product_name'><a href=''> ${i.product_name } </a></span>  
 		        	                <span class="price_tag">
@@ -251,8 +251,8 @@
                    		</c:forEach>
  	              	</ul>
  	              	<ul id="md_list">
-               			<c:forEach var="i" begin="160" end="179" items="${md_list }" step="5" >
-			                    <li class="items">
+               			<c:forEach var="i" begin="32" end="35" items="${md_list }">
+			                    <li class="items change_detail" value="<c:out value="${i.product_id }"/>">
 		                	        <div id="items_div" onclick="location.href=''"><img id="md_img" src='/brokurly/resources/img/product/all/${i.product_id }.jpg' alt='items'></div>     
 		            	            <span class='product_name'><a href=''> ${i.product_name } </a></span>  
 		        	                <span class="price_tag">
@@ -263,8 +263,8 @@
                    		</c:forEach>
  	              	</ul>
  	              	<ul id="md_list">
-               			<c:forEach var="i" begin="180" end="199" items="${md_list }" step="5" >
-			                    <li class="items">
+               			<c:forEach var="i" begin="36" end="39" items="${md_list }">
+			                    <li class="items change_detail" value="<c:out value="${i.product_id }"/>">
 		                	        <div id="items_div" onclick="location.href=''"><img id="md_img" src='/brokurly/resources/img/product/all/${i.product_id }.jpg' alt='items'></div>     
 		            	            <span class='product_name'><a href=''> ${i.product_name } </a></span>  
 		        	                <span class="price_tag">
@@ -275,8 +275,8 @@
                    		</c:forEach>
  	              	</ul>
  	              	<ul id="md_list">
-               			<c:forEach var="i" begin="200" end="219" items="${md_list }" step="5" >
-			                    <li class="items">
+               			<c:forEach var="i" begin="40" end="43" items="${md_list }">
+			                    <li class="items change_detail" value="<c:out value="${i.product_id }"/>">
 		                	        <div id="items_div" onclick="location.href=''"><img id="md_img" src='/brokurly/resources/img/product/all/${i.product_id }.jpg' alt='items'></div>     
 		            	            <span class='product_name'><a href=''> ${i.product_name } </a></span>  
 		        	                <span class="price_tag">
@@ -287,8 +287,8 @@
                    		</c:forEach>
  	              	</ul>
  	              	<ul id="md_list">
-               			<c:forEach var="i" begin="220" end="239" items="${md_list }" step="5" >
-			                    <li class="items">
+               			<c:forEach var="i" begin="44" end="47" items="${md_list }">
+			                    <li class="items change_detail" value="<c:out value="${i.product_id }"/>">
 		                	        <div id="items_div" onclick="location.href=''"><img id="md_img" src='/brokurly/resources/img/product/all/${i.product_id }.jpg' alt='items'></div>     
 		            	            <span class='product_name'><a href=''> ${i.product_name } </a></span>  
 		        	                <span class="price_tag">
@@ -299,8 +299,8 @@
                    		</c:forEach>
  	              	</ul>
  	              	<ul id="md_list">
-               			<c:forEach var="i" begin="240" end="259" items="${md_list }" step="5" >
-			                    <li class="items">
+               			<c:forEach var="i" begin="48" end="51" items="${md_list }">
+			                    <li class="items change_detail" value="<c:out value="${i.product_id }"/>">
 		                	        <div id="items_div" onclick="location.href=''"><img id="md_img" src='/brokurly/resources/img/product/all/${i.product_id }.jpg' alt='items'></div>     
 		            	            <span class='product_name'><a href=''> ${i.product_name } </a></span>  
 		        	                <span class="price_tag">
@@ -311,8 +311,8 @@
                    		</c:forEach>
  	              	</ul>
  	              	<ul id="md_list">
-               			<c:forEach var="i" begin="260" end="279" items="${md_list }" step="5" >
-			                    <li class="items">
+               			<c:forEach var="i" begin="52" end="55" items="${md_list }">
+			                    <li class="items change_detail" value="<c:out value="${i.product_id }"/>">
 		                	        <div id="items_div" onclick="location.href=''"><img id="md_img" src='/brokurly/resources/img/product/all/${i.product_id }.jpg' alt='items'></div>     
 		            	            <span class='product_name'><a href=''> ${i.product_name } </a></span>  
 		        	                <span class="price_tag">
@@ -323,8 +323,8 @@
                    		</c:forEach>
  	              	</ul>
  	              	<ul id="md_list">
-               			<c:forEach var="i" begin="280" end="299" items="${md_list }" step="5" >
-			                    <li class="items">
+               			<c:forEach var="i" begin="56" end="59" items="${md_list }">
+			                    <li class="items change_detail" value="<c:out value="${i.product_id }"/>">
 		                	        <div id="items_div" onclick="location.href=''"><img id="md_img" src='/brokurly/resources/img/product/all/${i.product_id }.jpg' alt='items'></div>     
 		            	            <span class='product_name'><a href=''> ${i.product_name } </a></span>  
 		        	                <span class="price_tag">
@@ -335,8 +335,8 @@
                    		</c:forEach>
  	              	</ul>
  	              	<ul id="md_list">
-               			<c:forEach var="i" begin="300" end="319" items="${md_list }" step="5" >
-			                    <li class="items">
+               			<c:forEach var="i" begin="60" end="63" items="${md_list }">
+			                    <li class="items change_detail" value="<c:out value="${i.product_id }"/>">
 		                	        <div id="items_div" onclick="location.href=''"><img id="md_img" src='/brokurly/resources/img/product/all/${i.product_id }.jpg' alt='items'></div>     
 		            	            <span class='product_name'><a href=''> ${i.product_name } </a></span>  
 		        	                <span class="price_tag">
@@ -347,8 +347,8 @@
                    		</c:forEach>
  	              	</ul>
  	              	<ul id="md_list">
-               			<c:forEach var="i" begin="320" end="339" items="${md_list }" step="5" >
-			                    <li class="items">
+               			<c:forEach var="i" begin="64" end="67" items="${md_list }">
+			                    <li class="items change_detail" value="<c:out value="${i.product_id }"/>">
 		                	        <div id="items_div" onclick="location.href=''"><img id="md_img" src='/brokurly/resources/img/product/all/${i.product_id }.jpg' alt='items'></div>     
 		            	            <span class='product_name'><a href=''> ${i.product_name } </a></span>  
 		        	                <span class="price_tag">
@@ -359,8 +359,8 @@
                    		</c:forEach>
  	              	</ul>
  	              	<ul id="md_list">
-               			<c:forEach var="i" begin="340" end="359" items="${md_list }" step="5" >
-			                    <li class="items">
+               			<c:forEach var="i" begin="68" end="71" items="${md_list }">
+			                    <li class="items change_detail" value="<c:out value="${i.product_id }"/>">
 		                	        <div id="items_div" onclick="location.href=''"><img id="md_img" src='/brokurly/resources/img/product/all/${i.product_id }.jpg' alt='items'></div>     
 		            	            <span class='product_name'><a href=''> ${i.product_name } </a></span>  
 		        	                <span class="price_tag">
@@ -371,8 +371,8 @@
                    		</c:forEach>
  	              	</ul>
             </div>
-            <div id="link_cate">
-                <a id="link_a" href="../TEST/채소.html"><span id="list_name">채소</span> 전체보기
+            <div id="link_cate" value="10">
+                <a id="link_a"><span id="list_name">채소</span> 전체보기
                     <span style="position: relative; top: 3px;  font-size: 17px;" class="material-icons-outlined">
                     arrow_forward_ios
                     </span>
@@ -397,7 +397,7 @@
             <div class="view_port">
                 <ul class="item_list">
                 	<c:forEach var="i" begin="28" end="33" items="${product }" >
-			                    <li class="items">
+			                    <li class="items change_detail" value="<c:out value="${i.product_id }"/>">
 		                	        <div onclick="location.href=''"><img src='/brokurly/resources/img/product/all/${i.product_id }.jpg' alt='items'></div>     
 		            	            <span class='product_name'><a href=''> ${i.product_name } </a></span>  
 		        	                <span class="price_tag">
@@ -429,7 +429,7 @@
             <div class="view_port">
                 <ul class="item_list">
                 	<c:forEach var="i" begin="34" end="39" items="${product }" >
-			                    <li class="items">
+			                    <li class="items change_detail" value="<c:out value="${i.product_id }"/>">
 		                	        <div onclick="location.href=''"><img src='/brokurly/resources/img/product/all/${i.product_id }.jpg' alt='items'></div>     
 		            	            <span class='product_name'><a href=''> ${i.product_name } </a></span>  
 		        	                <span class="price_tag">
@@ -462,7 +462,7 @@
             <div class="view_port">
                 <ul class="item_list">
                 	<c:forEach var="i" begin="40" end="45" items="${product }" >
-			                    <li class="items">
+			                    <li class="items change_detail" value="<c:out value="${i.product_id }"/>">
 		                	        <div onclick="location.href=''"><img src='/brokurly/resources/img/product/all/${i.product_id }.jpg' alt='items'></div>     
 		            	            <span class='product_name'><a href=''> ${i.product_name } </a></span>  
 		        	                <span class="price_tag">
@@ -494,7 +494,7 @@
             <div class="view_port">
                 <ul class="item_list">
                 	<c:forEach var="i" begin="0" end="5" items="${product_160 }" >
-			                    <li class="items">
+			                    <li class="items change_detail" value="<c:out value="${i.product_id }"/>">
 		                	        <div onclick="location.href=''"><img src='/brokurly/resources/img/product/all/${i.product_id }.jpg' alt='items'></div>     
 		            	            <span class='product_name'><a href=''> ${i.product_name } </a></span>  
 		        	                <span class="price_tag">
@@ -527,7 +527,7 @@
             <div class="view_port">
                 <ul class="item_list">
                 	<c:forEach var="i" begin="0" end="5" items="${product_150 }" >
-			                    <li class="items">
+			                    <li class="items change_detail" value="<c:out value="${i.product_id }"/>">
 		                	        <div onclick="location.href=''"><img src='/brokurly/resources/img/product/all/${i.product_id }.jpg' alt='items'></div>     
 		            	            <span class='product_name'><a href=''> ${i.product_name } </a></span>  
 		        	                <span class="price_tag">
@@ -560,8 +560,8 @@
     </div>
     <jsp:include page="include/topBtn.jsp"></jsp:include>
    
-   <!-- <script type="text/javascript" src="${path }/resources/js/main_ajax.js"></script> -->
 </body>
+<script type="text/javascript" src="${path }/resources/js/ajax/product_detail_ajax.js"></script>
 <script type="text/javascript" src="${path }/resources/js/style/main.js"></script>
-<script src="${path }/resources/js/ajax/product_detail_ajax.js"></script>
+<script type="text/javascript" src="${path }/resources/js/ajax/main_ajax.js"></script>
 </html>

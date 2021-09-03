@@ -43,26 +43,13 @@ public class HomeController {
 		List<ProductVO> list = productService.getRandomList();
 		List<ProductVO> list2 = productService.getRandomMaincateList(160);
 		List<ProductVO> list3 = productService.getRandomMaincateList(150);
-//		List<ProductVO> md_list = productService.getMdList();
+		List<ProductVO> md_list = productService.getMdList();
 
 		model.addAttribute("product", list);
 		model.addAttribute("product_160", list2);
 		model.addAttribute("product_150", list3);
-//		model.addAttribute("md_list", md_list);
+		model.addAttribute("md_list", md_list);
 
 		return "/main";
 	}
-
-//	@GetMapping("/main_code")
-//	@ResponseBody // 이걸 써야 리턴해줌
-//	public List<ProductVO> getMainId(HttpServletRequest request, Model model) {
-//		String maincate_id = request.getParameter("maincate_id");
-//		System.out.println(maincate_id);
-//		List<ProductVO> list = productService.getRandomMaincateList(Integer.parseInt(maincate_id));
-//
-//		model.addAttribute("product_md10", list);
-//		return list;
-//
-//	}
-
 }

@@ -14,7 +14,7 @@ import com.teamright.brokurly.product.mapper.ProductMapper;
 public class ProductServiceImpl implements ProductService {
 	
 	@Autowired
-	private ProductMapper productMapper; 
+	private ProductMapper productMapper;
 	
 	@Override
 	public List<ProductVO> getRandomList() {
@@ -59,10 +59,21 @@ public class ProductServiceImpl implements ProductService {
 		return list;
 	}
 	@Override
-	public int insertCart (int product_id, String customer_id) {
-		int get_count = productMapper.insertCart(product_id, customer_id);
-		
-		return get_count;
+	public int cartSelect(int product_id, String customer_id) {
+		int count = productMapper.cartSelect(product_id, customer_id);
+		return count;
+	}
+	@Override
+	public int cartInsert(int product_id, String customer_id) {
+		return productMapper.cartInsert(product_id, customer_id);
+	}
+	@Override
+	public int cartUpdate(int product_id, String customer_id) {
+		return productMapper.cartUpdate(product_id, customer_id);
+	}
+	@Override
+	public Integer cartCheckExist(int product_id) {
+		return productMapper.cartCheckExist(product_id);
 	}
 	
 

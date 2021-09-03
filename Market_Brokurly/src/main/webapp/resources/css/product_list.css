@@ -28,6 +28,7 @@
     list-style: none;
     width: 1000px;
     font-size: 1px;
+    padding-bottom:30px;
 }
 
 .list > li {
@@ -114,7 +115,7 @@
     top: 15px;
     right: 10px;
     width: 90px;
-    height: 155px;
+    height: 115px;
     color: #333;
     background-color: white;
     box-shadow: rgb(168, 168, 168) 0 0 5px;
@@ -326,8 +327,6 @@
     font-size: 20px;
 }
 
-
-
 .price {
     color: rgb(143, 143, 143);
     font-weight: 700;
@@ -338,4 +337,8 @@
     position:relative;
     top: 25px;
     right:127px;
+}
+
+#service_menu > li {
+	font-family: 'Noto Sans KR', Arial, sans-serif;
 }

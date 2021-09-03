@@ -1,42 +1,19 @@
-
-//$(document).ready(function(e) {
-//    $('.md_list').click(function(){
-//        $.ajax({ 
-//            url: '/brokurly/main_code', 
-//            type: "GET",
-//            data:{
-//                "maincate_id": $(this).attr('value') //this는 우리가 클릭한 태그를 가져옴. 
-//            },                           		    //.attr()은 요소(element)의 속성(attribute)의 값을 가져오거나 속성을 추가
-//            success: function(data) {
-//					console.log("받아온 데이터 : " + data);
-//            },
-//            error : function() {
-//                alert('fail');
-//            }
-//        })
-//    });
-//});
-
-
-$(document).ready(function() {
-	$('#practice_btn').click(function() {
-		$('#practice_text').val();	// js는 value, jq는 val
-		//버튼을 눌렀을 때 작동하는 메서드 함수...
-		//controller에 보내기
-		$.ajax({	// JSON 타입이 되는거에요!
-			url: "/brokurly/customer/practice",
-			type: "GET",
+/* ----------------------------------  MD 전체보기 가져오기 ---------------------------------- */
+$(document).ready(function(e) {
+	$('#link_cate').click(function(){
+		$.ajax({
+	        type : "GET",
+	        url : "/brokurly/products/product_main_id",
 			data: {
-				"practice_id": $('#practice_text').val() // practice_id 로 오른쪽을 보낼거야
+				"maincate_id": $(this).attr('value')
 			},
-			success:function(data) {	// data는 컨트롤러에서 리턴한 값
-			alert("성공");				
-			},
-			error:function(data) {
-			alert("실패");
-			}
+	        error : function() {
+	            alert('통신실패!!');
+	        },
+	        success : function() {
+				location.href="http://localhost:8080/brokurly/products/product_list";
+	        }
 		})
-	});
-		
-
+    });
 });
+

@@ -17,5 +17,8 @@ public interface ProductMapper {
 	public List<ProductVO> getMdList();
 	public List<ProductVO> getSubList(int subcate_id);
 	public List<ProductVO> getSubByMain(int maincate_id);
-	public int insertCart(@Param("product_id") int product_id, @Param("customer_id") String customer_id);
+	public int cartInsert(@Param("product_id") int product_id, @Param("customer_id") String customer_id);
+	public int cartSelect(@Param("product_id") int product_id, @Param("customer_id") String customer_id);
+	public int cartUpdate(@Param("product_id") int product_id, @Param("customer_id") String customer_id);
+	public Integer cartCheckExist(int product_id);
 }

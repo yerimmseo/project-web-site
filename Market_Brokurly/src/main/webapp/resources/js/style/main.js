@@ -207,8 +207,9 @@ leftBtn[6].onclick = function() {
 
 
 var checked;
+const linkBtn = document.getElementById('link_cate');
 const linkBtn_inner = document.getElementById('list_name');
-const linkBtn = document.getElementById('link_a');
+const linkBtn_a = document.getElementById('link_a');
 const mdList = document.querySelectorAll('#md_list');
 const mdView = document.querySelector('#md_view');
 
@@ -243,10 +244,6 @@ function getId(clicked_id) {
     
     var getTitle = list.getAttribute('data-title'); /* 선택한 요소의 data-title 값을 가져옴(이 안에 링크를 넣으면 됨) */
 
-	
-    //setTimeout(function() {    mdView.style.opacity="100%"; }, 100);
-    linkBtn.setAttribute('href', '../TEST/' + getTitle + ".html");/* 속성 값 변경 */
-    
     if (getTitle == '채소') {
 		mdView.style.animation="fade-out 0.3s forwards";
 		setTimeout(function() {
@@ -254,6 +251,7 @@ function getId(clicked_id) {
 		mdList[0].style.display="block"; 
 		mdView.style.animation="fade-in 0.3s forwards";
 		}, 200);
+		linkBtn.setAttribute('value', '10');
     } else if (getTitle == '과일') {
 		mdView.style.animation="fade-out 0.3s forwards";
 		setTimeout(function() {
@@ -261,6 +259,7 @@ function getId(clicked_id) {
 		mdList[1].style.display="block"; 
 		mdView.style.animation="fade-in 0.3s forwards";
 		}, 200);
+		linkBtn.setAttribute('value', '20');
     } else if (getTitle == '수산') {
 		mdView.style.animation="fade-out 0.3s forwards";
 		setTimeout(function() {
@@ -268,6 +267,7 @@ function getId(clicked_id) {
 		mdList[2].style.display="block"; 
 		mdView.style.animation="fade-in 0.3s forwards";
 		}, 200);
+		linkBtn.setAttribute('value', '30');
     } else if (getTitle == '정육') {
        mdView.style.animation="fade-out 0.3s forwards";
 		setTimeout(function() {
@@ -275,6 +275,7 @@ function getId(clicked_id) {
 		mdList[3].style.display="block"; 
 		mdView.style.animation="fade-in 0.3s forwards";
 		}, 200);
+		linkBtn.setAttribute('value', '40');
     } else if (getTitle == '국') {
         mdView.style.animation="fade-out 0.3s forwards";
 		setTimeout(function() {
@@ -282,6 +283,7 @@ function getId(clicked_id) {
 		mdList[4].style.display="block"; 
 		mdView.style.animation="fade-in 0.3s forwards";
 		}, 200);
+		linkBtn.setAttribute('value', '50');
     } else if (getTitle == '샐러드') {
         mdView.style.animation="fade-out 0.3s forwards";
 		setTimeout(function() {
@@ -289,6 +291,7 @@ function getId(clicked_id) {
 		mdList[5].style.display="block"; 
 		mdView.style.animation="fade-in 0.3s forwards";
 		}, 200);
+		linkBtn.setAttribute('value', '60');
     } else if (getTitle == '면') {
         mdView.style.animation="fade-out 0.3s forwards";
 		setTimeout(function() {
@@ -296,6 +299,7 @@ function getId(clicked_id) {
 		mdList[6].style.display="block"; 
 		mdView.style.animation="fade-in 0.3s forwards";
 		}, 200);
+		linkBtn.setAttribute('value', '70');
     } else if (getTitle == '생수') {
         mdView.style.animation="fade-out 0.3s forwards";
 		setTimeout(function() {
@@ -303,6 +307,7 @@ function getId(clicked_id) {
 		mdList[7].style.display="block"; 
 		mdView.style.animation="fade-in 0.3s forwards";
 		}, 200);
+		linkBtn.setAttribute('value', '80');
     } else if (getTitle == '간식') {
         mdView.style.animation="fade-out 0.3s forwards";
 		setTimeout(function() {
@@ -310,6 +315,7 @@ function getId(clicked_id) {
 		mdList[8].style.display="block"; 
 		mdView.style.animation="fade-in 0.3s forwards";
 		}, 200);
+		linkBtn.setAttribute('value', '90');
     } else if (getTitle == '베이커리') {
         mdView.style.animation="fade-out 0.3s forwards";
 		setTimeout(function() {
@@ -317,6 +323,7 @@ function getId(clicked_id) {
 		mdList[9].style.display="block"; 
 		mdView.style.animation="fade-in 0.3s forwards";
 		}, 200);
+		linkBtn.setAttribute('value', '100');
     } else if (getTitle == '건강식품') {
         mdView.style.animation="fade-out 0.3s forwards";
 		setTimeout(function() {
@@ -324,6 +331,7 @@ function getId(clicked_id) {
 		mdList[10].style.display="block"; 
 		mdView.style.animation="fade-in 0.3s forwards";
 		}, 200);
+		linkBtn.setAttribute('value', '110');
     } else if (getTitle == '생활용품') {
         mdView.style.animation="fade-out 0.3s forwards";
 		setTimeout(function() {
@@ -331,6 +339,7 @@ function getId(clicked_id) {
 		mdList[11].style.display="block"; 
 		mdView.style.animation="fade-in 0.3s forwards";
 		}, 200);
+		linkBtn.setAttribute('value', '120');
     } else if (getTitle == '스킨케어') {
         mdView.style.animation="fade-out 0.3s forwards";
 		setTimeout(function() {
@@ -338,6 +347,7 @@ function getId(clicked_id) {
 		mdList[12].style.display="block"; 
 		mdView.style.animation="fade-in 0.3s forwards";
 		}, 200);
+		linkBtn.setAttribute('value', '130');
     } else if (getTitle == '헤어') {
         mdView.style.animation="fade-out 0.3s forwards";
 		setTimeout(function() {
@@ -345,6 +355,7 @@ function getId(clicked_id) {
 		mdList[13].style.display="block"; 
 		mdView.style.animation="fade-in 0.3s forwards";
 		}, 200);
+		linkBtn.setAttribute('value', '140');
     } else if (getTitle == '주방용품') {
         mdView.style.animation="fade-out 0.3s forwards";
 		setTimeout(function() {
@@ -352,6 +363,7 @@ function getId(clicked_id) {
 		mdList[14].style.display="block"; 
 		mdView.style.animation="fade-in 0.3s forwards";
 		}, 200);
+		linkBtn.setAttribute('value', '150');
     } else if (getTitle == '가전제품') {
         mdView.style.animation="fade-out 0.3s forwards";
 		setTimeout(function() {
@@ -359,6 +371,7 @@ function getId(clicked_id) {
 		mdList[15].style.display="block"; 
 		mdView.style.animation="fade-in 0.3s forwards";
 		}, 200);
+		linkBtn.setAttribute('value', '160');
     } else if (getTitle == '베이비') {
         mdView.style.animation="fade-out 0.3s forwards";
 		setTimeout(function() {
@@ -366,6 +379,7 @@ function getId(clicked_id) {
 		mdList[16].style.display="block"; 
 		mdView.style.animation="fade-in 0.3s forwards";
 		}, 200);
+		linkBtn.setAttribute('value', '170');
     } else if (getTitle == '반려동물') {
        mdView.style.animation="fade-out 0.3s forwards";
 		setTimeout(function() {
@@ -373,6 +387,7 @@ function getId(clicked_id) {
 		mdList[17].style.display="block"; 
 		mdView.style.animation="fade-in 0.3s forwards";
 		}, 200);
+		linkBtn.setAttribute('value', '180');
     }
     
 }
