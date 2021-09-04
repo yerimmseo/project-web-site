@@ -15,7 +15,6 @@ response.setDateHeader("Expires", 0L);
 <meta charset="UTF-8">
 <title>BroKurly</title>
 <link rel="stylesheet" href="${path }/resources/css/main.css" />
-<link rel="stylesheet" href="${path }/resources/css/font.css" />
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet" />
 <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>

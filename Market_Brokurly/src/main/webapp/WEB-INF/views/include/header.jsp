@@ -329,7 +329,7 @@
                 </div>
                 <!-- 장바구니 아이콘 -->
                 <div class="gnb_menus">
-                    <a href="${path}/cart/cartlist">
+                    <a onclick="getCustomerId('${sessionScope.customer_id}')">
                         <span id="cart" class="material-icons-outlined" style="font-size: 30px;">shopping_cart</span>
                	  	</a>
                 </div>

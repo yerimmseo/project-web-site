@@ -60,6 +60,17 @@ function Mclick_customer() {
 	}, 4000);
 }
 
+/* ------------------------------- 장바구니 아이콘 클릭시 로그인 확인 ----------------------------------- */
+
+function getCustomerId(customer_id) {
+	if(customer_id == null || customer_id == "") {
+		alert('로그인 후 이용해주세요.');
+//		location.href="http://localhost:8080/brokurly/customer/signin";
+	} else {
+		location.href="http://localhost:8080/brokurly/cart/cartlist";
+	}
+}
+
 /* ------------------------------- 검색시 해당 품목 가져오기 ----------------------------------- */
 $('#search_a').click(function(){
 	

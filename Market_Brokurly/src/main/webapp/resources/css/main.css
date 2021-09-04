@@ -91,7 +91,7 @@ a {text-decoration: none; }
 
 .product_name { margin-top: 12px; font-weight: 500; font-family: 'Noto Sans KR', sans-serif; } 
 .product_name > a { width: 248.85px; height: 32px; display: block; white-space: nowrap; overflow:hidden; text-overflow: ellipsis; } 
-.price_tag { text-overflow: ellipsis; width: 248.85px; display: block; } 
+.price_tag { font-family: 'Noto Sans KR', sans-serif; text-overflow: ellipsis; width: 248.85px; display: block; } 
 .discounted_price { color: orangered; font-weight: 900; font-size: 17px; } 
 .price { color: rgb(143, 143, 143); font-size: 15px; font-weight: 700; text-decoration: line-through; } 
 .items { transition: all 0.5s ease; width: 248.58px; } 

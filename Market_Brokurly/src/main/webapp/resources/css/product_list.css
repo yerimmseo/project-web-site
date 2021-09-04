@@ -70,4 +70,3 @@ body { -webkit-user-select:none; -moz-user-select:none; -ms-user-select:none; us
 .price_tag { text-overflow: ellipsis; width: 248.85px;/* display: inline; */}
 .discounted_price { color: orangered; font-weight: 900; font-size: 20px; } 
 .price { color: rgb(143, 143, 143); font-weight: 700; font-size: 15px; font-family: 'Noto Sans KR', 'sans-serif'; text-decoration: line-through; display:inline; position:relative; top: 25px; right:127px; } 
-#service_menu > li {font-family: 'Noto Sans KR', Arial, sans-serif; } 
