@@ -39,6 +39,10 @@
 </script>
 </head>
 <body>
+
+	<div class="header">
+		<jsp:include page="../include/header.jsp"></jsp:include>
+	</div>
 <div id="wrap">
         <div id="container">
             <div id="main">
@@ -155,5 +159,8 @@
             </div>
         </div>
     </div>
+    <div class="footer_wrap">
+		<jsp:include page="../include/footer.jsp"></jsp:include>
+	</div>
 </body>
 </html>
