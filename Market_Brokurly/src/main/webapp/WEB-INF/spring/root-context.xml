@@ -26,5 +26,6 @@
 
 	<mybatis-spring:scan base-package="com.teamright.brokurly.customer.mapper" />
 	<mybatis-spring:scan base-package="com.teamright.brokurly.product.mapper" />
+	<mybatis-spring:scan base-package="com.teamright.brokurly.bbs.mapper" />
 
 </beans>
