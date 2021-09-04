@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+body { -webkit-user-select:none; -moz-user-select:none; -ms-user-select:none; user-select:none }
 .wrap *, .wrap *:after, .wrap *:before {box-sizing: border-box; margin: 0; padding: 0;}
 .wrap div, .wrap th, .wrap td, .wrap li, .wrap dt, .wrap dd, .wrap p {word-break: break-all;}
 .wrap ol, .wrap ul {list-style-type: none;}

@@ -2,6 +2,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
 
-body {font-family: 'Noto Sans KR', Arial, sans-serif;}
+body {font-family: 'Noto Sans KR', Arial, sans-serif; -webkit-user-select:none; -moz-user-select:none; -ms-user-select:none; user-select:none;}
 button {font-family: 'Noto Sans KR', Arial, sans-serif;}
 #user_info {font-family: Arial;}

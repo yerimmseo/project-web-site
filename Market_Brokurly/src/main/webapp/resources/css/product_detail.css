@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap');/* Noto Sans KR */
 
 #content { width: 100%; height: 100%; font-family: 'Noto Sans KR', sans-serif; } 
+body { -webkit-user-select:none; -moz-user-select:none; -ms-user-select:none; user-select:none }
 
 /* 첫번째 큰틀 */
 #main_box_one { display: grid; margin: auto; grid-template-columns: 1fr 540px; width: 1050px; padding-top: 20px; padding-bottom: 90px; box-sizing:border-box; }
