@@ -1,81 +1,18 @@
-@charset "UTF-8";
-#wrap {
-    width: 1070px;
-    border: solid 1px black;
-    margin: auto;
-}
-a {
-    cursor: pointer;
-}
+@charset "UTF-8";#wrap { width: 1070px; border: solid 1px black; margin: auto; } 
+a { cursor: pointer; } 
 
-#header {
-    text-align: center;
-    font-size: 40px;
-    padding: 20px;
-}
-#top-cate {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    width: 100%;
+#header { text-align: center; font-size: 40px; padding: 20px; } 
+#top-cate { list-style: none; margin: 0; padding: 0; width: 100%;}
+#top-cate > li { display: inline-block; padding: 20px; font-size: 16px; } 
+#banner { width: 100%; height: 200px; } 
+#title { font-size: 16px; font-weight: bold; padding: 10px; } 
+.list { margin: 0; padding: 0; list-style: none; width: 900px; border: solid 1px black; font-size: 0; } 
+.list > li { margin: 0; display: inline-block; font-size: 14px; padding: 5px; border-bottom: 1px solid gray; } 
+.inner-list { width: 100%; height: auto; } 
+.inner-list > ul { margin: 0; padding: 0; list-style: none; } 
+.thum { width: 338px; height: 435px; } 
 
-}
-#top-cate > li {
-    display: inline-block;
-    padding: 20px;
-    font-size: 16px;
-}
-#banner {
-    width: 100%;
-    height: 200px;
-}
-#title {
-    font-size: 16px;
-    font-weight: bold;
-    padding: 10px;
-}
-.list {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    width: 900px;
-    border: solid 1px black;
-    font-size: 0;
-}
-.list > li {
-    margin: 0;
-    display: inline-block;
-    font-size: 14px;
-    padding: 5px;
-    border-bottom: 1px solid gray;
-}
-.inner-list {
-    width: 100%;
-    height: auto;
-}
-.inner-list > ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-.thum {
-    width: 338px;
-    height: 435px;
-}
-
-.thum > a > img {
-	object-fit: contain; 
-}
-.info > span {
-    display: block;
-    padding-top: 10px;
-    width: 337px;
-}
-.item {
-	margin: 0;
-}
-.item-list > li {
-    display: inline-block;
-	width: 350px;
-	height: 382px;
-}
+.thum > a > img {object-fit: contain; } 
+.info > span { display: block; padding-top: 10px; width: 337px; } 
+.item {margin: 0; } 
+.item-list > li { display: inline-block;width: 350px;height: 382px; } 
