@@ -78,7 +78,7 @@
         </div>
          <div id="gnb_menu"> <!-- 항시 고정되는 메뉴 -->
             <div id="gnb">
-                <div class="gnb_menus"></div>
+                <div class="gnb_menus"></div> 
                 <div id="cate" class="gnb_menus" >
                     <span id="cate_icon" class="material-icons">menu</span>
                     <span id="cate_text">&nbsp;전체 카테고리<div id="main_category_box"><!-- 카테고리 -->
