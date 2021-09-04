@@ -95,7 +95,7 @@
                                     <li value="15" class="subs"><a href="">오이·호박·고추</a></li>
                                     <li value="16" class="subs"><a href="">냉동·이색·간편채소</a></li>
                                     <li value="17" class="subs"><a href="">콩나물·버섯</a></li>
-                                </ul>
+                                </ul> 
                             </li>
                             <li id="fruit" class="mainCate_text">
                                 <a class="mca" value="20">
