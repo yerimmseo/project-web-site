@@ -1,0 +1,215 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<c:set var="path" value="${pageContext.request.contextPath }" />
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="${path }/resources/css/bbs.css" />
+    <script type="text/javascript" src="https://res.kurly.com/js/lib/jquery-1.10.2.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+	<div class="header">
+		<jsp:include page="../include/header.jsp"></jsp:include>
+	</div>
+	 <div id="wrap">
+        <div id="container">
+            <div id="main">
+                <div id="content">
+                    <div class="page_aticle aticle_type2">
+                        <div id="snb" class="snb_cc">
+                            <h2 class="tit_snb">고객센터</h2>
+                            <div class="inner_snb">
+                                <ul class="list_menu">
+                                    <li>
+                                        <a href="${path }/bbs/list">공지사항</a>
+                                    </li>
+                                    <li class="on">
+                                        <a href="${path }/bbs/question">자주하는질문</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <form name="frmList" id="form" method="get" action="?">
+                            <div class="page_section">
+                                <div class="head_aticle">
+                                    <h2 class="tit">
+                                        자주하는 질문
+                                        <span class="tit_sub">고객님들께서 가장 자주하시는 질문을 모두 모았습니다.</span>
+                                    </h2>
+                                </div>
+                                <div class="search_date">
+                                    <a href="#none" class="btn_layer">
+                                        회원문의
+                                    </a>
+                                    <ul class="layer_search" style="display: none;">
+                                        <li>
+                                            <a href="#none" @click="searchResult" data-value="01" data-selected>회원문의</a>
+                                        </li>
+                                        <li>
+                                            <a href="#none" @click="searchResult" data-value="02"
+                                                data-selected>주문/결제</a>
+                                        </li>
+                                        <li>
+                                            <a href="#none" @click="searchResult" data-value="03"
+                                                data-selected>취소/교환/반품</a>
+                                        </li>
+                                        <li>
+                                            <a href="#none" @click="searchResult" data-value="04" data-selected>배송문의</a>
+                                        </li>
+                                        <li>
+                                            <a href="#none" @click="searchResult" data-value="05"
+                                                data-selected>쿠폰/적립금</a>
+                                        </li>
+                                        <li>
+                                            <a href="#none" @click="searchResult" data-value="07" data-selected>서비스 이용 및
+                                                기타</a>
+                                        </li>
+                                    </ul>
+                                    <input type="hidden" name="sitemcd" value>
+                                    <script>
+
+                                        var $targetBtn = $('.search_date .btn_layer');
+                                        var $targetLayer = $('.search_date .layer_search');
+                                        var $targetSelector = $('.layer_search a');
+
+                                        $targetSelector.each(function () {
+                                            if ($(this).data('selected')) {
+                                                $targetBtn.text($(this).data('selected'));
+                                            }
+                                        });
+                                        $targetBtn.on('click', function (e) {
+                                            e.preventDefault();
+                                            $(this).toggleClass('on');
+                                            $targetLayer.slideToggle(100);
+                                        });
+                                        $targetSelector.on('click', function (e) {
+                                            e.preventDefault();
+                                            var value = $(this).data('value');
+                                            var text = $(this).text();
+                                            $targetBtn.trigger('click').text(text);
+                                            $('[name=sitemcd]').val(value);
+                                            $('[name=frmList]').submit();
+                                        });
+
+                                    </script>
+                                </div>
+                                <div class="xans-element- xans-myshop xans-myshop-couponserial ">
+                                    <table width="100%" class="xans-board-listheader">
+                                        <tbody>
+                                            <tr>
+                                                <th width="70" class="input_txt">번호</th>
+                                                <th width="135" class="input_txt">카테고리</th>
+                                                <th class="input_txt">제목</th>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div>
+                                        <table width="100%" class="table_faq" onclick="view_content(this)" id="faq_92">
+                                            <tbody>
+                                                <tr>
+                                                    <td width="70" align="center">1</td>
+                                                    <td width="135" align="center">회원문의</td>
+                                                    <td style="cursor:pointer">회원가입은 무료인가요?</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <div style="display:none;padding:30px; border-top:1px solid #e6e6e6">
+                                            <table cellpadding="0" cellspacing="0" border="0">
+                                                <tbody>
+                                                    <tr valign="top">
+                                                        <th style="color:#0000bf;width:40px; padding-top:1px;">
+                                                            <img src="../Market_Brokurly/IMG/faq_a.gif">
+                                                        </th>
+                                                        <td>
+                                                            마켓컬리는 배송지역 상관 없이 회원가입은 무료입니다.
+                                                            <br>
+                                                            <br>
+                                                            회원가입 후 다양한 혜택과 상품을 만나보세요!
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="padding:1px; border-top:1px solid #e6e6e6">
+                                    <div class="layout-pagination">
+                                        <div class="pagediv">
+                                            <a href="/shop/service/faq.php?sitemcd=04&page=1"
+                                                class="layout-pagination-button layout-pagination-prev-page">
+                                                이전 페이지로 가기
+                                            </a>
+                                            <a href="/shop/service/faq.php?sitemcd=04&page=1"
+                                                class="layout-pagination-button layout-pagination-number">1</a>
+                                            <a href="/shop/service/faq.php?sitemcd=04&page=1"
+                                                class="layout-pagination-button layout-pagination-next-page">
+                                                다음 페이지로 가기
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <table class="xans-board-search xans-board-search2">
+                                        <tbody>
+                                            <tr>
+                                                <td class="input_txt">&nbsp;</td>
+                                                <td>
+                                                    <div class="search_bt">
+                                                        <input type="image" src="../Market_Brokurly/IMG/search.png"
+                                                            align="absmiddle">
+                                                        <input type="text" name="sword" value required>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <script>
+
+                        var preContent;
+
+                        function view_content(obj) {
+                            var div = obj.parentNode;
+
+                            for (var i = 1, m = div.childNodes.length; i < m; i++) {
+                                if (div.childNodes[i].nodeType != 1) continue;	// text node.
+                                else if (obj == div.childNodes[i]) continue;
+
+                                obj = div.childNodes[i];
+                                break;
+                            }
+
+                            if (preContent && obj != preContent) {
+                                obj.style.display = "block";
+                                preContent.style.display = "none";
+                            }
+                            else if (preContent && obj == preContent) preContent.style.display = (preContent.style.display == "none" ? "block" : "none");
+                            else if (preContent == null) obj.style.display = "block";
+
+                            preContent = obj;
+                        }
+
+                        { // 초기출력
+                            var no = "faq_";
+                            if (document.getElementById(no)) view_content(document.getElementById(no));
+                        }
+
+                        // KM-1483 Amplitude 연동
+                        KurlyTracker.setScreenName('frequently_ask_question')
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer_wrap">
+		<jsp:include page="../include/footer.jsp"></jsp:include>
+	</div>
+</body>
+</html>

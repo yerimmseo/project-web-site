@@ -109,6 +109,9 @@ public class BoardController {
 		service.updateViewcnt(board.getBno());
 		return "redirect:/bbs/list";
 	}
+	
+	@RequestMapping(value="/question", method=RequestMethod.GET , produces="application/text;charset=utf-8")
+	public void question() {}
 
 	
 }

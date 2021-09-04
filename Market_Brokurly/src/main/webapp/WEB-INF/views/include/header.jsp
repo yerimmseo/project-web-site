@@ -64,7 +64,7 @@
             </ul>
             <ul id="service_menu" >
                 <li><a href="${path}/bbs/list">공지사항</a></li>
-                <li><a href="">자주하는 질문</a></li>
+                <li><a href="${path}/bbs/question">자주하는 질문</a></li>
                 <li><a href="">1:1 문의</a></li>
                 <li><a href="">상품 제안</a></li>
             </ul>

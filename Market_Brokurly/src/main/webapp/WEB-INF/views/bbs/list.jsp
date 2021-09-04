@@ -53,14 +53,12 @@
                             <div class="inner_snb">
                                 <ul class="list_menu">
                                     <li class="on">
-                                        <a href="#none"
-                                            onclick="KurlyTrackerLink('/shop/board/list.php?id=notice', 'select_service_notice_list')">
+                                        <a href="${path }/bbs/list">
                                             공지사항
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#none"
-                                            onclick="KurlyTrackerLink('/shop/service/faq.php', 'select_service_frequently_qna')">
+                                        <a href="${path }/bbs/question">
                                             자주하는 질문
                                         </a>
                                     </li>
