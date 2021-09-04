@@ -1,0 +1,231 @@
+@charset "UTF-8";
+
+*, *:after, *:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    display: block;
+}
+
+html {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+html, body {
+    height: 100%;
+}
+
+body, input, select, textarea, button {
+    font-family: noto sans,malgun gothic,AppleGothic,dotum;
+    line-height: 1;
+    letter-spacing: -.05em;
+    color: #4c4c4c;
+    font-size: 12px;
+    max-width: 100%;
+}
+
+div {
+    display: block;
+}
+
+div, th, td, li, dt, dd, p {
+    word-break: break-all;
+}
+
+ol, ul {
+    list-style-type: none;
+}
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+
+b, strong {
+    font-weight: 700;
+}
+
+a {
+    background-color: transparent;
+    text-decoration: none;
+    color: inherit;
+}
+
+#header, #container, #content {
+    position: relative;
+}
+
+#main {
+    border-bottom: 1px solid #f7f7f7;
+}
+
+.tit_page {
+    overflow: hidden;
+    width: 1050px;
+    margin: 0 auto;
+    padding: 55px 0 46px;
+}
+
+.tit_page h2.tit {
+    font-weight: 800;
+    font-family: noto sans;
+    font-size: 30px;
+    color: #333;
+    line-height: 50px;
+    text-align: center;
+    letter-spacing: -.5px;
+}
+
+.tit_page .sub {
+    font-family: noto sans;
+    font-size: 14px;
+    color: #999;
+    line-height: 20px;
+    letter-spacing: -.3px;
+    text-align: center;
+}
+
+.layout-wrapper {
+    position: relative;
+    width: 1050px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.xans-myshop-couponserial {
+    padding-bottom: 20px;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+
+td {
+    display: table-cell;
+    vertical-align: inherit;
+}
+
+.boardView {
+    table-layout: fixed;
+    border-top: 2px solid #333;
+    border-bottom: 1px solid #f4f4f4;
+    color: #333;
+    line-height: 180%;
+    margin-top: 20px;
+}
+
+.boardView th {
+    width: 130px;
+    padding: 13px 0 13px 20px;
+    background-color: #f7f5f8;
+    border-top: 1px solid #f4f4f4;
+    text-align: left;
+}
+
+.boardView td {
+    width: auto;
+    padding: 13px 0 13px 23px;
+    border-top: 1px solid #f4f4f4;
+}
+
+.boardView tr.etcArea td {
+    padding: 0;
+    border: 0;
+}
+
+.boardView tr.etcArea ul {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    width: 100%;
+    border-top: 1px solid #f4f4f4;
+}
+
+.boardView tr.etcArea ul li {
+    float: left;
+}
+
+.boardView tr.etcArea ul .th {
+    float: left;
+    padding: 13px 0 13px 20px;
+    width: 130px;
+    background-color: #f7f5f8;
+}
+
+.boardView tr.etcArea ul .td {
+    float: left;
+    padding: 13px 0 13px 20px;
+    width: 180px;
+}
+
+.xans-element-.xans-myshop.xans-myshop-couponserial .eng {
+    display: none;
+}
+
+.xans-element-.xans-myshop.xans-myshop-couponserial td#contents .board_view_content {
+    line-height: 25px;
+}
+
+.xans-element-.xans-myshop.xans-myshop-couponserial td#contents .board_view_content div {
+    line-height: 25px;
+}
+
+.xans-element-.xans-myshop.xans-myshop-couponserial td#contents span {
+    line-height: 25px;
+}
+
+
+
+.bhs_button {
+    width: 150px;
+    display: inline-block;
+    line-height: 40px;
+    text-align: center;
+    background-color: #795b8f;
+    border: 1px solid #5f0080;
+    color: #fff;
+    font-size: 15px;
+    float: right;
+    margin-left: 2px;
+    font-size: 13px;
+}
+
+.btn_ok{
+	width: 150px;
+	height: 150px;
+    background-color: #795b8f;
+    color: #fff;
+}
+
+.bhs_button.yb {
+	width: 150px;
+	height: 150px;
+    background-color: #795b8f;
+    color: #fff;
+}
+
+.xans-board-movement {
+    border-top: 2px solid #333;
+    border-bottom: 2px solid #333;
+    margin: 20px 0;
+}
