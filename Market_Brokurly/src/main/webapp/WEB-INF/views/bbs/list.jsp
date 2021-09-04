@@ -148,7 +148,7 @@
 									<option value="tcw" <c:out value="${pvo.searchType eq 'tcw'?'selected':''}"/>>제목 + 내용 + 작성자</option>
 								</select>
 								<input type="text" name="keyword" id="keywordInput" value="${pvo.keyword}">
-								<button id="searchBtn" ><img src="${path }/resources/img/ico_bbssearch.png"></button>
+								<button id="searchBtn" ><img src="${path }/resources/img/bbs/search.png"></button>
 								<button id="newBtn">글작성</button>
 							</div>
                         </div>

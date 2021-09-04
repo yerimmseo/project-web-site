@@ -124,7 +124,7 @@
                                                 <tbody>
                                                     <tr valign="top">
                                                         <th style="color:#0000bf;width:40px; padding-top:1px;">
-                                                            <img src="../Market_Brokurly/IMG/faq_a.gif">
+                                                            <img src="${path }/resources/img/bbs/faq_a.gif">
                                                         </th>
                                                         <td>
                                                             마켓컬리는 배송지역 상관 없이 회원가입은 무료입니다.
@@ -159,7 +159,7 @@
                                                 <td class="input_txt">&nbsp;</td>
                                                 <td>
                                                     <div class="search_bt">
-                                                        <input type="image" src="../Market_Brokurly/IMG/search.png"
+                                                        <input type="image" src="${path }/resources/img/bbs/search.png"
                                                             align="absmiddle">
                                                         <input type="text" name="sword" value required>
                                                     </div>
