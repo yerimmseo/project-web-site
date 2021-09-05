@@ -108,7 +108,7 @@
                                                                             style="word-wrap:break-word;word-break:break-all"
                                                                             id="contents_931" valign="top">
                                                                             <div class="form-group">
-																				<textarea name="content" class="form-control" rows="3">${boardVO.content}</textarea>
+																				<textarea name="content" class="form-control" rows="10" cols="60">${boardVO.content}</textarea>
 																			</div>
                                                                         </td>
                                                                     </tr>
@@ -137,11 +137,6 @@
 																				<button type="submit" class="btn-primary">SAVE</button>
 																				<button type="submit" class="btn-warning">CANCEL</button>
 																			</div>
-                                                                        
-                                                                            <a href="list.php?id=notice">
-                                                                                <span class="bhs_button yb"
-                                                                                    style="float:none;">목록</span>
-                                                                            </a>
                                                                         </td>
                                                                     </tr>
                                                                 </tbody>

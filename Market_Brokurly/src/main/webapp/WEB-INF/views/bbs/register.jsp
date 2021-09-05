@@ -91,17 +91,10 @@
                                                                     <tr>
                                                                         <td align="right">
                                                                             <div class="box-footer">
-																				<span class="bhs_button yb"style="float:none;"><button type="submit" class="btn_ok">글쓰기</button></span>
+																				<button type="submit" class="btn_ok">글쓰기</button>
 																			</div>
                                                                         </td>
-                                                                        
-                                                                        <td align="right">
-                                                                            <a href="list.php?id=notice">
-                                                                                <span class="bhs_button yb"style="float:none;">목록</span>
-                                                                            </a>
-                                                                        </td>
-                                                                        
-              
+                                                               
                                                                     </tr>
                                                                 </tbody>
                                                             </table>
@@ -120,12 +113,7 @@
                                                     <col style="padding-left:10px">
                                                 </colgroup>
                                             </table>
-                                            <p>
-                                                <br>
-                                                <textarea id="examC_931" style="display:none;width:100%;height:300px">
-                                                <div><font face="Arial">고객님, 안녕하세요, 마켓컬리 입니다.</font></div><div><font face="Arial"><br></font></div><div><font face="Arial">컬리에서는 친환경 포장재이나 사용 후에도 지속 가능한 유통을 고려하여, 포장재 [종이박스] 회수 서비스를 실시하고 있으므로 관련 안내 드립니다.</font></div><div><font face="Arial"><br></font></div><div><font face="Arial"><br></font></div><div><b><font size="4" face="Arial"># 종이박스 회수 서비스 이용 안내</font></b></div><div><font face="Arial" style=""><b><br></b></font></div><div><font face="Arial"><b>1) 대상 지역 : 수도권 샛별배송 지역</b></font></div><div><font face="Arial"><b><br></b></font></div><div><font face="Arial" style=""><b>2) 회수 대상 : 종이박스 ( 1회 최대 3개 )</b></font></div><div><font face="Arial">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <b>&nbsp; &nbsp; &nbsp; &nbsp;</b><u style="background-color: rgb(255, 255, 128);">※ 상기 대상 외 기타 종이소재 포장재( e.g. 지아미 파우치, 종이 봉투, 종이테이프 등 ) 및 아이스팩은 미회수</u></font></div><div><font face="Arial"><br></font></div><div><b><font face="Arial">3) 회수 방법 :</font></b></div><div><font face="Arial">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <b>① 상품 수령 후 박스에서 송장을 제거해주세요.</b></font></div><div><font face="Arial"><b>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ② 새로운 주문 완료 후, 박스를 펼쳐 자택 문 앞에 놓아 주세요.</b></font></div><div><font face="Arial"><b>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ③ 새로운 주문이 배송 됨과 동시에 배송 기사님께서 종이 박스를 회수합니다.</b></font></div><div><font face="Arial"><b><br></b></font></div><div><font face="Arial"><b>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 이 후,&nbsp; 회수한 박스는 컬리가 재활용 업체에 전달합니다.</b></font></div><div><font face="Arial"><br></font></div><div><b><font face="Arial">4) 유의 사항 :&nbsp;</font></b></div><div><font face="Arial" style="">- 간혹, 배송 매니저님들께서 깜빡하고 회수를 잊으시거나 부득이하게 회수가 어려운 경우 회수가 누락 될 수 있습니다.</font></div><div><font face="Arial" style="">&nbsp; 고객님의 너그러운 양해 부탁 드리며 배송 매니저님께 잊지 않으시도록 꼭 회수 전달 드리겠습니다.</font></div><div><font face="Arial">&nbsp;&nbsp;</font></div><div>----</div><div><span style="font-family: Arial;">상기 내용과 같이 회수 서비스를 통해 회수한 종이 박스는 재활용 업체에 전달하고 있으며&nbsp;</span></div><div><span style="font-family: Arial;">발생 한 수익금으로는 학교 숲 / 샛별 숲 키우기 프로젝트로 지구를 위한 선순환 캠페인을 함께 하고 있습니다.&nbsp;</span></div><div><br></div><div><font face="Arial">원활한 서비스 운영을 위해 내용 준수해주시길 부탁 드립니다.</font></div><div><span style="font-family: Arial;">컬리 이용에 많은 관심과 성원 보내주심에 다시 한번 감사 말씀드리며&nbsp;</span><span style="font-family: Arial;">상품 품질과 식품 안전을 유지하면서도&nbsp;</span></div><div><span style="font-family: Arial;">친환경 포장재 및 포장 간소화를 할 수 있도록 더욱 연구하는 컬리가 되겠습니다.</span></div><div><span style="font-family: Arial;">&nbsp;</span></div><div><font face="Arial">감사합니다. 마켓컬리 드림.</font></div>
-                                                </textarea>
-                                            </p>
+                                          
                                         </td>
                                     </tr>
                                 </tbody>

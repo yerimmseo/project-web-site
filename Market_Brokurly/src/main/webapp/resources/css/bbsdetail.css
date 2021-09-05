@@ -205,21 +205,13 @@ td {
     border: 1px solid #5f0080;
     color: #fff;
     font-size: 15px;
-    float: right;
     margin-left: 2px;
     font-size: 13px;
 }
 
-.btn_ok{
-	width: 150px;
-	height: 150px;
-    background-color: #795b8f;
-    color: #fff;
-}
 
 .bhs_button.yb {
 	width: 150px;
-	height: 150px;
     background-color: #795b8f;
     color: #fff;
 }

@@ -343,3 +343,7 @@ input[type=checkbox], input[type=radio] {
 	margin-left: 10px;
 	margin-right: 10px;
 }
+
+.searchBtn{
+	font-size: 10px;	
+}
