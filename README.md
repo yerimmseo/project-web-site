@@ -1,6 +1,6 @@
 # project-web-site
-🥦 market brokurly 🥦
-마켓 컬리를 모티브로 한 온라인 웹사이트 개발
+🥦 market brokurly 🥦<br>
+마켓 컬리 웹 페이지 시스템을 모티브로 한 온라인 웹 사이트 개발
 
 ## 🥦 소개
 ### 프로젝트 진행 기간
