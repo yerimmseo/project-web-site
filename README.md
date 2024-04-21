@@ -1,4 +1,4 @@
-![image](https://github.com/yerimmseo/project-web-site/assets/80576569/1fb7bf05-ace5-43c3-9a45-7f98459ba284)# project-web-site
+# project-web-site
 🥦 market brokurly 🥦<br>
 마켓 컬리 웹 페이지 시스템을 모티브로 한 온라인 웹 사이트 개발
 
@@ -139,9 +139,3 @@
 > ![image](https://github.com/yerimmseo/project-web-site/assets/80576569/95633cd4-9123-41b1-a825-88f6c1fcdbf1)
 > ![image](https://github.com/yerimmseo/project-web-site/assets/80576569/c79edda1-d74c-4934-a596-65441160f8a0)
 > ![image](https://github.com/yerimmseo/project-web-site/assets/80576569/adf57c06-200b-4c50-bb7e-15b2b42cc797)
-
->### 🥦 사용한 API.
-> [kakaoAPI, kginesisAPI]
-> ![addressAPI](https://user-images.githubusercontent.com/82787224/133022068-99298f6b-a994-443d-893d-daafe4a0dda2.png)
-> ![order after](https://user-images.githubusercontent.com/82787224/133029696-e2f0dd04-9c74-4878-8125-f85ec0886f55.png)
->
