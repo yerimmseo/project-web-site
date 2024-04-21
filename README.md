@@ -48,7 +48,7 @@
 
 ## 🥦 구현한 화면 캡쳐
 > * 회원가입 창으로 이동
-> ![image](https://github.com/yerimmseo/project-web-site/assets/80576569/3bcff3ff-34d8-46f7-bda6-e4347087cbd7)\
+> ![image](https://github.com/yerimmseo/project-web-site/assets/80576569/3bcff3ff-34d8-46f7-bda6-e4347087cbd7)
 
 > * 회원가입 
 > ![image](https://github.com/yerimmseo/project-web-site/assets/80576569/a9da4345-c777-4e95-9d62-4fa4b3fa60b8)
